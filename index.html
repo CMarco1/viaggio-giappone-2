@@ -99,6 +99,34 @@
         tr:last-child:hover td { background-color: #ffe0e5; }
         
         .click-hint { text-align: center; color: var(--light-text); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 20px; display: inline-block; margin-left: 50%; transform: translateX(-50%); }
+
+        /* WEROAD / GIRLS IN ITALY STYLE INJECTIONS */
+        .mood-tags { display: flex; gap: 10px; justify-content: center; margin-top: 25px; flex-wrap: wrap; animation: fadeIn 1s ease-out 0.4s backwards; }
+        .tag { padding: 6px 18px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); color: white; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        
+        .included-excluded { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
+        @media(min-width: 768px) { .included-excluded { grid-template-columns: 1fr 1fr; } }
+        .inc-exc-box { background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); }
+        .inc-box { border-top: 5px solid #4CAF50; }
+        .exc-box { border-top: 5px solid #F44336; }
+        .inc-exc-box h3 { margin-top: 0; font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-color); }
+        .inc-exc-box ul { list-style: none; padding: 0; margin: 0; }
+        .inc-exc-box li { margin-bottom: 1rem; position: relative; padding-left: 30px; font-size: 0.95rem; color: var(--text-color); line-height: 1.4; }
+        .inc-box li::before { content: '✔️'; position: absolute; left: 0; top: 0; font-size: 1.1rem; }
+        .exc-box li::before { content: '❌'; position: absolute; left: 0; top: 0; font-size: 1.1rem; }
+
+        .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 15px 30px; box-shadow: 0 -5px 20px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-top: 1px solid rgba(0,0,0,0.05); }
+        .sticky-bar-info { font-weight: 800; color: var(--text-color); font-size: 1.2rem; display: none; }
+        @media(min-width: 768px) { .sticky-bar-info { display: block; } .sticky-bar { padding: 15px 50px; } }
+        .sticky-bar-info span { color: var(--light-text); font-weight: 600; font-size: 0.95rem; margin-left: 15px; border-left: 2px solid #EEE; padding-left: 15px;}
+        .cta-button { background: var(--primary-color); color: white; padding: 12px 30px; border-radius: 30px; font-weight: 800; text-decoration: none; transition: var(--transition); box-shadow: 0 4px 15px rgba(230,0,18,0.3); font-size: 1rem; letter-spacing: 0.5px; margin: 0 auto; text-align: center; display: block; }
+        @media(min-width: 768px) { .cta-button { margin: 0; } }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(230,0,18,0.4); color: white; }
+
+        .itinerary-day .day-image { position: relative; }
+        .day-badge { position: absolute; top: 20px; left: 20px; background: var(--primary-color); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 800; font-size: 0.85rem; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(5px); }
+        body { padding-bottom: 80px; } /* Prevent sticky bar overlap */
+
     </style>
 </head>
 <body>
@@ -106,6 +134,12 @@
     <header>
         <h1>🇯🇵 Giappone 2026</h1>
         <p>Il secondo viaggio: Cultura Nerd, Cibo e Relax tra Tokyo, Kyoto e Osaka.</p>
+        <div class="mood-tags">
+            <span class="tag">🏮 Tradizione</span>
+            <span class="tag">👾 Cultura Nerd</span>
+            <span class="tag">🍣 Foodie</span>
+            <span class="tag">🥾 Ritmo Relax</span>
+        </div>
     </header>
 
     <div class="container">
@@ -172,10 +206,10 @@
 
             <!-- DAY 1 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/shinjuku.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/shinjuku.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 1 (1 Dic): Arrivo a Tokyo</h3>
+                        <h3>Giorno </div></div>1 (1 Dic): Arrivo a Tokyo</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -202,10 +236,10 @@
 
             <!-- DAY 2 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/sensoji.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/sensoji.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 2 (2 Dic): Tradizione e Asakusa</h3>
+                        <h3>Giorno </div></div>2 (2 Dic): Tradizione e Asakusa</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -232,10 +266,10 @@
 
             <!-- DAY 3 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/akihabara.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/akihabara.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 3 (3 Dic): Il Paradiso Nerd - Akihabara</h3>
+                        <h3>Giorno </div></div>3 (3 Dic): Il Paradiso Nerd - Akihabara</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -262,10 +296,10 @@
 
             <!-- DAY 4 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/shibuya.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/shibuya.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 4 (4 Dic): Pop Culture a Shibuya</h3>
+                        <h3>Giorno </div></div>4 (4 Dic): Pop Culture a Shibuya</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -292,10 +326,10 @@
 
             <!-- DAY 5 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/nakano.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/nakano.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 5 (5 Dic): Vintage Nerd a Nakano</h3>
+                        <h3>Giorno </div></div>5 (5 Dic): Vintage Nerd a Nakano</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -322,10 +356,10 @@
 
             <!-- DAY 6 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/ikebukuro.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/ikebukuro.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 6 (6 Dic): Ikebukuro (Anime & Manga)</h3>
+                        <h3>Giorno </div></div>6 (6 Dic): Ikebukuro (Anime & Manga)</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -352,10 +386,10 @@
 
             <!-- DAY 7 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/odaiba.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/odaiba.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 7 (7 Dic): Odaiba e Gundam</h3>
+                        <h3>Giorno </div></div>7 (7 Dic): Odaiba e Gundam</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -388,10 +422,10 @@
 
             <!-- DAY 8 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/gion.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/gion.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 8 (8 Dic): Arrivo a Kyoto e Gion</h3>
+                        <h3>Giorno </div></div>8 (8 Dic): Arrivo a Kyoto e Gion</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -418,10 +452,10 @@
 
             <!-- DAY 9 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/kiyomizu.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/kiyomizu.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 9 (9 Dic): Il Tempio dell'Acqua</h3>
+                        <h3>Giorno </div></div>9 (9 Dic): Il Tempio dell'Acqua</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -448,10 +482,10 @@
 
             <!-- DAY 10 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/nishiki.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/nishiki.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 10 (10 Dic): Mercato Nishiki e Manga</h3>
+                        <h3>Giorno </div></div>10 (10 Dic): Mercato Nishiki e Manga</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -478,10 +512,10 @@
 
             <!-- DAY 11 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/arashiyama.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/arashiyama.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 11 (11 Dic): Arashiyama e Kinkaku-ji</h3>
+                        <h3>Giorno </div></div>11 (11 Dic): Arashiyama e Kinkaku-ji</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -508,10 +542,10 @@
 
             <!-- DAY 12 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/shinsekai.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/shinsekai.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 12 (12 Dic): Osaka (Den Den Town & Shinsekai)</h3>
+                        <h3>Giorno </div></div>12 (12 Dic): Osaka (Den Den Town & Shinsekai)</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -538,10 +572,10 @@
 
             <!-- DAY 13 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/dotonbori.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/dotonbori.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 13 (13 Dic): Osaka (Dotonbori e Namba)</h3>
+                        <h3>Giorno </div></div>13 (13 Dic): Osaka (Dotonbori e Namba)</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -568,10 +602,10 @@
 
             <!-- DAY 14 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/kyoto_station.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/kyoto_station.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 14 (14 Dic): Relax a Kyoto</h3>
+                        <h3>Giorno </div></div>14 (14 Dic): Relax a Kyoto</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -598,10 +632,10 @@
 
             <!-- DAY 15 -->
             <div class="itinerary-day" onclick="toggleDetails(this)">
-                <div class="day-image" style="background-image: url('images/airport.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/airport.jpg');"><div class="day-badge">Giorno 
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 15 (15 Dic): Partenza da Osaka KIX</h3>
+                        <h3>Giorno </div></div>15 (15 Dic): Partenza da Osaka KIX</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
@@ -656,8 +690,31 @@
                 </div>
             </div>
         </section>
+
+        <section class="included-excluded">
+            <div class="inc-exc-box inc-box">
+                <h3>✅ La stima comprende</h3>
+                <ul>
+                    <li>Voli A/R Roma-Giappone</li>
+                    <li>Scelta dei posti vicini in aereo</li>
+                    <li>14 Notti in Hotel 3★ / 4★</li>
+                    <li>Pasti principali e street food</li>
+                    <li>Spostamenti (Shinkansen, IC Card, Navette)</li>
+                    <li>Attrazioni, eSIM e Assicurazione base</li>
+                </ul>
+            </div>
+            <div class="inc-exc-box exc-box">
+                <h3>❌ La stima NON comprende</h3>
+                <ul>
+                    <li>Shopping Nerd (Action figures, manga)</li>
+                    <li>Souvenir e regali per amici</li>
+                    <li>Spedizione bagagli tra città (Takkyubin)</li>
+                    <li>Alcolici extra ed esperienze premium/locali notturni</li>
+                </ul>
+            </div>
+        </section>
         <section>
-            <h2>💰 Stima dei Costi (Totale per 2 Persone)</h2>
+            <h2 id="costi">💰 Stima dei Costi (Totale per 2 Persone)</h2>
             <p><em>Avendo già l'ICOCA, dovrete solo ricaricarla per i treni locali e la tratta Kyoto-Osaka.</em></p>
             <table>
                 <thead>
@@ -726,5 +783,11 @@
             }
         }
     </script>
+
+    <div class="sticky-bar">
+        <div class="sticky-bar-info">🇯🇵 Giappone 2026 <span>30 Nov - 15 Dic | 15 Giorni</span></div>
+        <a href="#costi" class="cta-button">Visualizza Budget</a>
+    </div>
+
 </body>
 </html>
