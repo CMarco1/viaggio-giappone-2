@@ -104,16 +104,12 @@
         .mood-tags { display: flex; gap: 10px; justify-content: center; margin-top: 25px; flex-wrap: wrap; animation: fadeIn 1s ease-out 0.4s backwards; }
         .tag { padding: 6px 18px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); color: white; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
-        .included-excluded { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
-        @media(min-width: 768px) { .included-excluded { grid-template-columns: 1fr 1fr; } }
-        .inc-exc-box { background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); }
-        .inc-box { border-top: 5px solid #4CAF50; }
-        .exc-box { border-top: 5px solid #F44336; }
+                @media(min-width: 768px) {         .inc-exc-box { background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); }
+                .exc-box { border-top: 5px solid #F44336; }
         .inc-exc-box h3 { margin-top: 0; font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-color); }
         .inc-exc-box ul { list-style: none; padding: 0; margin: 0; }
         .inc-exc-box li { margin-bottom: 1rem; position: relative; padding-left: 30px; font-size: 0.95rem; color: var(--text-color); line-height: 1.4; }
-        .inc-box li::before { content: '✔️'; position: absolute; left: 0; top: 0; font-size: 1.1rem; }
-        .exc-box li::before { content: '❌'; position: absolute; left: 0; top: 0; font-size: 1.1rem; }
+                .exc-box li::before { content: '❌'; position: absolute; left: 0; top: 0; font-size: 1.1rem; }
 
         .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 8px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-top: 1px solid rgba(0,0,0,0.05); }
         .sticky-bar-info { font-weight: 800; color: var(--text-color); font-size: 1.05rem; display: none; }
@@ -689,28 +685,7 @@
             </div>
         </section>
 
-        <section class="included-excluded">
-            <div class="inc-exc-box inc-box">
-                <h3>✅ La stima comprende</h3>
-                <ul>
-                    <li>Voli A/R Roma-Giappone</li>
-                    <li>Scelta dei posti vicini in aereo</li>
-                    <li>14 Notti in Hotel 3★ / 4★</li>
-                    <li>Pasti principali e street food</li>
-                    <li>Spostamenti (Shinkansen, IC Card, Navette)</li>
-                    <li>Attrazioni, eSIM e Assicurazione base</li>
-                </ul>
-            </div>
-            <div class="inc-exc-box exc-box">
-                <h3>❌ La stima NON comprende</h3>
-                <ul>
-                    <li>Shopping Nerd (Action figures, manga)</li>
-                    <li>Souvenir e regali per amici</li>
-                    <li>Spedizione bagagli tra città (Takkyubin)</li>
-                    <li>Alcolici extra ed esperienze premium/locali notturni</li>
-                </ul>
-            </div>
-        </section>
+        
         <section>
             <h2 id="costi">💰 Stima dei Costi (Totale per 2 Persone)</h2>
             <p><em>Avendo già l'ICOCA, dovrete solo ricaricarla per i treni locali e la tratta Kyoto-Osaka.</em></p>
@@ -761,6 +736,16 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
+
+            <div class="inc-exc-box exc-box" style="margin-top: 2rem;">
+                <h3>❌ La stima NON comprende</h3>
+                <ul>
+                    <li>Shopping Nerd (Action figures, manga)</li>
+                    <li>Souvenir e regali per amici</li>
+                    <li>Spedizione bagagli tra città (Takkyubin)</li>
+                    <li>Alcolici extra ed esperienze premium/locali notturni</li>
+                </ul>
             </div>
         </section>
 
