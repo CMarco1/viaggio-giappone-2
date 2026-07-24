@@ -7,78 +7,98 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <style>
+        <style>
         :root {
-            --primary-color: #D32F2F; 
-            --bg-color: #F8F9FA;
-            --text-color: #333333;
-            --light-text: #666666;
+            --primary-color: #E60012; /* Japan Red */
+            --primary-light: #FFEBEE;
+            --bg-color: #F4F6F8;
+            --text-color: #2C3E50;
+            --light-text: #546E7A;
             --card-bg: #FFFFFF;
-            --border-radius: 16px;
-            --transition: all 0.3s ease;
+            --border-radius: 20px;
+            --transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
-        body { font-family: 'Montserrat', 'Noto Sans JP', sans-serif; line-height: 1.7; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color); }
+        /* Base & Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        body { font-family: 'Montserrat', 'Noto Sans JP', sans-serif; line-height: 1.7; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color); -webkit-font-smoothing: antialiased; }
         
-        header { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('images/cover.jpg'); background-size: cover; background-position: center; background-attachment: fixed; color: white; text-align: center; padding: 6rem 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        header p { font-size: 1.2rem; font-weight: 400; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+        /* Header Hero */
+        header { 
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('images/cover.jpg'); 
+            background-size: cover; background-position: center 30%; background-attachment: fixed; color: white; text-align: center; 
+            padding: 8rem 1rem 6rem 1rem; position: relative; 
+        }
+        header::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background: linear-gradient(to top, var(--bg-color), transparent); }
+        header h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin-bottom: 0.5rem; letter-spacing: 1px; text-shadow: 0 4px 15px rgba(0,0,0,0.4); animation: fadeIn 0.8s ease-out; }
+        header p { font-size: 1.2rem; font-weight: 400; max-width: 650px; margin: 0 auto; opacity: 0.95; animation: fadeIn 1s ease-out 0.2s backwards; }
         
-        .container { max-width: 1100px; margin: -40px auto 0 auto; padding: 0 1.5rem 3rem 1.5rem; position: relative; z-index: 10; }
+        .container { max-width: 1100px; margin: -50px auto 0 auto; padding: 0 1.5rem 3rem 1.5rem; position: relative; z-index: 10; animation: fadeIn 1.2s ease-out 0.4s backwards; }
         
-        .summary-box { background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 3rem; border-top: 6px solid var(--primary-color); }
-        .summary-box ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
-        .summary-box li { background: var(--bg-color); padding: 1rem; border-radius: 8px; font-size: 0.95rem; }
-        .summary-box li strong { color: var(--primary-color); display: block; margin-bottom: 0.2rem; }
-        
-        h2 { color: var(--text-color); font-weight: 800; font-size: 2rem; margin-top: 3rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
-        h2::after { content: ""; flex: 1; height: 2px; background: #E0E0E0; margin-left: 15px; }
+        /* Typography */
+        h2 { color: var(--text-color); font-weight: 800; font-size: 2.2rem; margin-top: 3.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 12px; }
+        h2::after { content: ""; flex: 1; height: 3px; background: linear-gradient(90deg, #E0E0E0 0%, transparent 100%); margin-left: 15px; border-radius: 2px;}
 
-        .itinerary-day { background: var(--card-bg); margin-bottom: 2rem; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: var(--transition); cursor: pointer; }
-        .itinerary-day:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+        /* Cards & Summary */
+        .summary-box { background: var(--card-bg); padding: 2.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); margin-bottom: 3rem; border-top: 6px solid var(--primary-color); transition: var(--transition); }
+        .summary-box:hover { box-shadow: var(--shadow-lg); }
+        .summary-box ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+        .summary-box li { background: var(--bg-color); padding: 1.2rem; border-radius: 12px; font-size: 0.95rem; display: flex; flex-direction: column; }
+        .summary-box li strong { color: var(--primary-color); font-size: 1.05rem; margin-bottom: 0.3rem; }
+        
+        /* Itinerary Cards */
+        .itinerary-day { background: var(--card-bg); margin-bottom: 2.5rem; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: var(--transition); cursor: pointer; border: 1px solid rgba(0,0,0,0.03); }
+        .itinerary-day:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
         @media (min-width: 768px) { .itinerary-day { flex-direction: row; } }
         
-        .day-image { flex: 1; min-height: 250px; background-size: cover; background-position: center; }
-        .day-content { flex: 1.5; padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+        .day-image { flex: 1; min-height: 280px; background-size: cover; background-position: center; transition: transform 0.8s ease; }
+        .itinerary-day:hover .day-image { transform: scale(1.03); }
         
-        .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-        .day-content h3 { margin: 0; color: var(--primary-color); font-weight: 700; font-size: 1.4rem; }
-        .toggle-icon { font-size: 2rem; font-weight: 400; color: var(--primary-color); transition: transform 0.4s ease; line-height: 1; }
+        .day-content { flex: 1.5; padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; background: var(--card-bg); z-index: 2; }
         
-        .day-content > ul { padding-left: 1.2rem; color: var(--light-text); margin: 0; }
-        .day-content li { margin-bottom: 0.5rem; }
+        .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .day-content h3 { margin: 0; color: var(--primary-color); font-weight: 800; font-size: 1.5rem; line-height: 1.3; }
+        .toggle-icon { font-size: 2rem; font-weight: 400; color: #B0BEC5; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); line-height: 1; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bg-color); }
+        .itinerary-day:hover .toggle-icon { color: var(--primary-color); }
+        
+        .day-content > ul { padding-left: 0; color: var(--light-text); margin: 0; list-style: none; }
+        .day-content > ul > li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+        .day-content > ul > li::before { content: '•'; color: var(--primary-color); font-weight: bold; position: absolute; left: 0; font-size: 1.2rem; line-height: 1; top: 0px; }
         .day-content li strong { color: var(--text-color); }
 
-        /* Pannello Dettagli Espandibile */
-        .day-details { max-height: 0; overflow: hidden; opacity: 0; transition: all 0.5s ease-in-out; border-top: 1px solid transparent; margin-top: 0; padding-top: 0; }
-        .itinerary-day.active .day-details { max-height: 1000px; opacity: 1; border-top: 1px solid #EEE; margin-top: 1.5rem; padding-top: 1.5rem; }
-        .itinerary-day.active .toggle-icon { transform: rotate(45deg); }
+        /* Expandable Panel */
+        .day-details { 
+            display: grid; 
+            grid-template-rows: 0fr; 
+            transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.5s ease, opacity 0.4s ease; 
+            opacity: 0; margin-top: 0; padding-top: 0; border-top: 1px solid transparent; 
+        }
+        .day-details-inner { overflow: hidden; }
         
-        .details-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .itinerary-day.active .day-details { grid-template-rows: 1fr; opacity: 1; border-top: 1px solid #ECEFF1; margin-top: 1.5rem; }
+        .itinerary-day.active .day-details-inner { padding-top: 1.5rem; }
+        .itinerary-day.active .toggle-icon { transform: rotate(45deg); background: var(--primary-light); color: var(--primary-color); }
+        
+        .details-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
         @media(min-width: 768px) { .details-grid { grid-template-columns: 1fr 1fr; } }
         
-        .details-text h4 { margin: 0 0 0.5rem 0; color: var(--text-color); font-size: 1.1rem; border-left: 3px solid var(--primary-color); padding-left: 8px;}
-        .details-text p { margin: 0 0 1.2rem 0; color: var(--light-text); font-size: 0.95rem; }
+        .details-text h4 { margin: 0 0 0.8rem 0; color: var(--text-color); font-size: 1.15rem; font-weight: 700; display: inline-block; background: var(--primary-light); padding: 4px 12px; border-radius: 20px; color: var(--primary-color); }
+        .details-text p { margin: 0 0 1.5rem 0; color: var(--light-text); font-size: 1rem; line-height: 1.8; }
+        .details-text img { width:100%; border-radius:12px; margin-bottom:15px; height:180px; object-fit:cover; box-shadow: var(--shadow-sm); }
         
-        .details-map iframe { width: 100%; height: 250px; border: none; border-radius: 8px; background: #eee; }
+        .details-map iframe { width: 100%; height: 100%; min-height: 280px; border: none; border-radius: 12px; background: #eee; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); }
 
-        /* Food Grid & Table */
-        .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
-        .food-card { background: var(--card-bg); border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: var(--transition); }
-        .food-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
-        .food-card img { width: 100%; height: 220px; object-fit: cover; transition: var(--transition); }
-        .food-card:hover img { transform: scale(1.05); }
-        .food-card .food-info { padding: 1.5rem; position: relative; background: var(--card-bg); z-index: 2; }
-        .food-card h3 { margin: 0 0 0.5rem 0; color: var(--primary-color); font-weight: 700; }
-        .food-card p { margin: 0; color: var(--light-text); font-size: 0.95rem; }
-        table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card-bg); box-shadow: 0 8px 20px rgba(0,0,0,0.05); border-radius: var(--border-radius); overflow: hidden; margin-top: 1.5rem; }
-        th, td { padding: 1.2rem 1.5rem; text-align: left; border-bottom: 1px solid #EEEEEE; }
-        th { background-color: var(--primary-color); color: white; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-        tr:last-child td { border-bottom: none; font-weight: 800; font-size: 1.1rem; background-color: #FFF9F9; }
+        /* Cost Table */
+        table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card-bg); box-shadow: var(--shadow-sm); border-radius: var(--border-radius); overflow: hidden; margin-top: 2rem; }
+        th, td { padding: 1.5rem; text-align: left; border-bottom: 1px solid #F0F2F5; }
+        th { background-color: var(--text-color); color: white; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; }
+        tr:last-child td { border-bottom: none; font-weight: 800; font-size: 1.2rem; background-color: var(--primary-light); color: var(--primary-color); }
         tr:hover td { background-color: #FAFAFA; }
-        tr:last-child:hover td { background-color: #FFF9F9; }
+        tr:last-child:hover td { background-color: #ffe0e5; }
         
-        .click-hint { text-align: center; color: var(--light-text); font-size: 0.9rem; margin-bottom: 1rem; font-style: italic; }
+        .click-hint { text-align: center; color: var(--light-text); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic; background: rgba(0,0,0,0.03); padding: 10px; border-radius: 20px; display: inline-block; margin-left: 50%; transform: translateX(-50%); }
     </style>
 </head>
 <body>
@@ -163,16 +183,18 @@
                         <li>Serata tranquilla a Shinjuku.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Sistematevi in Hotel e fate una passeggiata leggera a Kabukicho per vedere la gigantesca testa di Godzilla. Ottimo per assorbire l'atmosfera al neon senza stancarvi troppo.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tsukemen.jpg' alt='Tsukemen' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Fu-unji (Shinjuku):</strong> Famoso per il suo <em>Tsukemen</em> (ramen in cui i noodles vengono intinti a parte in un brodo denso). In alternativa, esplorate <strong>Omoide Yokocho</strong> per spiedini <em>Yakitori</em> annaffiati da birra ghiacciata.</p>
+<img src='images/tsukemen.jpg' alt='Tsukemen'><p><strong>Fu-unji (Shinjuku):</strong> Famoso per il suo <em>Tsukemen</em> (ramen in cui i noodles vengono intinti a parte in un brodo denso). In alternativa, esplorate <strong>Omoide Yokocho</strong> per spiedini <em>Yakitori</em> annaffiati da birra ghiacciata.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Shinjuku,+Tokyo&daddr=Fu-unji,+Shinjuku,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -191,16 +213,18 @@
                         <li><strong>Pomeriggio:</strong> <em>Tokyo Skytree</em>.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Entrate dalla Porta del Tuono (Kaminarimon) e pescate il vostro Omikuji (oracolo). Nel pomeriggio andate alla Skytree per i negozi Ghibli e Pokémon, poi salite per il tramonto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/melonpan.jpg' alt='Melon Pan' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Asakusa Kagetsudo:</strong> Celebre per il suo <em>Jumbo Melon Pan</em> appena sfornato, croccante fuori e soffice dentro. A cena provate <strong>Asakusa Imahan</strong>, locale storico rinomato per il suo eccellente <em>Sukiyaki</em> (fettine di manzo cotte al tavolo).</p>
+<img src='images/melonpan.jpg' alt='Melon Pan'><p><strong>Asakusa Kagetsudo:</strong> Celebre per il suo <em>Jumbo Melon Pan</em> appena sfornato, croccante fuori e soffice dentro. A cena provate <strong>Asakusa Imahan</strong>, locale storico rinomato per il suo eccellente <em>Sukiyaki</em> (fettine di manzo cotte al tavolo).</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?saddr=Senso-ji,+Tokyo&daddr=Asakusa+Kagetsudo,+Tokyo+to:Tokyo+Skytree,+Tokyo&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -219,16 +243,18 @@
                         <li>Retro-gaming, Action figures, Maid Cafe.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Perdetevi nei piani di Radio Kaikan e cercate tesori da Super Potato. Provate i gacha o gli UFO catcher nei centri SEGA/GiGO.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/katsu_curry.jpg' alt='Katsu Curry' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Go! Go! Curry (Akihabara):</strong> Ordinate il famoso <em>Katsu Curry</em> (riso al curry denso con cotoletta). Per un'esperienza a tema, provate l'omelette rice all'<strong>@Home Cafe</strong> (Maid Cafe) o la morbida cotoletta di manzo da <strong>Gyukatsu Motomura</strong>.</p>
+<img src='images/katsu_curry.jpg' alt='Katsu Curry'><p><strong>Go! Go! Curry (Akihabara):</strong> Ordinate il famoso <em>Katsu Curry</em> (riso al curry denso con cotoletta). Per un'esperienza a tema, provate l'omelette rice all'<strong>@Home Cafe</strong> (Maid Cafe) o la morbida cotoletta di manzo da <strong>Gyukatsu Motomura</strong>.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Akihabara,+Tokyo&daddr=Go+Go+Curry,+Akihabara,+Tokyo&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -247,16 +273,18 @@
                         <li><strong>Pomeriggio:</strong> Shibuya (Nintendo Store, Hachiko).</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Iniziate nel silenzio della foresta del Meiji-jingu. A Shibuya vi aspettano lo Scramble Crossing, la statua di Hachiko e l'enorme Nintendo Store nel centro commerciale Shibuya PARCO.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/crepes.jpg' alt='Crepes' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Marion Crepes (Harajuku):</strong> Tappa obbligata per le iconiche <em>Crêpes giapponesi</em> ripiene. A Shibuya, cenate da <strong>Uobei Shibuya Dogenzaka</strong> per un <em>Kaiten Sushi</em> dove i piatti arrivano sfrecciando su binari ad alta velocità.</p>
+<img src='images/crepes.jpg' alt='Crepes'><p><strong>Marion Crepes (Harajuku):</strong> Tappa obbligata per le iconiche <em>Crêpes giapponesi</em> ripiene. A Shibuya, cenate da <strong>Uobei Shibuya Dogenzaka</strong> per un <em>Kaiten Sushi</em> dove i piatti arrivano sfrecciando su binari ad alta velocità.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?saddr=Meiji-jingu,+Tokyo&daddr=Takeshita+Street,+Tokyo+to:Shibuya+Crossing,+Tokyo+to:Uobei+Shibuya+Dogenzaka,+Tokyo&dirflg=w&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -275,16 +303,18 @@
                         <li>Meno caotico di Akihabara, perfetto per collezionisti.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>A Nakano troverete le cel originali degli anime storici e fumetti introvabili. Mandarake ha decine di negozietti tematici distribuiti su più piani. Un vero paradiso nascosto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/chuka_soba.jpg' alt='Chuka Soba' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Chuka Soba Aoba (Nakano):</strong> Un'istituzione del quartiere. Il loro piatto forte è il <em>Chuka Soba</em> (Ramen) con un doppio brodo stellare che unisce la ricchezza del maiale e del pollo al sapore delicato di pesce.</p>
+<img src='images/chuka_soba.jpg' alt='Chuka Soba'><p><strong>Chuka Soba Aoba (Nakano):</strong> Un'istituzione del quartiere. Il loro piatto forte è il <em>Chuka Soba</em> (Ramen) con un doppio brodo stellare che unisce la ricchezza del maiale e del pollo al sapore delicato di pesce.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Nakano+Broadway,+Tokyo&daddr=Chuka+Soba+Aoba,+Nakano,+Tokyo&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -303,16 +333,18 @@
                         <li>Pokémon Center Mega Tokyo e Animate Store.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Passeggiate nell'enorme Animate Flagship Store (il negozio di anime più grande del mondo). Al Sunshine City potrete visitare l'enorme Pokémon Center e la zona dei Gashapon (distributori di capsule).</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/taiyaki.jpg' alt='Taiyaki' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Mutekiya (Ikebukuro):</strong> Preparatevi alla fila, ma il loro <em>Tonkotsu Ramen</em> (brodo di maiale ricco e saporito) è leggendario. Per un dolce veloce, prendete un <em>Taiyaki</em> ai chioschi intorno a Sunshine City.</p>
+<img src='images/taiyaki.jpg' alt='Taiyaki'><p><strong>Mutekiya (Ikebukuro):</strong> Preparatevi alla fila, ma il loro <em>Tonkotsu Ramen</em> (brodo di maiale ricco e saporito) è leggendario. Per un dolce veloce, prendete un <em>Taiyaki</em> ai chioschi intorno a Sunshine City.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Sunshine+City,+Ikebukuro,+Tokyo&daddr=Mutekiya,+Ikebukuro,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -331,16 +363,18 @@
                         <li>Statua del Gundam Unicorn e Gundam Base.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Prendete il treno panoramico Yurikamome senza conducente. Scattate foto pazzesche sotto il Gundam Unicorn a grandezza naturale (che si trasforma ad orari precisi) e visitate le mostre tech.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tempura.jpg' alt='Tempura' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Tsukiji Tama Sushi (Odaiba):</strong> Situato nel centro commerciale Decks, offre un'ottima formula <em>All-You-Can-Eat Sushi</em> di alta qualità con una vista mozzafiato sul Rainbow Bridge e sulla baia di Tokyo.</p>
+<img src='images/tempura.jpg' alt='Tempura'><p><strong>Tsukiji Tama Sushi (Odaiba):</strong> Situato nel centro commerciale Decks, offre un'ottima formula <em>All-You-Can-Eat Sushi</em> di alta qualità con una vista mozzafiato sul Rainbow Bridge e sulla baia di Tokyo.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Gundam+Unicorn+Statue,+Odaiba,+Tokyo&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -365,16 +399,18 @@
                         <li>Pomeriggio nel quartiere storico di <strong>Gion</strong>.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Dopo le due ore di treno superveloce, posate i bagagli. Il pomeriggio passeggiate tra le basse case di legno di Gion, sperando di scorgere una Geisha, e spingetevi fino al fiume Kamo al tramonto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/matcha.jpg' alt='Matcha Parfait' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Tsujiri (Gion):</strong> Ottimo per una merenda con il loro inimitabile <em>Parfait al Matcha</em>. Per cena, passeggiate a Pontocho e provate <strong>Kyoto Gion Mikaku</strong> (per la carne Wagyu sulla piastra) o un Izakaya sul fiume per spiedini <em>Yakitori</em>.</p>
+<img src='images/matcha.jpg' alt='Matcha Parfait'><p><strong>Tsujiri (Gion):</strong> Ottimo per una merenda con il loro inimitabile <em>Parfait al Matcha</em>. Per cena, passeggiate a Pontocho e provate <strong>Kyoto Gion Mikaku</strong> (per la carne Wagyu sulla piastra) o un Izakaya sul fiume per spiedini <em>Yakitori</em>.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Gion,+Kyoto&daddr=Tsujiri,+Gion,+Kyoto+to:Pontocho,+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -393,16 +429,18 @@
                         <li>Strade storiche di Sannenzaka e Ninenzaka.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Andateci prestissimo per godervi la magia senza la calca. Sospeso sui pali di legno, offre una vista magica. Al ritorno scendete lungo le stradine acciottolate piene di negozi di artigianato.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tofu.jpg' alt='Tofu' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Okutan Kiyomizu:</strong> Ristorante centenario circondato da un giardino stupendo. Il piatto forte è lo <em>Yudofu</em> (tofu artigianale in brodo, perfetto per riscaldarsi). Lungo Ninenzaka, c'è uno <strong>Starbucks</strong> unico, ospitato in una casa tradizionale tatami.</p>
+<img src='images/tofu.jpg' alt='Tofu'><p><strong>Okutan Kiyomizu:</strong> Ristorante centenario circondato da un giardino stupendo. Il piatto forte è lo <em>Yudofu</em> (tofu artigianale in brodo, perfetto per riscaldarsi). Lungo Ninenzaka, c'è uno <strong>Starbucks</strong> unico, ospitato in una casa tradizionale tatami.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?saddr=Kiyomizu-dera,+Kyoto&daddr=Sannenzaka,+Kyoto+to:Okutan,+Kiyomizu,+Kyoto+to:Ninenzaka,+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -421,16 +459,18 @@
                         <li><em>Kyoto International Manga Museum</em>.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Iniziate la giornata nella "Cucina di Kyoto", il mercato di Nishiki. Nel pomeriggio sfogliate decine di migliaia di manga storici al museo del fumetto, situato in un'ex scuola elementare.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tako_tamago.jpg' alt='Tako Tamago' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Mercato Nishiki:</strong> Cercate il chiosco <strong>Kari-Kari Hakase</strong> per i <em>Takoyaki</em> e <strong>Daiyasu</strong> per il famoso <em>Tako Tamago</em>. Vicino al museo, provate <strong>Gogyo Kyoto</strong> per il particolarissimo <em>Ramen al Miso Bruciato</em> (Kogashi Miso).</p>
+<img src='images/tako_tamago.jpg' alt='Tako Tamago'><p><strong>Mercato Nishiki:</strong> Cercate il chiosco <strong>Kari-Kari Hakase</strong> per i <em>Takoyaki</em> e <strong>Daiyasu</strong> per il famoso <em>Tako Tamago</em>. Vicino al museo, provate <strong>Gogyo Kyoto</strong> per il particolarissimo <em>Ramen al Miso Bruciato</em> (Kogashi Miso).</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?saddr=Nishiki+Market,+Kyoto&daddr=Kyoto+International+Manga+Museum+to:Gogyo+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -449,16 +489,18 @@
                         <li>Il famoso Padiglione d'Oro (Kinkaku-ji).</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Perdetevi tra gli altissimi e ipnotici fusti verdi di bambù di Arashiyama per foto suggestive. Dopo pranzo spostatevi al Kinkaku-ji (tempio ricoperto d'oro vero), bellissimo al calar del sole.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/soba.jpg' alt='Soba' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Arashiyama Yoshimura:</strong> Ristorante con magnifica vista sul fiume Katsura. Il loro piatto principale è la <em>Soba fatta a mano</em>. Per gli amanti del caffè, fate un salto da <strong>% Arabica Kyoto Arashiyama</strong>.</p>
+<img src='images/soba.jpg' alt='Soba'><p><strong>Arashiyama Yoshimura:</strong> Ristorante con magnifica vista sul fiume Katsura. Il loro piatto principale è la <em>Soba fatta a mano</em>. Per gli amanti del caffè, fate un salto da <strong>% Arabica Kyoto Arashiyama</strong>.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?saddr=Arashiyama+Bamboo+Grove,+Kyoto&daddr=Arashiyama+Yoshimura,+Kyoto+to:Kinkaku-ji,+Kyoto&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -477,16 +519,18 @@
                         <li><strong>Den Den Town</strong> e <strong>Shinsekai</strong> (Quartiere retro).</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Arrivati a Osaka, spulciate i negozi dell'usato e dell'elettronica a Den Den Town. Poi spostatevi a Shinsekai, passeggiando tra insegne pazze anni '30 e la iconica torre Tsutenkaku.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/kushikatsu.jpg' alt='Kushikatsu' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Kushikatsu Daruma (Shinsekai):</strong> L'inventore del <em>Kushikatsu</em>! Ordinate vassoi di spiedini fritti da intingere (una sola volta!) nella loro salsa segreta. Riconoscerete il locale dall'enorme statua dell'uomo arrabbiato all'ingresso.</p>
+<img src='images/kushikatsu.jpg' alt='Kushikatsu'><p><strong>Kushikatsu Daruma (Shinsekai):</strong> L'inventore del <em>Kushikatsu</em>! Ordinate vassoi di spiedini fritti da intingere (una sola volta!) nella loro salsa segreta. Riconoscerete il locale dall'enorme statua dell'uomo arrabbiato all'ingresso.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?saddr=Nippombashi+Den+Den+Town,+Osaka&daddr=Kushikatsu+Daruma,+Shinsekai,+Osaka&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -505,16 +549,18 @@
                         <li>Il caos illuminato di <strong>Dotonbori</strong> e Namba.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Esplorate l'area dello shopping di Namba e Shinsaibashi. La sera raggiungete Dotonbori, il cuore pulsante dei led di Osaka, per scattare la foto iconica col Glico Man e il granchio gigante meccanico.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/okonomiyaki.jpg' alt='Okonomiyaki' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Mizuno (Dotonbori):</strong> Un'istituzione per l'<em>Okonomiyaki</em> (premiata Michelin). Per i <em>Takoyaki</em>, mettetevi in fila da <strong>Acchichi Honpo</strong> (vicino al ponte) per polpette croccanti fuori e morbidissime dentro.</p>
+<img src='images/okonomiyaki.jpg' alt='Okonomiyaki'><p><strong>Mizuno (Dotonbori):</strong> Un'istituzione per l'<em>Okonomiyaki</em> (premiata Michelin). Per i <em>Takoyaki</em>, mettetevi in fila da <strong>Acchichi Honpo</strong> (vicino al ponte) per polpette croccanti fuori e morbidissime dentro.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Dotonbori,+Osaka&daddr=Mizuno,+Dotonbori,+Osaka&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -533,16 +579,18 @@
                         <li>Ultimi acquisti, passeggiate e zero levatacce.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Godetevi l'ultima giornata con molta calma. La Kyoto Station è un vero capolavoro di architettura e contiene decine di negozi per i regali dell'ultimo minuto e un piccolo Pokémon Center nascosto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tonkatsu.jpg' alt='Tonkatsu' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>Katsukura (Kyoto Station):</strong> Situato all'11° piano dell'edificio The Cube. Serve uno dei migliori <em>Tonkatsu</em> (cotoletta di maiale impanata) di Kyoto. Potrete macinare voi stessi i semi di sesamo per la salsa di accompagnamento.</p>
+<img src='images/tonkatsu.jpg' alt='Tonkatsu'><p><strong>Katsukura (Kyoto Station):</strong> Situato all'11° piano dell'edificio The Cube. Serve uno dei migliori <em>Tonkatsu</em> (cotoletta di maiale impanata) di Kyoto. Potrete macinare voi stessi i semi di sesamo per la salsa di accompagnamento.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Kyoto+Station,+Kyoto&daddr=Katsukura,+Kyoto+Station&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -561,16 +609,18 @@
                         <li>Volo di rientro in Italia.</li>
                     </ul>
                     <div class="day-details">
+                        <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Prendete il treno rapido <em>Haruka Express</em> dalla stazione di Kyoto che vi porterà diretti all'Aeroporto Internazionale del Kansai in circa 75-80 minuti. Arrivate con buon anticipo!</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/nikuman.jpg' alt='Nikuman' style='width:100%; border-radius:8px; margin-bottom:10px; height:150px; object-fit:cover;'><p><strong>551 Horai (Kansai Airport / Kyoto St.):</strong> Prima di partire, comprate i loro famosissimi <em>Butaman</em> (soffici panini al vapore ripieni di maiale e cipolla). Sono il comfort food perfetto per l'attesa o il tragitto in treno.</p>
+<img src='images/nikuman.jpg' alt='Nikuman'><p><strong>551 Horai (Kansai Airport / Kyoto St.):</strong> Prima di partire, comprate i loro famosissimi <em>Butaman</em> (soffici panini al vapore ripieni di maiale e cipolla). Sono il comfort food perfetto per l'attesa o il tragitto in treno.</p>
                             </div>
                             <div class="details-map">
                                 <iframe src="https://maps.google.com/maps?q=Kansai+International+Airport&daddr=551+Horai,+Kansai+Airport&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
