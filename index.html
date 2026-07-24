@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giappone 2026: Itinerario Nerd & Relax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #E60012; /* Japan Red */
-            --bg-color: #f4f4f9;
-            --text-color: #333;
-            --card-bg: #fff;
-            --border-radius: 8px;
+            --primary-color: #D32F2F; /* Rosso più elegante */
+            --bg-color: #F8F9FA;
+            --text-color: #333333;
+            --light-text: #666666;
+            --card-bg: #FFFFFF;
+            --border-radius: 16px;
+            --transition: all 0.3s ease;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
@@ -23,49 +28,103 @@
         }
 
         header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Parallax effect */
             color: white;
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 6rem 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
+            max-width: 1100px;
+            margin: -40px auto 0 auto; /* Overlaps header slightly */
+            padding: 0 1.5rem 3rem 1.5rem;
+            position: relative;
+            z-index: 10;
         }
 
         .summary-box {
             background: var(--card-bg);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: var(--border-radius);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            border-top: 6px solid var(--primary-color);
+        }
+
+        .summary-box ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .summary-box li {
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .summary-box li strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.2rem;
         }
 
         h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
+            color: var(--text-color);
+            font-weight: 800;
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: #E0E0E0;
+            margin-left: 15px;
         }
 
         .itinerary-day {
             background: var(--card-bg);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .itinerary-day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
         }
 
         @media (min-width: 768px) {
@@ -76,69 +135,128 @@
 
         .day-image {
             flex: 1;
-            min-height: 200px;
+            min-height: 250px;
             background-size: cover;
             background-position: center;
         }
 
         .day-content {
-            flex: 2;
-            padding: 1.5rem;
+            flex: 1.5;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .day-content h3 {
             margin-top: 0;
-            color: #2c3e50;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .day-content ul {
+            padding-left: 1.2rem;
+            color: var(--light-text);
+        }
+
+        .day-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .day-content li strong {
+            color: var(--text-color);
         }
 
         .food-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
 
         .food-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
         }
 
         .food-card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .food-card:hover img {
+            transform: scale(1.05);
         }
 
         .food-card .food-info {
-            padding: 1rem;
+            padding: 1.5rem;
+            position: relative;
+            background: var(--card-bg);
+            z-index: 2;
+        }
+
+        .food-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .food-card p {
+            margin: 0;
+            color: var(--light-text);
+            font-size: 0.95rem;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             background: var(--card-bg);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             border-radius: var(--border-radius);
             overflow: hidden;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         th, td {
-            padding: 1rem;
+            padding: 1.2rem 1.5rem;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #EEEEEE;
         }
 
         th {
             background-color: var(--primary-color);
             color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
         tr:last-child td {
             border-bottom: none;
-            font-weight: bold;
+            font-weight: 800;
+            font-size: 1.1rem;
+            background-color: #FFF9F9;
+        }
+        
+        tr:hover td {
+            background-color: #FAFAFA;
+        }
+        tr:last-child:hover td {
+            background-color: #FFF9F9;
         }
     </style>
 </head>
