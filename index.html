@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giappone 2026: Itinerario Nerd & Relax</title>
+    <style>
+        :root {
+            --primary-color: #E60012; /* Japan Red */
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --card-bg: #fff;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .summary-box {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .itinerary-day {
+            background: var(--card-bg);
+            margin-bottom: 1.5rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .itinerary-day {
+                flex-direction: row;
+            }
+        }
+
+        .day-image {
+            flex: 1;
+            min-height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .day-content {
+            flex: 2;
+            padding: 1.5rem;
+        }
+
+        .day-content h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .food-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .food-card .food-info {
+            padding: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇯🇵 Giappone 2026</h1>
+        <p>Il secondo viaggio: Cultura Nerd, Cibo e Relax tra Tokyo, Kyoto e Osaka.</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="summary-box">
+            <h2>📅 Riepilogo del Viaggio</h2>
+            <ul>
+                <li><strong>Viaggiatori:</strong> 2 persone</li>
+                <li><strong>Andata:</strong> Roma → Tokyo (30 Novembre, arrivo previsto 1 Dicembre)</li>
+                <li><strong>Ritorno:</strong> Osaka → Roma (15 Dicembre)</li>
+                <li><strong>Durata in loco:</strong> 14 Notti (7 a Tokyo, 7 a Kyoto con base fissa)</li>
+                <li><strong>Stile:</strong> Rilassato, focus su pop culture, anime/videogiochi (Nerd), cibo.</li>
+                <li><strong>Alloggi:</strong> Solo Hotel occidentali 3-4 stelle (Assolutamente No Ryokan).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🏙️ Parte 1: Tokyo (1 - 8 Dicembre)</h2>
+            <p><em>Base: Hotel in zona Shinjuku, Shibuya o Akihabara.</em></p>
+
+            <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1503899036067-8b5cbeca0b53?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 1 (1 Dic): Arrivo a Tokyo</h3>
+                    <ul>
+                        <li>Arrivo, attivazione eSIM, trasferimento in hotel.</li>
+                        <li>Serata super tranquilla a Shinjuku: vista sul quartiere illuminato e prima cena a base di Ramen per riprendersi dal jet lag.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1531737255085-0556f8f7c5e2?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 2 (2 Dic): Tradizione e Asakusa</h3>
+                    <ul>
+                        <li><strong>Mattina:</strong> <em>Senso-ji</em> (Asakusa), passeggiata rilassata tra le bancarelle di Nakamise-dori.</li>
+                        <li><strong>Pomeriggio:</strong> <em>Tokyo Skytree</em> per ammirare la città dall'alto e curiosare nel centro commerciale annesso (negozi Ghibli e Pokémon).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1542931287-023b922fa89b?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 3 (3 Dic): Il Paradiso Nerd - Akihabara</h3>
+                    <ul>
+                        <li>Intera giornata dedicata ad <strong>Akihabara</strong>. Esplorazione di Radio Kaikan, Super Potato (retro-gaming), Mandarake, e negozi di action figures.</li>
+                        <li>Serata in un Izakaya locale o maid cafe per l'esperienza completa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 4 (4 Dic): Pop Culture a Shibuya e Harajuku</h3>
+                    <ul>
+                        <li><strong>Mattina:</strong> Santuario Meiji-jingu (passeggiata nel bosco per rilassarsi).</li>
+                        <li><strong>Pomeriggio:</strong> Parco Miyashita, <em>Nintendo Store Tokyo</em> e <em>Pokémon Center Shibuya</em> (dentro il Parco).</li>
+                        <li><strong>Sera:</strong> L'incrocio di Shibuya e cena in zona.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1610313175402-98ea322e7033?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 5-7 (5-7 Dic): Vintage Nerd, Ikebukuro e Odaiba</h3>
+                    <ul>
+                        <li><strong>Nakano Broadway:</strong> Il cuore pulsante del collezionismo vintage (manga, anime anni '80/'90). Meno caotico di Akiba.</li>
+                        <li><strong>Ikebukuro:</strong> Sunshine City (Pokémon Center Mega Tokyo) e Animate Flagship Store.</li>
+                        <li><strong>Odaiba:</strong> Visita alla statua del Gundam Unicorn e al Gundam Base Tokyo. TeamLab Planets opzionale.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🏯 Parte 2: Kyoto & Osaka (8 - 15 Dicembre)</h2>
+            <p><em>Base fissa a Kyoto in Hotel occidentale vicino alla stazione o Karasuma. Pendolarismo facile verso Osaka con carta ICOCA.</em></p>
+
+            <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 8-9 (8-9 Dic): Arrivo a Kyoto e Tempio dell'Acqua</h3>
+                    <ul>
+                        <li>Trasferimento in Shinkansen da Tokyo. Check-in in hotel. Pomeriggio rilassato a Gion.</li>
+                        <li><strong>Kiyomizu-dera (Tempio dell'Acqua):</strong> Da godersi con calma all'apertura per evitare la folla. Passeggiata per Sannenzaka/Ninenzaka.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1570131464434-2e9b9bc8a59c?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 10-11 (10-11 Dic): Mercati e Nintendo Museum</h3>
+                    <ul>
+                        <li>Passeggiata gastronomica al <strong>Mercato Nishiki</strong>.</li>
+                        <li><em>Kyoto International Manga Museum</em>.</li>
+                        <li>Gita super nerd a Uji per visitare il nuovissimo <strong>Nintendo Museum</strong> (richiede prenotazione anticipata con lotteria mesi prima!).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1590559899731-a389bfc0c8d5?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 12-13 (12-13 Dic): Pendolari a Osaka</h3>
+                    <ul>
+                        <li><strong>Den Den Town:</strong> L'equivalente di Akihabara a Osaka. Retro-gaming, figures, elettronica.</li>
+                        <li><strong>Dotonbori:</strong> Cena sotto le luci al neon, Takoyaki e Glico Man.</li>
+                        <li><strong>Shinsekai:</strong> Quartiere dall'estetica retro-futuristica anni '20/'30.</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="itinerary-day">
+                <div class="day-image" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80');"></div>
+                <div class="day-content">
+                    <h3>Giorno 14-15 (14-15 Dic): Relax e Rientro</h3>
+                    <ul>
+                        <li>Ultimi acquisti alla Kyoto Station (Pokémon Center, elettronica). Niente levatacce.</li>
+                        <li>Trasferimento all'Aeroporto del Kansai (KIX) con il treno <em>Haruka Express</em>. Volo per Roma.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🍱 Cibo Tipico da Assaggiare</h2>
+            <div class="food-grid">
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1558862107-d49ef2a04d72?w=500&q=80" alt="Ramen">
+                    <div class="food-info">
+                        <h3>Ramen</h3>
+                        <p>Tokyo/Kyoto. Provate le catene <em>Ichiran</em> (mangi in cabine singole) o <em>Afuri</em> per un brodo leggero allo yuzu.</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=500&q=80" alt="Sushi">
+                    <div class="food-info">
+                        <h3>Kaiten Sushi</h3>
+                        <p>Il sushi al nastro è economico e divertente (es. Kura Sushi, dove si ordina col tablet e arriva su un mini-shinkansen).</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1626202165039-44fb6b931dc9?w=500&q=80" alt="Takoyaki">
+                    <div class="food-info">
+                        <h3>Takoyaki</h3>
+                        <p>A Osaka (Dotonbori). Polpette bollenti ripiene di polpo, sormontate da katsuobushi (fiocchi di tonno essiccato).</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1634591460592-8dbbc97576f3?w=500&q=80" alt="Okonomiyaki">
+                    <div class="food-info">
+                        <h3>Okonomiyaki</h3>
+                        <p>Sempre a Osaka. Un pancake salato farcito cotto sulla piastra (Teppan) direttamente davanti a voi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>💰 Stima dei Costi (Totale per 2 Persone)</h2>
+            <p><em>Avendo già l'ICOCA, dovrete solo ricaricarla per i treni locali e la tratta Kyoto-Osaka.</em></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voce di spesa</th>
+                        <th>Dettagli</th>
+                        <th>Costo Stimato (€)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Voli (Andata/Ritorno)</strong></td>
+                        <td>Roma-Tokyo / Osaka-Roma</td>
+                        <td><strong>1.534,62 €</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alloggi</strong></td>
+                        <td>14 notti in Hotel 3★/4★ (Shinjuku/Kyoto)</td>
+                        <td>~ 1.500 - 1.800 €</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cibo</strong></td>
+                        <td>Pranzi, cene, street food e konbini</td>
+                        <td>~ 1.200 - 1.400 €</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trasporti</strong></td>
+                        <td>2x Shinkansen Tokyo-Kyoto (190€) + Ricariche ICOCA + Haruka Express</td>
+                        <td>~ 300 - 350 €</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Attrazioni & Varie</strong></td>
+                        <td>Templi, Musei (es. Manga Museum), eSIM/Pocket WiFi, Assicurazione Sanitaria</td>
+                        <td>~ 350 - 450 €</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTALE STIMATO IN 2</strong></td>
+                        <td>Tutto incluso per 15 giorni</td>
+                        <td><strong>~ 4.884,62 - 5.534,62 €</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+</body>
+</html>
