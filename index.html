@@ -121,6 +121,22 @@
 
         body { padding-bottom: 60px; } /* Prevent sticky bar overlap */
 
+
+        /* Responsive Table for Mobile */
+        @media (max-width: 767px) {
+            table { border: none; box-shadow: none; background: transparent; margin-top: 1rem; }
+            thead { display: none; }
+            tbody { display: block; }
+            tr { display: block; margin-bottom: 1.5rem; background: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); }
+            td { display: flex; flex-direction: column; text-align: left; padding: 1.2rem 1.5rem; border-bottom: 1px solid #F0F2F5; }
+            td::before { font-weight: 700; color: var(--light-text); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+            td:nth-child(1)::before { content: "Voce di spesa"; }
+            td:nth-child(2)::before { content: "Dettagli"; }
+            td:nth-child(3)::before { content: "Costo Stimato"; color: var(--primary-color); }
+            td:last-child { border-bottom: none; }
+            tr:last-child { background: var(--primary-light); border: 2px solid var(--primary-light); box-shadow: 0 8px 25px rgba(230,0,18,0.15); }
+            tr:last-child td { background: transparent; }
+        }
     </style>
 </head>
 <body>
@@ -689,7 +705,6 @@
         <section>
             <h2 id="costi">💰 Stima dei Costi (Totale per 2 Persone)</h2>
             <p><em>Avendo già l'ICOCA, dovrete solo ricaricarla per i treni locali e la tratta Kyoto-Osaka.</em></p>
-            <div style="overflow-x: auto;">
             <table>
                 <thead>
                     <tr>
@@ -736,7 +751,6 @@
                     </tr>
                 </tbody>
             </table>
-            </div>
 
             <div class="inc-exc-box exc-box" style="margin-top: 2rem;">
                 <h3>❌ La stima NON comprende</h3>
