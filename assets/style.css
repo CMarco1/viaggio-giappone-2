@@ -1,0 +1,325 @@
+/* ==========================================================================
+   Giappone 2026 — foglio di stile condiviso da tutte le pagine
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --primary-color: #E60012;      /* rosso Giappone */
+    --primary-dark: #B3000E;
+    --primary-light: #FFEBEE;
+    --bg-color: #F4F6F8;
+    --text-color: #2C3E50;
+    --light-text: #546E7A;
+    --card-bg: #FFFFFF;
+    --line: rgba(0,0,0,0.07);
+    --border-radius: 18px;
+    --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
+    --shadow-lg: 0 15px 35px rgba(0,0,0,0.10);
+    --topbar-h: 58px;
+    --strip-h: 54px;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topbar-h) + var(--strip-h) + 12px); }
+body {
+    font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+    line-height: 1.7; margin: 0; padding: 0;
+    background: var(--bg-color); color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    max-width: 100vw; overflow-x: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+:focus-visible { outline: 3px solid var(--primary-color); outline-offset: 3px; border-radius: 6px; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+a { color: var(--primary-color); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 1.1rem 4rem 1.1rem; }
+.wrap.narrow { max-width: 900px; }
+@media (min-width: 768px) { .wrap { padding: 0 1.8rem 5rem 1.8rem; } }
+
+/* ---------- Barra di navigazione ---------- */
+.topbar {
+    position: sticky; top: 0; z-index: 900; height: var(--topbar-h);
+    display: flex; align-items: center; gap: 1rem;
+    background: rgba(255,255,255,0.93); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line); padding: 0 1rem;
+}
+@media (min-width: 768px) { .topbar { padding: 0 1.8rem; } }
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 800; text-decoration: none; color: var(--text-color); font-size: 1rem; white-space: nowrap; flex-shrink: 0; }
+.brand span { color: var(--light-text); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.5px; display: none; }
+@media (min-width: 1000px) { .brand span { display: inline; } }
+.mainnav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; margin-left: auto; -webkit-overflow-scrolling: touch; }
+.mainnav::-webkit-scrollbar { display: none; }
+.mainnav a {
+    text-decoration: none; white-space: nowrap; font-size: 0.82rem; font-weight: 700;
+    color: var(--light-text); padding: 7px 13px; border-radius: 30px; transition: background 0.2s, color 0.2s;
+}
+.mainnav a:hover { background: var(--bg-color); color: var(--primary-color); }
+.mainnav a[aria-current="page"] { background: var(--primary-light); color: var(--primary-color); }
+
+/* ---------- Striscia dei giorni (pagine giornata) ---------- */
+.daystrip {
+    position: sticky; top: var(--topbar-h); z-index: 880; height: var(--strip-h);
+    display: flex; align-items: center; gap: 6px; padding: 0 1rem;
+    background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none;
+}
+.daystrip::-webkit-scrollbar { display: none; }
+@media (min-width: 768px) { .daystrip { padding: 0 1.8rem; justify-content: center; } }
+.daystrip a {
+    flex: 0 0 auto; text-decoration: none; text-align: center; line-height: 1.05;
+    padding: 5px 9px; border-radius: 10px; color: var(--light-text);
+    border: 1px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.daystrip a .n { display: block; font-weight: 800; font-size: 0.92rem; }
+.daystrip a .d { display: block; font-size: 0.6rem; font-weight: 700; opacity: 0.7; letter-spacing: 0.2px; }
+.daystrip a:hover { background: var(--bg-color); color: var(--primary-color); }
+.daystrip a[aria-current="page"] { background: var(--primary-color); color: #fff; }
+.daystrip a[aria-current="page"] .d { opacity: 0.85; }
+.daystrip .sep { flex: 0 0 auto; width: 1px; height: 26px; background: var(--line); margin: 0 5px; }
+
+/* ---------- Copertina della home ---------- */
+.hero {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.78) 100%), url('../images/cover.jpg');
+    background-size: cover; background-position: center 32%;
+    color: #fff; text-align: center; padding: 5rem 1rem 4rem 1rem;
+}
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 800; margin: 0 0 0.4rem 0; letter-spacing: 1px; text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+.hero p { font-size: 1.08rem; max-width: 620px; margin: 0 auto; opacity: 0.95; }
+.mood-tags { display: flex; gap: 9px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+.tag { padding: 6px 16px; border-radius: 20px; font-weight: 600; font-size: 0.82rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); color: #fff; }
+.countdown { display: inline-flex; align-items: baseline; gap: 8px; margin-top: 1.4rem; padding: 8px 22px; border-radius: 30px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
+.countdown strong { font-size: 1.5rem; font-weight: 800; }
+.countdown span { font-size: 0.8rem; font-weight: 600; opacity: 0.9; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ---------- Intestazione delle pagine tematiche ---------- */
+.pagehead { background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: #fff; padding: 2.6rem 1.1rem 2.4rem 1.1rem; }
+.pagehead-in { max-width: 1180px; margin: 0 auto; }
+@media (min-width: 768px) { .pagehead { padding: 3.2rem 1.8rem 3rem 1.8rem; } }
+.pagehead h1 { margin: 0 0 0.4rem 0; font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 800; }
+.pagehead p { margin: 0; font-size: 1rem; opacity: 0.92; max-width: 70ch; }
+.pagehead .crumb { font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.8; margin: 0 0 0.5rem 0; }
+.pagehead .crumb a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.5); }
+
+/* Indice interno alle pagine lunghe */
+.subnav { display: flex; flex-wrap: wrap; gap: 8px; margin: -1.6rem 0 2.4rem 0; position: relative; z-index: 5; }
+.subnav a { text-decoration: none; font-size: 0.8rem; font-weight: 700; color: var(--light-text); background: var(--card-bg); border: 1px solid var(--line); box-shadow: var(--shadow-sm); padding: 8px 16px; border-radius: 30px; }
+.subnav a:hover { color: var(--primary-color); }
+
+/* ---------- Copertina di una giornata ---------- */
+.dayhero { position: relative; margin: 1.4rem 0 1.6rem 0; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg); min-height: 230px; display: flex; align-items: flex-end; background-size: cover; background-position: center; }
+@media (min-width: 768px) { .dayhero { min-height: 300px; } }
+.dayhero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.30) 55%, rgba(0,0,0,0.12) 100%); }
+.dayhero-in { position: relative; padding: 1.4rem; color: #fff; width: 100%; }
+@media (min-width: 768px) { .dayhero-in { padding: 2.2rem; } }
+.dayhero .kicker { margin: 0 0 0.35rem 0; font-size: 0.76rem; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; opacity: 0.92; }
+.dayhero h1 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.3rem); font-weight: 800; line-height: 1.2; text-shadow: 0 3px 14px rgba(0,0,0,0.4); }
+.dayhero .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 0.9rem; }
+.dayhero .chips span { font-size: 0.74rem; font-weight: 700; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.28); backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 20px; }
+
+/* ---------- Impaginazione di una giornata ---------- */
+.daylayout { display: grid; gap: 1.3rem; }
+@media (min-width: 1000px) {
+    .daylayout {
+        grid-template-columns: 1.55fr 1fr;
+        grid-template-areas: "sintesi sintesi" "itin mappa" "itin mangiare" "note note";
+        align-items: start;
+    }
+    .a-sintesi { grid-area: sintesi; } .a-itin { grid-area: itin; }
+    .a-mappa { grid-area: mappa; } .a-mangiare { grid-area: mangiare; } .a-note { grid-area: note; }
+}
+
+/* ---------- Scheda generica ---------- */
+.card { background: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--shadow-sm); padding: 1.3rem; border: 1px solid var(--line); }
+@media (min-width: 768px) { .card { padding: 1.8rem; } }
+.card > h2 { margin: 0 0 1.1rem 0; font-size: 1.1rem; font-weight: 800; color: var(--text-color); display: flex; align-items: center; gap: 9px; }
+.card > h2::after { content: ""; flex: 1; height: 2px; background: linear-gradient(90deg, var(--line), transparent); border-radius: 2px; }
+.card.accent { border-top: 5px solid var(--primary-color); }
+
+/* Sintesi mattina/pomeriggio/sera */
+.synth { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.8rem; }
+@media (min-width: 700px) { .synth { grid-template-columns: repeat(3, 1fr); } }
+.synth li { background: var(--bg-color); border-radius: 12px; padding: 0.9rem 1.05rem; font-size: 0.93rem; color: var(--light-text); }
+.synth li strong:first-child { display: block; color: var(--primary-color); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem; }
+.synth li strong { color: var(--text-color); }
+
+/* ---------- Griglia dei giorni in home ---------- */
+.parthead { display: flex; align-items: baseline; gap: 14px; margin: 3rem 0 1.4rem 0; flex-wrap: wrap; }
+.parthead h2 { margin: 0; font-size: 1.55rem; font-weight: 800; }
+.parthead .when { font-size: 0.85rem; font-weight: 700; color: var(--light-text); background: var(--card-bg); border: 1px solid var(--line); padding: 4px 14px; border-radius: 20px; }
+.daygrid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); }
+.daycard { display: flex; flex-direction: column; background: var(--card-bg); border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-sm); text-decoration: none; color: inherit; border: 1px solid var(--line); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.daycard:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.daycard .thumb { height: 132px; background-size: cover; background-position: center; position: relative; }
+.daycard .thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 60%); }
+.daycard .num { position: absolute; z-index: 2; left: 12px; top: 12px; background: var(--primary-color); color: #fff; font-weight: 800; font-size: 0.72rem; letter-spacing: 1px; padding: 4px 11px; border-radius: 20px; }
+.daycard .zone { position: absolute; z-index: 2; right: 12px; top: 12px; background: rgba(255,255,255,0.92); color: var(--text-color); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+.daycard .body { padding: 0.95rem 1.1rem 1.15rem 1.1rem; display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
+.daycard .date { font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--light-text); }
+.daycard h3 { margin: 0; font-size: 1.02rem; font-weight: 800; line-height: 1.35; color: var(--text-color); }
+.daycard .teaser { margin: 0; font-size: 0.85rem; color: var(--light-text); }
+.daycard .go { margin-top: auto; padding-top: 0.6rem; font-size: 0.8rem; font-weight: 800; color: var(--primary-color); }
+.daycard.is-today { border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--primary-light), var(--shadow-lg); }
+.daycard.is-today .num::before { content: "OGGI · "; }
+
+/* ---------- Riquadri di collegamento in home ---------- */
+.tiles { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.tile { text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--border-radius); padding: 1.4rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 0.35rem; transition: transform 0.25s ease, box-shadow 0.25s ease; border-top: 5px solid var(--primary-color); }
+.tile:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.tile .ico { font-size: 1.7rem; line-height: 1; }
+.tile h3 { margin: 0.3rem 0 0 0; font-size: 1.08rem; font-weight: 800; color: var(--text-color); }
+.tile p { margin: 0; font-size: 0.87rem; color: var(--light-text); }
+
+/* Numeri chiave in home */
+.stats { display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); margin: 1.6rem 0 0 0; padding: 0; list-style: none; }
+.stats li { background: var(--card-bg); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.1rem; box-shadow: var(--shadow-sm); }
+.stats .k { display: block; font-size: 0.68rem; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--light-text); margin-bottom: 0.2rem; }
+.stats .v { font-size: 1rem; font-weight: 800; color: var(--text-color); }
+.stats .v small { display: block; font-size: 0.78rem; font-weight: 600; color: var(--light-text); }
+
+/* ---------- Avanti / indietro fra i giorni ---------- */
+.dayfoot { display: grid; gap: 0.8rem; grid-template-columns: 1fr; margin-top: 2rem; }
+@media (min-width: 640px) { .dayfoot { grid-template-columns: 1fr auto 1fr; align-items: stretch; } }
+.dayfoot a { text-decoration: none; background: var(--card-bg); border: 1px solid var(--line); border-radius: 14px; padding: 0.9rem 1.1rem; box-shadow: var(--shadow-sm); color: inherit; display: flex; flex-direction: column; justify-content: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.dayfoot a:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.dayfoot .lbl { font-size: 0.68rem; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--light-text); }
+.dayfoot .ttl { font-size: 0.92rem; font-weight: 700; color: var(--text-color); }
+.dayfoot .next { text-align: right; }
+.dayfoot .home { display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--primary-color); }
+.dayfoot .empty { display: none; }
+@media (min-width: 640px) { .dayfoot .empty { display: block; visibility: hidden; } }
+
+/* ---------- Blocchi di contenuto riusati dalle vecchie sezioni ---------- */
+h2.sec { color: var(--text-color); font-weight: 800; font-size: 1.9rem; margin: 3rem 0 1.6rem 0; display: flex; align-items: center; gap: 12px; scroll-margin-top: calc(var(--topbar-h) + 14px); }
+h2.sec::after { content: ""; flex: 1; height: 3px; background: linear-gradient(90deg, #E0E0E0, transparent); border-radius: 2px; }
+h2.sec:first-of-type { margin-top: 2.2rem; }
+h3.sub { font-size: 1.4rem; font-weight: 800; margin: 2.6rem 0 1.2rem 0; scroll-margin-top: calc(var(--topbar-h) + 14px); }
+
+.summary-box { background: var(--card-bg); padding: 1.4rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); margin-bottom: 2rem; border-top: 6px solid var(--primary-color); }
+@media (min-width: 768px) { .summary-box { padding: 2rem; } }
+.summary-box ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem; margin: 0; }
+.summary-box li { background: var(--bg-color); padding: 1.1rem; border-radius: 12px; font-size: 0.94rem; display: flex; flex-direction: column; }
+.summary-box li strong { color: var(--primary-color); font-size: 1.02rem; margin-bottom: 0.3rem; }
+.summary-box ul.flow { grid-template-columns: 1fr; gap: 0.8rem; }
+.summary-box ul.flow li { display: block; }
+.summary-box ul.flow li strong { font-size: 1rem; }
+.summary-box li ul { display: block; margin: 0.6rem 0 0 0; padding: 0; }
+.summary-box li ul li { background: transparent; padding: 0 0 0 1.1rem; margin-bottom: 0.55rem; border-radius: 0; position: relative; font-size: 0.9rem; }
+.summary-box li ul li::before { content: "›"; position: absolute; left: 0; top: -1px; color: var(--primary-color); font-weight: 800; }
+.summary-box li ul li:last-child { margin-bottom: 0; }
+.summary-box h3 { margin-top: 0; }
+
+.details-grid { display: grid; grid-template-columns: 1fr; gap: 1.3rem; }
+@media (min-width: 860px) { .details-grid { grid-template-columns: 1fr 1fr; } }
+
+.callout { background: var(--card-bg); border-left: 5px solid var(--primary-color); border-radius: 12px; padding: 1.15rem 1.35rem; margin: 0 0 1.8rem 0; box-shadow: var(--shadow-sm); font-size: 0.94rem; color: var(--light-text); }
+.callout strong { color: var(--text-color); }
+
+.prio { display: inline-block; font-size: 0.66rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; white-space: nowrap; }
+.prio-high { background: #FFEBEE; color: #C62828; }
+.prio-med { background: #FFF8E1; color: #EF6C00; }
+.prio-low { background: #E8F5E9; color: #2E7D32; }
+
+/* Testo discorsivo dentro le schede */
+.prose p { margin: 0 0 1.2rem 0; color: var(--light-text); font-size: 0.97rem; line-height: 1.8; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--text-color); }
+.prose h4 { margin: 1.8rem 0 0.8rem 0; font-size: 1.05rem; font-weight: 800; color: var(--primary-color); background: var(--primary-light); display: inline-block; padding: 4px 14px; border-radius: 20px; }
+.prose > h4:first-child { margin-top: 0; }
+.prose ul { padding-left: 1.2rem; color: var(--light-text); font-size: 0.95rem; }
+.prose li { margin-bottom: 0.7rem; }
+.prose img { width: 100%; border-radius: 12px; margin-bottom: 14px; height: 180px; object-fit: cover; box-shadow: var(--shadow-sm); }
+
+/* Timeline oraria */
+.timeline { list-style: none; padding: 0; margin: 0; }
+.timeline li { position: relative; display: grid; grid-template-columns: 60px 1fr; gap: 0.9rem; padding: 0 0 1.05rem 0; font-size: 0.95rem; }
+.timeline li::after { content: ""; position: absolute; left: 5px; top: 20px; bottom: 0; width: 2px; background: rgba(0,0,0,0.09); }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li:last-child::after { display: none; }
+.timeline .t { position: relative; padding-left: 20px; font-weight: 800; font-size: 0.8rem; color: var(--primary-color); white-space: nowrap; line-height: 1.6; }
+.timeline .t::before { content: ""; position: absolute; left: 0; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--card-bg); border: 3px solid var(--primary-color); box-sizing: border-box; }
+.timeline li.opt .t { color: var(--light-text); }
+.timeline li.opt .t::before { border-color: var(--light-text); }
+.timeline strong { color: var(--text-color); }
+.timeline div { color: var(--light-text); }
+.timeline em { opacity: 0.9; }
+@media (max-width: 480px) {
+    .timeline li { grid-template-columns: 52px 1fr; gap: 0.7rem; font-size: 0.9rem; }
+    .timeline .t { padding-left: 18px; font-size: 0.74rem; }
+}
+
+/* Dove mangiare */
+.eat { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+.eat li { display: grid; grid-template-columns: auto 1fr; gap: 0.85rem; align-items: start; background: var(--bg-color); border-radius: 10px; padding: 0.75rem 0.95rem; font-size: 0.9rem; color: var(--light-text); }
+.eat .when { font-weight: 800; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary-color); white-space: nowrap; padding-top: 0.25rem; }
+.eat strong { color: var(--text-color); }
+@media (max-width: 560px) {
+    .eat li { grid-template-columns: 1fr; gap: 0.15rem; }
+    .eat .when { padding-top: 0; }
+}
+
+/* Mappa */
+.mapbox iframe { width: 100%; height: 320px; border: none; border-radius: 12px; background: #eee; display: block; }
+.maplink { display: inline-block; margin-top: 0.9rem; font-size: 0.82rem; font-weight: 800; text-decoration: none; color: var(--primary-color); }
+.maplink:hover { text-decoration: underline; }
+
+/* Tabella costi */
+table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card-bg); box-shadow: var(--shadow-sm); border-radius: var(--border-radius); overflow: hidden; margin-top: 1.5rem; }
+th, td { padding: 1.3rem; text-align: left; border-bottom: 1px solid #F0F2F5; }
+th { background: var(--text-color); color: #fff; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.4px; }
+tr:last-child td { border-bottom: none; font-weight: 800; font-size: 1.15rem; background: var(--primary-light); color: var(--primary-color); }
+@media (max-width: 767px) {
+    table { display: block; border: none; box-shadow: none; background: transparent; }
+    thead { display: none; }
+    tbody, tr, td { display: block; width: 100%; }
+    tr { margin-bottom: 1.2rem; background: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--shadow-sm); border: 1px solid var(--line); }
+    td { border-bottom: 1px solid #F0F2F5; overflow-wrap: break-word; }
+    td::before { display: block; font-weight: 700; color: var(--light-text); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+    td:nth-child(1)::before { content: "Voce di spesa"; }
+    td:nth-child(2)::before { content: "Dettagli"; }
+    td:nth-child(3)::before { content: "Costo stimato"; color: var(--primary-color); }
+    td:last-child { border-bottom: none; }
+    tr:last-child { background: var(--primary-light); }
+    tr:last-child td { background: transparent; }
+}
+
+.inc-exc-box { background: var(--card-bg); padding: 1.4rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); }
+.exc-box { border-top: 5px solid #F44336; }
+.inc-exc-box h3 { margin-top: 0; font-size: 1.15rem; margin-bottom: 1.2rem; }
+.inc-exc-box ul { list-style: none; padding: 0; margin: 0; }
+.inc-exc-box li { margin-bottom: 0.9rem; position: relative; padding-left: 30px; font-size: 0.93rem; line-height: 1.5; }
+.exc-box li::before { content: '❌'; position: absolute; left: 0; top: 0; font-size: 1rem; }
+
+/* ---------- Piede pagina ---------- */
+.sitefoot { border-top: 1px solid var(--line); background: var(--card-bg); padding: 2rem 1.1rem 2.4rem 1.1rem; color: var(--light-text); font-size: 0.85rem; }
+.sitefoot-in { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; align-items: center; justify-content: space-between; }
+.sitefoot a { color: var(--light-text); text-decoration: none; font-weight: 700; }
+.sitefoot a:hover { color: var(--primary-color); }
+.sitefoot nav { display: flex; flex-wrap: wrap; gap: 0.8rem 1.2rem; }
+
+/* Torna su */
+.to-top { position: fixed; right: 16px; bottom: 20px; width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--card-bg); color: var(--primary-color); font-size: 1.3rem; line-height: 1; box-shadow: var(--shadow-lg); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s, visibility 0.3s; z-index: 950; }
+.to-top.visible { opacity: 1; visibility: visible; transform: none; }
+
+/* ---------- Stampa ---------- */
+@media print {
+    .topbar, .daystrip, .to-top, .sitefoot, .dayfoot, .subnav, .mood-tags, .countdown, .maplink, .mapbox { display: none !important; }
+    body { background: #fff; }
+    .hero, .pagehead { background: none !important; color: var(--text-color); padding: 1.5rem 0; }
+    .hero h1, .pagehead h1 { text-shadow: none; }
+    .dayhero { min-height: 0; box-shadow: none; background-image: none !important; border: 1px solid #DDD; }
+    .dayhero::before { display: none; }
+    .dayhero-in { color: var(--text-color); padding: 1rem; }
+    .dayhero h1 { text-shadow: none; }
+    .dayhero .chips span { border-color: #DDD; background: none; }
+    .card, .summary-box, .inc-exc-box, table { box-shadow: none; border: 1px solid #DDD; break-inside: avoid; }
+    .daylayout { display: block; }
+    .card { margin-bottom: 1rem; }
+    .prose img { display: none; }
+    a { color: inherit; text-decoration: none; }
+}
