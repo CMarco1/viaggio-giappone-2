@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giappone 2026: Itinerario Nerd &amp; Relax | 2 - 17 Dic</title>
-    <meta name="description" content="Itinerario di 15 giorni in Giappone (2 - 17 dicembre 2026): 7 notti a Kyoto e 7 a Tokyo, tra cultura nerd, templi, street food e relax. Mappe, budget e checklist.">
+    <meta name="description" content="Itinerario in Giappone (2 - 17 dicembre 2026, Qatar Airways): 7 notti a Kyoto e 6 a Tokyo, tra cultura nerd, templi, street food e relax. Mappe, budget e checklist.">
     <meta name="theme-color" content="#E60012">
     <meta name="color-scheme" content="light">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Giappone 2026: Itinerario Nerd &amp; Relax">
-    <meta property="og:description" content="15 giorni tra Tokyo, Kyoto e Osaka: itinerario giorno per giorno, mappe, budget e consigli pratici.">
+    <meta property="og:description" content="14 giorni tra Kyoto, Osaka e Tokyo: itinerario giorno per giorno, mappe, budget e consigli pratici.">
     <meta property="og:image" content="images/cover.jpg">
     <meta property="og:locale" content="it_IT">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗾</text></svg>">
@@ -71,6 +71,12 @@
            column di default spezzerebbe ogni figlio su una riga a sé. */
         .summary-box ul.flow li { display: block; }
         .summary-box ul.flow li strong { font-size: 1rem; }
+        /* Sotto-liste (es. i canali di prenotazione): la card annidata sparirebbe
+           sullo sfondo del <li> genitore, servono un rientro e un marcatore. */
+        .summary-box li ul { display: block; margin: 0.6rem 0 0 0; padding: 0; }
+        .summary-box li ul li { background: transparent; padding: 0 0 0 1.1rem; margin-bottom: 0.55rem; border-radius: 0; position: relative; font-size: 0.92rem; }
+        .summary-box li ul li::before { content: "›"; position: absolute; left: 0; top: -1px; color: var(--primary-color); font-weight: 800; }
+        .summary-box li ul li:last-child { margin-bottom: 0; }
         
         /* Itinerary Cards */
         .itinerary-day { background: var(--card-bg); margin-bottom: 2.5rem; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: var(--transition); cursor: pointer; border: 1px solid rgba(0,0,0,0.03); }
@@ -226,6 +232,8 @@
 
         <nav class="quick-nav" aria-label="Navigazione rapida">
             <a href="#riepilogo">📅 Riepilogo</a>
+            <a href="#voli">✈️ Voli</a>
+            <a href="#trasporti-aeroporti">🚄 Aeroporti</a>
             <a href="#senso-marcia">🔄 Senso di marcia</a>
             <a href="#dicembre">❄️ Dicembre</a>
             <a href="#prenotazioni">🎟️ Prenotazioni</a>
@@ -240,9 +248,9 @@
             <h2>📅 Riepilogo del Viaggio</h2>
             <ul>
                 <li><strong>Viaggiatori:</strong> 2 persone</li>
-                <li><strong>Andata:</strong> Roma → Osaka KIX (2 Dicembre)</li>
-                <li><strong>Ritorno:</strong> Tokyo Narita → Roma (17 Dicembre)</li>
-                <li><strong>Durata in loco:</strong> 14 Notti (7 Kyoto, poi 7 Tokyo)</li>
+                <li><strong>Andata:</strong> Roma FCO → Osaka KIX (2 Dic, 15:10 → 3 Dic, 16:25)</li>
+                <li><strong>Ritorno:</strong> Tokyo <strong>Haneda</strong> → Roma FCO (17 Dic, 01:25 → 13:30)</li>
+                <li><strong>Durata in loco:</strong> 14 giorni, <strong>13 notti in hotel</strong> (7 Kyoto, 6 Tokyo)</li>
                 <li><strong>Stile:</strong> Pop culture, Nerd, Relax, Food.</li>
                 <li><strong>Alloggi:</strong> Hotel occidentali (No Ryokan).</li>
             </ul>
@@ -250,10 +258,128 @@
 
 
         <section>
+            <h2 id="voli">✈️ I Vostri Voli (Qatar Airways)</h2>
+            <div class="callout">
+                <strong>Due orari condizionano tutto l'itinerario.</strong> All'andata si atterra a KIX alle <strong>16:25</strong>,
+                quindi il 3 dicembre non è una giornata di visite: si arriva a Kyoto col buio, giusto in tempo per cena.
+                Al ritorno si vola da <strong>Haneda all'1:25 di notte</strong>, il che regala il <strong>16 dicembre come ultima
+                giornata piena</strong> a Tokyo, ma significa anche dormire in aereo: le notti in hotel sono <strong>13, non 14</strong>.
+            </div>
+            <div class="details-grid" style="margin-bottom: 3rem;">
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #4CAF50;">
+                    <h3 style="color: #4CAF50; margin-top: 0; font-size: 1.2rem;">🛫 Andata — 2/3 Dicembre</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
+                        <li><strong>QR132</strong> · mer 2 dic<br>Roma FCO <strong>15:10</strong> → Doha DOH <strong>22:20</strong> <em>(5h 10m, A350-900)</em></li>
+                        <li><strong>Scalo a Doha:</strong> 3h 05m. Abbastanza per cenare con calma ad Hamad, non abbastanza per uscire.</li>
+                        <li><strong>QR802</strong> · gio 3 dic<br>Doha DOH <strong>01:25</strong> → Osaka KIX <strong>16:25</strong> <em>(9h, A350-900)</em></li>
+                        <li><strong>In Giappone:</strong> con controlli e bagagli si esce da KIX verso le 17:30, Haruka Express e arrivo a Kyoto <strong>intorno alle 19:00</strong>. Compilate <em>Visit Japan Web</em> prima di partire: il QR fa la differenza fra 15 minuti e un'ora di coda.</li>
+                    </ul>
+                </div>
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #E60012;">
+                    <h3 style="color: #E60012; margin-top: 0; font-size: 1.2rem;">🛬 Ritorno — 17 Dicembre</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
+                        <li><strong>QR813</strong> · gio 17 dic<br>Tokyo <strong>HANEDA (HND)</strong> <strong>01:25</strong> → Doha <strong>06:40</strong> <em>(11h 15m)</em></li>
+                        <li><strong>Scalo a Doha:</strong> 2h 50m.</li>
+                        <li><strong>QR131</strong> · gio 17 dic<br>Doha <strong>09:30</strong> → Roma FCO <strong>13:30</strong> <em>(6h)</em></li>
+                        <li><strong>Attenzione:</strong> partire all'1:25 del 17 vuol dire essere in aeroporto <strong>entro le 22:30 del 16</strong>. Si esce dall'hotel la mattina del 16, si lascia il bagaglio in deposito e si gira tutto il giorno leggeri.</li>
+                        <li><strong>La buona notizia:</strong> Haneda è in città, non come Narita. Dal centro sono <strong>30-45 minuti</strong> con la monorotaia o la linea Keikyu, e costa poco più di 500 yen.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 id="trasporti-aeroporti" style="font-size: 1.5rem; margin-top: 3rem;">🚄 Come e dove prenotare i trasporti da/per gli aeroporti</h3>
+            <div class="callout">
+                <strong>Regola generale:</strong> l'arrivo va prenotato, il ritorno no. L'<em>Haruka</em> da KIX conviene comprarlo prima
+                (costa meno e vi evita di restare in piedi 80 minuti con le valigie); per <em>Haneda</em> non serve prenotare nulla —
+                si passa la carta IC al tornello e si sale.
+            </div>
+
+            <div class="details-grid" style="margin-bottom: 2rem;">
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #4CAF50;">
+                    <h3 style="color: #4CAF50; margin-top: 0; font-size: 1.15rem;">🛬 KIX → Kyoto (3 dic, ~17:30)</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.9rem;">
+                        <li><strong>① JR Haruka Express</strong> — <em>la scelta consigliata</em><br>
+                            75-80 minuti diretti fino a <strong>Kyoto Station</strong>, senza cambi. Il treno parte dalla stazione JR
+                            sotto il Terminal 1, collegata all'arrivi da una passerella coperta.
+                            Corse ogni 30 minuti circa; l'ultima da KIX parte verso le <strong>22:16</strong>, quindi avete
+                            larghissimo margine.<br>
+                            <strong>Dove prenotarlo:</strong>
+                            <ul style="grid-template-columns: 1fr; gap: 0.4rem; margin-top: 0.6rem;">
+                                <li><strong>Sito JR-WEST</strong> (<em>global.westjr.co.jp</em>, sistema <em>e5489</em>) — è il canale ufficiale e il più economico.
+                                    Si prenota fino a un mese prima, si paga con carta e si ritira il biglietto ai distributori verdi
+                                    o al <em>JR Ticket Office</em> di KIX mostrando la stessa carta + passaporto.</li>
+                                <li><strong>Klook o KKday</strong> — più semplici da usare in italiano/inglese, prezzo simile.
+                                    Ricevete un voucher da cambiare al banco JR in aeroporto (mettete in conto 10 minuti di fila).</li>
+                                <li><strong>Sul posto</strong> — <em>JR Ticket Office (Midori-no-Madoguchi)</em> nella stazione di KIX.
+                                    Funziona sempre, ma il 3 dicembre arrivate in orario di rientro serale: è l'opzione con più coda.</li>
+                            </ul>
+                            <strong>Quanto costa:</strong> il biglietto ordinario con posto riservato è circa <em>3.600 yen</em>, ma esiste lo
+                            <strong>sconto per stranieri</strong> (<em>HARUKA discount ticket</em>) che lo porta intorno ai <em>2.200 yen</em>.
+                            <strong>Avendo già l'ICOCA vi serve solo la tariffa scontata singola</strong>, non il pacchetto "ICOCA &amp; HARUKA":
+                            basta mostrare passaporto e la vostra carta al momento dell'acquisto.
+                        </li>
+                        <li><strong>② Limousine Bus</strong> — <em>il piano B con i bagagli</em><br>
+                            Autobus diretto KIX → <strong>Kyoto Station (uscita Hachijo)</strong>, circa <strong>85-100 minuti</strong> a seconda
+                            del traffico, <strong>~2.800 yen</strong>. Non serve prenotare: si compra al banco nell'area arrivi o al
+                            distributore alla fermata, e le valigie vanno nella stiva. Più lento e meno puntuale del treno, ma zero scale
+                            e zero valigie da trascinare. Sito: <em>kate.co.jp</em> (Kansai Airport Transportation).
+                        </li>
+                        <li><strong>③ Da evitare quella sera:</strong> il Nankai + cambio a Osaka costa meno ma richiede uno o due cambi
+                            con i bagagli, di sera, appena sbarcati da 20 ore di volo. Il risparmio non vale la fatica.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #E60012;">
+                    <h3 style="color: #E60012; margin-top: 0; font-size: 1.15rem;">🛫 Tokyo → Haneda (16 dic, entro le 22:30)</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.9rem;">
+                        <li><strong>Non c'è niente da prenotare.</strong> È il vantaggio concreto di Haneda su Narita: entrambe le linee
+                            sono metropolitane normali, a posti liberi, che si pagano <strong>passando la ICOCA al tornello</strong>.
+                            Nessun biglietto anticipato, nessun voucher, nessun orario da rispettare se non l'ultima corsa.</li>
+                        <li><strong>① Keikyu Line</strong> — <em>la più veloce ed economica</em><br>
+                            Da <strong>Shinagawa</strong> a <strong>Haneda Terminal 3</strong> in ~15 minuti, <strong>~330 yen</strong>.
+                            Molti treni sono in servizio diretto con la <em>linea Asakusa</em>: da Asakusa, Higashi-Ginza, Shimbashi
+                            o Nihombashi si arriva in aeroporto <strong>senza cambiare treno</strong>. Verificate solo che sul display
+                            del treno ci sia scritto <em>Haneda Airport</em> (alcuni convogli si sganciano per altre destinazioni).
+                        </li>
+                        <li><strong>② Tokyo Monorail</strong> — <em>la più panoramica</em><br>
+                            Da <strong>Hamamatsucho</strong> (sulla linea JR Yamanote) a <strong>Terminal 3</strong> in ~18 minuti,
+                            <strong>~520 yen</strong>. Prendete un convoglio <em>Rapid</em> o <em>Express</em>, non il locale che ferma ovunque.
+                        </li>
+                        <li><strong>③ Airport Limousine Bus</strong> — <em>se avete molti bagagli</em><br>
+                            Parte dai principali hotel e dai terminal di Shinjuku, Ikebukuro e Tokyo Station. <strong>~1.300 yen</strong>,
+                            40-60 minuti secondo il traffico. Si prenota su <em>limousinebus.co.jp</em> oppure si compra al banco:
+                            comodo perché le valigie vanno in stiva, ma il traffico serale di Tokyo è imprevedibile.
+                        </li>
+                        <li><strong>Dal percorso del Giorno 14:</strong> siete a Odaiba. Prendete la <em>Yurikamome</em> fino a
+                            <strong>Shimbashi</strong> e da lì la linea Asakusa/Keikyu diretta per Haneda: in tutto circa 45 minuti,
+                            un solo cambio.</li>
+                        <li><strong>⚠️ Ultime corse:</strong> la monorotaia e la Keikyu smettono <strong>intorno a mezzanotte</strong>.
+                            Il vostro volo parte all'1:25, quindi in teoria ci arrivereste — <em>non fatelo</em>. Puntate a essere
+                            in aeroporto per le 22:30: il banco Qatar chiude circa un'ora prima del decollo, e a Haneda
+                            i controlli notturni possono essere lenti.</li>
+                        <li><strong>Piano di emergenza:</strong> se perdete l'ultimo treno, il taxi dal centro costa
+                            <strong>7.000-9.000 yen</strong> (~45-55 €) e ci mette 30-40 minuti con le strade libere di notte.
+                            Esistono anche bus notturni da Shibuya e Shinjuku.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout" style="border-left-color: #673AB7;">
+                <strong>Terza tratta da prenotare: lo Shinkansen Kyoto → Tokyo del 10 dicembre.</strong>
+                Si compra su <em>SmartEX</em> (app o sito, in inglese) oppure ai distributori JR. Con le valigie grandi ricordatevi
+                il <em>posto con spazio bagagli oversize</em> in ultima fila: è gratuito ma va riservato, e senza si paga una sovrattassa.
+                Vedi la sezione <a href="#prenotazioni">Da Prenotare in Anticipo</a>.
+            </div>
+        </section>
+
+        <section>
             <h2 id="senso-marcia">🔄 Perché prima il Kansai e poi Tokyo</h2>
             <div class="callout">
                 A parità di prezzo del volo, il senso di marcia <strong>non è indifferente</strong>: entrare da Osaka KIX
-                e uscire da Tokyo Narita è la scelta migliore per queste date. Ecco i quattro motivi, dal più al meno importante.
+                e uscire da Tokyo Haneda è la scelta migliore per queste date. Ecco i quattro motivi, dal più al meno importante.
+                <br><br><strong>Gli orari confermati rafforzano la scelta:</strong> si rientra da <em>Haneda</em> e non da Narita,
+                il che elimina l'unico svantaggio serio che questa direzione aveva.
             </div>
             <div class="details-grid" style="margin-bottom: 3rem;">
                 <div class="summary-box" style="margin-bottom: 0; border-top-color: #4CAF50;">
@@ -268,8 +394,9 @@
                 <div class="summary-box" style="margin-bottom: 0; border-top-color: #FF9800;">
                     <h3 style="color: #FF9800; margin-top: 0; font-size: 1.2rem;">⚠️ Il prezzo da pagare</h3>
                     <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
-                        <li><strong>Narita è scomoda.</strong> È l'unico vero svantaggio: il rientro da Narita richiede circa un'ora e mezza porta-a-porta con il Narita Express, contro i 75 minuti scarsi del Haruka da Kyoto. Con un volo mattutino significa alzarsi molto presto l'ultimo giorno.</li>
-                        <li><strong>Come rimediare:</strong> prenotate il N'EX il giorno prima e, se il volo è molto presto, valutate l'ultima notte in un hotel vicino alla stazione di Tokyo o Nippori invece che a Shinjuku.</li>
+                        <li><strong>Il primo giorno si perde.</strong> Il QR802 atterra a KIX alle 16:25 e Kyoto è a 75 minuti di Haruka: il 3 dicembre si arriva in hotel verso le 19:00, col buio da tre ore. Volando su Tokyo si sarebbe stati in centro un po' prima, ma la differenza è di un'ora scarsa e in ogni caso non sarebbe bastata per visitare nulla.</li>
+                        <li><strong>Come rimediare:</strong> trattate il 3 dicembre come una serata, non come una giornata. Check-in, una ciotola di ramen vicino all'hotel, e a letto presto per sfruttare il jet lag il mattino dopo.</li>
+                        <li><strong>Una notte in meno in hotel.</strong> Il volo di ritorno parte all'1:25 del 17: la notte fra il 16 e il 17 si passa in aereo. Sono <strong>13 notti prenotate, non 14</strong> — attenzione a non sbagliare la prenotazione (è anche ~100 € risparmiati).</li>
                         <li><strong>Nota sui prezzi:</strong> nell'analisi voli la rotta "andata Osaka" costava <em>1.452 €</em> contro i <em>1.611 €</em> della rotta inversa, quindi in quel momento il senso consigliato era anche il più economico. Se ora costano uguale, la scelta resta comunque questa.</li>
                         <li><strong>Cosa NON cambia:</strong> notti, budget e numero di giorni sono identici nei due sensi. Cambia solo l'ordine, quindi non c'è nessun costo nascosto nel decidere così.</li>
                     </ul>
@@ -320,7 +447,7 @@
                     <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
                         <li><strong>Nintendo Museum (Uji, Kyoto)</strong><span class="prio prio-high">Lotteria</span><br>Aperto nel 2024 a mezz'ora da Kyoto: è <em>il</em> pezzo mancante di questo itinerario. Ingresso solo tramite lotteria sull'account Nintendo, con estrazione mesi prima. Va tentata subito, e in caso di vittoria si incastra al posto di una mezza giornata a Kyoto.</li>
                         <li><strong>Museo Ghibli (Mitaka, Tokyo)</strong><span class="prio prio-high">Data fissa</span><br>I biglietti escono <em>il 10 del mese precedente</em> alla visita (ora giapponese) e volano via in minuti. Per una visita a dicembre significa essere pronti il 10 novembre.</li>
-                        <li><strong>teamLab (Tokyo)</strong><span class="prio prio-med">Fascia oraria</span><br>Biglietti a slot orario, spesso esauriti nel weekend. <em>Planets</em> (Toyosu) è comodissimo da abbinare a Odaiba del Giorno 14.</li>
+                        <li><strong>teamLab (Tokyo)</strong><span class="prio prio-med">Fascia oraria</span><br>Biglietti a slot orario, spesso esauriti nel weekend. <em>Planets</em> (Toyosu) è comodissimo da abbinare a Odaiba del Giorno 14 — ma quel giorno si vola: prendete uno slot <strong>entro il primo pomeriggio</strong>.</li>
                         <li><strong>Super Nintendo World – USJ (Osaka)</strong><span class="prio prio-med">Mezza giornata</span><br>Se volete farlo, occupa un giorno intero e va sostituito a uno dei due giorni di Osaka, non aggiunto. Biglietto + eventuale accesso all'area da comprare online.</li>
                     </ul>
                 </div>
@@ -329,8 +456,11 @@
                     <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
                         <li><strong>Shibuya Sky</strong><span class="prio prio-high">Tramonto</span><br>La fascia del tramonto è la prima a esaurirsi. A dicembre “tramonto” vuol dire slot delle 16:00 circa: prenotate appena aprono le vendite.</li>
                         <li><strong>Tokyo Skytree</strong><span class="prio prio-med">Consigliato</span><br>Biglietto online = fila separata e più corta rispetto alla biglietteria.</li>
-                        <li><strong>Shinkansen Tokyo → Kyoto</strong><span class="prio prio-med">Posto riservato</span><br>Con i bagagli grandi serve il <em>posto con spazio bagagli oversize</em> (ultima fila), gratuito ma <strong>solo su prenotazione</strong>: senza, si rischia una sovrattassa. Prenotabile online con SmartEX.</li>
+                        <li><strong>Shinkansen Kyoto → Tokyo</strong><span class="prio prio-med">Posto riservato</span><br>Con i bagagli grandi serve il <em>posto con spazio bagagli oversize</em> (ultima fila), gratuito ma <strong>solo su prenotazione</strong>: senza, si rischia una sovrattassa. Prenotabile online con SmartEX.</li>
+                        <li><strong>Hotel: 13 notti, non 14</strong><span class="prio prio-high">Errore facile</span><br>Kyoto <em>3→10 dic</em> (7 notti) e Tokyo <em>10→16 dic</em> (6 notti). La notte fra il 16 e il 17 si passa in volo: se prenotate fino al 17 pagate una camera vuota.</li>
+                        <li><strong>Deposito bagagli il 16</strong><span class="prio prio-med">Da chiedere</span><br>Check-out la mattina, volo all'1:25 di notte: servono 10-12 ore di parcheggio per le valigie. Chiedetelo all'hotel in fase di prenotazione.</li>
                         <li><strong>eSIM</strong><span class="prio prio-med">Prima di partire</span><br>Compratela e installatela in Italia: si attiva all'atterraggio senza dover cercare il WiFi dell'aeroporto.</li>
+                        <li><strong>Haruka Express (KIX → Kyoto)</strong><span class="prio prio-med">Il 3 dicembre</span><br>Si atterra alle 16:25 e si viaggia in orario di rientro: il biglietto scontato per stranieri si compra al banco JR in aeroporto, ma prenotare online evita di restare in piedi 80 minuti con le valigie.</li>
                         <li><strong>Assicurazione sanitaria</strong><span class="prio prio-high">Obbligatoria di fatto</span><br>In Giappone la sanità per gli stranieri è privata e costosissima. Da fare prima della partenza.</li>
                     </ul>
                 </div>
@@ -366,14 +496,16 @@
             <h2>🏨 Alloggi (Da Prenotare)</h2>
             <div class="details-grid" style="margin-bottom: 3rem;">
                 <div class="summary-box" style="margin-bottom: 0; border-top-color: #4CAF50; padding: 1.5rem;">
-                    <h3 style="color: #4CAF50; margin-top: 0; font-size: 1.2rem;">📍 Base 1 — Kyoto (3 - 10 Dicembre)</h3>
+                    <h3 style="color: #4CAF50; margin-top: 0; font-size: 1.2rem;">📍 Base 1 — Kyoto (3 - 10 Dicembre · 7 notti)</h3>
+                    <p style="margin: 0.5rem 0; font-size: 0.9rem; opacity: 0.85;">⚠️ Il 3 si arriva verso le <strong>19:00</strong>: avvisate l'hotel del check-in serale.</p>
                     <p style="margin: 0.5rem 0;"><strong>Nome Hotel:</strong> <em>[In attesa di prenotazione]</em></p>
                     <p style="margin: 0.5rem 0;"><strong>Indirizzo (EN):</strong> <em>[Inserire qui l'indirizzo in alfabeto occidentale]</em></p>
                     <p style="margin: 0.5rem 0;"><strong>Indirizzo (JP per Taxi):</strong> <em>[Inserire qui i Kanji per i tassisti]</em></p>
                     <p style="margin: 0.5rem 0;"><strong>Check-in:</strong> --:-- | <strong>Check-out:</strong> --:--</p>
                 </div>
                 <div class="summary-box" style="margin-bottom: 0; border-top-color: #9C27B0; padding: 1.5rem;">
-                    <h3 style="color: #9C27B0; margin-top: 0; font-size: 1.2rem;">📍 Base 2 — Tokyo (10 - 17 Dicembre)</h3>
+                    <h3 style="color: #9C27B0; margin-top: 0; font-size: 1.2rem;">📍 Base 2 — Tokyo (10 - 16 Dicembre · 6 notti)</h3>
+                    <p style="margin: 0.5rem 0; font-size: 0.9rem; opacity: 0.85;">⚠️ <strong>Ultima notte: 15→16.</strong> Il 16 si fa check-out la mattina e si vola all'1:25. Chiedete il <em>deposito bagagli</em> per la giornata.</p>
                     <p style="margin: 0.5rem 0;"><strong>Nome Hotel:</strong> <em>[In attesa di prenotazione]</em></p>
                     <p style="margin: 0.5rem 0;"><strong>Indirizzo (EN):</strong> <em>[Inserire qui l'indirizzo in alfabeto occidentale]</em></p>
                     <p style="margin: 0.5rem 0;"><strong>Indirizzo (JP per Taxi):</strong> <em>[Inserire qui i Kanji per i tassisti]</em></p>
@@ -389,28 +521,29 @@
                 <button type="button" data-action="collapse-all">Chiudi tutto</button>
             </div>
             <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
-                <div class="day-image" style="background-image: url('images/gion.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/kyoto_station.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 1 (3 Dic): Arrivo a Kyoto e Gion</h3>
+                        <h3>Giorno 1 (3 Dic): Arrivo in serata a Kyoto</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
-                        <li>Atterraggio a <strong>Osaka KIX</strong>, Haruka Express per Kyoto.</li>
-                        <li>Check-in, attivazione eSIM e pomeriggio a <strong>Gion</strong>.</li>
+                        <li><strong>16:25:</strong> atterraggio a <strong>Osaka KIX</strong>, poi Haruka Express.</li>
+                        <li><strong>~19:00:</strong> check-in, eSIM e una cena semplice. Niente di più.</li>
                     </ul>
                     <div class="day-details" id="day-details-1">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
-                                <p>Dal Kansai Airport prendete l'<em>Haruka Express</em>: 75-80 minuti diretti fino alla stazione di Kyoto, si compra al volo con la carta IC. Posate i bagagli (se la camera non è pronta, coin locker in stazione) e concedetevi un primo pomeriggio lento: è il modo migliore per far passare il fuso.</p>
-                                <p>Passeggiate tra le basse case di legno di Gion, sperando di scorgere una Geisha, e spingetevi fino al fiume Kamo al tramonto. <strong>Andate a dormire presto:</strong> il jet lag vi sveglierà all'alba per qualche giorno, ed è esattamente quello che serve per i templi di domani.</p>
+                                <p>Poco, ed è giusto così. Il QR802 tocca terra a KIX alle <strong>16:25</strong>: fra immigrazione, bagagli e dogana si esce verso le 17:30, l'<em>Haruka Express</em> impiega 75-80 minuti fino alla stazione di Kyoto e in hotel ci si arriva <strong>intorno alle 19</strong>, con il buio da tre ore. Non provate a incastrarci una visita: a dicembre a Kyoto alle 16:30 è già notte e i templi sono chiusi.</p>
+                                <p><strong>Accorgimenti utili:</strong> compilate <em>Visit Japan Web</em> prima di partire da Roma (il QR fa risparmiare mezz'ora di coda), attivate l'eSIM appena atterrati mentre siete ancora sotto il Wi-Fi dell'aeroporto, e comprate lì la carta <em>ICOCA</em> — l'Haruka si paga direttamente con quella. I biglietti Haruka scontati per stranieri si prendono al banco JR nel terminal.</p>
+                                <p>Poi solo una cosa: <strong>andate a dormire presto.</strong> Il jet lag vi sveglierà alle 5 del mattino per i prossimi giorni, ed è esattamente il regalo che serve per il Kiyomizu-dera di domani.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/matcha.jpg' alt='Matcha Parfait' loading='lazy' decoding='async' width='560' height='180'><p><strong>Tsujiri (Gion):</strong> Ottimo per una merenda con il loro inimitabile <em>Parfait al Matcha</em>. Per cena, passeggiate a Pontocho e provate <strong>Kyoto Gion Mikaku</strong> (per la carne Wagyu sulla piastra) o un Izakaya sul fiume per spiedini <em>Yakitori</em>.</p>
+<img src='images/matcha.jpg' alt='Matcha Parfait' loading='lazy' decoding='async' width='560' height='180'><p>Restate vicini all'hotel: dopo 20 ore di viaggio non ha senso cercare il ristorante perfetto. La zona della <strong>stazione di Kyoto</strong> risolve tutto — il decimo piano del palazzo della stazione è pieno di ristoranti aperti fino alle 22, e per un primo ramen c'è <em>Kyoto Ramen Koji</em>, una via interna con nove banchi di ramen di regioni diverse. In alternativa, il konbini sotto l'hotel è una scelta più dignitosa di quanto sembri.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Gion,+Kyoto&daddr=Tsujiri,+Gion,+Kyoto+to:Pontocho,+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kansai+International+Airport&daddr=Kyoto+Station,+Kyoto&dirflg=r&t=&z=9&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -447,27 +580,30 @@
                 </div>
             </div>
             <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
-                <div class="day-image" style="background-image: url('images/nishiki.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/gion.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 3 (5 Dic): Mercato Nishiki e Manga</h3>
+                        <h3>Giorno 3 (5 Dic): Nishiki, Manga e Gion al tramonto</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
-                        <li>Passeggiata al <strong>Mercato Nishiki</strong>.</li>
-                        <li><em>Kyoto International Manga Museum</em>.</li>
+                        <li><strong>Mattina:</strong> passeggiata al <strong>Mercato Nishiki</strong>.</li>
+                        <li><strong>Pomeriggio:</strong> <em>Kyoto International Manga Museum</em>.</li>
+                        <li><strong>Sera:</strong> <strong>Gion</strong> e Pontocho quando si accendono le lanterne.</li>
                     </ul>
                     <div class="day-details" id="day-details-3">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
-                                <p>Iniziate la giornata nella "Cucina di Kyoto", il mercato di Nishiki. Nel pomeriggio sfogliate decine di migliaia di manga storici al museo del fumetto, situato in un'ex scuola elementare.</p>
+                                <p>Iniziate la giornata nella "Cucina di Kyoto", il mercato di Nishiki. Nel pomeriggio sfogliate decine di migliaia di manga storici al museo del fumetto, situato in un'ex scuola elementare (chiude alle 17:30, ultimo ingresso 17:00).</p>
+                                <p><strong>Poi Gion.</strong> È qui che recuperiamo la serata persa il giorno dell'arrivo, e il posto giusto è proprio questo: dal Manga Museum sono <em>dieci minuti a piedi verso est</em>, e Gion di sera è molto meglio di Gion di pomeriggio. Scendete Hanamikoji-dori tra le case di legno con le lanterne accese — verso le 17:30-18:30 è l'orario in cui le <em>maiko</em> si spostano fra un impegno e l'altro, l'unica finestra realistica per intravederne una. Poi attraversate verso il fiume Kamo e infilatevi in <strong>Pontocho</strong>, il vicolo largo due metri pieno di izakaya.</p>
+                                <p style="opacity: 0.85; font-size: 0.95rem;">Una regola sola: <em>non fermate e non fotografate le maiko.</em> Nelle vie private di Gion è vietato per ordinanza e la multa arriva a 10.000 yen.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tako_tamago.jpg' alt='Tako Tamago' loading='lazy' decoding='async' width='560' height='180'><p><strong>Mercato Nishiki:</strong> Cercate il chiosco <strong>Kari-Kari Hakase</strong> per i <em>Takoyaki</em> e <strong>Daiyasu</strong> per il famoso <em>Tako Tamago</em>. Vicino al museo, provate <strong>Gogyo Kyoto</strong> per il particolarissimo <em>Ramen al Miso Bruciato</em> (Kogashi Miso).</p>
+<img src='images/tako_tamago.jpg' alt='Tako Tamago' loading='lazy' decoding='async' width='560' height='180'><p><strong>Mercato Nishiki:</strong> Cercate il chiosco <strong>Kari-Kari Hakase</strong> per i <em>Takoyaki</em> e <strong>Daiyasu</strong> per il famoso <em>Tako Tamago</em>. Nel pomeriggio, merenda da <strong>Tsujiri</strong> a Gion con il loro inimitabile <em>Parfait al Matcha</em>. Per cena, <strong>Kyoto Gion Mikaku</strong> (Wagyu sulla piastra) oppure un izakaya sul fiume a Pontocho per spiedini <em>Yakitori</em>.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Nishiki+Market,+Kyoto&daddr=Kyoto+International+Manga+Museum+to:Gogyo+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Nishiki+Market,+Kyoto&daddr=Kyoto+International+Manga+Museum+to:Gion,+Kyoto+to:Pontocho,+Kyoto&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -592,7 +728,7 @@
         </section>
 
         <section>
-            <h2 id="tokyo">🏙️ Parte 2: Tokyo (10 - 17 Dicembre)</h2>
+            <h2 id="tokyo">🏙️ Parte 2: Tokyo (10 - 16 Dicembre)</h2>
             <p class="click-hint">👆 Clicca sulle schede per scoprire i dettagli e le mappe!</p>
             <div class="day-controls">
                 <button type="button" data-action="expand-all">Espandi tutto</button>
@@ -771,25 +907,30 @@
                 <div class="day-image" style="background-image: url('images/odaiba.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 14 (16 Dic): Odaiba e Gundam</h3>
+                        <h3>Giorno 14 (16 Dic): Odaiba, Gundam e volo di notte</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
-                        <li><strong>Odaiba:</strong> Isola artificiale sul mare.</li>
-                        <li>Statua del Gundam Unicorn e Gundam Base.</li>
+                        <li><strong>Mattina:</strong> check-out e bagagli in deposito. <em>Giornata intera libera.</em></li>
+                        <li><strong>Odaiba:</strong> Gundam Unicorn, Gundam Base, teamLab.</li>
+                        <li><strong>22:30:</strong> a Haneda. Volo QR813 all'<strong>01:25</strong>.</li>
                     </ul>
                     <div class="day-details" id="day-details-14">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Prendete il treno panoramico Yurikamome senza conducente. Scattate foto pazzesche sotto il Gundam Unicorn a grandezza naturale (che si trasforma ad orari precisi) e visitate il Gundam Base al piano superiore del DiverCity.</p>
-                                <p><strong>Da incastrare qui:</strong> <em>teamLab Planets</em> a Toyosu è sulla stessa linea Yurikamome ed è l'esperienza digitale più fotografata del Giappone (si cammina scalzi nell'acqua: portate pantaloni arrotolabili). Biglietti a fascia oraria, da prenotare online in anticipo.</p>
+                                <h4>Come si incastra la giornata:</h4>
+                                <p>Il volo notturno vi regala un'ultima giornata piena — ma va organizzata al contrario. <strong>Mattina:</strong> check-out entro le 10-11 e bagagli grossi <em>in deposito all'hotel</em> (quasi tutti lo fanno gratis; in alternativa i coin locker grandi della stazione, ~700 yen). Girate tutto il giorno con lo zaino.</p>
+                                <p><strong>Perché proprio Odaiba oggi:</strong> non è un caso. Odaiba è sulla baia, <em>dalla stessa parte di Haneda</em>: a fine giornata siete a ~25 minuti dall'aeroporto invece che a un'ora. Chiudere il viaggio da Shinjuku o Ikebukuro avrebbe significato una traversata della città con i bagagli.</p>
+                                <p>Prendete il treno panoramico Yurikamome senza conducente. Foto sotto il <strong>Gundam Unicorn</strong> a grandezza naturale (si trasforma ad orari precisi) e <strong>Gundam Base</strong> al piano alto del DiverCity — è anche l'ultima occasione per i gunpla. Aggiungete <em>teamLab Planets</em> a Toyosu, sulla stessa linea (si cammina scalzi nell'acqua: pantaloni arrotolabili; biglietti a fascia oraria da prenotare online).</p>
+                                <h4>La tabella di marcia della sera:</h4>
+                                <p><strong>~20:30</strong> recuperate i bagagli in hotel · <strong>~21:45</strong> arrivo a Haneda (Tokyo Monorail da Hamamatsucho o linea Keikyu da Shinagawa, ~500 yen, 30-45 min) · <strong>22:30</strong> banco Qatar aperto, check-in e controlli · <strong>01:25</strong> decollo.</p>
+                                <p style="opacity: 0.9;"><strong>Occhio agli ultimi treni:</strong> la monorotaia per Haneda smette intorno a mezzanotte, ma non giocatevela sul filo. E il <em>Terminal 3</em> (internazionale) di Haneda ha una galleria in stile Edo con negozi e ristoranti aperti fino a tardi: se arrivate presto non è tempo sprecato.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tempura.jpg' alt='Tempura' loading='lazy' decoding='async' width='560' height='180'><p><strong>Tsukiji Tama Sushi (Odaiba):</strong> Situato nel centro commerciale Decks, offre un'ottima formula <em>All-You-Can-Eat Sushi</em> di alta qualità con una vista mozzafiato sul Rainbow Bridge e sulla baia di Tokyo.</p>
+<img src='images/tempura.jpg' alt='Tempura' loading='lazy' decoding='async' width='560' height='180'><p><strong>Tsukiji Tama Sushi (Odaiba):</strong> nel centro commerciale Decks, ottima formula <em>all-you-can-eat</em> con vista sul Rainbow Bridge — l'ultimo pranzo giusto. Per l'ultima cena, la galleria <em>Edo Koji</em> al Terminal 3 di Haneda ha ramen e tonkatsu decenti fino a tarda sera. E riservate spazio nel bagaglio a mano: il duty free di Haneda ha Pokémon Center, Kit Kat regionali e dolci di ogni prefettura.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Gundam+Unicorn+Statue,+Odaiba,+Tokyo&daddr=Tsukiji+Tama+Sushi,+Decks+Tokyo+Beach&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Gundam+Unicorn+Statue,+Odaiba,+Tokyo&daddr=Haneda+Airport+Terminal+3,+Tokyo&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -800,25 +941,26 @@
                 <div class="day-image" style="background-image: url('images/airport.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 15 (17 Dic): Partenza da Tokyo Narita</h3>
+                        <h3>Giorno 15 (17 Dic): In volo — rientro a Roma</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
-                        <li><strong>Narita Express</strong> dalla città all'aeroporto.</li>
-                        <li>Volo di rientro in Italia.</li>
+                        <li><strong>Notte in aereo.</strong> Nessun hotel da prenotare.</li>
+                        <li>Doha 06:40 → scalo 2h50 → <strong>Roma FCO 13:30</strong>.</li>
                     </ul>
                     <div class="day-details" id="day-details-15">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Narita è lontana dal centro: calcolate <strong>circa 1 ora e mezza porta-a-porta</strong>. Il modo più comodo è il <em>Narita Express (N'EX)</em>, che parte da Shinjuku, Shibuya e Tokyo Station ed è a posti riservati: prenotate il giorno prima, soprattutto con i bagagli grandi. Sommando i 3 ore di anticipo richiesti per un volo intercontinentale, una partenza in mattinata significa sveglia molto presto.</p>
-                                <p><strong>Ultime cose:</strong> svuotate la carta IC solo se non tornerete (il saldo non scade per 10 anni, conviene tenerla), e ricordatevi che il duty free di Narita è ottimo per gli ultimi souvenir — inclusi Pokémon Center e negozi di dolci regionali dopo i controlli.</p>
+                                <h4>Come va la giornata:</h4>
+                                <p>Questa non è una giornata di viaggio, è una giornata <em>in</em> viaggio. Decollati da Haneda all'1:25, si atterra a <strong>Doha alle 06:40</strong> dopo 11h15 di volo, si aspetta <strong>2h50</strong> ad Hamad e si riparte alle <strong>09:30</strong> con il QR131. Atterraggio a <strong>Roma Fiumicino alle 13:30</strong>: si arriva a casa nel pomeriggio, il che rende il 17 un giorno perso ma il 18 un giorno normale.</p>
+                                <p><strong>Sopravvivere al volo notturno:</strong> è la tratta lunga e parte nel cuore della notte giapponese, quindi il corpo dorme davvero. Portate mascherina, tappi e una felpa (l'A350 tiene freddo), e a Doha non cercate la lounge se non l'avete: Hamad ha docce a pagamento che valgono ogni riyal dopo 11 ore di volo.</p>
+                                <p><strong>Ultime cose prima di lasciare il Giappone:</strong> <em>non</em> svuotate la carta IC — il saldo vale 10 anni e la riuserete al prossimo viaggio. Se avete comprato molto, ricordate il rimborso <em>tax free</em>: gli acquisti esentasse vanno dichiarati e non aperti, e la ricevuta va mostrata al gate della dogana in partenza.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/nikuman.jpg' alt='Nikuman' loading='lazy' decoding='async' width='560' height='180'><p><strong>Ekiben alla Tokyo Station:</strong> nel reparto <em>Ekibenya Matsuri</em> ci sono oltre 150 bento da viaggio diversi: prendetene uno da mangiare in treno o in attesa al gate. Per l'ultimo comfort food a costo zero, un <em>nikuman</em> caldo (panino al vapore ripieno di maiale) preso al banco di un qualsiasi konbini: d'inverno sono accanto alla cassa.</p>
+<img src='images/nikuman.jpg' alt='Nikuman' loading='lazy' decoding='async' width='560' height='180'><p>L'ultimo cibo giapponese vero lo prendete a Haneda, prima dei controlli: un <em>ekiben</em> o un <em>nikuman</em> caldo dal konbini del terminal (d'inverno stanno nel banco accanto alla cassa) da mangiare al gate. Dopodiché è catering Qatar e un caffè ad Hamad — a Fiumicino, ormai, siete a casa.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Tokyo+Station,+Tokyo&daddr=Narita+International+Airport&dirflg=r&t=&z=10&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?q=Hamad+International+Airport,+Doha&t=&z=11&ie=UTF8&iwloc=&output=embed" title="Mappa dello scalo di Doha" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -899,7 +1041,7 @@
                 <tbody>
                     <tr>
                         <td><strong>Voli (Andata/Ritorno)</strong></td>
-                        <td>Roma-Osaka KIX / Tokyo Narita-Roma (Qatar Airways)</td>
+                        <td>QR132/QR802 Roma&nbsp;FCO-Osaka&nbsp;KIX · QR813/QR131 Tokyo&nbsp;Haneda-Roma&nbsp;FCO (Qatar Airways)</td>
                         <td><strong>1.452,00 €</strong></td>
                     </tr>
                     <tr>
@@ -909,18 +1051,18 @@
                     </tr>
                     <tr>
                         <td><strong>Alloggi</strong></td>
-                        <td>14 notti in Hotel 3★/4★ (Kyoto, poi Shinjuku)</td>
-                        <td>~ 1.500 - 1.800 €</td>
+                        <td><strong>13</strong> notti in Hotel 3★/4★ (7 Kyoto + 6 Tokyo — il 16 si dorme in aereo)</td>
+                        <td>~ 1.400 - 1.670 €</td>
                     </tr>
                     <tr>
                         <td><strong>Cibo</strong></td>
-                        <td>Pranzi, cene, street food e konbini</td>
-                        <td>~ 1.200 - 1.400 €</td>
+                        <td>Pranzi, cene, street food e konbini (14 giorni; il 17 i pasti sono a bordo)</td>
+                        <td>~ 1.150 - 1.350 €</td>
                     </tr>
                     <tr>
                         <td><strong>Trasporti</strong></td>
-                        <td>2x Shinkansen Kyoto-Tokyo (190€) + Ricariche ICOCA + Haruka Express (Andata da KIX) + N'EX (Ritorno per Narita)</td>
-                        <td>~ 350 - 400 €</td>
+                        <td>2x Shinkansen Kyoto-Tokyo (190€) + Ricariche ICOCA + Haruka Express (KIX→Kyoto) + Monorotaia/Keikyu per Haneda (~500 yen a testa)</td>
+                        <td>~ 320 - 370 €</td>
                     </tr>
                     <tr>
                         <td><strong>Attrazioni & Varie</strong></td>
@@ -929,8 +1071,8 @@
                     </tr>
                     <tr>
                         <td><strong>TOTALE STIMATO IN 2</strong></td>
-                        <td>Tutto incluso per 15 giorni</td>
-                        <td><strong>~ 5.052 - 5.702 €</strong></td>
+                        <td>Tutto incluso, 2 persone, 14 giorni in Giappone</td>
+                        <td><strong>~ 4.872 - 5.492 €</strong></td>
                     </tr>
                 </tbody>
             </table>
@@ -949,7 +1091,7 @@
     </div>
 
     <div class="sticky-bar">
-        <div class="sticky-bar-info">🇯🇵 Giappone 2026 <span>2 - 17 Dic | 15 Giorni</span></div>
+        <div class="sticky-bar-info">🇯🇵 Giappone 2026 <span>2 - 17 Dic | 13 notti</span></div>
         <a href="#costi" class="cta-button">Visualizza Budget</a>
     </div>
 
