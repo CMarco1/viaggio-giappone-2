@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giappone 2026: Itinerario Nerd & Relax</title>
+    <title>Giappone 2026: Itinerario Nerd &amp; Relax | 30 Nov - 15 Dic</title>
+    <meta name="description" content="Itinerario di 15 giorni in Giappone (30 novembre - 15 dicembre 2026): 7 notti a Tokyo e 7 a Kyoto, tra cultura nerd, templi, street food e relax. Mappe, budget e checklist.">
+    <meta name="theme-color" content="#E60012">
+    <meta name="color-scheme" content="light">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Giappone 2026: Itinerario Nerd &amp; Relax">
+    <meta property="og:description" content="15 giorni tra Tokyo, Kyoto e Osaka: itinerario giorno per giorno, mappe, budget e consigli pratici.">
+    <meta property="og:image" content="images/cover.jpg">
+    <meta property="og:locale" content="it_IT">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗾</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
         <style>
         *, *::before, *::after { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; scroll-padding-bottom: 90px; }
         body { max-width: 100vw; overflow-x: hidden; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
+        :focus-visible { outline: 3px solid var(--primary-color); outline-offset: 3px; border-radius: 6px; }
 
         :root {
             --primary-color: #E60012; /* Japan Red */
@@ -30,11 +44,13 @@
         body { font-family: 'Montserrat', 'Noto Sans JP', sans-serif; line-height: 1.7; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color); -webkit-font-smoothing: antialiased; }
         
         /* Header Hero */
-        header { 
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('images/cover.jpg'); 
-            background-size: cover; background-position: center 30%; background-attachment: fixed; color: white; text-align: center; 
-            padding: 8rem 1rem 6rem 1rem; position: relative; 
+        header {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('images/cover.jpg');
+            background-size: cover; background-position: center 30%; color: white; text-align: center;
+            padding: 8rem 1rem 6rem 1rem; position: relative;
         }
+        /* background-attachment: fixed is broken/janky on iOS: enable only on real pointer devices */
+        @media (hover: hover) and (min-width: 768px) { header { background-attachment: fixed; } }
         header::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background: linear-gradient(to top, var(--bg-color), transparent); }
         header h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin-bottom: 0.5rem; letter-spacing: 1px; text-shadow: 0 4px 15px rgba(0,0,0,0.4); animation: fadeIn 0.8s ease-out; }
         header p { font-size: 1.2rem; font-weight: 400; max-width: 650px; margin: 0 auto; opacity: 0.95; animation: fadeIn 1s ease-out 0.2s backwards; }
@@ -51,6 +67,10 @@
         .summary-box ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
         .summary-box li { background: var(--bg-color); padding: 1.2rem; border-radius: 12px; font-size: 0.95rem; display: flex; flex-direction: column; }
         .summary-box li strong { color: var(--primary-color); font-size: 1.05rem; margin-bottom: 0.3rem; }
+        /* Le voci .flow contengono testo discorsivo con <em>/<span> inline: il flex
+           column di default spezzerebbe ogni figlio su una riga a sé. */
+        .summary-box ul.flow li { display: block; }
+        .summary-box ul.flow li strong { font-size: 1rem; }
         
         /* Itinerary Cards */
         .itinerary-day { background: var(--card-bg); margin-bottom: 2.5rem; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: var(--transition); cursor: pointer; border: 1px solid rgba(0,0,0,0.03); }
@@ -109,26 +129,54 @@
         .mood-tags { display: flex; gap: 10px; justify-content: center; margin-top: 25px; flex-wrap: wrap; animation: fadeIn 1s ease-out 0.4s backwards; }
         .tag { padding: 6px 18px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); color: white; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
-                @media(min-width: 768px) {         .inc-exc-box { background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); }
-                .exc-box { border-top: 5px solid #F44336; }
+        .inc-exc-box { background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); }
+        @media(min-width: 768px) { .inc-exc-box { padding: 2rem; } }
+        .exc-box { border-top: 5px solid #F44336; }
         .inc-exc-box h3 { margin-top: 0; font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-color); }
         .inc-exc-box ul { list-style: none; padding: 0; margin: 0; }
         .inc-exc-box li { margin-bottom: 1rem; position: relative; padding-left: 30px; font-size: 0.95rem; color: var(--text-color); line-height: 1.4; }
-                .exc-box li::before { content: '❌'; position: absolute; left: 0; top: 0; font-size: 1.1rem; }
+        .exc-box li::before { content: '❌'; position: absolute; left: 0; top: 0; font-size: 1.1rem; }
 
-        .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 8px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-top: 1px solid rgba(0,0,0,0.05); }
+        .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 8px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; gap: 12px; z-index: 1000; border-top: 1px solid rgba(0,0,0,0.05); padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
         .sticky-bar-info { font-weight: 800; color: var(--text-color); font-size: 1.05rem; display: none; }
-        @media(min-width: 768px) { .sticky-bar-info { display: block; } .sticky-bar { padding: 10px 40px; } }
+        @media(min-width: 768px) { .sticky-bar-info { display: block; } .sticky-bar { padding: 10px 40px; padding-bottom: calc(10px + env(safe-area-inset-bottom)); } }
         .sticky-bar-info span { color: var(--light-text); font-weight: 600; font-size: 0.85rem; margin-left: 15px; border-left: 2px solid #EEE; padding-left: 15px;}
-        .cta-button { background: var(--primary-color); color: white; padding: 8px 24px; border-radius: 30px; font-weight: 800; text-decoration: none; transition: var(--transition); box-shadow: 0 4px 15px rgba(230,0,18,0.3); font-size: 0.9rem; letter-spacing: 0.5px; margin: 0 auto; text-align: center; display: block; }
+        .cta-button { background: var(--primary-color); color: white; padding: 10px 24px; border-radius: 30px; font-weight: 800; text-decoration: none; transition: var(--transition); box-shadow: 0 4px 15px rgba(230,0,18,0.3); font-size: 0.9rem; letter-spacing: 0.5px; margin: 0 auto; text-align: center; display: block; white-space: nowrap; }
         @media(min-width: 768px) { .cta-button { margin: 0; } }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(230,0,18,0.4); color: white; }
 
-        body { padding-bottom: 60px; } /* Prevent sticky bar overlap */
+        body { padding-bottom: 72px; } /* Prevent sticky bar overlap */
 
+        /* Countdown pill in the hero */
+        .countdown { display: inline-flex; align-items: baseline; gap: 8px; margin-top: 1.5rem; padding: 8px 22px; border-radius: 30px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); animation: fadeIn 1s ease-out 0.6s backwards; }
+        .countdown strong { font-size: 1.6rem; font-weight: 800; letter-spacing: 0.5px; }
+        .countdown span { font-size: 0.85rem; font-weight: 600; opacity: 0.9; letter-spacing: 1px; text-transform: uppercase; }
+
+        /* Quick navigation */
+        .quick-nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 0 0 2.5rem 0; }
+        .quick-nav a { text-decoration: none; font-size: 0.85rem; font-weight: 700; color: var(--light-text); background: var(--card-bg); border: 1px solid rgba(0,0,0,0.06); box-shadow: var(--shadow-sm); padding: 9px 18px; border-radius: 30px; transition: color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease; }
+        .quick-nav a:hover { color: var(--primary-color); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+        /* Expand / collapse all */
+        .day-controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .day-controls button { font-family: inherit; font-size: 0.82rem; font-weight: 700; color: var(--light-text); background: var(--card-bg); border: 1px solid rgba(0,0,0,0.08); padding: 8px 18px; border-radius: 30px; cursor: pointer; transition: color 0.25s ease, border-color 0.25s ease; }
+        .day-controls button:hover { color: var(--primary-color); border-color: var(--primary-color); }
+
+        /* Info callout */
+        .callout { background: var(--card-bg); border-left: 5px solid var(--primary-color); border-radius: 12px; padding: 1.2rem 1.4rem; margin: 0 0 2rem 0; box-shadow: var(--shadow-sm); font-size: 0.95rem; color: var(--light-text); }
+        .callout strong { color: var(--text-color); }
+
+        /* Booking priority badges */
+        .prio { display: inline-block; font-size: 0.68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; white-space: nowrap; }
+        .prio-high { background: #FFEBEE; color: #C62828; }
+        .prio-med { background: #FFF8E1; color: #EF6C00; }
+
+        /* Back to top */
+        .to-top { position: fixed; right: 18px; bottom: 82px; width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--card-bg); color: var(--primary-color); font-size: 1.3rem; line-height: 1; box-shadow: var(--shadow-lg); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; z-index: 999; }
+        .to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 
         /* Responsive Table for Mobile */
-                @media (max-width: 767px) {
+        @media (max-width: 767px) {
             table { display: block; border: none; box-shadow: none; background: transparent; margin-top: 1rem; width: 100%; max-width: 100%; word-break: break-word; padding: 0; margin: 0;}
             thead { display: none; }
             tbody { display: block; width: 100%; }
@@ -141,6 +189,22 @@
             td:last-child { border-bottom: none; }
             tr:last-child { background: var(--primary-light); border: 2px solid var(--primary-light); box-shadow: 0 8px 25px rgba(230,0,18,0.15); }
             tr:last-child td { background: transparent; }
+        }
+
+        /* Print: an itinerary is something you actually print or save as PDF */
+        @media print {
+            header { padding: 2rem 1rem; background: none; color: var(--text-color); }
+            header::after, .mood-tags, .countdown, .quick-nav, .day-controls, .sticky-bar, .to-top, .click-hint, .details-map, .toggle-icon { display: none !important; }
+            body { padding-bottom: 0; background: #fff; }
+            .container { margin: 0 auto; max-width: none; }
+            .itinerary-day { break-inside: avoid; box-shadow: none; border: 1px solid #DDD; margin-bottom: 1rem; }
+            .day-image { display: none; }
+            /* Always show the details when printing, regardless of accordion state */
+            .day-details { grid-template-rows: 1fr !important; opacity: 1 !important; margin-top: 1rem !important; border-top: 1px solid #ECEFF1 !important; }
+            .day-details-inner { padding-top: 1rem !important; }
+            .details-grid { grid-template-columns: 1fr; }
+            .details-text img { display: none; }
+            .summary-box, .inc-exc-box, table { box-shadow: none; border: 1px solid #DDD; break-inside: avoid; }
         }
     </style>
 </head>
@@ -155,11 +219,23 @@
             <span class="tag">🍣 Foodie</span>
             <span class="tag">🥾 Ritmo Relax</span>
         </div>
+        <div class="countdown" id="countdown" hidden></div>
     </header>
 
     <div class="container">
-        
-        <section class="summary-box">
+
+        <nav class="quick-nav" aria-label="Navigazione rapida">
+            <a href="#riepilogo">📅 Riepilogo</a>
+            <a href="#dicembre">❄️ Dicembre</a>
+            <a href="#prenotazioni">🎟️ Prenotazioni</a>
+            <a href="#checklist">✅ Checklist</a>
+            <a href="#tokyo">🏙️ Tokyo</a>
+            <a href="#kyoto">🏯 Kyoto &amp; Osaka</a>
+            <a href="#sopravvivenza">🗣️ Sopravvivenza</a>
+            <a href="#costi">💰 Budget</a>
+        </nav>
+
+        <section class="summary-box" id="riepilogo">
             <h2>📅 Riepilogo del Viaggio</h2>
             <ul>
                 <li><strong>Viaggiatori:</strong> 2 persone</li>
@@ -173,7 +249,67 @@
 
 
         <section>
-            <h2>✅ Checklist Pre-Partenza & App Indispensabili</h2>
+            <h2 id="dicembre">❄️ Dicembre in Giappone: cosa aspettarsi</h2>
+            <div class="callout">
+                <strong>Il sole tramonta prestissimo.</strong> A dicembre in Giappone fa buio tra le <strong>16:30 e le 17:00</strong>.
+                È il vincolo più sottovalutato di questo itinerario: templi e giardini chiudono in genere tra le 16:00 e le 17:00,
+                quindi le visite “da luce” (Kiyomizu-dera, Arashiyama, Kinkaku-ji, Fushimi Inari) vanno messe al <strong>mattino</strong>,
+                lasciando al tardo pomeriggio i quartieri al neon, i negozi e i musei al chiuso.
+            </div>
+            <div class="details-grid" style="margin-bottom: 3rem;">
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #03A9F4;">
+                    <h3 style="color: #03A9F4; margin-top: 0; font-size: 1.2rem;">🌡️ Clima e abbigliamento</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
+                        <li><strong>Temperature:</strong> Tokyo circa 12°C di massima e 4°C di minima, Kyoto un paio di gradi più fredda (di notte vicino allo zero).</li>
+                        <li><strong>Bello ma freddo:</strong> dicembre è uno dei mesi più <em>secchi e soleggiati</em> dell'anno. Poca pioggia, cieli tersi: ottimo per le foto.</li>
+                        <li><strong>Come vestirsi:</strong> a strati. Fuori serve il cappotto, ma treni, negozi e ristoranti sono riscaldatissimi: meglio maglioni leggeri sovrapposti che uno spesso.</li>
+                        <li><strong>Da comprare lì:</strong> le <em>Heattech</em> di Uniqlo e i <em>kairo</em> (scaldamani adesivi da konbini, pochi centesimi l'uno) cambiano la vita nelle giornate all'aperto.</li>
+                        <li><strong>Scarpe comode e già rodate:</strong> si camminano tranquillamente 15-20 km al giorno.</li>
+                    </ul>
+                </div>
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #8BC34A;">
+                    <h3 style="color: #8BC34A; margin-top: 0; font-size: 1.2rem;">🍁 Il bonus della stagione</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
+                        <li><strong>Coda del foliage:</strong> il picco del <em>momiji</em> a Kyoto è a fine novembre, ma nella prima settimana di dicembre gli aceri rossi spesso resistono ancora, soprattutto nei templi di pianura. Arrivando l'8 potreste beccarne gli ultimi.</li>
+                        <li><strong>Illuminazioni invernali:</strong> da fine novembre le città si riempiono di <em>illuminations</em>. Le più comode per voi: Roppongi/Midtown e Shibuya a Tokyo, e l'albero gigante dentro la Kyoto Station.</li>
+                        <li><strong>Bassa stagione turistica:</strong> la prima metà di dicembre è una delle finestre meno affollate dell'anno. Code più corte ovunque, prima del caos di Capodanno.</li>
+                        <li><strong>Natale “alla giapponese”:</strong> non è una festa religiosa, tutto resta aperto. Curiosità: la vigilia si mangia pollo fritto e <em>Christmas cake</em>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="prenotazioni">🎟️ Da Prenotare in Anticipo (fatelo ORA)</h2>
+            <div class="callout">
+                Le esperienze migliori per un viaggio “nerd” in Giappone <strong>non si comprano sul posto</strong>: hanno biglietti a data fissa,
+                lotterie o finestre di vendita che aprono settimane o mesi prima. Questa è la parte del programma più facile da sbagliare.
+            </div>
+            <div class="details-grid" style="margin-bottom: 3rem;">
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #E60012;">
+                    <h3 style="color: #E60012; margin-top: 0; font-size: 1.2rem;">🎮 Tappe nerd su prenotazione</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
+                        <li><strong>Nintendo Museum (Uji, Kyoto)</strong><span class="prio prio-high">Lotteria</span><br>Aperto nel 2024 a mezz'ora da Kyoto: è <em>il</em> pezzo mancante di questo itinerario. Ingresso solo tramite lotteria sull'account Nintendo, con estrazione mesi prima. Va tentata subito, e in caso di vittoria si incastra al posto di una mezza giornata a Kyoto.</li>
+                        <li><strong>Museo Ghibli (Mitaka, Tokyo)</strong><span class="prio prio-high">Data fissa</span><br>I biglietti escono <em>il 10 del mese precedente</em> alla visita (ora giapponese) e volano via in minuti. Per una visita a dicembre significa essere pronti il 10 novembre.</li>
+                        <li><strong>teamLab (Tokyo)</strong><span class="prio prio-med">Fascia oraria</span><br>Biglietti a slot orario, spesso esauriti nel weekend. <em>Planets</em> (Toyosu) è comodissimo da abbinare a Odaiba del Giorno 7.</li>
+                        <li><strong>Super Nintendo World – USJ (Osaka)</strong><span class="prio prio-med">Mezza giornata</span><br>Se volete farlo, occupa un giorno intero e va sostituito a uno dei due giorni di Osaka, non aggiunto. Biglietto + eventuale accesso all'area da comprare online.</li>
+                    </ul>
+                </div>
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #673AB7;">
+                    <h3 style="color: #673AB7; margin-top: 0; font-size: 1.2rem;">🗼 Panorami e trasporti</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
+                        <li><strong>Shibuya Sky</strong><span class="prio prio-high">Tramonto</span><br>La fascia del tramonto è la prima a esaurirsi. A dicembre “tramonto” vuol dire slot delle 16:00 circa: prenotate appena aprono le vendite.</li>
+                        <li><strong>Tokyo Skytree</strong><span class="prio prio-med">Consigliato</span><br>Biglietto online = fila separata e più corta rispetto alla biglietteria.</li>
+                        <li><strong>Shinkansen Tokyo → Kyoto</strong><span class="prio prio-med">Posto riservato</span><br>Con i bagagli grandi serve il <em>posto con spazio bagagli oversize</em> (ultima fila), gratuito ma <strong>solo su prenotazione</strong>: senza, si rischia una sovrattassa. Prenotabile online con SmartEX.</li>
+                        <li><strong>eSIM</strong><span class="prio prio-med">Prima di partire</span><br>Compratela e installatela in Italia: si attiva all'atterraggio senza dover cercare il WiFi dell'aeroporto.</li>
+                        <li><strong>Assicurazione sanitaria</strong><span class="prio prio-high">Obbligatoria di fatto</span><br>In Giappone la sanità per gli stranieri è privata e costosissima. Da fare prima della partenza.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="checklist">✅ Checklist Pre-Partenza & App Indispensabili</h2>
             <div class="details-grid">
                 <div class="summary-box" style="margin-bottom: 2rem; border-top-color: #FF9800;">
                     <h3 style="color: #FF9800; margin-top: 0; font-size: 1.2rem;">Da Fare / Portare</h3>
@@ -181,7 +317,8 @@
                         <li><strong>Visit Japan Web:</strong> Compilare immigrazione e dogana online per ottenere i QR code per un ingresso veloce.</li>
                         <li><strong>Adattatore Corrente:</strong> Tipo A (due poli piatti, 100V). Le prese Schuko/italiane non funzionano.</li>
                         <li><strong>Powerbank:</strong> Fondamentale per l'uso massiccio di mappe, foto e traduttore tutto il giorno.</li>
-                        <li><strong>Yen in contanti:</strong> Utili per piccoli templi, mercatini e per ricaricare la carta IC fisica (ICOCA).</li>
+                        <li><strong>Yen in contanti:</strong> Utili per piccoli templi, mercatini e per ricaricare la carta IC fisica (ICOCA). Si prelevano dagli ATM dei konbini 7-Eleven, che accettano le carte estere.</li>
+                        <li><strong>ICOCA anche a Tokyo:</strong> Le carte IC sono interoperabili in tutto il Giappone. La vostra ICOCA di Osaka funziona su metro e JR di Tokyo, e per pagare ai konbini e ai distributori: non serve comprare una Suica.</li>
                     </ul>
                 </div>
                 <div class="summary-box" style="margin-bottom: 2rem; border-top-color: #2196F3;">
@@ -216,11 +353,15 @@
             </div>
         </section>
         <section>
-            <h2>🏙️ Parte 1: Tokyo (1 - 8 Dicembre)</h2>
+            <h2 id="tokyo">🏙️ Parte 1: Tokyo (1 - 8 Dicembre)</h2>
             <p class="click-hint">👆 Clicca sulle schede per scoprire i dettagli e le mappe!</p>
+            <div class="day-controls">
+                <button type="button" data-action="expand-all">Espandi tutto</button>
+                <button type="button" data-action="collapse-all">Chiudi tutto</button>
+            </div>
 
             <!-- DAY 1 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/shinjuku.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -231,17 +372,17 @@
                         <li>Arrivo, attivazione eSIM, trasferimento in hotel.</li>
                         <li>Serata tranquilla a Shinjuku.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-1">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Sistematevi in Hotel e fate una passeggiata leggera a Kabukicho per vedere la gigantesca testa di Godzilla. Ottimo per assorbire l'atmosfera al neon senza stancarvi troppo.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tsukemen.jpg' alt='Tsukemen'><p><strong>Fu-unji (Shinjuku):</strong> Famoso per il suo <em>Tsukemen</em> (ramen in cui i noodles vengono intinti a parte in un brodo denso). In alternativa, esplorate <strong>Omoide Yokocho</strong> per spiedini <em>Yakitori</em> annaffiati da birra ghiacciata.</p>
+<img src='images/tsukemen.jpg' alt='Tsukemen' loading='lazy' decoding='async' width='560' height='180'><p><strong>Fu-unji (Shinjuku):</strong> Famoso per il suo <em>Tsukemen</em> (ramen in cui i noodles vengono intinti a parte in un brodo denso). In alternativa, esplorate <strong>Omoide Yokocho</strong> per spiedini <em>Yakitori</em> annaffiati da birra ghiacciata.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Shinjuku+Station,+Tokyo&daddr=Fu-unji,+Shinjuku,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Shinjuku+Station,+Tokyo&daddr=Fu-unji,+Shinjuku,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -250,7 +391,7 @@
             </div>
 
             <!-- DAY 2 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/sensoji.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -261,17 +402,17 @@
                         <li><strong>Mattina:</strong> <em>Senso-ji</em> (Asakusa) e Nakamise-dori.</li>
                         <li><strong>Pomeriggio:</strong> <em>Tokyo Skytree</em>.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-2">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Entrate dalla Porta del Tuono (Kaminarimon) e pescate il vostro Omikuji (oracolo). Nel pomeriggio andate alla Skytree per i negozi Ghibli e Pokémon, poi salite per il tramonto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/melonpan.jpg' alt='Melon Pan'><p><strong>Asakusa Kagetsudo:</strong> Celebre per il suo <em>Jumbo Melon Pan</em> appena sfornato, croccante fuori e soffice dentro. A cena provate <strong>Asakusa Imahan</strong>, locale storico rinomato per il suo eccellente <em>Sukiyaki</em> (fettine di manzo cotte al tavolo).</p>
+<img src='images/melonpan.jpg' alt='Melon Pan' loading='lazy' decoding='async' width='560' height='180'><p><strong>Asakusa Kagetsudo:</strong> Celebre per il suo <em>Jumbo Melon Pan</em> appena sfornato, croccante fuori e soffice dentro. A cena provate <strong>Asakusa Imahan</strong>, locale storico rinomato per il suo eccellente <em>Sukiyaki</em> (fettine di manzo cotte al tavolo).</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Senso-ji,+Tokyo&daddr=Asakusa+Kagetsudo,+Tokyo+to:Tokyo+Skytree,+Tokyo&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Senso-ji,+Tokyo&daddr=Asakusa+Kagetsudo,+Tokyo+to:Tokyo+Skytree,+Tokyo&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -280,7 +421,7 @@
             </div>
 
             <!-- DAY 3 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/akihabara.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -291,17 +432,17 @@
                         <li>Giornata dedicata ad <strong>Akihabara</strong>.</li>
                         <li>Retro-gaming, Action figures, Maid Cafe.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-3">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Perdetevi nei piani di Radio Kaikan e cercate tesori da Super Potato. Provate i gacha o gli UFO catcher nei centri SEGA/GiGO.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/katsu_curry.jpg' alt='Katsu Curry'><p><strong>Go! Go! Curry (Akihabara):</strong> Ordinate il famoso <em>Katsu Curry</em> (riso al curry denso con cotoletta). Per un'esperienza a tema, provate l'omelette rice all'<strong>@Home Cafe</strong> (Maid Cafe) o la morbida cotoletta di manzo da <strong>Gyukatsu Motomura</strong>.</p>
+<img src='images/katsu_curry.jpg' alt='Katsu Curry' loading='lazy' decoding='async' width='560' height='180'><p><strong>Go! Go! Curry (Akihabara):</strong> Ordinate il famoso <em>Katsu Curry</em> (riso al curry denso con cotoletta). Per un'esperienza a tema, provate l'omelette rice all'<strong>@Home Cafe</strong> (Maid Cafe) o la morbida cotoletta di manzo da <strong>Gyukatsu Motomura</strong>.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?q=Go+Go+Curry,+Akihabara,+Tokyo&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?q=Go+Go+Curry,+Akihabara,+Tokyo&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -310,7 +451,7 @@
             </div>
 
             <!-- DAY 4 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/shibuya.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -321,17 +462,17 @@
                         <li><strong>Mattina:</strong> Santuario Meiji-jingu.</li>
                         <li><strong>Pomeriggio:</strong> Shibuya (Nintendo Store, Hachiko).</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-4">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Iniziate nel silenzio della foresta del Meiji-jingu. A Shibuya vi aspettano lo Scramble Crossing, la statua di Hachiko e l'enorme Nintendo Store nel centro commerciale Shibuya PARCO.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/crepes.jpg' alt='Crepes'><p><strong>Marion Crepes (Harajuku):</strong> Tappa obbligata per le iconiche <em>Crêpes giapponesi</em> ripiene. A Shibuya, cenate da <strong>Uobei Shibuya Dogenzaka</strong> per un <em>Kaiten Sushi</em> dove i piatti arrivano sfrecciando su binari ad alta velocità.</p>
+<img src='images/crepes.jpg' alt='Crepes' loading='lazy' decoding='async' width='560' height='180'><p><strong>Marion Crepes (Harajuku):</strong> Tappa obbligata per le iconiche <em>Crêpes giapponesi</em> ripiene. A Shibuya, cenate da <strong>Uobei Shibuya Dogenzaka</strong> per un <em>Kaiten Sushi</em> dove i piatti arrivano sfrecciando su binari ad alta velocità.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Meiji-jingu,+Tokyo&daddr=Takeshita+Street,+Tokyo+to:Shibuya+Crossing,+Tokyo+to:Uobei+Shibuya+Dogenzaka,+Tokyo&dirflg=w&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Meiji-jingu,+Tokyo&daddr=Takeshita+Street,+Tokyo+to:Shibuya+Crossing,+Tokyo+to:Uobei+Shibuya+Dogenzaka,+Tokyo&dirflg=w&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -340,7 +481,7 @@
             </div>
 
             <!-- DAY 5 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/nakano.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -351,17 +492,17 @@
                         <li><strong>Nakano Broadway:</strong> Vintage manga e anime.</li>
                         <li>Meno caotico di Akihabara, perfetto per collezionisti.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-5">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>A Nakano troverete le cel originali degli anime storici e fumetti introvabili. Mandarake ha decine di negozietti tematici distribuiti su più piani. Un vero paradiso nascosto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/chuka_soba.jpg' alt='Chuka Soba'><p><strong>Chuka Soba Aoba (Nakano):</strong> Un'istituzione del quartiere. Il loro piatto forte è il <em>Chuka Soba</em> (Ramen) con un doppio brodo stellare che unisce la ricchezza del maiale e del pollo al sapore delicato di pesce.</p>
+<img src='images/chuka_soba.jpg' alt='Chuka Soba' loading='lazy' decoding='async' width='560' height='180'><p><strong>Chuka Soba Aoba (Nakano):</strong> Un'istituzione del quartiere. Il loro piatto forte è il <em>Chuka Soba</em> (Ramen) con un doppio brodo stellare che unisce la ricchezza del maiale e del pollo al sapore delicato di pesce.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Nakano+Broadway,+Tokyo&daddr=Chuka+Soba+Aoba,+Nakano,+Tokyo&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Nakano+Broadway,+Tokyo&daddr=Chuka+Soba+Aoba,+Nakano,+Tokyo&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -370,7 +511,7 @@
             </div>
 
             <!-- DAY 6 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/ikebukuro.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -381,17 +522,17 @@
                         <li><strong>Ikebukuro:</strong> Sunshine City.</li>
                         <li>Pokémon Center Mega Tokyo e Animate Store.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-6">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Passeggiate nell'enorme Animate Flagship Store (il negozio di anime più grande del mondo). Al Sunshine City potrete visitare l'enorme Pokémon Center e la zona dei Gashapon (distributori di capsule).</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/taiyaki.jpg' alt='Taiyaki'><p><strong>Mutekiya (Ikebukuro):</strong> Preparatevi alla fila, ma il loro <em>Tonkotsu Ramen</em> (brodo di maiale ricco e saporito) è leggendario. Per un dolce veloce, prendete un <em>Taiyaki</em> ai chioschi intorno a Sunshine City.</p>
+<img src='images/taiyaki.jpg' alt='Taiyaki' loading='lazy' decoding='async' width='560' height='180'><p><strong>Mutekiya (Ikebukuro):</strong> Preparatevi alla fila, ma il loro <em>Tonkotsu Ramen</em> (brodo di maiale ricco e saporito) è leggendario. Per un dolce veloce, prendete un <em>Taiyaki</em> ai chioschi intorno a Sunshine City.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Sunshine+City,+Ikebukuro,+Tokyo&daddr=Mutekiya,+Ikebukuro,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Sunshine+City,+Ikebukuro,+Tokyo&daddr=Mutekiya,+Ikebukuro,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -400,7 +541,7 @@
             </div>
 
             <!-- DAY 7 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/odaiba.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -411,17 +552,18 @@
                         <li><strong>Odaiba:</strong> Isola artificiale sul mare.</li>
                         <li>Statua del Gundam Unicorn e Gundam Base.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-7">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
-                                <p>Prendete il treno panoramico Yurikamome senza conducente. Scattate foto pazzesche sotto il Gundam Unicorn a grandezza naturale (che si trasforma ad orari precisi) e visitate le mostre tech.</p>
+                                <p>Prendete il treno panoramico Yurikamome senza conducente. Scattate foto pazzesche sotto il Gundam Unicorn a grandezza naturale (che si trasforma ad orari precisi) e visitate il Gundam Base al piano superiore del DiverCity.</p>
+                                <p><strong>Da incastrare qui:</strong> <em>teamLab Planets</em> a Toyosu è sulla stessa linea Yurikamome ed è l'esperienza digitale più fotografata del Giappone (si cammina scalzi nell'acqua: portate pantaloni arrotolabili). Biglietti a fascia oraria, da prenotare online in anticipo.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tempura.jpg' alt='Tempura'><p><strong>Tsukiji Tama Sushi (Odaiba):</strong> Situato nel centro commerciale Decks, offre un'ottima formula <em>All-You-Can-Eat Sushi</em> di alta qualità con una vista mozzafiato sul Rainbow Bridge e sulla baia di Tokyo.</p>
+<img src='images/tempura.jpg' alt='Tempura' loading='lazy' decoding='async' width='560' height='180'><p><strong>Tsukiji Tama Sushi (Odaiba):</strong> Situato nel centro commerciale Decks, offre un'ottima formula <em>All-You-Can-Eat Sushi</em> di alta qualità con una vista mozzafiato sul Rainbow Bridge e sulla baia di Tokyo.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Gundam+Unicorn+Statue,+Odaiba,+Tokyo&daddr=Tsukiji+Tama+Sushi,+Decks+Tokyo+Beach&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Gundam+Unicorn+Statue,+Odaiba,+Tokyo&daddr=Tsukiji+Tama+Sushi,+Decks+Tokyo+Beach&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -432,11 +574,15 @@
         </section>
 
         <section>
-            <h2>🏯 Parte 2: Kyoto & Osaka (8 - 15 Dicembre)</h2>
+            <h2 id="kyoto">🏯 Parte 2: Kyoto & Osaka (8 - 15 Dicembre)</h2>
             <p class="click-hint">👆 Scopri i percorsi, i templi e i quartieri neon!</p>
+            <div class="day-controls">
+                <button type="button" data-action="expand-all">Espandi tutto</button>
+                <button type="button" data-action="collapse-all">Chiudi tutto</button>
+            </div>
 
             <!-- DAY 8 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/gion.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -447,17 +593,17 @@
                         <li>Shinkansen da Tokyo. Check-in a Kyoto.</li>
                         <li>Pomeriggio nel quartiere storico di <strong>Gion</strong>.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-8">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Dopo le due ore di treno superveloce, posate i bagagli. Il pomeriggio passeggiate tra le basse case di legno di Gion, sperando di scorgere una Geisha, e spingetevi fino al fiume Kamo al tramonto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/matcha.jpg' alt='Matcha Parfait'><p><strong>Tsujiri (Gion):</strong> Ottimo per una merenda con il loro inimitabile <em>Parfait al Matcha</em>. Per cena, passeggiate a Pontocho e provate <strong>Kyoto Gion Mikaku</strong> (per la carne Wagyu sulla piastra) o un Izakaya sul fiume per spiedini <em>Yakitori</em>.</p>
+<img src='images/matcha.jpg' alt='Matcha Parfait' loading='lazy' decoding='async' width='560' height='180'><p><strong>Tsujiri (Gion):</strong> Ottimo per una merenda con il loro inimitabile <em>Parfait al Matcha</em>. Per cena, passeggiate a Pontocho e provate <strong>Kyoto Gion Mikaku</strong> (per la carne Wagyu sulla piastra) o un Izakaya sul fiume per spiedini <em>Yakitori</em>.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Gion,+Kyoto&daddr=Tsujiri,+Gion,+Kyoto+to:Pontocho,+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Gion,+Kyoto&daddr=Tsujiri,+Gion,+Kyoto+to:Pontocho,+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -466,28 +612,29 @@
             </div>
 
             <!-- DAY 9 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/kiyomizu.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 9 (9 Dic): Il Tempio dell'Acqua</h3>
+                        <h3>Giorno 9 (9 Dic): Kiyomizu-dera e Fushimi Inari</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <ul>
-                        <li><strong>Kiyomizu-dera (Tempio dell'Acqua):</strong> Visita all'alba.</li>
-                        <li>Strade storiche di Sannenzaka e Ninenzaka.</li>
+                        <li><strong>Mattina presto:</strong> <em>Kiyomizu-dera</em> e le salite di Sannenzaka e Ninenzaka.</li>
+                        <li><strong>Pomeriggio:</strong> i torii infiniti di <strong>Fushimi Inari</strong>.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-9">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
-                                <p>Andateci prestissimo per godervi la magia senza la calca. Sospeso sui pali di legno, offre una vista magica. Al ritorno scendete lungo le stradine acciottolate piene di negozi di artigianato.</p>
+                                <p>Andate al Kiyomizu-dera prestissimo (apre alle 6:00!) per godervi la magia senza la calca. Sospeso sui pali di legno, offre una vista magica. Al ritorno scendete lungo le stradine acciottolate piene di negozi di artigianato.</p>
+                                <p>Nel pomeriggio, due fermate di treno più a sud, il <strong>Fushimi Inari Taisha</strong>: migliaia di torii vermigli che salgono lungo il monte Inari. È <em>gratuito e aperto 24 ore su 24</em>, quindi è l'unica grande tappa di Kyoto che non teme il tramonto delle 16:30 — anzi, i primi tratti sono illuminati e al buio sono spettacolari. Il giro completo fino alla vetta è di circa 2-3 ore: se siete stanchi, fermatevi al belvedere di Yotsutsuji (45 minuti) da cui si vede tutta la città.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tofu.jpg' alt='Tofu'><p><strong>Okutan Kiyomizu:</strong> Ristorante centenario circondato da un giardino stupendo. Il piatto forte è lo <em>Yudofu</em> (tofu artigianale in brodo, perfetto per riscaldarsi). Lungo Ninenzaka, c'è uno <strong>Starbucks</strong> unico, ospitato in una casa tradizionale tatami.</p>
+<img src='images/tofu.jpg' alt='Tofu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Okutan Kiyomizu:</strong> Ristorante centenario circondato da un giardino stupendo. Il piatto forte è lo <em>Yudofu</em> (tofu artigianale in brodo, perfetto per riscaldarsi). Lungo Ninenzaka, c'è uno <strong>Starbucks</strong> unico, ospitato in una casa tradizionale tatami. Sulla via d'accesso a Fushimi Inari, provate invece lo street food a tema volpe: <em>kitsune udon</em> e i biscotti <em>tsujiura senbei</em> a forma di muso di volpe.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Kiyomizu-dera,+Kyoto&daddr=Sannenzaka,+Kyoto+to:Okutan,+Kiyomizu,+Kyoto+to:Ninenzaka,+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kiyomizu-dera,+Kyoto&daddr=Ninenzaka,+Kyoto+to:Fushimi+Inari+Taisha,+Kyoto&dirflg=w&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso del Giorno 9" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -496,7 +643,7 @@
             </div>
 
             <!-- DAY 10 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/nishiki.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -507,17 +654,17 @@
                         <li>Passeggiata al <strong>Mercato Nishiki</strong>.</li>
                         <li><em>Kyoto International Manga Museum</em>.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-10">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Iniziate la giornata nella "Cucina di Kyoto", il mercato di Nishiki. Nel pomeriggio sfogliate decine di migliaia di manga storici al museo del fumetto, situato in un'ex scuola elementare.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tako_tamago.jpg' alt='Tako Tamago'><p><strong>Mercato Nishiki:</strong> Cercate il chiosco <strong>Kari-Kari Hakase</strong> per i <em>Takoyaki</em> e <strong>Daiyasu</strong> per il famoso <em>Tako Tamago</em>. Vicino al museo, provate <strong>Gogyo Kyoto</strong> per il particolarissimo <em>Ramen al Miso Bruciato</em> (Kogashi Miso).</p>
+<img src='images/tako_tamago.jpg' alt='Tako Tamago' loading='lazy' decoding='async' width='560' height='180'><p><strong>Mercato Nishiki:</strong> Cercate il chiosco <strong>Kari-Kari Hakase</strong> per i <em>Takoyaki</em> e <strong>Daiyasu</strong> per il famoso <em>Tako Tamago</em>. Vicino al museo, provate <strong>Gogyo Kyoto</strong> per il particolarissimo <em>Ramen al Miso Bruciato</em> (Kogashi Miso).</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Nishiki+Market,+Kyoto&daddr=Kyoto+International+Manga+Museum+to:Gogyo+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Nishiki+Market,+Kyoto&daddr=Kyoto+International+Manga+Museum+to:Gogyo+Kyoto&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -526,7 +673,7 @@
             </div>
 
             <!-- DAY 11 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/arashiyama.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -537,17 +684,17 @@
                         <li>Foresta di Bambù di <strong>Arashiyama</strong>.</li>
                         <li>Il famoso Padiglione d'Oro (Kinkaku-ji).</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-11">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Perdetevi tra gli altissimi e ipnotici fusti verdi di bambù di Arashiyama per foto suggestive. Dopo pranzo spostatevi al Kinkaku-ji (tempio ricoperto d'oro vero), bellissimo al calar del sole.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/soba.jpg' alt='Soba'><p><strong>Arashiyama Yoshimura:</strong> Ristorante con magnifica vista sul fiume Katsura. Il loro piatto principale è la <em>Soba fatta a mano</em>. Per gli amanti del caffè, fate un salto da <strong>% Arabica Kyoto Arashiyama</strong>.</p>
+<img src='images/soba.jpg' alt='Soba' loading='lazy' decoding='async' width='560' height='180'><p><strong>Arashiyama Yoshimura:</strong> Ristorante con magnifica vista sul fiume Katsura. Il loro piatto principale è la <em>Soba fatta a mano</em>. Per gli amanti del caffè, fate un salto da <strong>% Arabica Kyoto Arashiyama</strong>.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Arashiyama+Bamboo+Grove,+Kyoto&daddr=Arashiyama+Yoshimura,+Kyoto+to:Kinkaku-ji,+Kyoto&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Arashiyama+Bamboo+Grove,+Kyoto&daddr=Arashiyama+Yoshimura,+Kyoto+to:Kinkaku-ji,+Kyoto&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -556,7 +703,7 @@
             </div>
 
             <!-- DAY 12 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/shinsekai.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -567,17 +714,17 @@
                         <li>Pendolari da Kyoto a Osaka (30 min di treno).</li>
                         <li><strong>Den Den Town</strong> e <strong>Shinsekai</strong> (Quartiere retro).</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-12">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Arrivati a Osaka, spulciate i negozi dell'usato e dell'elettronica a Den Den Town. Poi spostatevi a Shinsekai, passeggiando tra insegne pazze anni '30 e la iconica torre Tsutenkaku.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/kushikatsu.jpg' alt='Kushikatsu'><p><strong>Kushikatsu Daruma (Shinsekai):</strong> L'inventore del <em>Kushikatsu</em>! Ordinate vassoi di spiedini fritti da intingere (una sola volta!) nella loro salsa segreta. Riconoscerete il locale dall'enorme statua dell'uomo arrabbiato all'ingresso.</p>
+<img src='images/kushikatsu.jpg' alt='Kushikatsu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Kushikatsu Daruma (Shinsekai):</strong> L'inventore del <em>Kushikatsu</em>! Ordinate vassoi di spiedini fritti da intingere (una sola volta!) nella loro salsa segreta. Riconoscerete il locale dall'enorme statua dell'uomo arrabbiato all'ingresso.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Nippombashi+Den+Den+Town,+Osaka&daddr=Kushikatsu+Daruma,+Shinsekai,+Osaka&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Nippombashi+Den+Den+Town,+Osaka&daddr=Kushikatsu+Daruma,+Shinsekai,+Osaka&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -586,7 +733,7 @@
             </div>
 
             <!-- DAY 13 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/dotonbori.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -597,17 +744,17 @@
                         <li>Secondo giorno da pendolari.</li>
                         <li>Il caos illuminato di <strong>Dotonbori</strong> e Namba.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-13">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Esplorate l'area dello shopping di Namba e Shinsaibashi. La sera raggiungete Dotonbori, il cuore pulsante dei led di Osaka, per scattare la foto iconica col Glico Man e il granchio gigante meccanico.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/okonomiyaki.jpg' alt='Okonomiyaki'><p><strong>Mizuno (Dotonbori):</strong> Un'istituzione per l'<em>Okonomiyaki</em> (premiata Michelin). Per i <em>Takoyaki</em>, mettetevi in fila da <strong>Acchichi Honpo</strong> (vicino al ponte) per polpette croccanti fuori e morbidissime dentro.</p>
+<img src='images/okonomiyaki.jpg' alt='Okonomiyaki' loading='lazy' decoding='async' width='560' height='180'><p><strong>Mizuno (Dotonbori):</strong> Un'istituzione per l'<em>Okonomiyaki</em> (premiata Michelin). Per i <em>Takoyaki</em>, mettetevi in fila da <strong>Acchichi Honpo</strong> (vicino al ponte) per polpette croccanti fuori e morbidissime dentro.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?q=Mizuno,+Dotonbori,+Osaka&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?q=Mizuno,+Dotonbori,+Osaka&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -616,7 +763,7 @@
             </div>
 
             <!-- DAY 14 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/kyoto_station.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -627,17 +774,18 @@
                         <li>Giornata totalmente libera a Kyoto.</li>
                         <li>Ultimi acquisti, passeggiate e zero levatacce.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-14">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
-                                <p>Godetevi l'ultima giornata con molta calma. La Kyoto Station è un vero capolavoro di architettura e contiene decine di negozi per i regali dell'ultimo minuto e un piccolo Pokémon Center nascosto.</p>
+                                <p>Godetevi l'ultima giornata con molta calma. La Kyoto Station è un vero capolavoro di architettura e contiene decine di negozi per i regali dell'ultimo minuto e un piccolo Pokémon Center nascosto. Salite la scalinata monumentale fino alla terrazza panoramica: a dicembre nell'atrio c'è un enorme albero di Natale illuminato.</p>
+                                <p><strong>Se invece avete ancora energie</strong>, questa è la giornata jolly per una gita a <strong>Nara</strong> (45 minuti di treno): cervi in libertà che si inchinano per un biscotto e il Todai-ji, che custodisce un Buddha di bronzo di 15 metri. In alternativa, è il giorno perfetto se avete vinto la lotteria del <strong>Nintendo Museum</strong> di Uji. Comunque vada, fate i bagagli stasera: domani si parte presto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tonkatsu.jpg' alt='Tonkatsu'><p><strong>Katsukura (Kyoto Station):</strong> Situato all'11° piano dell'edificio The Cube. Serve uno dei migliori <em>Tonkatsu</em> (cotoletta di maiale impanata) di Kyoto. Potrete macinare voi stessi i semi di sesamo per la salsa di accompagnamento.</p>
+<img src='images/tonkatsu.jpg' alt='Tonkatsu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Katsukura (Kyoto Station):</strong> Situato all'11° piano dell'edificio The Cube. Serve uno dei migliori <em>Tonkatsu</em> (cotoletta di maiale impanata) di Kyoto. Potrete macinare voi stessi i semi di sesamo per la salsa di accompagnamento.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Kyoto+Station,+Kyoto&daddr=Katsukura,+Kyoto+Station&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kyoto+Station,+Kyoto&daddr=Katsukura,+Kyoto+Station&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -646,7 +794,7 @@
             </div>
 
             <!-- DAY 15 -->
-            <div class="itinerary-day" onclick="toggleDetails(this)">
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
                 <div class="day-image" style="background-image: url('images/airport.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
@@ -657,17 +805,17 @@
                         <li>Trasferimento in treno all'aeroporto.</li>
                         <li>Volo di rientro in Italia.</li>
                     </ul>
-                    <div class="day-details">
+                    <div class="day-details" id="day-details-15">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
                                 <h4>Cosa fare:</h4>
                                 <p>Prendete il treno rapido <em>Haruka Express</em> dalla stazione di Kyoto che vi porterà diretti all'Aeroporto Internazionale del Kansai in circa 75-80 minuti. Arrivate con buon anticipo!</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/nikuman.jpg' alt='Nikuman'><p><strong>551 Horai (Kansai Airport / Kyoto St.):</strong> Prima di partire, comprate i loro famosissimi <em>Butaman</em> (soffici panini al vapore ripieni di maiale e cipolla). Sono il comfort food perfetto per l'attesa o il tragitto in treno.</p>
+<img src='images/nikuman.jpg' alt='Nikuman' loading='lazy' decoding='async' width='560' height='180'><p><strong>551 Horai (Kansai Airport / Kyoto St.):</strong> Prima di partire, comprate i loro famosissimi <em>Butaman</em> (soffici panini al vapore ripieni di maiale e cipolla). Sono il comfort food perfetto per l'attesa o il tragitto in treno.</p>
                             </div>
                             <div class="details-map">
-                                <iframe src="https://maps.google.com/maps?saddr=Kansai+International+Airport&daddr=551+Horai,+Kansai+Airport&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kansai+International+Airport&daddr=551+Horai,+Kansai+Airport&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -681,7 +829,7 @@
 
 
         <section>
-            <h2>🗣️ Sopravvivenza: Regole & Parole Utili</h2>
+            <h2 id="sopravvivenza">🗣️ Sopravvivenza: Regole & Parole Utili</h2>
             <div class="details-grid" style="margin-bottom: 3rem;">
                 <div class="summary-box" style="margin-bottom: 0; border-top-color: #E91E63;">
                     <h3 style="color: #E91E63; margin-top: 0; font-size: 1.2rem;">Le Regole d'Oro</h3>
@@ -701,6 +849,33 @@
                         <li><strong>Kore, ikura desu ka?:</strong> "Questo, quanto costa?".</li>
                         <li><strong>Toire wa doko desu ka?:</strong> "Dov'è il bagno?".</li>
                         <li><strong>[Nome] kudasai:</strong> "[Nome] per favore" (es. <em>Mizu kudasai</em> = Acqua per favore).</li>
+                        <li><strong>Eigo no menu wa arimasu ka?:</strong> "Avete un menu in inglese?".</li>
+                        <li><strong>Gochisousama deshita:</strong> "Grazie, era buonissimo" (si dice uscendo dal ristorante).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="details-grid" style="margin-bottom: 3rem;">
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #607D8B;">
+                    <h3 style="color: #607D8B; margin-top: 0; font-size: 1.2rem;">🧠 Trucchi che nessuno vi dice</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
+                        <li><strong>Niente cestini in giro:</strong> i rifiuti si portano dietro fino al konbini o alla stazione. Tenete un sacchettino in borsa.</li>
+                        <li><strong>Konbini = alleati:</strong> 7-Eleven, FamilyMart e Lawson hanno bagni puliti gratuiti, ATM per carte estere, cibo ottimo a poco e sono aperti 24h.</li>
+                        <li><strong>Coin locker:</strong> in ogni stazione, si pagano con la carta IC. Perfetti per liberarsi del bagaglio nel giorno di trasferimento a Kyoto senza aspettare il check-in.</li>
+                        <li><strong>Contanti ancora necessari:</strong> molti piccoli ristoranti, templi e bancarelle non accettano carte. Tenete sempre qualche migliaio di yen addosso.</li>
+                        <li><strong>Vassoio per pagare:</strong> alla cassa i soldi si appoggiano sul vassoietto, non si mettono in mano al cassiere.</li>
+                        <li><strong>Tax free:</strong> mostrando il passaporto molti negozi scontano l'imposta sopra i 5.000 yen. Occhio però: <em>le regole del duty free giapponese cambiano proprio a fine 2026</em>, quindi verificate la procedura aggiornata prima di partire.</li>
+                    </ul>
+                </div>
+                <div class="summary-box" style="margin-bottom: 0; border-top-color: #F44336;">
+                    <h3 style="color: #F44336; margin-top: 0; font-size: 1.2rem;">🚨 Emergenze e numeri utili</h3>
+                    <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
+                        <li><strong>110</strong> — Polizia. <strong>119</strong> — Ambulanza e Vigili del Fuoco. Chiamate gratuite da qualsiasi telefono.</li>
+                        <li><strong>Japan Visitor Hotline:</strong> 050-3816-2787, attiva 24h in inglese per turisti (emergenze, smarrimenti, informazioni).</li>
+                        <li><strong>Ambasciata d'Italia a Tokyo</strong> (per Tokyo) e <strong>Consolato Generale a Osaka</strong> (per Kyoto/Osaka): salvate i recapiti aggiornati dal sito <em>esteri.it</em> prima di partire.</li>
+                        <li><strong>Oggetti smarriti:</strong> in Giappone si ritrovano quasi sempre. Chiedete al <em>Lost &amp; Found</em> della stazione o al <em>koban</em> (posto di polizia di quartiere) più vicino.</li>
+                        <li><strong>Terremoti:</strong> le scosse leggere sono normali. Non uscite in strada, allontanatevi dalle finestre e seguite il personale. Vale la pena installare l'app <em>Safety Tips</em> del governo giapponese.</li>
+                        <li><strong>Copie dei documenti:</strong> tenete una foto di passaporto, assicurazione e carta d'imbarco nel telefono e nel cloud.</li>
                     </ul>
                 </div>
             </div>
@@ -770,28 +945,122 @@
 
     </div>
 
-    <script>
-        function toggleDetails(element) {
-            // Seleziono tutte le altre card e le chiudo se clicco su una nuova (opzionale, ma pulito)
-            document.querySelectorAll('.itinerary-day').forEach(card => {
-                if(card !== element) card.classList.remove('active');
-            });
-            // Attivo/Disattivo la card cliccata
-            element.classList.toggle('active');
-            
-            // Scroll leggermente per centrare la card una volta aperta
-            if(element.classList.contains('active')) {
-                setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 300);
-            }
-        }
-    </script>
-
     <div class="sticky-bar">
         <div class="sticky-bar-info">🇯🇵 Giappone 2026 <span>30 Nov - 15 Dic | 15 Giorni</span></div>
         <a href="#costi" class="cta-button">Visualizza Budget</a>
     </div>
+
+    <button type="button" class="to-top" id="toTop" aria-label="Torna all'inizio della pagina">↑</button>
+
+    <script>
+    (function () {
+        'use strict';
+
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.itinerary-day'));
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* Le mappe partono con data-src: 15 iframe di Google Maps caricati subito
+           costavano diversi MB e secondi di attesa. Le carichiamo alla prima apertura. */
+        function loadMap(card) {
+            var frame = card.querySelector('iframe[data-src]');
+            if (frame) {
+                frame.src = frame.getAttribute('data-src');
+                frame.removeAttribute('data-src');
+            }
+        }
+
+        function setOpen(card, open) {
+            card.classList.toggle('active', open);
+            card.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) loadMap(card);
+        }
+
+        cards.forEach(function (card, i) {
+            var panel = card.querySelector('.day-details');
+            if (panel) card.setAttribute('aria-controls', panel.id);
+
+            var icon = card.querySelector('.toggle-icon');
+            if (icon) icon.setAttribute('aria-hidden', 'true');
+
+            card.addEventListener('click', function (e) {
+                /* Un click su un link o dentro la mappa non deve chiudere la scheda */
+                if (e.target.closest('a, iframe')) return;
+                toggle(card);
+            });
+
+            card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                    e.preventDefault();
+                    toggle(card);
+                }
+            });
+        });
+
+        function toggle(card) {
+            var willOpen = !card.classList.contains('active');
+            /* Comportamento a fisarmonica, ma solo se non si è scelto "Espandi tutto" */
+            if (willOpen && !document.body.classList.contains('all-expanded')) {
+                cards.forEach(function (other) {
+                    if (other !== card) setOpen(other, false);
+                });
+            }
+            setOpen(card, willOpen);
+
+            if (willOpen) {
+                window.setTimeout(function () {
+                    card.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+                }, reduceMotion ? 0 : 300);
+            }
+        }
+
+        document.querySelectorAll('[data-action]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var expand = btn.dataset.action === 'expand-all';
+                document.body.classList.toggle('all-expanded', expand);
+                cards.forEach(function (card) { setOpen(card, expand); });
+            });
+        });
+
+        /* Countdown alla partenza: si nasconde da solo a viaggio iniziato */
+        var DEPARTURE = new Date(2026, 10, 30, 0, 0, 0); // 30 novembre 2026
+        var RETURN = new Date(2026, 11, 15, 23, 59, 59); // 15 dicembre 2026
+        var box = document.getElementById('countdown');
+        if (box) {
+            var now = new Date();
+            var days = Math.ceil((DEPARTURE - now) / 86400000);
+            var html = '';
+            if (days > 1) {
+                html = '<strong>' + days + '</strong><span>giorni alla partenza</span>';
+            } else if (days === 1) {
+                html = '<strong>Domani</strong><span>si parte!</span>';
+            } else if (now <= RETURN) {
+                var dayOfTrip = Math.floor((now - DEPARTURE) / 86400000);
+                html = '<strong>Giorno ' + dayOfTrip + '</strong><span>siete in Giappone 🎌</span>';
+            }
+            if (html) {
+                box.innerHTML = html;
+                box.hidden = false;
+            }
+        }
+
+        /* Torna su */
+        var toTop = document.getElementById('toTop');
+        if (toTop) {
+            toTop.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+            });
+            var ticking = false;
+            window.addEventListener('scroll', function () {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(function () {
+                    toTop.classList.toggle('visible', window.scrollY > 800);
+                    ticking = false;
+                });
+            }, { passive: true });
+        }
+    })();
+    </script>
 
 </body>
 </html>
