@@ -113,7 +113,17 @@
         .itinerary-day.active .toggle-icon { transform: rotate(45deg); background: var(--primary-light); color: var(--primary-color); }
         
         .details-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        @media(min-width: 768px) { .details-grid { grid-template-columns: 1fr 1fr; } }
+        /* Le timeline sono lunghe: su desktop la colonna del testo va allargata,
+           la mappa non deve stirarsi per tutta l'altezza della giornata e la foto
+           laterale non deve diventare una striscia di 3000px. */
+        @media(min-width: 768px) {
+            .details-grid { grid-template-columns: 1fr 1fr; }
+            /* Solo dentro le giornate: altrove (.details-grid è riusata da
+               Prenotazioni e Checklist) le due colonne restano simmetriche. */
+            .day-details .details-grid { grid-template-columns: 1.4fr 1fr; }
+            .details-map { align-self: start; height: 460px; }
+            .itinerary-day.active .day-image { flex: 0.6; }
+        }
         
         .details-text h4 { margin: 0 0 0.8rem 0; color: var(--text-color); font-size: 1.15rem; font-weight: 700; display: inline-block; background: var(--primary-light); padding: 4px 12px; border-radius: 20px; color: var(--primary-color); }
         .details-text p { margin: 0 0 1.5rem 0; color: var(--light-text); font-size: 1rem; line-height: 1.8; }
@@ -167,6 +177,26 @@
         .day-controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .day-controls button { font-family: inherit; font-size: 0.82rem; font-weight: 700; color: var(--light-text); background: var(--card-bg); border: 1px solid rgba(0,0,0,0.08); padding: 8px 18px; border-radius: 30px; cursor: pointer; transition: color 0.25s ease, border-color 0.25s ease; }
         .day-controls button:hover { color: var(--primary-color); border-color: var(--primary-color); }
+
+        /* Riga meta sotto il titolo della giornata */
+        .day-meta { font-size: 0.75rem; font-weight: 700; color: var(--light-text); opacity: 0.8; margin: -0.5rem 0 1rem 0; letter-spacing: 0.3px; }
+
+        /* Timeline oraria della giornata */
+        .timeline { list-style: none; padding: 0; margin: 0.5rem 0 1.5rem 0; }
+        .timeline li { position: relative; display: grid; grid-template-columns: 60px 1fr; gap: 0.9rem; padding: 0 0 1.05rem 0; font-size: 0.95rem; }
+        .timeline li::after { content: ""; position: absolute; left: 5px; top: 20px; bottom: 0; width: 2px; background: rgba(0,0,0,0.09); }
+        .timeline li:last-child { padding-bottom: 0; }
+        .timeline li:last-child::after { display: none; }
+        .timeline .t { position: relative; padding-left: 20px; font-weight: 800; font-size: 0.8rem; color: var(--primary-color); white-space: nowrap; line-height: 1.6; }
+        .timeline .t::before { content: ""; position: absolute; left: 0; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--card-bg); border: 3px solid var(--primary-color); box-sizing: border-box; }
+        .timeline li.opt .t { color: var(--light-text); }
+        .timeline li.opt .t::before { border-color: var(--light-text); }
+        .timeline strong { color: var(--text-color); }
+        .timeline em { opacity: 0.85; }
+        @media (max-width: 480px) {
+            .timeline li { grid-template-columns: 52px 1fr; gap: 0.7rem; font-size: 0.9rem; }
+            .timeline .t { padding-left: 18px; font-size: 0.74rem; }
+        }
 
         /* Info callout */
         .callout { background: var(--card-bg); border-left: 5px solid var(--primary-color); border-radius: 12px; padding: 1.2rem 1.4rem; margin: 0 0 2rem 0; box-shadow: var(--shadow-sm); font-size: 0.95rem; color: var(--light-text); }
@@ -464,17 +494,17 @@
                 <div class="summary-box" style="margin-bottom: 0; border-top-color: #E60012;">
                     <h3 style="color: #E60012; margin-top: 0; font-size: 1.2rem;">🎮 Tappe nerd su prenotazione</h3>
                     <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
-                        <li><strong>Nintendo Museum (Uji, Kyoto)</strong><span class="prio prio-high">Lotteria</span><br>Aperto nel 2024 a mezz'ora da Kyoto: è <em>il</em> pezzo mancante di questo itinerario. Ingresso solo tramite lotteria sull'account Nintendo, con estrazione mesi prima. Va tentata subito, e in caso di vittoria si incastra al posto di una mezza giornata a Kyoto.</li>
-                        <li><strong>Museo Ghibli (Mitaka, Tokyo)</strong><span class="prio prio-high">Data fissa</span><br>I biglietti escono <em>il 10 del mese precedente</em> alla visita (ora giapponese) e volano via in minuti. Per una visita a dicembre significa essere pronti il 10 novembre.</li>
-                        <li><strong>teamLab (Tokyo)</strong><span class="prio prio-med">Fascia oraria</span><br>Biglietti a slot orario, spesso esauriti nel weekend. <em>Planets</em> (Toyosu) è comodissimo da abbinare a Odaiba del Giorno 14.</li>
+                        <li><strong>Nintendo Museum (Uji, Kyoto)</strong><span class="prio prio-high">Lotteria</span><br>Aperto nel 2024 a mezz'ora da Kyoto: è <em>il</em> pezzo mancante di questo itinerario. Ingresso solo tramite lotteria sull'account Nintendo, con estrazione circa 3 mesi prima. Va tentata subito: se vincete, prende il posto di <strong>Nara al Giorno 7</strong>, abbinandolo a Byodo-in e alle case da tè di Uji.</li>
+                        <li><strong>Museo Ghibli (Mitaka, Tokyo)</strong><span class="prio prio-high">Data fissa</span><br>I biglietti escono <em>il 10 del mese precedente</em> alle 10:00 ora giapponese (le 2 di notte in Italia) e volano via in minuti: per il <strong>Giorno 12 (lunedì 14 dic)</strong> vuol dire essere svegli il <strong>10 novembre 2026</strong>. Il museo <em>chiude il martedì</em>, quindi la giornata non è spostabile al 15.</li>
+                        <li><strong>teamLab (Tokyo)</strong><span class="prio prio-med">Fascia oraria</span><br>Biglietti a slot orario, spesso esauriti con settimane di anticipo. Serve <em>Planets</em> (Toyosu), quello a piedi nudi nell'acqua: slot delle 10:00 del <strong>Giorno 14</strong>, poi Odaiba a due fermate di Yurikamome. Attenzione a non comprare per sbaglio <em>Borderless</em>, che è un'altra sede.</li>
                         <li><strong>Super Nintendo World – USJ (Osaka)</strong><span class="prio prio-med">Mezza giornata</span><br>Se volete farlo, occupa un giorno intero e va sostituito a uno dei due giorni di Osaka, non aggiunto. Biglietto + eventuale accesso all'area da comprare online.</li>
                     </ul>
                 </div>
                 <div class="summary-box" style="margin-bottom: 0; border-top-color: #673AB7;">
                     <h3 style="color: #673AB7; margin-top: 0; font-size: 1.2rem;">🗼 Panorami e trasporti</h3>
                     <ul class="flow" style="grid-template-columns: 1fr; gap: 0.8rem;">
-                        <li><strong>Shibuya Sky</strong><span class="prio prio-high">Tramonto</span><br>La fascia del tramonto è la prima a esaurirsi. A dicembre “tramonto” vuol dire slot delle 16:00 circa: prenotate appena aprono le vendite.</li>
-                        <li><strong>Tokyo Skytree</strong><span class="prio prio-med">Consigliato</span><br>Biglietto online = fila separata e più corta rispetto alla biglietteria.</li>
+                        <li><strong>Shibuya Sky</strong><span class="prio prio-high">Tramonto</span><br>La fascia del tramonto è la prima a esaurirsi, e il <strong>Giorno 10 è un sabato</strong>: sparisce ancora prima. A dicembre “tramonto” vuol dire slot delle <strong>16:00-16:15</strong>. Prenotate appena aprono le vendite; ripiego, Shibuya Scramble Square di giorno.</li>
+                        <li><strong>Tokyo Skytree</strong><span class="prio prio-med">Consigliato</span><br>Slot del <strong>Giorno 9</strong>, verso le 10:30: il biglietto online ha una fila separata e molto più corta rispetto alla biglietteria.</li>
                         <li><strong>Shinkansen Kyoto → Tokyo</strong><span class="prio prio-med">Posto riservato</span><br>Con i bagagli grandi serve il <em>posto con spazio bagagli oversize</em> (ultima fila), gratuito ma <strong>solo su prenotazione</strong>: senza, si rischia una sovrattassa. Prenotabile online con SmartEX.</li>
                         <li><strong>Hotel: 14 notti</strong><span class="prio prio-med">Da prenotare</span><br>Kyoto <em>3→10 dic</em> (7 notti) e Tokyo <em>10→17 dic</em> (7 notti). Si dorme in hotel anche l'ultima notte: il volo parte la sera del 17.</li>
                         <li><strong>Narita Express del 17</strong><span class="prio prio-high">Posti riservati</span><br>Il N'EX è interamente a prenotazione obbligatoria. Compratelo su <em>eki-net.com</em> o al JR Ticket Office <strong>il giorno prima</strong>, non la mattina stessa. Chiedete anche il <em>deposito bagagli</em> all'hotel per la giornata del 17.</li>
@@ -534,7 +564,7 @@
         </section>
         <section>
             <h2 id="kyoto">🏯 Parte 1: Kyoto &amp; Osaka (3 - 10 Dicembre)</h2>
-            <p class="click-hint">👆 Scopri i percorsi, i templi e i quartieri neon!</p>
+            <p class="click-hint">👆 Apri una giornata: dentro c'è l'itinerario ora per ora e la mappa con tutte le tappe collegate.</p>
             <div class="day-controls">
                 <button type="button" data-action="expand-all">Espandi tutto</button>
                 <button type="button" data-action="collapse-all">Chiudi tutto</button>
@@ -546,23 +576,35 @@
                         <h3>Giorno 1 (3 Dic): Arrivo in serata a Kyoto</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Giovedì · ✈️ Giornata di arrivo · 🚶 quasi zero</p>
                     <ul>
                         <li><strong>16:25:</strong> atterraggio a <strong>Osaka KIX</strong>, poi Haruka Express.</li>
-                        <li><strong>~19:00:</strong> check-in, eSIM e una cena semplice. Niente di più.</li>
+                        <li><strong>~19:00:</strong> check-in a Kyoto, eSIM e una cena semplice.</li>
+                        <li>Nessuna visita: a dicembre alle 16:30 è già buio.</li>
                     </ul>
                     <div class="day-details" id="day-details-1">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Poco, ed è giusto così. Il QR802 tocca terra a KIX alle <strong>16:25</strong>: fra immigrazione, bagagli e dogana si esce verso le 17:30, l'<em>Haruka Express</em> impiega 75-80 minuti fino alla stazione di Kyoto e in hotel ci si arriva <strong>intorno alle 19</strong>, con il buio da tre ore. Non provate a incastrarci una visita: a dicembre a Kyoto alle 16:30 è già notte e i templi sono chiusi.</p>
-                                <p><strong>Accorgimenti utili:</strong> compilate <em>Visit Japan Web</em> prima di partire da Roma (il QR fa risparmiare mezz'ora di coda), attivate l'eSIM appena atterrati mentre siete ancora sotto il Wi-Fi dell'aeroporto, e comprate lì la carta <em>ICOCA</em> — l'Haruka si paga direttamente con quella. I biglietti Haruka scontati per stranieri si prendono al banco JR nel terminal.</p>
-                                <p>Poi solo una cosa: <strong>andate a dormire presto.</strong> Il jet lag vi sveglierà alle 5 del mattino per i prossimi giorni, ed è esattamente il regalo che serve per il Kiyomizu-dera di domani.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">16:25</span><div><strong>Atterraggio a Kansai (KIX)</strong> — con immigrazione, bagagli e dogana si esce verso le 17:15-17:30. Il QR di <em>Visit Japan Web</em> vi fa saltare la coda lunga.</div></li>
+                                    <li><span class="t">17:30</span><div><strong>Carta ICOCA + biglietto Haruka</strong> al banco JR, dentro la stazione sotto il Terminal 1 (passerella coperta dagli arrivi).</div></li>
+                                    <li><span class="t">17:50</span><div><strong>Haruka Express</strong> → 75-80 minuti diretti, nessun cambio. Attivate l'eSIM mentre siete ancora fermi.</div></li>
+                                    <li><span class="t">19:10</span><div><strong>Kyoto Station</strong> — l'atrio è un capolavoro di architettura anni '90 e a dicembre ospita un enorme albero di Natale illuminato. Due minuti per guardarlo in su prima di uscire.</div></li>
+                                    <li><span class="t">19:30</span><div><strong>Check-in in hotel</strong> e doccia.</div></li>
+                                    <li class="opt"><span class="t">20:15</span><div><strong>Cena vicino all'hotel.</strong> Non cercate il ristorante perfetto: siete svegli da venti ore.</div></li>
+                                    <li><span class="t">21:30</span><div><strong>A letto presto.</strong> Il jet lag vi sveglierà alle 5, ed è esattamente quello che serve domani.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>Perché non c'è nient'altro.</strong> Il QR802 tocca terra alle 16:25 e a dicembre il sole a Kyoto tramonta verso le <em>16:45</em>: qualunque tempio sarebbe già chiuso prima ancora che usciate dall'aeroporto. Trattatela come una serata di trasferimento, non come una giornata persa — il giorno dopo partite all'alba.</p>
+                                <p><strong>Le tre cose da non dimenticare:</strong> compilare <em>Visit Japan Web</em> prima di lasciare Roma, comprare la <strong>ICOCA</strong> al banco JR (vi servirà per due settimane, anche a Tokyo), e chiedere all'hotel il codice per il check-in serale se la reception chiude.</p>
+                                <p><strong>Se avete ancora energia:</strong> la <em>Kyoto Tower</em> è esattamente di fronte alla stazione e l'osservatorio resta aperto fino alle 21:00. Dieci minuti, 900 yen, e vedete dall'alto la griglia di luci della città che girerete nei prossimi sei giorni.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/matcha.jpg' alt='Matcha Parfait' loading='lazy' decoding='async' width='560' height='180'><p>Restate vicini all'hotel: dopo 20 ore di viaggio non ha senso cercare il ristorante perfetto. La zona della <strong>stazione di Kyoto</strong> risolve tutto — il decimo piano del palazzo della stazione è pieno di ristoranti aperti fino alle 22, e per un primo ramen c'è <em>Kyoto Ramen Koji</em>, una via interna con nove banchi di ramen di regioni diverse. In alternativa, il konbini sotto l'hotel è una scelta più dignitosa di quanto sembri.</p>
+<img src='images/chuka_soba.jpg' alt='Ramen' loading='lazy' decoding='async' width='560' height='180'><p>Restate nel raggio di cinquecento metri. Il <strong>decimo piano della stazione</strong> è pieno di ristoranti aperti fino alle 22, e al secondo livello c'è <strong>Kyoto Ramen Koji</strong>: una via interna con nove banchi di ramen di regioni diverse del Giappone, dal tonkotsu di Hakata al miso di Sapporo. Si ordina al distributore automatico all'ingresso di ogni locale. In alternativa il konbini sotto l'hotel — un onigiri e una zuppa calda alle dieci di sera, dopo venti ore di viaggio, sono più che dignitosi.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Kansai+International+Airport&daddr=Kyoto+Station,+Kyoto&dirflg=r&t=&z=9&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kansai+International+Airport&daddr=Kyoto+Station,+Kyoto&dirflg=r&t=&z=9&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 1" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -573,25 +615,43 @@
                 <div class="day-image" style="background-image: url('images/kiyomizu.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 2 (4 Dic): Kiyomizu-dera e Fushimi Inari</h3>
+                        <h3>Giorno 2 (4 Dic): Higashiyama all'alba e Fushimi Inari</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Venerdì · 🚶 ~9 km a piedi · 🚉 1 spostamento in treno</p>
                     <ul>
-                        <li><strong>Mattina presto:</strong> <em>Kiyomizu-dera</em> e le salite di Sannenzaka e Ninenzaka.</li>
-                        <li><strong>Pomeriggio:</strong> i torii infiniti di <strong>Fushimi Inari</strong>.</li>
+                        <li><strong>06:30:</strong> <em>Kiyomizu-dera</em> deserto, apre alle 6:00.</li>
+                        <li><strong>Mattina:</strong> discesa a piedi per Sannenzaka, Pagoda Yasaka, Kodai-ji.</li>
+                        <li><strong>Pomeriggio:</strong> i diecimila torii di <strong>Fushimi Inari</strong> fino al tramonto.</li>
                     </ul>
                     <div class="day-details" id="day-details-2">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Andate al Kiyomizu-dera prestissimo (apre alle 6:00!) per godervi la magia senza la calca. Sospeso sui pali di legno, offre una vista magica. Al ritorno scendete lungo le stradine acciottolate piene di negozi di artigianato.</p>
-                                <p>Nel pomeriggio, due fermate di treno più a sud, il <strong>Fushimi Inari Taisha</strong>: migliaia di torii vermigli che salgono lungo il monte Inari. È <em>gratuito e aperto 24 ore su 24</em>, quindi è l'unica grande tappa di Kyoto che non teme il tramonto delle 16:30 — anzi, i primi tratti sono illuminati e al buio sono spettacolari. Il giro completo fino alla vetta è di circa 2-3 ore: se siete stanchi, fermatevi al belvedere di Yotsutsuji (45 minuti) da cui si vede tutta la città.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">06:30</span><div><strong>Kiyomizu-dera</strong> — apre alle <em>6:00</em>, ed è l'unico grande tempio del Giappone che potete avere praticamente per voi. Il palco sospeso su 168 pilastri di legno all'alba, con la foschia sulla città, è il motivo per cui il jet lag oggi è un alleato.</div></li>
+                                    <li><span class="t">07:45</span><div><strong>Sannenzaka e Ninenzaka</strong> — le due discese acciottolate più fotografate di Kyoto. A quest'ora i negozi sono chiusi e non c'è nessuno: è l'unico momento in cui si capisce come doveva essere il quartiere.</div></li>
+                                    <li><span class="t">08:15</span><div><strong>Pagoda Yasaka (Hokan-ji)</strong> — la pagoda a cinque piani che spunta in fondo alla via. È <em>la</em> cartolina di Kyoto: mettetevi su Yasaka-dori guardando verso est.</div></li>
+                                    <li><span class="t">08:45</span><div><strong>Kodai-ji</strong> (apre 9:00) — tempio molto meno affollato, con un giardino zen e un bambuseto in miniatura. 600 yen, mezz'ora scarsa.</div></li>
+                                    <li class="opt"><span class="t">10:00</span><div><strong>Maruyama Park e Yasaka Shrine</strong> — il parco è il polmone verde di Higashiyama; il santuario, con la sua porta vermiglia, è la fine naturale della passeggiata e l'ingresso a Gion (che però fate domani sera).</div></li>
+                                    <li><span class="t">10:45</span><div><strong>Chion-in</strong> <em>(opzionale)</em> — la porta Sanmon è la più grande struttura in legno del suo genere in Giappone. Impressionante anche solo da sotto, senza entrare.</div></li>
+                                    <li><span class="t">12:00</span><div><strong>Pranzo</strong> in zona Yasaka / Higashiyama.</div></li>
+                                    <li><span class="t">13:30</span><div><strong>Treno per Fushimi Inari</strong> — dalla stazione Keihan <em>Gion-Shijo</em> a <em>Fushimi-Inari</em> sono 7 minuti e due fermate. Con la ICOCA.</div></li>
+                                    <li><span class="t">14:00</span><div><strong>Fushimi Inari Taisha</strong> — la salita fra i torii vermigli. Gratuito e aperto 24 ore su 24: è l'unica grande tappa di Kyoto che non teme il tramonto.</div></li>
+                                    <li><span class="t">16:00</span><div><strong>Belvedere di Yotsutsuji</strong> — 45 minuti di salita dal basso, e da lì si vede tutta Kyoto. È il punto giusto per fermarsi se non volete fare la vetta (2-3 ore totali).</div></li>
+                                    <li><span class="t">16:45</span><div><strong>Tramonto</strong> e discesa con i primi tratti di torii illuminati. Al buio sono ancora più belli e la folla è sparita.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> tutto in discesa e tutto a piedi. Si parte dal punto più alto e più affollato (Kiyomizu-dera) all'ora in cui non c'è nessuno, si scende lungo le vie storiche mentre la città si sveglia, e si chiude con l'unico posto che <em>migliora</em> quando cala il buio. Nessuna tappa dista più di 15 minuti a piedi dalla precedente, tranne l'ultima.</p>
+                                <p><strong>Come arrivare a Kiyomizu alle 6:30:</strong> gli autobus non sono ancora frequenti. Un taxi dalla zona della stazione costa 1.500-2.000 yen ed è il modo giusto di spendere dieci euro in tutto il viaggio. Fatevi scrivere <em>清水寺</em> dall'hotel.</p>
+                                <p><strong>Momiji:</strong> il 4 dicembre siete al limite estremo della stagione degli aceri rossi. Higashiyama e Kiyomizu sono fra gli ultimi posti a perdere il colore — potreste beccare la coda del foliage, ed è uno dei motivi per cui vale la pena essere a Kyoto adesso e non fra una settimana.</p>
+                                <p><strong>Vestitevi a strati:</strong> alle 6:30 a Kyoto in dicembre ci sono 2-4 gradi, a mezzogiorno anche 12. E oggi camminate quasi dieci chilometri: scarpe comode, non da ginnastica nuove.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tofu.jpg' alt='Tofu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Okutan Kiyomizu:</strong> Ristorante centenario circondato da un giardino stupendo. Il piatto forte è lo <em>Yudofu</em> (tofu artigianale in brodo, perfetto per riscaldarsi). Lungo Ninenzaka, c'è uno <strong>Starbucks</strong> unico, ospitato in una casa tradizionale tatami. Sulla via d'accesso a Fushimi Inari, provate invece lo street food a tema volpe: <em>kitsune udon</em> e i biscotti <em>tsujiura senbei</em> a forma di muso di volpe.</p>
+<img src='images/tofu.jpg' alt='Yudofu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Colazione:</strong> lungo Ninenzaka c'è uno <strong>Starbucks</strong> unico al mondo, ospitato in una casa tradizionale con stanze in tatami — ci si toglie le scarpe. <strong>Pranzo:</strong> <strong>Okutan Kiyomizu</strong>, ristorante centenario immerso in un giardino, specializzato in <em>Yudofu</em> (tofu artigianale in brodo bollente: perfetto per riscaldarsi dopo una mattinata al freddo). <strong>Merenda a Fushimi Inari:</strong> lungo la via d'accesso lo street food è tutto a tema volpe — <em>kitsune udon</em> e i biscotti <em>tsujiura senbei</em> a forma di muso di volpe, gli antenati dei fortune cookie.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Kiyomizu-dera,+Kyoto&daddr=Ninenzaka,+Kyoto+to:Fushimi+Inari+Taisha,+Kyoto&dirflg=w&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso del Giorno 9" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kiyomizu-dera,+Kyoto&daddr=Hokan-ji+Temple,+Kyoto+to:Kodai-ji,+Kyoto+to:Yasaka+Shrine,+Kyoto+to:Fushimi+Inari+Taisha,+Kyoto&dirflg=r&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 2" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -602,27 +662,42 @@
                 <div class="day-image" style="background-image: url('images/gion.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 3 (5 Dic): Nishiki, Manga e Gion al tramonto</h3>
+                        <h3>Giorno 3 (5 Dic): Nijo, Manga Museum, Nishiki e Gion di sera</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Sabato · 🚶 ~7 km a piedi · 🚉 tutto in centro</p>
                     <ul>
-                        <li><strong>Mattina:</strong> passeggiata al <strong>Mercato Nishiki</strong>.</li>
-                        <li><strong>Pomeriggio:</strong> <em>Kyoto International Manga Museum</em>.</li>
+                        <li><strong>Mattina:</strong> <em>Castello di Nijo</em> e i pavimenti dell'usignolo.</li>
+                        <li><strong>Pomeriggio:</strong> Manga Museum, <strong>Mercato Nishiki</strong> e le gallerie coperte.</li>
                         <li><strong>Sera:</strong> <strong>Gion</strong> e Pontocho quando si accendono le lanterne.</li>
                     </ul>
                     <div class="day-details" id="day-details-3">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Iniziate la giornata nella "Cucina di Kyoto", il mercato di Nishiki. Nel pomeriggio sfogliate decine di migliaia di manga storici al museo del fumetto, situato in un'ex scuola elementare (chiude alle 17:30, ultimo ingresso 17:00).</p>
-                                <p><strong>Poi Gion.</strong> È qui che recuperiamo la serata persa il giorno dell'arrivo, e il posto giusto è proprio questo: dal Manga Museum sono <em>dieci minuti a piedi verso est</em>, e Gion di sera è molto meglio di Gion di pomeriggio. Scendete Hanamikoji-dori tra le case di legno con le lanterne accese — verso le 17:30-18:30 è l'orario in cui le <em>maiko</em> si spostano fra un impegno e l'altro, l'unica finestra realistica per intravederne una. Poi attraversate verso il fiume Kamo e infilatevi in <strong>Pontocho</strong>, il vicolo largo due metri pieno di izakaya.</p>
-                                <p style="opacity: 0.85; font-size: 0.95rem;">Una regola sola: <em>non fermate e non fotografate le maiko.</em> Nelle vie private di Gion è vietato per ordinanza e la multa arriva a 10.000 yen.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">08:45</span><div><strong>Castello di Nijo</strong> — apre alle 8:45 e alle 9 non c'è ancora nessuno. Il <em>Palazzo Ninomaru</em> ha i celebri <strong>pavimenti dell'usignolo</strong>, costruiti per cigolare come un canto d'uccello e tradire gli assassini. 1.300 yen, un'ora e mezza.</div></li>
+                                    <li><span class="t">10:45</span><div><strong>A piedi verso est</strong> — 15 minuti lungo Oike-dori fino a Karasuma-Oike.</div></li>
+                                    <li><span class="t">11:00</span><div><strong>Kyoto International Manga Museum</strong> — 300.000 volumi in un'ex scuola elementare del 1869, con corridoi in legno e aule trasformate in scaffali. Si possono prendere e leggere ovunque, anche sul prato. Chiude alle 17:30 (ultimo ingresso 17:00).</div></li>
+                                    <li><span class="t">12:45</span><div><strong>Pranzo</strong> in zona Karasuma.</div></li>
+                                    <li><span class="t">13:45</span><div><strong>Mercato Nishiki</strong> — 400 metri di galleria coperta e 130 banchi: la "Cucina di Kyoto". Dieci minuti a piedi a sud del museo.</div></li>
+                                    <li><span class="t">15:15</span><div><strong>Teramachi e Shinkyogoku</strong> — le due gallerie coperte che partono dalla fine di Nishiki. Negozi di ogni tipo, dalle librerie ai negozi di anime, e riparo se piove.</div></li>
+                                    <li><span class="t">16:30</span><div><strong>Argine del fiume Kamo</strong> — attraversate a Shijo verso est mentre cala il buio. Le luci dei ristoranti che si accendono sull'acqua sono uno dei momenti migliori della giornata.</div></li>
+                                    <li><span class="t">17:00</span><div><strong>Gion — Hanamikoji-dori</strong> — la via delle case da tè in legno con le lanterne accese. Fra le <em>17:30 e le 18:30</em> è la finestra in cui le <em>maiko</em> si spostano da un impegno all'altro: è l'unico momento realistico per intravederne una.</div></li>
+                                    <li><span class="t">18:15</span><div><strong>Shirakawa e il ponte Tatsumi</strong> — il canale con i salici, appena a nord di Gion. Molto più tranquillo di Hanamikoji e altrettanto bello.</div></li>
+                                    <li><span class="t">19:00</span><div><strong>Pontocho</strong> — il vicolo largo due metri fra Kamo e Kiyamachi, fitto di izakaya e ristoranti. Cena qui.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> è una linea retta da ovest a est, tutta in centro e tutta a piedi. Si comincia con l'unica tappa che apre presto e chiude presto (Nijo), si passa al museo al coperto nelle ore centrali, si mangia al mercato nel pomeriggio e si arriva a Gion esattamente quando serve — cioè al buio.</p>
+                                <p><strong>Perché Gion di sera e non di pomeriggio.</strong> Gion di giorno è un quartiere di case chiuse e turisti in kimono a noleggio; Gion alle sei di sera, con le lanterne accese e il rumore dei <em>geta</em> sull'acciottolato, è un'altra cosa. Vale la pena spostare tutto il resto della giornata per essere lì all'ora giusta.</p>
+                                <p style="opacity: 0.9;"><strong>Una regola da rispettare:</strong> non fermate e non fotografate le maiko. Nelle vie private di Gion è vietato per ordinanza comunale e la multa arriva a <em>10.000 yen</em>. Foto della strada sì, foto delle persone no.</p>
+                                <p><strong>Attenzione — oggi è sabato:</strong> Nishiki nel weekend è molto affollato, quasi impraticabile fra le 12 e le 14. È un'altra ragione per arrivarci alle 13:45 dopo aver già pranzato, e per usare il mercato come assaggio a piccoli morsi invece che come pranzo vero.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tako_tamago.jpg' alt='Tako Tamago' loading='lazy' decoding='async' width='560' height='180'><p><strong>Mercato Nishiki:</strong> Cercate il chiosco <strong>Kari-Kari Hakase</strong> per i <em>Takoyaki</em> e <strong>Daiyasu</strong> per il famoso <em>Tako Tamago</em>. Nel pomeriggio, merenda da <strong>Tsujiri</strong> a Gion con il loro inimitabile <em>Parfait al Matcha</em>. Per cena, <strong>Kyoto Gion Mikaku</strong> (Wagyu sulla piastra) oppure un izakaya sul fiume a Pontocho per spiedini <em>Yakitori</em>.</p>
+<img src='images/tako_tamago.jpg' alt='Tako Tamago' loading='lazy' decoding='async' width='560' height='180'><p><strong>Al Mercato Nishiki</strong> si mangia camminando: cercate <strong>Kari-Kari Hakase</strong> per i <em>takoyaki</em> e soprattutto <strong>Daiyasu</strong> per il <em>tako tamago</em> — un polpetto intero candito con un uovo di quaglia infilato nella testa, servito su uno stecco. È strano, dolce e salato insieme, e non lo trovate da nessun'altra parte. <strong>Merenda:</strong> <strong>Tsujiri</strong> a Gion per il loro <em>parfait al matcha</em> a strati. <strong>Cena:</strong> <strong>Kyoto Gion Mikaku</strong> per il Wagyu sulla piastra, oppure un izakaya sul fiume a Pontocho per <em>yakitori</em> e birra. Molti locali di Pontocho hanno il menu solo in giapponese: cercate quelli con le foto o la vetrina di plastica.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Nishiki+Market,+Kyoto&daddr=Kyoto+International+Manga+Museum+to:Gion,+Kyoto+to:Pontocho,+Kyoto&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Nijo+Castle,+Kyoto&daddr=Kyoto+International+Manga+Museum+to:Nishiki+Market,+Kyoto+to:Gion,+Kyoto+to:Pontocho,+Kyoto&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 3" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -633,24 +708,43 @@
                 <div class="day-image" style="background-image: url('images/arashiyama.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 4 (6 Dic): Arashiyama e Kinkaku-ji</h3>
+                        <h3>Giorno 4 (6 Dic): Arashiyama all'alba, Kinkaku-ji e Ryoan-ji</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Domenica · 🚶 ~8 km · 🚉 2 spostamenti (ovest → nord)</p>
                     <ul>
-                        <li>Foresta di Bambù di <strong>Arashiyama</strong>.</li>
-                        <li>Il famoso Padiglione d'Oro (Kinkaku-ji).</li>
+                        <li><strong>08:00:</strong> foresta di bambù <strong>vuota</strong> (poi diventa impraticabile).</li>
+                        <li><strong>Mattina:</strong> Tenryu-ji, villa Okochi Sanso, ponte Togetsukyo.</li>
+                        <li><strong>Pomeriggio:</strong> <strong>Kinkaku-ji</strong> d'oro e il giardino zen di <strong>Ryoan-ji</strong>.</li>
                     </ul>
                     <div class="day-details" id="day-details-4">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Perdetevi tra gli altissimi e ipnotici fusti verdi di bambù di Arashiyama per foto suggestive. Dopo pranzo spostatevi al Kinkaku-ji (tempio ricoperto d'oro vero), bellissimo al calar del sole.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">08:00</span><div><strong>Foresta di bambù di Arashiyama</strong> — questa è l'ora, e non è un consiglio generico: dalle 10 in poi il sentiero è una fila indiana di persone e la foto diventa impossibile. Alle otto siete quasi soli fra i fusti.</div></li>
+                                    <li><span class="t">08:40</span><div><strong>Tenryu-ji</strong> (apre 8:30) — tempio patrimonio UNESCO. Il <em>giardino Sogenchi</em> del 1300 è rimasto identico da settecento anni ed è progettato per incorniciare le montagne dietro. Entrate dal retro e uscite direttamente nel bambuseto.</div></li>
+                                    <li><span class="t">09:50</span><div><strong>Villa Okochi Sanso</strong> — la casa e il giardino di un attore del cinema muto, in cima alla collina. 1.000 yen che comprendono <em>matcha e dolcetto</em> con vista sulla valle. È la tappa che quasi tutti saltano ed è la più bella della zona.</div></li>
+                                    <li class="opt"><span class="t">11:00</span><div><strong>Ponte Togetsukyo</strong> — il "ponte che attraversa la luna", sul fiume Katsura, con le montagne dietro. In dicembre le sponde hanno ancora colore.</div></li>
+                                    <li><span class="t">11:20</span><div><strong>Iwatayama Monkey Park</strong> <em>(opzionale)</em> — 20 minuti di salita ripida oltre il ponte, e in cima ci sono 120 macachi liberi e la vista migliore su Kyoto. Vale la fatica solo se avete gambe.</div></li>
+                                    <li><span class="t">12:00</span><div><strong>Pranzo</strong> ad Arashiyama, sul fiume.</div></li>
+                                    <li><span class="t">13:15</span><div><strong>Spostamento verso nord</strong> — Arashiyama → Kinkaku-ji: bus 11 + 59, oppure il tram <em>Randen</em> fino a Kitano-Hakubaicho e poi bus. Con due persone il <strong>taxi</strong> (~2.500 yen, 25 minuti) costa poco più e vi fa risparmiare quaranta minuti di attese.</div></li>
+                                    <li><span class="t">14:00</span><div><strong>Kinkaku-ji, il Padiglione d'Oro</strong> — due piani interamente ricoperti di foglia d'oro vera, riflessi nello stagno. Il percorso è a senso unico e si fa in 40 minuti.</div></li>
+                                    <li><span class="t">15:15</span><div><strong>A piedi fino a Ryoan-ji</strong> — 20 minuti lungo la strada, oppure due fermate di bus.</div></li>
+                                    <li><span class="t">15:35</span><div><strong>Ryoan-ji</strong> — il giardino zen più famoso del mondo: quindici rocce sulla ghiaia bianca, disposte in modo che da qualunque punto se ne vedano solo quattordici. Chiude alle 17:00 in inverno. Sedetevi sulla veranda in legno e non fate niente per venti minuti.</div></li>
+                                    <li><span class="t">16:45</span><div><strong>Tramonto</strong> e rientro in centro (bus 59 o metro da Kitaoji).</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> è l'unica giornata di Kyoto che richiede due spostamenti seri, perché Arashiyama è all'estremo ovest e Kinkaku-ji a nord. Vale la pena farla comunque insieme: sono le due immagini più famose della città e stanno entrambe fuori dal centro, quindi combinarle evita di sprecare due mezze giornate.</p>
+                                <p><strong>Le otto del mattino non sono negoziabili.</strong> Il bambuseto è il posto più sovraffollato del Giappone dopo lo Scramble di Shibuya, e la finestra utile dura circa novanta minuti. Il treno JR Sagano da Kyoto Station a Saga-Arashiyama impiega 15 minuti e parte già alle 6:30.</p>
+                                <p><strong>Aggiunta zen, se avete tempo:</strong> a dieci minuti a piedi da Ryoan-ji c'è <em>Ninna-ji</em>, enorme, con una pagoda a cinque piani e quasi nessun turista. Chiude alle 16:30 in inverno.</p>
+                                <p><strong>Sul Kinkaku-ji:</strong> è bello e va visto, ma è anche la tappa più affollata e più veloce di Kyoto — non aspettatevi contemplazione. Ryoan-ji subito dopo serve proprio a riequilibrare la giornata.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/soba.jpg' alt='Soba' loading='lazy' decoding='async' width='560' height='180'><p><strong>Arashiyama Yoshimura:</strong> Ristorante con magnifica vista sul fiume Katsura. Il loro piatto principale è la <em>Soba fatta a mano</em>. Per gli amanti del caffè, fate un salto da <strong>% Arabica Kyoto Arashiyama</strong>.</p>
+<img src='images/soba.jpg' alt='Soba' loading='lazy' decoding='async' width='560' height='180'><p><strong>Pranzo:</strong> <strong>Arashiyama Yoshimura</strong>, con vetrate sul fiume Katsura e sul ponte Togetsukyo — la specialità è la <em>soba fatta a mano</em>, servita fredda con salsa o calda in brodo. Si fa la fila ma scorre. <strong>Caffè:</strong> <strong>% Arabica Arashiyama</strong>, sulla riva del fiume, è uno dei caffè più fotografati del Giappone e uno dei pochi posti in città dove trovate un espresso decente. <strong>Street food:</strong> lungo la via principale di Arashiyama, i <em>korokke</em> (crocchette di patate fritte) e i dango di riso grigliati con salsa di soia dolce.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Arashiyama+Bamboo+Grove,+Kyoto&daddr=Arashiyama+Yoshimura,+Kyoto+to:Kinkaku-ji,+Kyoto&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Arashiyama+Bamboo+Grove,+Kyoto&daddr=Tenryu-ji,+Kyoto+to:Togetsukyo+Bridge,+Kyoto+to:Kinkaku-ji,+Kyoto+to:Ryoan-ji,+Kyoto&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 4" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -661,24 +755,42 @@
                 <div class="day-image" style="background-image: url('images/shinsekai.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 5 (7 Dic): Osaka (Den Den Town & Shinsekai)</h3>
+                        <h3>Giorno 5 (7 Dic): Osaka sud: Kuromon, Den Den Town e Shinsekai</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Lunedì · 🚶 ~7 km · 🚄 Kyoto→Osaka 30 min</p>
                     <ul>
-                        <li>Pendolari da Kyoto a Osaka (30 min di treno).</li>
-                        <li><strong>Den Den Town</strong> e <strong>Shinsekai</strong> (Quartiere retro).</li>
+                        <li><strong>Mattina:</strong> colazione al <strong>Mercato Kuromon</strong>, granchio e ricci.</li>
+                        <li><strong>Pomeriggio:</strong> <em>Den Den Town</em>, l'Akihabara di Osaka.</li>
+                        <li><strong>Sera:</strong> <strong>Shinsekai</strong>, la Tsutenkaku e il kushikatsu.</li>
                     </ul>
                     <div class="day-details" id="day-details-5">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Arrivati a Osaka, spulciate i negozi dell'usato e dell'elettronica a Den Den Town. Poi spostatevi a Shinsekai, passeggiando tra insegne pazze anni '30 e la iconica torre Tsutenkaku.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">08:30</span><div><strong>Kyoto → Osaka</strong> — treno rapido JR Special Rapid, 29 minuti fino a Osaka Station, oppure Keihan/Hankyu fino a Namba. Con la ICOCA, nessun biglietto da comprare.</div></li>
+                                    <li><span class="t">09:30</span><div><strong>Mercato Kuromon Ichiba</strong> — 580 metri di galleria coperta, 150 banchi, e a differenza di Nishiki qui si mangia <em>seduti</em>: molti banchi grigliano capesante, granchio, wagyu e ricci di mare sul momento. Questa è la vostra colazione.</div></li>
+                                    <li><span class="t">11:00</span><div><strong>Den Den Town (Nipponbashi)</strong> — a cinque minuti a piedi a sud del mercato. È l'equivalente osakano di Akihabara: elettronica, retrogaming, modellismo, manga usati. Meno luccicante di Akiba e molto meno affollato.</div></li>
+                                    <li><span class="t">12:30</span><div><strong>Super Potato / Mandarake Grand Chaos</strong> — se cercate cartucce Famicom o figure fuori produzione, sono qui e i prezzi sono migliori che a Tokyo.</div></li>
+                                    <li><span class="t">13:30</span><div><strong>Verso Shinsekai</strong> — 20 minuti a piedi verso sud, oppure una fermata di metro (linea Sakaisuji da Ebisucho).</div></li>
+                                    <li><span class="t">14:00</span><div><strong>Shinsekai</strong> — il quartiere costruito nel 1912 immaginando la Parigi e la Coney Island del futuro, poi rimasto congelato negli anni '60. Insegne enormi, pesci gonfiabili, statue di Billiken. È il posto più "vecchia Osaka" che vedrete.</div></li>
+                                    <li><span class="t">14:30</span><div><strong>Torre Tsutenkaku</strong> — 103 metri, l'osservatorio è al quinto piano e c'è anche una piattaforma esterna. Ma la cosa migliore è lo scivolo <em>Tower Slider</em> che scende in spirale attorno alla torre in dieci secondi.</div></li>
+                                    <li class="opt"><span class="t">15:30</span><div><strong>Janjan Yokocho</strong> — il vicolo coperto ai piedi della torre, lungo 180 metri: tavoli di shogi in strada, bar dove si beve alle tre del pomeriggio, kushikatsu ovunque.</div></li>
+                                    <li><span class="t">16:30</span><div><strong>Spa World</strong> <em>(opzionale)</em> — enorme complesso termale con piani a tema europeo e asiatico. 1.500 yen, e dopo tre giorni di camminate è il modo migliore di passare un'ora.</div></li>
+                                    <li><span class="t">17:30</span><div><strong>Tsutenkaku illuminata</strong> — la torre cambia colore e il quartiere al neon di sera è tutta un'altra cosa. Cena qui.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> è una linea dritta verso sud — Kuromon, Den Den Town, Shinsekai stanno tutti su un asse di due chilometri e mezzo, e si possono fare interamente a piedi. Osaka sud è il lato popolare e un po' sgangherato della città: rumoroso, ipercalorico, per niente elegante. È il contrario esatto di Kyoto, ed è il motivo per cui ci si viene.</p>
+                                <p><strong>Kuromon come colazione, non come pranzo.</strong> I banchi aprono verso le 9 e i migliori esauriscono il pesce buono entro mezzogiorno. Arrivare alle 9:30 significa mangiare bene, spendere meno e non fare fila.</p>
+                                <p><strong>Sul kushikatsu, una regola sacra:</strong> ogni tavolo ha una vaschetta di salsa in comune, e <strong>non si intinge due volte</strong> (<em>ni-do zuke kinshi</em>). Se vi serve più salsa, usate un cavolo crudo come cucchiaio. È l'unica regola di galateo che a Osaka prendono davvero sul serio.</p>
+                                <p><strong>Quanto costa oggi:</strong> il treno Kyoto-Osaka è ~570 yen a tratta. Nient'altro in questa giornata richiede prenotazione.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/kushikatsu.jpg' alt='Kushikatsu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Kushikatsu Daruma (Shinsekai):</strong> L'inventore del <em>Kushikatsu</em>! Ordinate vassoi di spiedini fritti da intingere (una sola volta!) nella loro salsa segreta. Riconoscerete il locale dall'enorme statua dell'uomo arrabbiato all'ingresso.</p>
+<img src='images/kushikatsu.jpg' alt='Kushikatsu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Colazione a Kuromon:</strong> capesante grigliate al momento, <em>uni</em> (riccio) su un cucchiaio, granchio alla griglia, spiedini di wagyu A5. Si mangia in piedi accanto al banco, si paga 300-1.500 yen a porzione. <strong>Cena a Shinsekai:</strong> <strong>Kushikatsu Daruma</strong>, la casa madre, aperta dal 1929 — spiedini di carne, verdura e formaggio impanati nel panko e fritti, serviti a ciclo continuo. Ordinate il set misto e poi aggiungete: l'asparago, il maiale e il formaggio sono i migliori. In alternativa, <em>doteyaki</em> (tendine di manzo stufate nel miso per ore) in uno dei banchi di Janjan Yokocho, con una birra.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Nippombashi+Den+Den+Town,+Osaka&daddr=Kushikatsu+Daruma,+Shinsekai,+Osaka&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kuromon+Ichiba+Market,+Osaka&daddr=Den+Den+Town,+Osaka+to:Tsutenkaku,+Osaka+to:Janjan+Yokocho,+Osaka+to:Shinsekai,+Osaka&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 5" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -689,24 +801,43 @@
                 <div class="day-image" style="background-image: url('images/dotonbori.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 6 (8 Dic): Osaka (Dotonbori e Namba)</h3>
+                        <h3>Giorno 6 (8 Dic): Castello di Osaka, Shinsaibashi e Dotonbori</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Martedì · 🚶 ~8 km · 🚄 Kyoto→Osaka 30 min</p>
                     <ul>
-                        <li>Secondo giorno da pendolari.</li>
-                        <li>Il caos illuminato di <strong>Dotonbori</strong> e Namba.</li>
+                        <li><strong>09:00:</strong> <strong>Castello di Osaka</strong> e il suo parco.</li>
+                        <li><strong>Pomeriggio:</strong> Shinsaibashi-suji e <em>Amerikamura</em>.</li>
+                        <li><strong>Sera:</strong> <strong>Dotonbori</strong> al neon e il Glico Man.</li>
                     </ul>
                     <div class="day-details" id="day-details-6">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Esplorate l'area dello shopping di Namba e Shinsaibashi. La sera raggiungete Dotonbori, il cuore pulsante dei led di Osaka, per scattare la foto iconica col Glico Man e il granchio gigante meccanico.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">08:15</span><div><strong>Kyoto → Osaka</strong> — JR fino a Osakajokoen (la fermata del castello) via Osaka Station, circa 50 minuti totali.</div></li>
+                                    <li><span class="t">09:00</span><div><strong>Castello di Osaka</strong> — apre alle 9:00. Il donjon che vedete è una ricostruzione in cemento del 1931, ma i <em>fossati e le mura ciclopiche</em> del 1620 sono originali e sono la parte davvero impressionante: alcuni blocchi pesano oltre cento tonnellate. Dentro c'è un museo su Toyotomi Hideyoshi e in cima un osservatorio a 360°.</div></li>
+                                    <li><span class="t">10:45</span><div><strong>Nishinomaru Garden e il fossato interno</strong> — il giro esterno del castello vale quanto l'interno. In dicembre gli aceri residui e i pini contro le mura di pietra funzionano molto bene.</div></li>
+                                    <li><span class="t">11:45</span><div><strong>Metro verso il centro</strong> — linea Chuo/Midosuji fino a Shinsaibashi, ~20 minuti.</div></li>
+                                    <li><span class="t">12:30</span><div><strong>Pranzo</strong> in zona Shinsaibashi.</div></li>
+                                    <li><span class="t">13:30</span><div><strong>Shinsaibashi-suji</strong> — 600 metri di galleria commerciale coperta, dal 1600 la via dello shopping di Osaka. Qui trovate i grandi negozi, Uniqlo, Don Quijote e i <em>drugstore</em> con il tax-free.</div></li>
+                                    <li><span class="t">15:00</span><div><strong>Amerikamura ("Ame-mura")</strong> — due isolati a ovest: il quartiere della subcultura giovanile di Osaka, vintage shop, murales, skater e una replica in miniatura della Statua della Libertà. Il contraltare underground di Shinsaibashi.</div></li>
+                                    <li><span class="t">16:15</span><div><strong>Hozen-ji Yokocho</strong> — un vicolo acciottolato di sessanta metri, illuminato da lanterne, a un isolato dal caos di Dotonbori. Al centro c'è una statua di Fudo Myoo completamente ricoperta di muschio, perché i passanti la bagnano da settant'anni. Il contrasto con la strada accanto è surreale.</div></li>
+                                    <li class="opt"><span class="t">17:00</span><div><strong>Dotonbori</strong> — al tramonto si accendono le insegne. Il <strong>Glico Man</strong>, il granchio meccanico del Kani Doraku, il drago del Kinryu Ramen. Il punto foto è il <em>ponte Ebisubashi</em>.</div></li>
+                                    <li class="opt"><span class="t">18:00</span><div><strong>Crociera sul canale</strong> <em>(opzionale)</em> — 20 minuti, ~1.500 yen, e le insegne viste dall'acqua sono un'altra cosa.</div></li>
+                                    <li><span class="t">19:30</span><div><strong>Umeda Sky Building</strong> <em>(opzionale)</em> — 173 metri, il "Giardino Galleggiante" è una terrazza circolare aperta fra le due torri, con la scala mobile sospesa nel vuoto per arrivarci. È la vista più bella di Osaka di notte, aperta fino alle 22:30. Sono 15 minuti di metro da Namba.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> il castello sta a nord-est e apre alle 9, quindi va fatto per primo; tutto il resto — Shinsaibashi, Amerikamura, Hozen-ji, Dotonbori — sta in un quadrato di ottocento metri di lato, e si fa a piedi passando gradualmente dal giorno alla notte. Un solo spostamento in metro fra le due metà.</p>
+                                <p><strong>Dotonbori va vista al buio, punto.</strong> Di giorno è una via commerciale qualunque; alle cinque di sera, con seicento insegne al neon riflesse nel canale, è una delle immagini più iconiche del Giappone. Per questo il castello è al mattino e non viceversa.</p>
+                                <p><strong>Se il tempo è brutto:</strong> Shinsaibashi-suji, Namba Walk e la galleria di Ebisubashi sono <em>tutti coperti</em>. Questa è la giornata giusta da spostare in caso di pioggia, insieme al giorno del Manga Museum.</p>
+                                <p><strong>Tax-free:</strong> Osaka è il posto migliore del viaggio per comprare cosmetici, medicinali e elettronica. Soglia 5.000 yen, passaporto <em>fisico</em> alla cassa, e la merce sigillata non va aperta prima di uscire dal paese.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/okonomiyaki.jpg' alt='Okonomiyaki' loading='lazy' decoding='async' width='560' height='180'><p><strong>Mizuno (Dotonbori):</strong> Un'istituzione per l'<em>Okonomiyaki</em> (premiata Michelin). Per i <em>Takoyaki</em>, mettetevi in fila da <strong>Acchichi Honpo</strong> (vicino al ponte) per polpette croccanti fuori e morbidissime dentro.</p>
+<img src='images/okonomiyaki.jpg' alt='Okonomiyaki' loading='lazy' decoding='async' width='560' height='180'><p>Osaka si chiama <em>tenka no daidokoro</em>, "la cucina della nazione", e la parola d'ordine è <strong>kuidaore</strong>: mangiare fino a rovinarsi. <strong>Takoyaki:</strong> <strong>Kukuru</strong> o <strong>Wanaka</strong> a Dotonbori — polpette di pastella con polpo, cotte in stampi semisferici, croccanti fuori e quasi liquide dentro. Ustionano: aspettate trenta secondi. <strong>Okonomiyaki:</strong> <strong>Mizuno</strong>, una stella Michelin Bib Gourmand, su Dotonbori — la fila è lunga ma scorre. <strong>Kitsune udon:</strong> <strong>Dotonbori Imai</strong>, un'oasi silenziosa in mezzo al caos, aperta dal 1946: brodo delicatissimo di alghe e sardine essiccate. <strong>Cena tarda:</strong> <strong>Kinryu Ramen</strong>, aperto 24 ore, si mangia seduti su piattaforme di tatami in strada.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?q=Mizuno,+Dotonbori,+Osaka&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Osaka+Castle&daddr=Shinsaibashi-suji,+Osaka+to:Amerikamura,+Osaka+to:Hozenji+Yokocho,+Osaka+to:Dotonbori,+Osaka&dirflg=r&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 6" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -714,29 +845,47 @@
                 </div>
             </div>
             <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
-                <div class="day-image" style="background-image: url('images/kyoto_station.jpg');"></div>
+                <div class="day-image" style="background-image: url('images/nishiki.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 7 (9 Dic): Jolly a Kyoto (o Nara)</h3>
+                        <h3>Giorno 7 (9 Dic): Nara: i cervi, il Grande Buddha e Naramachi</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Mercoledì · 🚶 ~8 km · 🚄 Kyoto→Nara 45 min</p>
                     <ul>
-                        <li>Giornata libera: relax, Nara o Nintendo Museum.</li>
-                        <li>Ultimo giorno in Kansai, zero levatacce.</li>
+                        <li><strong>Mattina:</strong> Kofuku-ji e i <strong>1.200 cervi</strong> del parco.</li>
+                        <li><strong>Centrale:</strong> il <strong>Grande Buddha</strong> del Todai-ji, 15 metri di bronzo.</li>
+                        <li><strong>Pomeriggio:</strong> le 3.000 lanterne di <strong>Kasuga Taisha</strong>, poi Naramachi.</li>
                     </ul>
                     <div class="day-details" id="day-details-7">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>È il vero jolly del viaggio: dopo sei giorni intensi, decidete la mattina stessa in base a come vi sentite. Se avete vinto la lotteria del <strong>Nintendo Museum</strong> di Uji, oggi è il giorno giusto: è a mezz'ora da Kyoto.</p>
-                                <p>L'alternativa migliore è una gita a <strong>Nara</strong> (45 minuti di treno): cervi in libertà che si inchinano per un biscotto e il Todai-ji, che custodisce un Buddha di bronzo di 15 metri. Se invece vince il relax, la Kyoto Station è un capolavoro di architettura: salite la scalinata monumentale fino alla terrazza panoramica, a dicembre nell'atrio c'è un enorme albero di Natale illuminato.</p>
-                                <p><strong>Stasera rifate le valigie:</strong> domani si prende lo Shinkansen per Tokyo. Approfittatene per non comprare souvenir ingombranti qui — il grosso degli acquisti conviene farlo nella seconda settimana.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">08:00</span><div><strong>Kyoto → Nara</strong> — <em>Kintetsu Limited Express</em> da Kyoto Station, 35 minuti, arriva a Kintetsu-Nara che è già a cinque minuti dal parco (la stazione JR è più lontana). ~1.160 yen.</div></li>
+                                    <li><span class="t">08:50</span><div><strong>Kofuku-ji</strong> — la pagoda a cinque piani, seconda più alta del Giappone, è la prima cosa che vedete salendo dalla stazione. Il <em>Museo dei Tesori Nazionali</em> accanto ha la celebre statua dell'Ashura a tre volti.</div></li>
+                                    <li><span class="t">09:45</span><div><strong>Nara Park</strong> — 1.200 <em>sika</em> in libertà, considerati messaggeri divini e protetti da secoli. I biscotti <em>shika senbei</em> costano 200 yen dai banchi ufficiali; i cervi hanno imparato a <strong>inchinarsi</strong> per chiederli, e a strattonare le borse di chi tergiversa.</div></li>
+                                    <li><span class="t">10:45</span><div><strong>Todai-ji</strong> — il <em>Daibutsuden</em> è uno dei più grandi edifici in legno del mondo e contiene un Buddha di bronzo di 15 metri e 500 tonnellate, fuso nel 752. Dentro c'è un pilastro con un foro delle dimensioni di una narice del Buddha: passarci attraverso porterebbe fortuna.</div></li>
+                                    <li><span class="t">12:15</span><div><strong>Pranzo</strong> in zona parco o verso Naramachi.</div></li>
+                                    <li><span class="t">13:30</span><div><strong>Kasuga Taisha</strong> — 20 minuti a piedi nel bosco a est. Il santuario ha <strong>3.000 lanterne</strong>: quelle di pietra lungo il sentiero d'accesso e quelle di bronzo appese ai porticati. Nella sala interna alcune sono sempre accese in una stanza buia, ed è una delle immagini migliori del viaggio.</div></li>
+                                    <li class="opt"><span class="t">14:45</span><div><strong>Nigatsu-do</strong> <em>(opzionale)</em> — sulla collina sopra il Todai-ji, con una terrazza in legno da cui si vede tutta la piana di Nara. Gratuito e quasi vuoto.</div></li>
+                                    <li><span class="t">15:30</span><div><strong>Naramachi</strong> — l'antico quartiere dei mercanti, a sud del parco: case in legno strette e lunghe (<em>machiya</em>), botteghe di artigianato, piccoli caffè. Cercate le palline rosse di stoffa (<em>migawari-zaru</em>, "scimmie sostitutive") appese fuori dalle case.</div></li>
+                                    <li><span class="t">16:40</span><div><strong>Tramonto</strong>, rientro a Kyoto e ultima serata in città.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> Nara si visita interamente a piedi, in un arco che sale da ovest a est — Kofuku-ji, parco, Todai-ji, Kasuga Taisha — e poi torna giù a Naramachi. Nessun mezzo, nessun biglietto oltre al treno. È la gita fuori porta più facile del viaggio.</p>
+                                <p><strong>Sui cervi, seriamente:</strong> sono animali selvatici da 50 chili. Se avete i senbei in mano vi circondano; se ne avete in tasca ve li cercano. Comprateli solo quando siete pronti a distribuirli tutti in un minuto, e tenete le mappe di carta e il cibo fuori portata.</p>
+                                <p><strong>Due alternative, se Nara non vi convince.</strong> Sono entrambe buone e questa è la giornata giusta per sostituirla:</p>
+                                <ul>
+                                <li><strong>Kyoto nord-est</strong> — <em>Ginkaku-ji</em> (il Padiglione d'Argento, mai ricoperto d'argento, con un giardino di sabbia straordinario), poi il <strong>Sentiero del Filosofo</strong> lungo il canale, <em>Nanzen-ji</em> con il suo acquedotto in mattoni di epoca Meiji, e il gigantesco torii dell'<em>Heian Jingu</em>. Tutto a piedi, due chilometri e mezzo in discesa: è il lato di Kyoto che questo itinerario altrimenti non tocca.</li>
+                                <li><strong>Nintendo Museum a Uji</strong> — aperto nell'ottobre 2024 nell'ex stabilimento di Uji, a 20 minuti di treno da Kyoto. <strong>Ingresso solo su lotteria</strong>, da tentare 3 mesi prima sul sito ufficiale. Se vincete, abbinatelo a <em>Byodo-in</em> (il tempio della moneta da 10 yen) e alle case da tè di Uji, che è la capitale giapponese del matcha.</li>
+                                </ul>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tonkatsu.jpg' alt='Tonkatsu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Katsukura (Kyoto Station):</strong> Situato all'11° piano dell'edificio The Cube. Serve uno dei migliori <em>Tonkatsu</em> (cotoletta di maiale impanata) di Kyoto. Potrete macinare voi stessi i semi di sesamo per la salsa di accompagnamento.</p>
+<img src='images/matcha.jpg' alt='Matcha' loading='lazy' decoding='async' width='560' height='180'><p><strong>Da provare:</strong> il <em>kakinoha-zushi</em>, sushi di sgombro o salmone avvolto in una foglia di cachi — nato come metodo di conservazione quando Nara era lontana dal mare, oggi è la specialità della città. Si compra confezionato in stazione o da <strong>Hiraso</strong>, storico produttore vicino al parco. <strong>Il colpo di scena:</strong> <strong>Nakatanidou</strong>, vicino a Sanjo-dori — fanno il <em>mochi</em> a mano con una battitura acrobatica velocissima, in due, con mazze di legno. Non è una gag: è il modo tradizionale, e i mochi al fagiolo rosso appena battuti sono ancora tiepidi. Se sentite urlare in mezzo alla strada, è quello. <strong>Pranzo:</strong> udon o <em>chagayu</em> (porridge di riso al tè verde, piatto monastico di Nara) in uno dei locali di Naramachi.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Kyoto+Station,+Kyoto&daddr=Katsukura,+Kyoto+Station&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kofuku-ji,+Nara&daddr=Nara+Park+to:Todai-ji,+Nara+to:Kasuga+Taisha,+Nara+to:Naramachi,+Nara&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 7" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -748,7 +897,7 @@
 
         <section>
             <h2 id="tokyo">🏙️ Parte 2: Tokyo (10 - 17 Dicembre)</h2>
-            <p class="click-hint">👆 Clicca sulle schede per scoprire i dettagli e le mappe!</p>
+            <p class="click-hint">👆 Ogni giornata è un percorso a piedi fra attrazioni vicine: apri per orari, dritte e mappa del giro.</p>
             <div class="day-controls">
                 <button type="button" data-action="expand-all">Espandi tutto</button>
                 <button type="button" data-action="collapse-all">Chiudi tutto</button>
@@ -757,25 +906,43 @@
                 <div class="day-image" style="background-image: url('images/shinjuku.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 8 (10 Dic): Shinkansen e arrivo a Tokyo</h3>
+                        <h3>Giorno 8 (10 Dic): Shinkansen, Shimokitazawa e la notte di Shinjuku</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Giovedì · 🚄 Kyoto→Tokyo 2h15 · 🚶 ~6 km</p>
                     <ul>
-                        <li><strong>Shinkansen</strong> Kyoto → Tokyo (2h15). Check-in.</li>
-                        <li>Serata tranquilla a Shinjuku.</li>
+                        <li><strong>09:30:</strong> Shinkansen <em>Nozomi</em>, posto E per il <strong>Monte Fuji</strong>.</li>
+                        <li><strong>Pomeriggio:</strong> <strong>Shimokitazawa</strong>, vintage e caffè.</li>
+                        <li><strong>Sera:</strong> Godzilla, <em>Omoide Yokocho</em> e Golden Gai.</li>
                     </ul>
                     <div class="day-details" id="day-details-8">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Giornata di trasferimento: 2 ore e un quarto di Shinkansen da Kyoto a Tokyo. Partite in mattinata così da avere tutto il pomeriggio libero. Sedetevi sul <strong>lato destro (posti E)</strong>: nelle giornate limpide di dicembre il Fuji appare per qualche minuto, ed è lo spettacolo migliore del viaggio pagato zero.</p>
-                                <p>Sistematevi in hotel e fate una passeggiata leggera a Kabukicho per vedere la gigantesca testa di Godzilla. Ottimo per assorbire l'atmosfera al neon senza stancarvi troppo dopo il treno.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">08:45</span><div><strong>Kyoto Station</strong> — comprate un <em>ekiben</em> (bento da treno) prima di salire: fa parte dell'esperienza e sul Nozomi non c'è più il carrello.</div></li>
+                                    <li><span class="t">09:30</span><div><strong>Shinkansen Nozomi per Tokyo</strong> — 2h15, 140 km/h di media reali. <strong>Chiedete i posti D/E, lato destro</strong> nel senso di marcia.</div></li>
+                                    <li><span class="t">10:15</span><div><strong>Monte Fuji</strong> — circa 40-45 minuti dopo la partenza, poco dopo Shizuoka, il Fuji appare sulla destra per un paio di minuti. A dicembre, con l'aria tersa e la neve in cima, è la finestra migliore dell'anno.</div></li>
+                                    <li><span class="t">11:45</span><div><strong>Tokyo Station</strong> — cambio per la <em>JR Chuo Line</em> (rapida) fino a Shinjuku, 14 minuti.</div></li>
+                                    <li><span class="t">12:30</span><div><strong>Check-in a Shinjuku</strong> e bagagli in camera. Se la camera non è pronta, lasciateli alla reception.</div></li>
+                                    <li><span class="t">13:30</span><div><strong>Pranzo</strong> a Shinjuku.</div></li>
+                                    <li><span class="t">14:30</span><div><strong>Shimokitazawa</strong> — 7 minuti di treno Odakyu da Shinjuku. Quartiere di viuzze senza auto, il centro del <em>vintage</em> di Tokyo: decine di negozi di seconda mano, dischi, caffè indipendenti, piccoli teatri. È il posto più rilassato della città ed è il modo giusto di passare il primo pomeriggio a Tokyo senza spremersi.</div></li>
+                                    <li><span class="t">16:30</span><div><strong>Rientro a Shinjuku</strong> e tramonto.</div></li>
+                                    <li><span class="t">17:15</span><div><strong>Kabukicho e la testa di Godzilla</strong> — la testa a grandezza naturale che spunta dal tetto dell'Hotel Gracery, all'ottavo piano. Ruggisce e sputa fumo a ogni ora.</div></li>
+                                    <li><span class="t">18:00</span><div><strong>Omoide Yokocho</strong> — il "vicolo dei ricordi", detto anche <em>Piss Alley</em>: una manciata di vicoli sopravvissuti al dopoguerra, con banchi di yakitori da sei posti, fumo di carbonella e lanterne rosse. Cena qui.</div></li>
+                                    <li><span class="t">20:00</span><div><strong>Golden Gai</strong> — 280 micro-bar in sei viuzze, molti con quattro sgabelli in tutto. Alcuni hanno un <em>coperto</em> di 500-1.000 yen e alcuni non accettano stranieri: cercate quelli con il cartello "welcome" o il menu in inglese in vetrina.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> mezza giornata la mangia il trasferimento, quindi il pomeriggio è volutamente leggero — Shimokitazawa non richiede biglietti, orari né energia — e la sera è tutta a piedi dall'hotel. Zero rischio di arrivare a Tokyo esausti il primo giorno.</p>
+                                <p><strong>Sul biglietto Shinkansen:</strong> prenotate su <strong>SmartEX</strong> (app in inglese, carta di credito, si scarica il QR e si passa ai tornelli senza stampare) oppure ai <em>Midori no Madoguchi</em> in stazione. ~13.320 yen a persona per Kyoto-Tokyo in classe ordinaria riservata. Il JR Pass a 50.000 yen <strong>non conviene</strong> per questo itinerario: fate una sola tratta lunga.</p>
+                                <p><strong>Il posto E.</strong> Nella carrozza ordinaria la fila è A-B-C corridoio D-E. Andando <em>verso Tokyo</em>, il Fuji è a destra, quindi lato D/E. Se prenotate online potete sceglierli dalla mappa.</p>
+                                <p><strong>Da qui in poi Shinjuku è la vostra base per sette notti.</strong> Vale la pena, il primo giorno, capire da che uscita si esce: la stazione ha oltre 200 uscite ed è ufficialmente la più trafficata del mondo. Memorizzate quella dell'hotel.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tsukemen.jpg' alt='Tsukemen' loading='lazy' decoding='async' width='560' height='180'><p><strong>Fu-unji (Shinjuku):</strong> Famoso per il suo <em>Tsukemen</em> (ramen in cui i noodles vengono intinti a parte in un brodo denso). In alternativa, esplorate <strong>Omoide Yokocho</strong> per spiedini <em>Yakitori</em> annaffiati da birra ghiacciata.</p>
+<img src='images/katsu_curry.jpg' alt='Katsu Curry' loading='lazy' decoding='async' width='560' height='180'><p><strong>Sul treno:</strong> un <em>ekiben</em> comprato a Kyoto Station — provate quello con il manzo di Omi o lo <em>shumai</em> di Kiyoken. <strong>Cena a Omoide Yokocho:</strong> yakitori alla carbonella, ordinati a spiedino singolo (<em>momo</em> coscia, <em>negima</em> pollo e porro, <em>tsukune</em> polpetta) accompagnati da birra o highball. I banchi hanno 6-8 posti e si sta gomito a gomito con i salaryman: è rumoroso, unto e memorabile. Tenete conto che molti locali sono <em>solo contanti</em> e alcuni hanno un coperto. <strong>Alternativa a Shimokitazawa:</strong> il quartiere è pieno di curry giapponese e caffè specialty — <strong>Shimokita Curry</strong> e i tostatori indipendenti sono la scusa perfetta per una pausa.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Shinjuku+Station,+Tokyo&daddr=Fu-unji,+Shinjuku,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Shimokitazawa+Station,+Tokyo&daddr=Shinjuku+Station,+Tokyo+to:Hotel+Gracery+Shinjuku+to:Omoide+Yokocho,+Tokyo+to:Golden+Gai,+Tokyo&dirflg=r&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 8" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -786,52 +953,42 @@
                 <div class="day-image" style="background-image: url('images/sensoji.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 9 (11 Dic): Tradizione e Asakusa</h3>
+                        <h3>Giorno 9 (11 Dic): Asakusa, Skytree, Ueno e Ameyoko</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Venerdì · 🚶 ~9 km · 🚉 3 spostamenti brevi</p>
                     <ul>
-                        <li><strong>Mattina:</strong> <em>Senso-ji</em> (Asakusa) e Nakamise-dori.</li>
-                        <li><strong>Pomeriggio:</strong> <em>Tokyo Skytree</em>.</li>
+                        <li><strong>07:30:</strong> <strong>Senso-ji</strong> deserto, il tempio più antico di Tokyo.</li>
+                        <li><strong>Mattina:</strong> Nakamise, Sumida Park e lo <strong>Skytree</strong> (634 m).</li>
+                        <li><strong>Pomeriggio:</strong> <strong>Parco di Ueno</strong> e il mercato di <em>Ameyoko</em>.</li>
                     </ul>
                     <div class="day-details" id="day-details-9">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Entrate dalla Porta del Tuono (Kaminarimon) e pescate il vostro Omikuji (oracolo). Nel pomeriggio andate alla Skytree per i negozi Ghibli e Pokémon, poi salite per il tramonto.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">07:30</span><div><strong>Senso-ji</strong> — il recinto è <em>sempre aperto</em> e alle 7:30 la Kaminarimon con il suo lampione rosso da 700 chili è vostra. Fondato nel 628, è il tempio più antico di Tokyo. Alle 10 la stessa strada è un fiume di gente.</div></li>
+                                    <li><span class="t">08:15</span><div><strong>Nakamise-dori</strong> — 250 metri di bancarelle fra la porta e il tempio, alcune gestite dalla stessa famiglia da generazioni. A quest'ora sono ancora chiuse ma la strada vuota con le saracinesche dipinte è bellissima; riapre verso le 9:30 se volete tornare.</div></li>
+                                    <li><span class="t">09:00</span><div><strong>Sala principale e pagoda a cinque piani</strong> — bruciate l'incenso nel <em>jokoro</em> e portatevene il fumo addosso: si dice che curi. Provate l'<em>omikuji</em>, l'oracolo su carta: se esce <em>kyo</em> (sfortuna), lo si annoda all'apposito filo e lo si lascia lì.</div></li>
+                                    <li><span class="t">09:45</span><div><strong>Sumida Park</strong> — dieci minuti a piedi verso il fiume. Dalla riva si ha la vista classica: il fiume, la sede Asahi con la fiamma dorata e lo Skytree dietro.</div></li>
+                                    <li><span class="t">10:30</span><div><strong>Tokyo Skytree</strong> — 20 minuti a piedi attraverso il ponte, oppure una fermata di Tobu. 634 metri, la torre più alta del Giappone. Il primo osservatorio è a 350 m, il secondo a 450 con una rampa a spirale in vetro. <em>Prenotate lo slot online</em>: si salta la fila.</div></li>
+                                    <li><span class="t">12:00</span><div><strong>Solamachi</strong> — il centro commerciale ai piedi della torre: 300 negozi, un piano intero di ristoranti, e l'acquario. Pranzo qui.</div></li>
+                                    <li><span class="t">13:45</span><div><strong>Verso Ueno</strong> — metro Ginza da Asakusa, oppure JR: 10-15 minuti.</div></li>
+                                    <li><span class="t">14:15</span><div><strong>Parco di Ueno</strong> — il primo parco pubblico del Giappone (1873). Dentro ci sono il <em>Tokyo National Museum</em> (la più grande collezione di arte giapponese al mondo: samurai, spade, ceramiche), il santuario Toshogu tutto in foglia d'oro e lo stagno Shinobazu.</div></li>
+                                    <li><span class="t">16:00</span><div><strong>Ameyoko</strong> — il mercato sotto e lungo i binari sopraelevati fra Ueno e Okachimachi. Nato come mercato nero del dopoguerra, oggi è 400 banchi di pesce, spezie, scarpe, dolci e cibo di strada, urlati a pieni polmoni. È il posto meno "ordinato" di Tokyo.</div></li>
+                                    <li><span class="t">17:30</span><div><strong>Aperitivo sotto i binari</strong> — molti locali di Ameyoko hanno tavoli in strada e si beve dalle 15 in poi. Cena qui o rientro a Shinjuku.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> è il Tokyo <em>shitamachi</em>, la città bassa — Asakusa, Skytree, Ueno stanno tutti nel quadrante nord-est e sono collegati da tratte di dieci minuti. Si comincia all'alba nel punto più affollato della città e si finisce in un mercato che è l'esatto opposto della Tokyo lucida di Shibuya.</p>
+                                <p><strong>Perché alle 7:30.</strong> Senso-ji riceve trenta milioni di visitatori l'anno. Alle 7:30 c'è una dozzina di persone e i monaci che aprono; alle 10:30 Nakamise si attraversa a passo d'uomo. È la stessa logica di Kiyomizu-dera al giorno 2, ed è la ragione per cui il jet lag va assecondato invece che combattuto.</p>
+                                <p><strong>Skytree o Shibuya Sky?</strong> Ne bastano due in tutto il viaggio e questo itinerario ne prevede due: lo Skytree oggi (la vista più alta e più ampia, ma lontana dal centro) e <em>Shibuya Sky</em> al tramonto fra due giorni (più basso ma con lo Scramble sotto i piedi). Se volete tagliare, tagliate lo Skytree e restate a esplorare Asakusa e Kappabashi.</p>
+                                <p><strong>Extra a due passi:</strong> <em>Kappabashi Dougu-gai</em>, la "via degli utensili", è a dieci minuti da Senso-ji: 170 negozi di attrezzatura per ristoranti, coltelli giapponesi artigianali e il cibo di plastica delle vetrine. Ottimo per i regali.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/melonpan.jpg' alt='Melon Pan' loading='lazy' decoding='async' width='560' height='180'><p><strong>Asakusa Kagetsudo:</strong> Celebre per il suo <em>Jumbo Melon Pan</em> appena sfornato, croccante fuori e soffice dentro. A cena provate <strong>Asakusa Imahan</strong>, locale storico rinomato per il suo eccellente <em>Sukiyaki</em> (fettine di manzo cotte al tavolo).</p>
+<img src='images/melonpan.jpg' alt='Melonpan' loading='lazy' decoding='async' width='560' height='180'><p><strong>Colazione ad Asakusa:</strong> <strong>Kagetsudo</strong>, celebre per il <em>melonpan</em> gigante — croccante di zucchero fuori, soffice dentro, va mangiato caldo appena sfornato. Poi lo street food di Nakamise: <em>ningyo-yaki</em> (dolcetti di pastella ripieni di fagioli rossi, cotti in stampi a forma di lanterna) e <em>senbei</em> grigliati sul momento. <strong>Pranzo:</strong> tempura ad Asakusa da <strong>Daikokuya</strong>, aperta dal 1887, oppure il piano ristoranti di Solamachi. <strong>Pomeriggio a Ueno:</strong> ad Ameyoko si mangia camminando — spiedini, frutta tagliata, takoyaki, e i famosi banchi di dolci a peso. <strong>Cena:</strong> gli izakaya sotto i binari di Okachimachi, con i tavoli all'aperto e le stufe a fungo: rumorosi, economici e pieni di gente del posto.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Senso-ji,+Tokyo&daddr=Asakusa+Kagetsudo,+Tokyo+to:Tokyo+Skytree,+Tokyo&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
-                <div class="day-image" style="background-image: url('images/akihabara.jpg');"></div>
-                <div class="day-content">
-                    <div class="day-header">
-                        <h3>Giorno 10 (12 Dic): Il Paradiso Nerd - Akihabara</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <ul>
-                        <li>Giornata dedicata ad <strong>Akihabara</strong>.</li>
-                        <li>Retro-gaming, Action figures, Maid Cafe.</li>
-                    </ul>
-                    <div class="day-details" id="day-details-10">
-                        <div class="day-details-inner">
-                        <div class="details-grid">
-                            <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Perdetevi nei piani di Radio Kaikan e cercate tesori da Super Potato. Provate i gacha o gli UFO catcher nei centri SEGA/GiGO.</p>
-                                <h4>Cosa mangiare:</h4>
-<img src='images/katsu_curry.jpg' alt='Katsu Curry' loading='lazy' decoding='async' width='560' height='180'><p><strong>Go! Go! Curry (Akihabara):</strong> Ordinate il famoso <em>Katsu Curry</em> (riso al curry denso con cotoletta). Per un'esperienza a tema, provate l'omelette rice all'<strong>@Home Cafe</strong> (Maid Cafe) o la morbida cotoletta di manzo da <strong>Gyukatsu Motomura</strong>.</p>
-                            </div>
-                            <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?q=Go+Go+Curry,+Akihabara,+Tokyo&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Senso-ji,+Asakusa,+Tokyo&daddr=Sumida+Park,+Tokyo+to:Tokyo+Skytree+to:Ueno+Park,+Tokyo+to:Ameyoko,+Tokyo&dirflg=r&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 9" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -842,24 +999,89 @@
                 <div class="day-image" style="background-image: url('images/shibuya.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 11 (13 Dic): Pop Culture a Shibuya</h3>
+                        <h3>Giorno 10 (12 Dic): Meiji Jingu, Harajuku e Shibuya al tramonto</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Sabato · 🚶 ~8 km · 🚉 tutto a piedi o 1 fermata</p>
                     <ul>
-                        <li><strong>Mattina:</strong> Santuario Meiji-jingu.</li>
-                        <li><strong>Pomeriggio:</strong> Shibuya (Nintendo Store, Hachiko).</li>
+                        <li><strong>08:00:</strong> <strong>Meiji Jingu</strong> nella foresta, prima della folla.</li>
+                        <li><strong>Mattina:</strong> Takeshita-dori, Omotesando e <em>Cat Street</em>.</li>
+                        <li><strong>Tramonto:</strong> <strong>Shibuya Sky</strong> sopra lo Scramble.</li>
+                    </ul>
+                    <div class="day-details" id="day-details-10">
+                        <div class="day-details-inner">
+                        <div class="details-grid">
+                            <div class="details-text">
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">08:00</span><div><strong>Meiji Jingu</strong> — apre all'alba. Il santuario dedicato all'imperatore Meiji è immerso in una foresta di <strong>100.000 alberi piantati a mano</strong> nel 1920, tutti donati da ogni prefettura del Giappone. Il torii all'ingresso è alto 12 metri, in cipresso di 1.500 anni. Alle otto di sabato mattina il viale di ghiaia è quasi vuoto.</div></li>
+                                    <li><span class="t">09:15</span><div><strong>Botti di sake e di vino</strong> — lungo il viale ci sono 200 botti di sake donate dai produttori di tutto il Giappone e, di fronte, botti di vino di Borgogna: l'imperatore Meiji fu il primo a occidentalizzare il paese. Nel weekend capita spesso di incrociare un <em>matrimonio shintoista</em> in corteo.</div></li>
+                                    <li><span class="t">10:15</span><div><strong>Takeshita-dori</strong> — 350 metri di strada pedonale, il cuore della moda giovanile: crêpe, negozi kawaii, purikura. Di sabato è densissima, ma è parte dell'esperienza.</div></li>
+                                    <li><span class="t">11:15</span><div><strong>Omotesando</strong> — l'esatto opposto, a due minuti: un viale alberato largo, con le boutique di lusso ospitate in edifici firmati da Ando, Herzog & de Meuron e SANAA. Vale come architettura anche se non comprate niente.</div></li>
+                                    <li><span class="t">12:15</span><div><strong>Cat Street</strong> — la viuzza che collega Harajuku a Shibuya seguendo il tracciato di un vecchio fiume interrato. Streetwear, sneaker, vintage; niente auto. È la via più piacevole del quartiere.</div></li>
+                                    <li><span class="t">13:00</span><div><strong>Pranzo</strong> fra Cat Street e Shibuya.</div></li>
+                                    <li><span class="t">14:15</span><div><strong>Shibuya PARCO</strong> — il sesto piano è un piano intero di flagship: <strong>Nintendo Tokyo</strong> (il primo store ufficiale del Giappone), <strong>Pokémon Center Shibuya</strong>, <strong>Capcom Store</strong> e <strong>Jump Shop</strong>. Nel weekend Nintendo Tokyo può richiedere un ticket numerato all'ingresso.</div></li>
+                                    <li><span class="t">15:45</span><div><strong>Statua di Hachiko</strong> — la storia del cane che aspettò il padrone alla stazione per nove anni dopo la sua morte. È il punto d'incontro di Tokyo.</div></li>
+                                    <li><span class="t">16:15</span><div><strong>Shibuya Sky</strong> — 229 metri, e la parte buona è il <em>rooftop all'aperto</em> senza vetri sopra la testa. <strong>Prenotate lo slot del tramonto</strong> (~16:00-16:30 in dicembre): si vede la città diventare arancione e poi accendersi, con il Fuji all'orizzonte nelle giornate terse.</div></li>
+                                    <li><span class="t">17:45</span><div><strong>Shibuya Scramble</strong> — dal basso stavolta. Fino a 3.000 persone per verde. Il punto di osservazione classico è la finestra dello <em>Starbucks del Tsutaya</em>, ma attraversarlo tre o quattro volte è più divertente.</div></li>
+                                    <li><span class="t">18:30</span><div><strong>Center-gai e Nonbei Yokocho</strong> — la via principale al neon, e il "vicolo degli ubriaconi" accanto ai binari, con una quarantina di micro-bar in due file. Cena qui.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> Meiji Jingu, Harajuku, Omotesando e Shibuya sono in fila su tre chilometri, collegati da strade pedonali. Si può fare <em>tutto a piedi</em>, e la sequenza va dal silenzio assoluto della foresta al punto più rumoroso della Terra nell'arco di dieci ore. È il contrasto che definisce Tokyo.</p>
+                                <p><strong>Shibuya Sky va prenotato adesso.</strong> Gli slot del tramonto sono i primi a esaurirsi, spesso <em>settimane</em> prima, e nel weekend spariscono per primi. Biglietto sul sito ufficiale, ~2.700 yen. Se non trovate posto, il ripiego decente è <em>Shibuya Scramble Square</em> di giorno o il bar panoramico del <em>Cerulean Tower</em>.</p>
+                                <p><strong>Oggi è sabato.</strong> Harajuku di sabato pomeriggio è al massimo della densità: Takeshita-dori diventa a senso unico di fatto. Farla alle 10:15 invece che alle 15 fa una differenza enorme. In compenso il sabato è il giorno migliore per vedere i <em>cosplayer</em> al ponte Jingu-bashi e i matrimoni al santuario.</p>
+                                <p><strong>Se avanza tempo:</strong> <em>Yoyogi Park</em> è attaccato al santuario e il sabato pomeriggio ospita di tutto, dai rockabilly che ballano in giacca di pelle ai gruppi di tamburi.</p>
+                                <h4>Cosa mangiare:</h4>
+<img src='images/crepes.jpg' alt='Crêpes' loading='lazy' decoding='async' width='560' height='180'><p><strong>Harajuku:</strong> le <em>crêpes</em> di Takeshita-dori sono un'istituzione dagli anni '70 — <strong>Marion Crepes</strong> e <strong>Angel's Heart</strong> le fanno arrotolate in un cono di carta, farcite di panna, frutta e a volte una fetta intera di cheesecake. Scegliete dalla vetrina di plastica. <strong>Pranzo:</strong> <strong>Afuri</strong> per il ramen allo <em>yuzu shio</em>, agrumato e leggero (l'opposto del tonkotsu pesante), o <strong>Gyukatsu Motomura</strong> a Shibuya: cotoletta di manzo impanata e servita al sangue, che ognuno finisce di cuocere su una pietra rovente al proprio tavolo. <strong>Cena:</strong> <em>izakaya</em> a Nonbei Yokocho, oppure il piano ristoranti di Shibuya Scramble Square. <strong>Dolce:</strong> i pancake soufflé alti cinque centimetri di <strong>Flipper's</strong> o <strong>A Happy Pancake</strong>.</p>
+                            </div>
+                            <div class="details-map">
+                                <iframe data-src="https://maps.google.com/maps?saddr=Meiji+Jingu,+Tokyo&daddr=Takeshita+Street,+Harajuku+to:Omotesando,+Tokyo+to:Cat+Street,+Shibuya+to:Shibuya+Scramble+Crossing&dirflg=w&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 10" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="itinerary-day" role="button" tabindex="0" aria-expanded="false">
+                <div class="day-image" style="background-image: url('images/akihabara.jpg');"></div>
+                <div class="day-content">
+                    <div class="day-header">
+                        <h3>Giorno 11 (13 Dic): Akihabara: la strada pedonale della domenica</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <p class="day-meta">🗓️ Domenica · 🚶 ~5 km · 🎮 giornata otaku</p>
+                    <ul>
+                        <li><strong>Mattina:</strong> Kanda Myojin, il santuario dell'elettronica.</li>
+                        <li><strong>13:00:</strong> <em>hokosha tengoku</em> — <strong>Chuo-dori chiusa alle auto</strong>.</li>
+                        <li><strong>Tutto il giorno:</strong> retrogaming, Mandarake, gachapon, maid café.</li>
                     </ul>
                     <div class="day-details" id="day-details-11">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Iniziate nel silenzio della foresta del Meiji-jingu. A Shibuya vi aspettano lo Scramble Crossing, la statua di Hachiko e l'enorme Nintendo Store nel centro commerciale Shibuya PARCO.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">09:30</span><div><strong>Kanda Myojin</strong> — dieci minuti a piedi su per la collina. Santuario del 730 d.C. che oggi è il protettore ufficiale dell'elettronica e dell'IT: le aziende ci portano i server a benedire e si comprano <em>omamori</em> (amuleti) per la sicurezza informatica e per i circuiti. Il contrasto fra il vermiglio del santuario e Akihabara sotto è perfetto.</div></li>
+                                    <li><span class="t">10:30</span><div><strong>Akihabara Radio Kaikan</strong> — dieci piani accanto alla stazione, ognuno con negozi diversi: figure, carte, modellismo, dojinshi. È il punto di partenza classico.</div></li>
+                                    <li><span class="t">11:30</span><div><strong>Super Potato</strong> — tre piani di retrogaming, dal Famicom al Dreamcast, cartucce sciolte a scaffale e una sala arcade anni '80 all'ultimo piano con i cabinati originali funzionanti a 100 yen.</div></li>
+                                    <li><span class="t">12:30</span><div><strong>Pranzo</strong> in zona (il ramen o il curry di Akiba).</div></li>
+                                    <li><span class="t">13:30</span><div><strong>Chuo-dori pedonale</strong> — <em>hokosha tengoku</em>, il "paradiso dei pedoni": la domenica dalle 13:00 alle 17:00 (in inverno) la strada principale <strong>chiude al traffico</strong> e ci si cammina in mezzo. È il modo migliore in assoluto per vedere Akihabara, ed è esattamente il motivo per cui questa giornata è di domenica.</div></li>
+                                    <li><span class="t">14:00</span><div><strong>Mandarake Complex</strong> — otto piani di usato, ognuno con una specializzazione: manga d'epoca, cel di animazione originali, figure vintage, cosplay. È un museo dove si può comprare tutto.</div></li>
+                                    <li><span class="t">15:15</span><div><strong>Yodobashi Camera Akiba</strong> — nove piani di elettronica, il più grande del Giappone. Il piano dei giocattoli e quello degli utensili da cucina valgono la visita anche solo per guardare. Tax-free al piano dedicato.</div></li>
+                                    <li class="opt"><span class="t">16:15</span><div><strong>GiGO e le pareti di gachapon</strong> — le sale giochi con i <em>crane game</em> su più piani e i corridoi con centinaia di distributori di capsule. Portate monete da 100.</div></li>
+                                    <li><span class="t">17:00</span><div><strong>@Home Cafe</strong> <em>(opzionale)</em> — il maid café più famoso e più "accessibile": si entra, si paga un coperto, le cameriere disegnano sul ketchup e fanno cantare l'incantesimo che rende buono il cibo. È kitsch consapevole, dura un'ora, e non è previsto nient'altro.</div></li>
+                                    <li><span class="t">18:30</span><div><strong>Cena</strong> ad Akihabara, oppure <em>Jimbocho</em> a due fermate: il quartiere dei 130 negozi di libri usati, con stampe ukiyo-e originali a prezzi sorprendenti.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>Perché proprio la domenica.</strong> Akihabara ha una cosa che esiste solo nel weekend: <strong>Chuo-dori chiusa al traffico</strong>, la domenica pomeriggio. La strada principale diventa una piazza lunga ottocento metri, con le insegne su sei piani da entrambi i lati e nessuna auto. È l'immagine che avete in testa quando pensate ad Akihabara, e la si ottiene solo oggi. Tutto il resto dell'itinerario di Tokyo è stato costruito attorno a questo.</p>
+                                <p><strong>Come funziona il quartiere:</strong> tutto sta su Chuo-dori e nelle due strade parallele, in un rettangolo di seicento metri. Non serve nessun mezzo, e si entra e si esce dai palazzi in verticale — ogni edificio è una serie di negozi impilati, quindi guardate <em>sempre</em> le insegne verticali, non le vetrine a piano terra.</p>
+                                <p><strong>Sull'usato:</strong> a Mandarake e nei negozi di seconda mano la merce giapponese usata è in condizioni che altrove sarebbero considerate nuove. È il posto giusto per comprare, non i negozi turistici.</p>
+                                <p><strong>Se Akihabara non vi prende:</strong> a due fermate c'è <em>Jimbocho</em> (libri antichi e stampe) e a quattro c'è <em>Ginza</em>, che oggi ha anch'essa la strada pedonale la domenica pomeriggio — Chuo-dori chiusa alle auto con i tavolini in mezzo al viale del lusso.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/crepes.jpg' alt='Crepes' loading='lazy' decoding='async' width='560' height='180'><p><strong>Marion Crepes (Harajuku):</strong> Tappa obbligata per le iconiche <em>Crêpes giapponesi</em> ripiene. A Shibuya, cenate da <strong>Uobei Shibuya Dogenzaka</strong> per un <em>Kaiten Sushi</em> dove i piatti arrivano sfrecciando su binari ad alta velocità.</p>
+<img src='images/tsukemen.jpg' alt='Tsukemen' loading='lazy' decoding='async' width='560' height='180'><p><strong>Pranzo:</strong> <strong>Kyushu Jangara Ramen</strong>, storico di Akihabara, per un tonkotsu denso di Kyushu; oppure <strong>Go Go Curry</strong>, curry di Kanazawa nero e densissimo su riso con cotoletta, servito in tempi da fast food. <strong>Il rito locale:</strong> <strong>Ichiran</strong> — si ordina a un distributore, si compila una scheda con la durezza della pasta e l'intensità del brodo, e si mangia in un box individuale con le paratie laterali e una tendina davanti. Zero interazione umana: è pensato per concentrarsi solo sul ramen. <strong>Merenda:</strong> i <em>taiyaki</em> (dolcetti a forma di pesce con ripieno di fagioli rossi o crema) dai banchi lungo Chuo-dori, e i caffè a tema — dal <strong>Gundam Café</strong> ai <em>cat café</em> e <em>owl café</em> ai piani alti.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Meiji-jingu,+Tokyo&daddr=Takeshita+Street,+Tokyo+to:Shibuya+Crossing,+Tokyo+to:Uobei+Shibuya+Dogenzaka,+Tokyo&dirflg=w&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Kanda+Myojin,+Tokyo&daddr=Akihabara+Radio+Kaikan+to:Super+Potato+Akihabara+to:Mandarake+Complex,+Akihabara+to:Yodobashi+Camera+Akiba&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 11" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -870,24 +1092,40 @@
                 <div class="day-image" style="background-image: url('images/nakano.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 12 (14 Dic): Vintage Nerd a Nakano</h3>
+                        <h3>Giorno 12 (14 Dic): Museo Ghibli, Kichijoji e Nakano Broadway</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Lunedì · 🚶 ~6 km · 🚉 linea Chuo, tutto in fila</p>
                     <ul>
-                        <li><strong>Nakano Broadway:</strong> Vintage manga e anime.</li>
-                        <li>Meno caotico di Akihabara, perfetto per collezionisti.</li>
+                        <li><strong>10:00:</strong> <strong>Museo Ghibli</strong> — biglietto da prendere il 10 del mese prima.</li>
+                        <li><strong>Pranzo:</strong> <em>Parco Inokashira</em> e Kichijoji.</li>
+                        <li><strong>Pomeriggio:</strong> <strong>Nakano Broadway</strong>, quattro piani di otaku.</li>
                     </ul>
                     <div class="day-details" id="day-details-12">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>A Nakano troverete le cel originali degli anime storici e fumetti introvabili. Mandarake ha decine di negozietti tematici distribuiti su più piani. Un vero paradiso nascosto.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">09:15</span><div><strong>Shinjuku → Mitaka</strong> — JR Chuo Line rapida, 20 minuti. Dalla stazione il museo è a 15 minuti a piedi lungo il canale Tamagawa (piacevole) o con la navetta gialla a tema.</div></li>
+                                    <li><span class="t">10:00</span><div><strong>Museo Ghibli</strong> — progettato da Hayao Miyazaki con il motto <em>"perdiamoci insieme"</em>: niente percorso obbligato, niente frecce. Dentro ci sono lo studio ricostruito con i tavoli pieni di schizzi, il <strong>Gattobus</strong> di peluche (su cui possono salire solo i bambini, mettetevi il cuore in pace), il robot di <em>Laputa</em> a grandezza naturale sul tetto, e la sala Saturn dove proiettano un <strong>cortometraggio esclusivo</strong> mai uscito altrove. È <em>vietato fotografare all'interno</em> — di proposito.</div></li>
+                                    <li><span class="t">12:15</span><div><strong>Parco Inokashira</strong> — il museo si affaccia direttamente sul parco. Lo stagno con le barche a pedali a forma di cigno, i sentieri fra gli alberi, e nel weekend gli artisti di strada. È lo stesso parco dove Miyazaki andava a disegnare.</div></li>
+                                    <li><span class="t">13:00</span><div><strong>Kichijoji</strong> — dieci minuti a piedi. Il quartiere che i giapponesi votano regolarmente come <em>"il posto dove si vorrebbe vivere"</em>: gallerie coperte, negozi indipendenti, niente turisti.</div></li>
+                                    <li><span class="t">13:15</span><div><strong>Harmonica Yokocho</strong> — un dedalo di un centinaio di micro-locali in vicoli larghi un metro, dietro la stazione: nato come mercato nero, oggi mescola banchi di pesce e bar alla moda. Pranzo qui.</div></li>
+                                    <li><span class="t">14:45</span><div><strong>Kichijoji → Nakano</strong> — JR Chuo, 10 minuti.</div></li>
+                                    <li><span class="t">15:15</span><div><strong>Nakano Broadway</strong> — a cinque minuti dalla stazione attraverso la galleria Sun Mall. Quattro piani di negozi di collezionismo, ed è qui che <strong>Mandarake è nato</strong>: oggi occupa oltre venti punti vendita separati nello stesso edificio, ognuno specializzato (manga d'epoca, cel originali, figure, orologi, kaiju). I prezzi sono migliori di Akihabara e i pezzi rari sono più rari.</div></li>
+                                    <li><span class="t">17:15</span><div><strong>Nakano Sun Mall e i vicoli</strong> — attorno alla stazione ci sono decine di izakaya minuscoli, molto frequentati dai locali e quasi mai dai turisti. Ottimi per cena.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> Mitaka, Kichijoji e Nakano sono tre fermate consecutive della stessa linea (JR Chuo), tutte a ovest di Shinjuku, e in totale fanno venti minuti di treno in tutta la giornata. È la giornata più efficiente dell'itinerario ed è anche la più rilassata.</p>
+                                <p style="opacity:0.95;"><strong>⚠️ Il biglietto del Museo Ghibli è la cosa più difficile di tutto il viaggio.</strong> Non si comprano biglietti sul posto, mai. Si vendono <em>solo online</em>, esclusivamente il <strong>10 del mese precedente alle 10:00 ora giapponese</strong> (le 2:00 del mattino in Italia), e per dicembre significa il <strong>10 novembre 2026</strong>. Si esauriscono in pochi minuti. Mettete la sveglia, tenete la pagina aperta prima dell'ora, e abbiate un secondo dispositivo pronto.</p>
+                                <p><strong>Perché lunedì:</strong> il museo <em>chiude il martedì</em>, e il lunedì è il giorno con meno pressione sui biglietti rispetto al weekend. Nakano Broadway invece apre tardi — molti negozi alzano le saracinesche verso mezzogiorno — quindi il pomeriggio è l'ora giusta comunque.</p>
+                                <p><strong>Se non riuscite a prendere il biglietto:</strong> spostate la giornata su Kichijoji + Nakano con calma, e aggiungete <em>Shimokitazawa</em> (una fermata da Kichijoji con la Keio Inokashira) — oppure il <strong>Ghibli Park</strong> vicino a Nagoya, che però è una giornata intera di treno e ha lo stesso problema di biglietti.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/chuka_soba.jpg' alt='Chuka Soba' loading='lazy' decoding='async' width='560' height='180'><p><strong>Chuka Soba Aoba (Nakano):</strong> Un'istituzione del quartiere. Il loro piatto forte è il <em>Chuka Soba</em> (Ramen) con un doppio brodo stellare che unisce la ricchezza del maiale e del pollo al sapore delicato di pesce.</p>
+<img src='images/tonkatsu.jpg' alt='Tonkatsu' loading='lazy' decoding='async' width='560' height='180'><p><strong>Dentro il museo:</strong> lo <em>Straw Hat Café</em> ha una fila lunghissima e prezzi alti, ma il gelato e il pane sono buoni; il chiosco esterno vende una birra artigianale a marchio Ghibli. <strong>Pranzo a Kichijoji:</strong> <strong>Satou</strong>, macelleria storica accanto alla stazione, celebre per i <em>menchikatsu</em> — polpette di manzo Matsusaka impanate e fritte, vendute allo sportello di strada. C'è sempre una fila di venti persone che scorre in dieci minuti, e costano 300 yen. Al piano di sopra la stessa famiglia gestisce un ristorante di steak. <strong>Ad Harmonica Yokocho:</strong> yakitori, ostriche e sakè in banchi da sei posti. <strong>Cena a Nakano:</strong> gli izakaya di Nakano Sun Mall e i vicoli attorno — pochi turisti, menu spesso solo in giapponese, prezzi da quartiere.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Nakano+Broadway,+Tokyo&daddr=Chuka+Soba+Aoba,+Nakano,+Tokyo&dirflg=w&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Ghibli+Museum,+Mitaka&daddr=Inokashira+Park,+Tokyo+to:Kichijoji+Station,+Tokyo+to:Nakano+Broadway,+Tokyo&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 12" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -898,24 +1136,43 @@
                 <div class="day-image" style="background-image: url('images/ikebukuro.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 13 (15 Dic): Ikebukuro (Anime & Manga)</h3>
+                        <h3>Giorno 13 (15 Dic): Ikebukuro, Otome Road e le luci di Ginza</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Martedì · 🚶 ~7 km · ✨ serata illuminazioni</p>
                     <ul>
-                        <li><strong>Ikebukuro:</strong> Sunshine City.</li>
-                        <li>Pokémon Center Mega Tokyo e Animate Store.</li>
+                        <li><strong>Mattina:</strong> <strong>Pokémon Center Mega Tokyo</strong> e Sunshine City.</li>
+                        <li><strong>Pomeriggio:</strong> Animate flagship e <em>Otome Road</em>.</li>
+                        <li><strong>Sera:</strong> <strong>Ginza e Marunouchi</strong>, le illuminazioni di Natale.</li>
                     </ul>
                     <div class="day-details" id="day-details-13">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Passeggiate nell'enorme Animate Flagship Store (il negozio di anime più grande del mondo). Al Sunshine City potrete visitare l'enorme Pokémon Center e la zona dei Gashapon (distributori di capsule).</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">09:30</span><div><strong>Shinjuku → Ikebukuro</strong> — JR Yamanote, 5 minuti.</div></li>
+                                    <li><span class="t">10:00</span><div><strong>Sunshine City</strong> — un complesso enorme collegato alla stazione da un tunnel pedonale. Dentro c'è di tutto, ma le tappe che contano sono tre.</div></li>
+                                    <li class="opt"><span class="t">10:15</span><div><strong>Pokémon Center Mega Tokyo</strong> — il più grande del Giappone, con la statua gigante all'ingresso, il <em>Pikachu Sweets Café</em> e merchandise esclusivo dello store. Accanto c'è il <strong>Pokémon Card Gym</strong>, dove si gioca davvero.</div></li>
+                                    <li><span class="t">11:15</span><div><strong>Sunshine Aquarium e Sunshine 60</strong> <em>(opzionale)</em> — l'acquario è sul tetto e ha i pinguini che nuotano in una vasca trasparente <em>contro lo skyline della città</em>. L'osservatorio al 60° piano ha una terrazza panoramica rinnovata con prato sintetico e sdraio.</div></li>
+                                    <li><span class="t">12:30</span><div><strong>Pranzo</strong> a Sunshine City o a Ikebukuro est.</div></li>
+                                    <li><span class="t">13:45</span><div><strong>Animate Ikebukuro</strong> — il flagship della più grande catena di anime e manga del Giappone: nove piani, riaperto nel 2023 in un edificio nuovo con un teatro e un café. È il tempio della cultura anime a Tokyo.</div></li>
+                                    <li><span class="t">14:45</span><div><strong>Otome Road</strong> — duecento metri di negozi rivolti al pubblico femminile otaku: dojinshi, merchandise di serie <em>josei</em>, tre Mandarake dedicati, e i <em>butler café</em> (l'equivalente maschile dei maid café). È l'altra metà, meno raccontata, della cultura otaku giapponese.</div></li>
+                                    <li><span class="t">16:00</span><div><strong>Ikebukuro → Ginza</strong> — metro Marunouchi diretta, ~18 minuti.</div></li>
+                                    <li><span class="t">16:45</span><div><strong>Ginza</strong> — il quartiere del lusso, e a dicembre le facciate dei grandi magazzini sono vetrine natalizie a tutta altezza. Da vedere il <strong>Ginza Six</strong> (con l'installazione artistica nell'atrio e il roof garden) e il <strong>Wako</strong> con la torre dell'orologio del 1932.</div></li>
+                                    <li><span class="t">17:30</span><div><strong>Marunouchi Naka-dori</strong> — quindici minuti a piedi verso la Stazione di Tokyo. Il viale è <strong>illuminato da oltre un milione di luci color champagne</strong> da metà novembre a metà febbraio: è la più elegante delle illuminazioni di Tokyo e si cammina in mezzo agli alberi accesi per un chilometro.</div></li>
+                                    <li><span class="t">18:15</span><div><strong>Facciata della Tokyo Station</strong> — l'edificio in mattoni rossi del 1914, restaurato, illuminato di notte e visto dalla piazza KITTE. Sul tetto del <em>KITTE</em> (sesto piano, gratuito) c'è una terrazza con la vista dall'alto sui binari e sulla stazione accesa.</div></li>
+                                    <li><span class="t">19:15</span><div><strong>Cena</strong> a Marunouchi o a Yurakucho, sotto i binari.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> due metà nette collegate da una sola metro diretta. La mattina è il polo otaku nord (Ikebukuro), la sera è il Giappone opposto — il lusso di Ginza e le illuminazioni. Ed è pensata così perché <em>le luci di dicembre vanno viste</em>: siete in Giappone nell'unico periodo dell'anno in cui esistono, e questo itinerario altrimenti non le toccherebbe mai.</p>
+                                <p><strong>Le illuminazioni di dicembre, in ordine di bellezza:</strong> <em>Marunouchi Naka-dori</em> (un milione di luci champagne, la più elegante), <em>Roppongi Keyakizaka</em> (luci blu con la Tokyo Tower incorniciata in fondo alla strada — la foto più famosa), <em>Caretta Shiodome</em> (uno spettacolo di luci e musica ogni 20 minuti), <em>Yebisu Garden Place</em> (con un lampadario Baccarat da 5 metri in piazza). Se stasera avete energia, Roppongi è a otto minuti di metro da Ginza.</p>
+                                <p><strong>Natale in Giappone è una festa laica e romantica</strong>, non familiare: si esce in coppia, si guardano le luci e si mangia il <em>Christmas cake</em> (pan di Spagna con panna e fragole). Il 25 dicembre è un giorno lavorativo normale. Voi rientrate prima, ma le luci ci sono già tutte da metà novembre.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/taiyaki.jpg' alt='Taiyaki' loading='lazy' decoding='async' width='560' height='180'><p><strong>Mutekiya (Ikebukuro):</strong> Preparatevi alla fila, ma il loro <em>Tonkotsu Ramen</em> (brodo di maiale ricco e saporito) è leggendario. Per un dolce veloce, prendete un <em>Taiyaki</em> ai chioschi intorno a Sunshine City.</p>
+<img src='images/nikuman.jpg' alt='Nikuman' loading='lazy' decoding='async' width='560' height='180'><p><strong>Ikebukuro è la capitale dei gyoza</strong>: la zona attorno alla stazione ne ha decine di locali. <strong>Kagetsu</strong> e <strong>Kaikatei</strong> sono gli storici — ravioli alla piastra con la base croccante, ordinati a piatti da sei. <strong>Pranzo alternativo:</strong> il ramen di <strong>Mutekiya</strong>, sempre con la fila, tonkotsu ricchissimo. <strong>Cena a Yurakucho:</strong> i <em>gado-shita</em>, gli izakaya ricavati sotto gli archi della ferrovia fra Ginza e Tokyo Station — grigliate, birra e i treni che passano sopra la testa, a due passi dalle boutique più care del Giappone. È uno dei contrasti migliori della città. <strong>Se volete lo sfizio:</strong> il piano alimentare interrato (<em>depachika</em>) di <strong>Ginza Mitsukoshi</strong> è un museo del cibo — dolci, bento e frutta da regalo a prezzi assurdi.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Sunshine+City,+Ikebukuro,+Tokyo&daddr=Mutekiya,+Ikebukuro,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Sunshine+City,+Ikebukuro,+Tokyo&daddr=Animate+Ikebukuro+to:Otome+Road,+Ikebukuro+to:Ginza,+Tokyo+to:Marunouchi+Naka-dori,+Tokyo&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 13" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -926,27 +1183,42 @@
                 <div class="day-image" style="background-image: url('images/odaiba.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 14 (16 Dic): Odaiba e Gundam</h3>
+                        <h3>Giorno 14 (16 Dic): teamLab Planets, Odaiba e i Gundam</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Mercoledì · 🚶 ~6 km · 🚝 Yurikamome sopraelevata</p>
                     <ul>
-                        <li><strong>Odaiba:</strong> isola artificiale sulla baia di Tokyo.</li>
-                        <li>Statua del <strong>Gundam Unicorn</strong> e Gundam Base.</li>
-                        <li>Da abbinare: <em>teamLab Planets</em> a Toyosu.</li>
+                        <li><strong>10:00:</strong> <strong>teamLab Planets</strong>, a piedi nudi nell'acqua.</li>
+                        <li><strong>Pomeriggio:</strong> <strong>Odaiba</strong>, il Gundam Unicorn a grandezza naturale.</li>
+                        <li><strong>Tramonto:</strong> Rainbow Bridge e lo skyline dalla baia.</li>
                     </ul>
                     <div class="day-details" id="day-details-14">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Cosa fare:</h4>
-                                <p>Prendete la <em>Yurikamome</em>, il treno panoramico senza conducente che attraversa il Rainbow Bridge: sedetevi in prima fila, davanti al vetro. A Odaiba fate le foto sotto il <strong>Gundam Unicorn</strong> a grandezza naturale, che si trasforma ad orari precisi (in genere ogni ora dalle 11 alle 21, con proiezioni luminose dopo il tramonto: a dicembre le vedete già dalle 17), e salite al <strong>Gundam Base</strong> ai piani alti del DiverCity — è il posto giusto per i gunpla, comprese le edizioni esclusive del negozio.</p>
-                                <p><strong>Da incastrare qui:</strong> <em>teamLab Planets</em> a Toyosu è sulla stessa linea Yurikamome ed è l'esperienza digitale più fotografata del Giappone (si cammina scalzi nell'acqua: portate pantaloni arrotolabili). Biglietti a fascia oraria, da prenotare online in anticipo.</p>
-                                <p><strong>Se avanza tempo:</strong> il <em>Miraikan</em> (museo della scienza, con il robot ASIMO e un planetario) e le terme urbane di <em>Oedo Onsen</em> sono entrambi a Odaiba. E la <em>Statua della Libertà</em> in scala ridotta davanti al Rainbow Bridge è una delle viste più assurde e più belle di Tokyo al tramonto.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">09:15</span><div><strong>Shinjuku → Toyosu</strong> — metro fino a Toyosu, poi Yurikamome una fermata fino a Shin-Toyosu. Circa 45 minuti.</div></li>
+                                    <li><span class="t">10:00</span><div><strong>teamLab Planets</strong> — quattro grandi spazi e due giardini in cui si entra <strong>a piedi nudi</strong>. Si cammina nell'acqua fino al ginocchio mentre banchi di carpe koi proiettate vi nuotano attorno e si trasformano in fiori al contatto; c'è una stanza con migliaia di orchidee sospese che scendono dal soffitto e una sfera specchiata infinita. <em>Portate pantaloni arrotolabili</em> (o usate gli shorts prestati) e considerate che i vestiti chiari riflettono meglio le proiezioni. <strong>Slot orario obbligatorio, da prenotare online.</strong></div></li>
+                                    <li><span class="t">12:15</span><div><strong>Toyosu → Odaiba</strong> — la <em>Yurikamome</em> è una monorotaia automatica senza conducente: sedetevi <strong>in prima fila davanti</strong>, la vista frontale sopra la baia mentre si passa il Rainbow Bridge è una piccola attrazione a sé.</div></li>
+                                    <li><span class="t">12:45</span><div><strong>Pranzo a Odaiba</strong> — al <em>Tsukiji Tama Sushi</em> di DiverCity o nella food court affacciata sulla baia.</div></li>
+                                    <li><span class="t">14:00</span><div><strong>Gundam Unicorn a grandezza naturale</strong> — 19,7 metri davanti a DiverCity Tokyo Plaza. Si <strong>trasforma</strong> più volte al giorno (di solito alle 11, 13, 15, 17) con luci e musica: il pannello di testa si apre e le armature si sollevano.</div></li>
+                                    <li><span class="t">14:45</span><div><strong>Gundam Base Tokyo</strong> — al settimo piano di DiverCity: il più grande negozio di <em>Gunpla</em> del mondo, con modelli esclusivi, una zona in cui si può montare il kit sul posto e una fabbrica in vetrina.</div></li>
+                                    <li><span class="t">16:00</span><div><strong>Spiaggia di Odaiba e Statua della Libertà</strong> — la replica in scala 1:7 sul lungomare, con il <strong>Rainbow Bridge</strong> e lo skyline di Tokyo dietro. Al tramonto (~16:30) il ponte si accende: è una delle viste migliori della città e non costa niente.</div></li>
+                                    <li><span class="t">17:00</span><div><strong>Spettacolo di luci del Gundam</strong> — dopo il buio la statua ha una proiezione notturna con clip animate sulla facciata dell'edificio dietro. Diverso da quello diurno.</div></li>
+                                    <li><span class="t">17:45</span><div><strong>Aqua City e DECKS</strong> — centri commerciali sul mare, con il <em>Takoyaki Museum</em> (una food court di soli takoyaki di produttori diversi di Osaka) e <strong>Odaiba Joypolis</strong>, il parco a tema Sega al chiuso, se volete un'ultima ora di giochi.</div></li>
+                                    <li><span class="t">19:00</span><div><strong>Rientro</strong> con la Yurikamome, questa volta al buio: il ponte illuminato dal treno è ancora meglio.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> Toyosu e Odaiba sono due fermate della stessa linea sopraelevata sulla baia, e la giornata segue il sole — l'installazione al chiuso al mattino, la statua all'aperto nel pomeriggio, il ponte illuminato al tramonto. Zero corse in metro affollate, molta aria di mare.</p>
+                                <p><strong>teamLab Planets va prenotato con settimane di anticipo</strong>, sul sito ufficiale, con slot orario. È la seconda prenotazione più critica del viaggio dopo il Museo Ghibli. Nota importante: esistono <em>due</em> teamLab a Tokyo, e sono diversi — <strong>Planets</strong> a Toyosu (a piedi nudi, nell'acqua, quello descritto qui) e <strong>Borderless</strong> ad Azabudai Hills (senza acqua, con opere che migrano da una stanza all'altra). Se dovete sceglierne uno, Planets è più memorabile.</p>
+                                <p><strong>Il giorno prima del rientro.</strong> Questa è l'ultima giornata piena "vera": domani si parte. Approfittatene per finire i regali — DiverCity e Aqua City hanno il tax-free e sono molto meno affollati dei negozi di Shinjuku.</p>
+                                <p><strong>Se piove:</strong> è una delle giornate meno adatte al maltempo (metà è all'aperto). Lo scambio naturale è con il giorno 13 (Ikebukuro/Ginza), quasi interamente al coperto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/tempura.jpg' alt='Tempura' loading='lazy' decoding='async' width='560' height='180'><p><strong>Tsukiji Tama Sushi (Odaiba):</strong> Situato nel centro commerciale Decks, offre un'ottima formula <em>All-You-Can-Eat Sushi</em> di alta qualità con una vista mozzafiato sul Rainbow Bridge e sulla baia di Tokyo. Sempre a Decks, il piano <em>Odaiba Takoyaki Museum</em> raccoglie i banchi delle takoyakerie storiche di Osaka: un modo per chiudere il cerchio con la prima settimana di viaggio.</p>
+<img src='images/tempura.jpg' alt='Tempura' loading='lazy' decoding='async' width='560' height='180'><p><strong>Pranzo:</strong> <strong>Tsukiji Tama Sushi</strong> a DiverCity, la filiale di una casa storica del mercato di Tsukiji — sushi di buon livello a prezzi ragionevoli, con i set del pranzo. <strong>Lo sfizio locale:</strong> il <strong>Takoyaki Museum</strong> a DECKS: cinque banchi di produttori diversi di Osaka, ognuno con la propria versione, e si può fare il confronto diretto. C'è anche una food court a tema anni '60 (<em>Odaiba Takoyaki Museum / Daiba Itchome Shotengai</em>) con i dolci e i giocattoli retrò dell'epoca Showa. <strong>Cena:</strong> i ristoranti di Aqua City con le vetrate sulla baia e il Rainbow Bridge illuminato — pagate la vista, ma stasera ne vale la pena. In alternativa <strong>Bills Odaiba</strong>, celebre per i pancake alla ricotta, aperto anche a cena.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Gundam+Unicorn+Statue,+Odaiba,+Tokyo&daddr=Tsukiji+Tama+Sushi,+Decks+Tokyo+Beach&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=teamLab+Planets+TOKYO,+Toyosu&daddr=DiverCity+Tokyo+Plaza,+Odaiba+to:Unicorn+Gundam+Statue,+Odaiba+to:Odaiba+Seaside+Park+to:Aqua+City+Odaiba&dirflg=r&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 14" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
@@ -957,32 +1229,44 @@
                 <div class="day-image" style="background-image: url('images/airport.jpg');"></div>
                 <div class="day-content">
                     <div class="day-header">
-                        <h3>Giorno 15 (17 Dic): Shinjuku, ultimi acquisti e Narita</h3>
+                        <h3>Giorno 15 (17 Dic): Shinjuku, ultimi acquisti e volo da Narita</h3>
                         <span class="toggle-icon">+</span>
                     </div>
+                    <p class="day-meta">🗓️ Giovedì · 🚶 ~4 km · ✈️ partenza in serata</p>
                     <ul>
-                        <li><strong>Mattina:</strong> check-out, bagagli in deposito. Giornata libera.</li>
-                        <li><strong>Shinjuku:</strong> Gyoen, osservatorio gratuito, Omoide Yokocho.</li>
-                        <li><strong>17:15:</strong> N'EX per Narita. Volo QR807 alle <strong>21:55</strong>.</li>
+                        <li><strong>Mattina:</strong> <strong>Shinjuku Gyoen</strong> e l'osservatorio gratuito del Comune.</li>
+                        <li><strong>Pomeriggio:</strong> ultimi acquisti tax-free e bagagli.</li>
+                        <li><strong>17:15:</strong> Narita Express → volo <strong>QR807 delle 21:55</strong>.</li>
                     </ul>
                     <div class="day-details" id="day-details-15">
                         <div class="day-details-inner">
                         <div class="details-grid">
                             <div class="details-text">
-                                <h4>Il giorno regalato dal volo serale:</h4>
-                                <p>Partendo alle 21:55 questa non è una giornata di trasferimento: è <strong>una giornata vera</strong> che finisce alle cinque del pomeriggio. Fate il check-out entro le 10-11 e lasciate le valigie <em>in deposito all'hotel</em> (quasi tutti lo fanno gratis; in alternativa i coin locker grandi in stazione, ~700 yen). Poi girate leggeri.</p>
-                                <p><strong>Perché Shinjuku:</strong> è il quartiere in cui avete dormito una settimana senza mai dedicargli una giornata, ed è anche <em>il posto da cui parte il Narita Express</em>. Zero rischio logistico: quando è ora, scendete in stazione e salite sul treno.</p>
-                                <h4>Cosa fare:</h4>
-                                <p><strong>Mattina —</strong> lo <em>Shinjuku Gyoen</em> è uno dei pochi posti a Tokyo dove a metà dicembre restano ancora aceri rossi: 58 ettari di giardino giapponese, inglese e francese a 500 yen d'ingresso (chiuso il lunedì, ma il 17 è giovedì). Poi salite al <strong>Tokyo Metropolitan Government Building</strong>: l'osservatorio al 45° piano è <em>gratuito</em> e con l'aria tersa d'inverno si vede il Fuji all'orizzonte — la mattina presto è la fascia migliore.</p>
-                                <p><strong>Pomeriggio —</strong> ultimi acquisti. <em>Bic Camera</em> e <em>Yodobashi</em> a Shinjuku sono enormi ed è la vostra ultima occasione per l'elettronica tax free; <em>Don Quijote</em> per i souvenir stupidi e i Kit Kat; il <em>Kinokuniya</em> per i libri. Passate davanti alla testa di <strong>Godzilla</strong> sul tetto dell'Hotel Gracery a Kabukicho e infilatevi in <strong>Omoide Yokocho</strong>, il vicolo di baracchini di yakitori sotto i binari: alle 16 è già in atmosfera e con il buio invernale è perfetto per le ultime foto.</p>
-                                <h4>⏰ Il rientro, ora per ora:</h4>
-                                <p><strong>~16:30</strong> passate in hotel a riprendere i bagagli · <strong>17:15</strong> Narita Express da Shinjuku (prenotato il giorno prima!) · <strong>~18:40</strong> arrivo a Narita · <strong>18:55</strong> apre il check-in Qatar · <strong>21:55</strong> decollo del QR807 · <strong>04:40 del 18</strong> arrivo a Doha, 4h50 di scalo · <strong>09:30</strong> QR131 · <strong>13:30</strong> Roma Fiumicino.</p>
-                                <p><strong>Ultime cose:</strong> <em>non</em> svuotate la carta IC — il saldo vale 10 anni e la riuserete al prossimo viaggio. Se avete comprato in regime <em>tax free</em>, tenete i pacchi sigillati e lo scontrino a portata di mano per il controllo doganale in partenza. E lo scalo lungo a Doha non è una punizione: Hamad ha docce a pagamento che dopo 12 ore di volo valgono ogni riyal.</p>
+                                <h4>Itinerario della giornata:</h4>
+                                <ol class="timeline">
+                                    <li><span class="t">09:00</span><div><strong>Check-out</strong> — lasciate i bagagli alla reception dell'hotel, non ai coin locker: oggi vi servono le mani libere e li riprendete nel pomeriggio.</div></li>
+                                    <li><span class="t">09:30</span><div><strong>Shinjuku Gyoen</strong> — 58 ettari a dieci minuti a piedi dalla stazione, con tre giardini distinti (giapponese, inglese, francese) e una serra tropicale. In dicembre è quasi vuoto, con gli ultimi aceri e i <em>ginkgo</em> gialli. 500 yen, apre alle 9:00. È il modo migliore di passare l'ultima mattina: silenzioso e senza fretta.</div></li>
+                                    <li><span class="t">11:00</span><div><strong>Palazzo del Governo Metropolitano</strong> — quindici minuti a piedi verso ovest. L'osservatorio al 45° piano, a 202 metri, è <strong>gratuito</strong>: nelle giornate limpide di dicembre si vede il <em>Monte Fuji</em> all'orizzonte, ed è l'ultimo saluto giusto alla città. Aperto dalle 9:30.</div></li>
+                                    <li><span class="t">12:15</span><div><strong>Pranzo</strong> a Shinjuku ovest.</div></li>
+                                    <li><span class="t">13:30</span><div><strong>Ultimi acquisti</strong> — <strong>Yodobashi Camera</strong> (isolati multipli, ognuno con un reparto diverso), <strong>Don Quijote</strong> aperto 24 ore per i souvenir assurdi, <strong>Bic Camera</strong> e i <em>drugstore</em> per i cosmetici. Ricordate: <em>tax-free sopra i 5.000 yen, passaporto fisico alla cassa</em>, e i sacchetti sigillati non vanno aperti.</div></li>
+                                    <li><span class="t">15:30</span><div><strong>Kit Kat e cibo da riportare</strong> — i gusti giapponesi esclusivi (matcha, wasabi, sake, patata dolce) si trovano al piano alimentare dei grandi magazzini e nei negozi di souvenir in stazione. Compratene più di quanti pensiate.</div></li>
+                                    <li><span class="t">16:15</span><div><strong>Ritiro bagagli in hotel</strong> e ultimo giro.</div></li>
+                                    <li><span class="t">17:15</span><div><strong>Narita Express (N'EX) da Shinjuku</strong> — <em>parte dalla vostra stessa stazione</em>, nessun cambio, ~80-90 minuti fino a Narita. Prenotate il posto: il treno ha portabagagli con serratura a codice. ~3.250 yen.</div></li>
+                                    <li><span class="t">18:45</span><div><strong>Arrivo a Narita Terminal 2</strong> — Qatar Airways opera dal <strong>Terminal 2</strong>. Tre ore prima del volo: è il margine giusto per un volo intercontinentale.</div></li>
+                                    <li><span class="t">19:00</span><div><strong>Check-in, rimborso tax-free e sicurezza</strong> — se avete acquisti tax-free potrebbero volerli vedere: teneteli a portata e non nel bagaglio imbarcato.</div></li>
+                                    <li><span class="t">20:00</span><div><strong>Ultima cena in Giappone</strong> — Narita T2 ha ristoranti veri, non solo fast food: c'è del sushi decente e diversi banchi di ramen dopo i controlli.</div></li>
+                                    <li><span class="t">21:55</span><div><strong>QR807 per Doha</strong> — 12h45. Arrivo a Roma domani alle <strong>13:30</strong>.</div></li>
+                                </ol>
+                                <h4>Note e dritte:</h4>
+                                <p><strong>La logica della giornata:</strong> il volo è alle 21:55, quindi avete una giornata quasi intera — e per la prima volta la passate <em>a Shinjuku</em>, il quartiere in cui avete dormito sette notti senza mai visitarlo davvero. Tutto è entro venti minuti a piedi dall'hotel e dalla stazione da cui parte il treno per l'aeroporto: rischio logistico zero.</p>
+                                <p><strong>Il calcolo del tempo, per stare tranquilli:</strong> N'EX alle 17:15 → Narita 18:45 → tre ore e dieci prima del decollo. Se preferite un margine ancora più largo, c'è un N'EX ogni 30 minuti e potete anticipare a quello delle 16:45. Alternativa: il <em>Keisei Skyliner</em>, più veloce (41 minuti) ma parte da Ueno/Nippori, quindi da Shinjuku non conviene.</p>
+                                <p><strong>Prima di uscire dall'hotel, ultimo controllo:</strong> passaporto, carta d'imbarco, il sacchetto tax-free sigillato, il caricatore nella presa dietro il comodino, e il <em>saldo residuo della ICOCA</em> — potete usarla al konbini dell'aeroporto per svuotarla, oppure tenerla: vale dieci anni e la riuserete al prossimo viaggio.</p>
+                                <p><strong>Il bagaglio a mano.</strong> Qatar è rigida sul peso del bagaglio a mano (7 kg). Se avete comprato molto, ridistribuite in hotel e non in aeroporto.</p>
                                 <h4>Cosa mangiare:</h4>
-<img src='images/nikuman.jpg' alt='Nikuman' loading='lazy' decoding='async' width='560' height='180'><p>L'ultimo pasto giapponese vero fatelo a <strong>Omoide Yokocho</strong> nel tardo pomeriggio: due spiedini <em>yakitori</em> e una birra in piedi, gomito a gomito con i salaryman, sono il congedo giusto. In alternativa, alla stazione di Shinjuku prendete un <em>ekiben</em> da mangiare sul N'EX. E se avete ancora fame a Narita, il Terminal 2 ha un piano di ristoranti prima dei controlli e un ottimo duty free dopo — Pokémon Center compreso.</p>
+<img src='images/taiyaki.jpg' alt='Taiyaki' loading='lazy' decoding='async' width='560' height='180'><p><strong>Pranzo d'addio:</strong> Shinjuku ha di tutto, ma due idee giuste per l'ultimo giorno — un <em>kaisendon</em> (ciotola di riso coperta di sashimi) o un buon <em>tonkatsu</em> da <strong>Tonkatsu Suzuki</strong>. Se volete chiudere in bellezza, i grandi magazzini di Shinjuku (Isetan, Takashimaya) hanno ai piani alti ristoranti di livello con i set del pranzo a prezzi molto più bassi della sera. <strong>Sul treno:</strong> comprate un ultimo <em>ekiben</em> a Shinjuku Station e mangiatelo sul N'EX guardando scorrere la periferia di Tokyo — è un modo molto giapponese di chiudere il viaggio. <strong>A Narita:</strong> l'area ristoranti del Terminal 2 dopo i controlli ha ramen e sushi decenti, e i negozi di <em>omiyage</em> (souvenir gastronomici) sono l'ultima occasione per i Kit Kat che avete dimenticato.</p>
                             </div>
                             <div class="details-map">
-                                <iframe data-src="https://maps.google.com/maps?saddr=Shinjuku+Gyoen+National+Garden,+Tokyo&daddr=Tokyo+Metropolitan+Government+Building+to:Omoide+Yokocho,+Shinjuku+to:Narita+International+Airport&dirflg=r&t=&z=10&ie=UTF8&iwloc=&output=embed" title="Mappa del percorso della giornata" loading="lazy"></iframe>
+                                <iframe data-src="https://maps.google.com/maps?saddr=Shinjuku+Gyoen+National+Garden,+Tokyo&daddr=Tokyo+Metropolitan+Government+Building+to:Yodobashi+Camera+Shinjuku+to:Shinjuku+Station,+Tokyo+to:Narita+International+Airport&dirflg=r&t=&z=10&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 15" loading="lazy"></iframe>
                             </div>
                         </div>
                         </div>
