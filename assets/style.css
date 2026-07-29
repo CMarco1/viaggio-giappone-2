@@ -267,6 +267,7 @@ h3.sub { font-size: 1.4rem; font-weight: 800; margin: 2.6rem 0 1.2rem 0; scroll-
 .mapbox iframe { width: 100%; height: 320px; border: none; border-radius: 12px; background: #eee; display: block; }
 .maplink { display: inline-block; margin-top: 0.9rem; font-size: 0.82rem; font-weight: 800; text-decoration: none; color: var(--primary-color); }
 .maplink:hover { text-decoration: underline; }
+.maplink + .maplink { margin-left: 1.4rem; }
 
 /* Tabella costi */
 table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card-bg); box-shadow: var(--shadow-sm); border-radius: var(--border-radius); overflow: hidden; margin-top: 1.5rem; }
