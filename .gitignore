@@ -1,3 +1,7 @@
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
 .DS_Store
+
+# Documenti di viaggio: passaporti, carte d'imbarco, conferme di prenotazione.
+# Il sito e' pubblico, questa roba non ci deve finire.
+biglietti/
