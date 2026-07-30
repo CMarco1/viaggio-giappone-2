@@ -1,0 +1,219 @@
+---
+name: viaggio-giappone
+description: Linee guida e gusti dei due viaggiatori per il sito dell'itinerario Giappone 2026 (2-18 dicembre, Kyoto + Tokyo). Da leggere PRIMA di proporre, aggiungere, spostare o togliere qualsiasi tappa, ristorante, esperienza o giornata, e prima di modificare qualunque giorno-NN.html, mangiare.html, nerd.html, pratica.html, prenotazioni.html o costi.html. Contiene i veti assoluti (parchi a tema, cibi banditi), le preferenze, la regola del ritmo e la regola anti-doppioni.
+---
+
+# Viaggio Giappone 2026 — linee guida
+
+Le regole qui sotto vengono **prima** di qualunque consiglio "da guida turistica".
+Se una tappa è bellissima ma viola una regola, non si propone. Non si propone
+nemmeno "come opzionale": si lascia fuori.
+
+## I fatti fissi
+
+- **2-18 dicembre 2026**, 15 giorni in Giappone, 14 notti, **2 persone**.
+- **Base 1:** Kyoto, Hotel M's Plus Shijo-Omiya, 7 notti (3→10 dic). Sotto casa:
+  Hankyu Omiya e il capolinea del tram **Randen** per Arashiyama.
+- **Base 2:** Tokyo, APA Higashi-Shinjuku Kabukicho Tower, 7 notti (10→17 dic).
+  Fermata quotidiana **Higashi-Shinjuku** (Oedo + Fukutoshin), 350 m.
+  Shinjuku Station è a 1,1 km: non è la stazione "di casa".
+- Hotel occidentali, **niente ryokan**. Onsen in terrazza incluso all'APA.
+- Buio alle **16:30-16:45**. Le cose "da luce" vanno al mattino, sempre.
+- Non è la prima volta in Giappone: **Nara è già stata fatta** e non ha convinto.
+
+## ⛔ Veti assoluti
+
+### Parchi a tema — no, in nessuna forma
+Niente **Museo Ghibli**, niente **Nintendo Museum** (Uji), niente **Super
+Nintendo World / Universal Studios Japan**, niente parchi a tema in generale.
+La decisione è chiusa: non riproporli, non elencarli fra le alternative, non
+scrivere "se cambiate idea". Vale anche per i loro vincoli di prenotazione —
+non serve tenerne traccia in `prenotazioni.html`.
+
+### Cibi banditi
+Non compaiono nei consigli, e se un locale è consigliato per **altro** va
+scritto per cos'altro.
+
+| Bandito | Include anche |
+|---|---|
+| **Soba** | zaru soba, chasoba, soba al tè verde. *(Il "chuka soba" è ramen: quello va bene.)* |
+| **Okonomiyaki** | la "frittatona con tutto dentro". Fuori anche Chibo, Ajinoya e simili. |
+| **Matcha** | gelato, parfait, dolci, warabimochi al tè, il "set matcha e dolcetto", la via del tè di Uji come attrattiva gastronomica. |
+| **Tofu** | yudofu, tofu kaiseki, il tofu come piatto. *(Come ingrediente dentro un nabe o una zuppa non è un problema: non è "andare a mangiare il tofu".)* |
+
+### Esperienze escluse
+Non si propongono, nemmeno come opzionali:
+
+- **Sumo** — né torneo né *asageiko* (l'allenamento mattutino nelle heya di
+  Ryogoku). A dicembre non c'è comunque nessun basho, ma la porta è chiusa
+  anche per l'allenamento: non riproporlo.
+- **Cerimonia del tè** — in qualunque forma, a Kyoto o altrove. Si somma al
+  veto sul matcha: il tè non è una leva da usare per vendere una tappa.
+
+### L'omurice è ammesso, una volta sola
+L'**omurice** (frittatina sottile chiusa sopra il riso saltato al pomodoro)
+**non** rientra nel veto sull'okonomiyaki: è un piatto diverso e vogliono
+provarlo. Va messo in programma **una volta**, in un posto che valga la pena.
+
+Il posto giusto ce l'avete già: **Hokkyokusei** a Shinsaibashi (Giorno 3),
+casa di legno con giardino interno, è **il locale dove l'omurice è stato
+inventato nel 1925**. Se per qualsiasi motivo salta, la sostituzione va
+cercata a Osaka o in un *yoshoku* storico, non in una catena.
+
+Una volta piazzato, non riproporlo altrove: vale la regola anti-doppioni.
+
+## ✅ Cosa piace
+
+**Da mangiare:** **sushi** e **carne**, in tutte le forme — wagyu, yakiniku,
+teppanyaki, sukiyaki, shabu-shabu, tonkatsu, katsudon, yakitori, kushikatsu,
+unagi, ramen, curry con la cotoletta, gyoza. I mercati vanno bene se il motivo
+è il pesce o la carne alla griglia, non i dolci.
+
+Il sushi vero è **sotto-rappresentato** nel sito: se c'è occasione di
+aggiungerne di buono, ha priorità alta.
+
+**Da fare — il tema nerd, in ordine di interesse:**
+1. **Retrogaming** — cartucce sciolte, console testate, hardware junk, sale
+   arcade con i cabinati veri.
+2. **Giochi Switch** nuovi e usati.
+3. **Manga** nuovi e usati.
+4. **Action figure** nuove e usate.
+
+Traduzione operativa: Book Off, Surugaya, Mandarake, Trader, Beep, Super
+Potato, Retro Game Camp, Nakano Broadway, Den Den Town, Yamashiroya, Radio
+Kaikan, Gundam Base, i piani usato ovunque. **Il mercato dell'usato ha
+priorità sul nuovo**, perché è la cosa che in Italia non si può fare.
+
+**Da vedere:** templi e castelli veri, quartieri al neon, mercati, vicoli,
+robe fuori dal comune. Il resto è contorno.
+
+## Decisioni già prese
+
+- ✅ **Karaoke, una serata.** Deciso, va messo in programma — non proposto come
+  opzionale. Box privato in due, Kabukicho ce l'ha sotto casa (~300 m
+  dall'APA), aperti fino a notte fonda, ~1.500 ¥ l'ora. Va incastrato in una
+  sera di Tokyo che finisce presto e vicino all'hotel: i candidati sono il
+  **Giorno 12** (si rientra a Shinjuku a piedi facendo shopping) o il
+  **Giorno 14** (rientro dalla baia). Non il Giorno 8, già pieno con Omoide
+  Yokocho e Golden Gai.
+- ✅ **Spiaggia di Odaiba, tempo vero.** Al Giorno 14, dopo la Gundam Base e la
+  trasformazione dell'Unicorn, va previsto **tempo largo sulla spiaggia** di
+  Odaiba Kaihin Koen — non venti minuti di passaggio per la foto alla Statua
+  della Libertà. È sabbia vera sulla baia, con il Rainbow Bridge davanti, il
+  tramonto alle 16:30 e le luci che si accendono subito dopo. È la tappa
+  "niente da fare" della giornata e va difesa: se il tempo stringe, si taglia
+  un centro commerciale, non la spiaggia.
+- ❌ Sumo, cerimonia del tè, parchi a tema: chiusi, vedi sopra.
+
+## 📏 La regola del ritmo — vale quanto i veti
+
+**Il viaggio deve essere tranquillo.** Serve tempo per stare con calma nei
+posti che piacciono, non per collezionarne di più.
+
+- Non aggiungere una tappa a una giornata già piena: **si scambia**, e si
+  scrive cosa si perde.
+- Se una tappa è nerd o è cibo, il tempo si può allungare. Se è "un'altra cosa
+  da vedere", si taglia.
+- Un negozio di usato può risucchiare due ore invece di quaranta minuti: è un
+  risultato, non un imprevisto. Le giornate nerd vanno tenute **larghe**.
+- Deve esistere **almeno un pomeriggio cuscinetto** dichiarato, senza niente
+  di prenotato e senza orari.
+- Le giornate stanno sui **4-9 km a piedi**. Sopra i 9 km si toglie qualcosa.
+- Le sere non devono finire tutte con "cena e a letto", ma nemmeno diventare
+  un secondo programma. Una cosa dopocena, non tre.
+
+## 🔁 La regola anti-doppioni — il tetto è **due**
+
+Due esperienze simili vanno bene: la seconda volta si guarda con occhi diversi.
+**Tre no, mai, in nessuna categoria.** Questo è un numero secco, non un
+"dipende": se una categoria è già a due e ne salta fuori una terza, quella
+terza entra **solo al posto** di una delle due, dicendo quale si perde e perché
+la nuova è meglio.
+
+| Categoria | Tetto | Note |
+|---|---|---|
+| **Osservatori e viste dall'alto** | **2** | Ce n'erano **sei** (Kyoto Tower, Umeda Sky, Skytree, Shibuya Sky, Sunshine 60, palazzo del Governo). Ne restano due: **Umeda Sky** in Kansai e **Shibuya Sky** a Tokyo. |
+| Acquari | 1 | |
+| Giardini zen di sassi | 1 | Ryoan-ji basta, è l'originale. |
+| Grandi templi d'oro / padiglioni | 2 | |
+| Mercati alimentari fatti *apposta* | 2 | Nishiki e Kuromon. Ameyoko si attraversa e basta. |
+| Serate in un vicolo di izakaya | 2 | Omoide Yokocho e Golden Gai (stessa sera, Giorno 8) più Pontocho (Giorno 5). Gli altri vicoli si attraversano, non ci si cena. |
+
+Il conteggio è **su tutto il viaggio**, non per città: due osservatori totali,
+non due a Kyoto e due a Tokyo.
+
+**Cosa conta come "esperienza".** Una tappa dove si paga un biglietto, si sale
+un ascensore o ci si passa la serata: quella conta e va contata. Un quartiere,
+un vicolo o una galleria che si attraversano camminando verso altro **non
+contano** — sono strada, non programma. Il fastidio di partenza erano *le
+tante torri viste dall'alto*, non l'aver camminato in due vie diverse.
+
+Prima di proporre qualcosa, chiediti: **"di questa cosa qui quante ne hanno
+già?"** Zero o una → si può aggiungere. Due → è una sostituzione.
+
+## Come si scrive sul sito
+
+Il tono esistente è: **secca persona plurale ("fate", "arrivateci"), motivo
+concreto per ogni scelta, un fatto verificabile per tappa, nessun entusiasmo
+generico**. Ogni giornata spiega la *logica* di sé stessa in "Note e dritte".
+Mantienilo.
+
+Struttura di `giorno-NN.html` (non inventarne una nuova):
+
+- `.dayhero` + `.chips` — i chip devono coincidere con il teaser della card in
+  `index.html`. **Oggi non coincidono sempre: verificali quando tocchi un giorno.**
+- `.card.accent.a-sintesi` → `ul.synth`, tre righe.
+- `.card.a-itin` → `ol.timeline`, `<li><span class="t">HH:MM</span><div>…</div></li>`.
+  Le tappe facoltative hanno `class="opt"` sul `<li>`.
+- `.card.a-mappa` → iframe Google Maps + link `.maplink`. Se cambi le tappe,
+  **aggiorna anche saddr/daddr**.
+- `.card.a-mangiare` → `ul.eat` con `<span class="when">Pranzo</span>`.
+- `.card.a-note.prose` → paragrafi che aprono con `<strong>`.
+- Navigazione in fondo: `.dayfoot` prev/home/next.
+- Priorità: `<span class="prio prio-high|prio-med|prio-low">`.
+
+Toccando un giorno, controlla sempre gli effetti su: `index.html` (teaser e
+immagine), `prenotazioni.html` (se nasce o muore una prenotazione),
+`costi.html` (se cambia una spesa), `mangiare.html` e `nerd.html` (se il
+consiglio è generale e non di giornata).
+
+## Checklist prima di proporre qualsiasi cosa
+
+1. È un parco a tema, il sumo o una cerimonia del tè? → **fuori.**
+2. Il motivo per andarci è soba, okonomiyaki, matcha o tofu? → **fuori.**
+3. Ne hanno già una uguale? → solo come **sostituzione**, dicendo cosa si perde.
+4. Sta in una giornata già piena? → **si scambia**, non si aggiunge.
+5. È retrogaming / Switch / manga / figure / sushi / carne? → **priorità alta**,
+   e dagli tempo largo.
+6. Funziona **a dicembre**, con il buio alle 16:30 e le chiusure invernali
+   alle 16:30? Verifica i giorni di chiusura settimanali.
+7. Richiede prenotazione? → allora va anche in `prenotazioni.html` con la sua
+   scadenza.
+
+## Debito noto (da sistemare quando si passa di lì)
+
+Il grosso è stato saldato nella revisione di luglio 2026. Resta questo:
+
+- `mangiare.html` — **tofu** nell'oden da konbini (ingrediente in una lista, non
+  una tappa: tollerabile, non serve riscrivere).
+- `images/` — `matcha.jpg`, `soba.jpg`, `tofu.jpg` e `okonomiyaki.jpg` non sono
+  più referenziate da nessuna pagina. Cancellarle è una decisione dell'utente,
+  non tua.
+- `giorno-06.html` — con la salita alla Tsutenkaku è saltato anche il
+  **Tower Slider**, lo scivolo a spirale dalla base della torre. Non è una
+  vista dall'alto e non violerebbe niente: se serve un'aggiunta a Shinsekai,
+  ricomincia da lì.
+- `giorno-14.html` — **mercoledì 16 dicembre 2026**: Toyosu chiude *alcuni*
+  mercoledì e il calendario ufficiale esce tardi. La pagina ha già i due
+  ripieghi scritti, ma il controllo va rifatto a fine novembre.
+
+### Già sistemato, non riaprire
+
+Osservatori portati da sei a **due** (Umeda Sky, Shibuya Sky): tagliate Kyoto
+Tower (G1), la salita alla Tsutenkaku (G6), lo Skytree (G9 → sostituito da
+**Kappabashi**, e il giorno si è rinominato in quattro file), il Sunshine 60
+(G13) e il palazzo del Governo (G15 → **Hanazono Jinja**). Okonomiyaki fuori
+dal G3 e omurice da **Hokkyokusei** promosso a prima scelta. Matcha tolto da
+G4, G7 e G15. Karaoke messo a programma alle 21:30 del **G12**. Spiaggia di
+Odaiba a un'ora e mezza piena nel **G14**. Teaser di `index.html` riallineati
+ai chip delle giornate.
