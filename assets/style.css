@@ -233,7 +233,7 @@ h3.sub { font-size: 1.4rem; font-weight: 800; margin: 2.6rem 0 1.2rem 0; scroll-
 .prose > h4:first-child { margin-top: 0; }
 .prose ul { padding-left: 1.2rem; color: var(--light-text); font-size: 0.95rem; }
 .prose li { margin-bottom: 0.7rem; }
-.prose img { width: 100%; border-radius: 12px; margin-bottom: 14px; height: 180px; object-fit: cover; box-shadow: var(--shadow-sm); }
+.prose img, .a-mangiare img { width: 100%; border-radius: 12px; margin-bottom: 14px; height: 180px; object-fit: cover; box-shadow: var(--shadow-sm); }
 
 /* Timeline oraria */
 .timeline { list-style: none; padding: 0; margin: 0; }
@@ -321,6 +321,6 @@ tr:last-child td { border-bottom: none; font-weight: 800; font-size: 1.15rem; ba
     .card, .summary-box, .inc-exc-box, table { box-shadow: none; border: 1px solid #DDD; break-inside: avoid; }
     .daylayout { display: block; }
     .card { margin-bottom: 1rem; }
-    .prose img { display: none; }
+    .prose img, .a-mangiare img { display: none; }
     a { color: inherit; text-decoration: none; }
 }

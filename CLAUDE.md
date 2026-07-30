@@ -148,8 +148,14 @@ posti che piacciono, non per collezionarne di più.
   da vedere", si taglia.
 - Un negozio di usato può risucchiare due ore invece di quaranta minuti: è un
   risultato, non un imprevisto. Le giornate nerd vanno tenute **larghe**.
-- Deve esistere **almeno un pomeriggio cuscinetto** dichiarato, senza niente
-  di prenotato e senza orari.
+- **Il cuscinetto non si dichiara in anticipo, si prende sul posto.** Non serve
+  un pomeriggio vuoto scritto nel programma: se una giornata non gira, si
+  libera *quel* pomeriggio lì e si decide la mattina stessa o a pranzo. Quello
+  che serve invece è che le giornate siano **scritte in modo da permetterlo**:
+  ogni pomeriggio deve dire cosa si perde a tagliarlo, e le cose che non si
+  recuperano — eventi a data fissa, slot prenotati, mercati che esistono solo
+  quel giorno — vanno marcate come tali, perché sono le uniche che *non* si
+  possono liberare.
 - Le giornate stanno sui **4-9 km a piedi**. Sopra i 9 km si toglie qualcosa.
 - Le sere non devono finire tutte con "cena e a letto", ma nemmeno diventare
   un secondo programma. Una cosa dopocena, non tre.
