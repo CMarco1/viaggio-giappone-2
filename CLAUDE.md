@@ -1,13 +1,11 @@
----
-name: viaggio-giappone
-description: Linee guida e gusti dei due viaggiatori per il sito dell'itinerario Giappone 2026 (2-18 dicembre, Kyoto + Tokyo). Da leggere PRIMA di proporre, aggiungere, spostare o togliere qualsiasi tappa, ristorante, esperienza o giornata, e prima di modificare qualunque giorno-NN.html, mangiare.html, nerd.html, pratica.html, prenotazioni.html o costi.html. Contiene i veti assoluti (parchi a tema, cibi banditi), le preferenze, la regola del ritmo e la regola anti-doppioni.
----
+# CLAUDE.md
 
-# Viaggio Giappone 2026 — linee guida
+Sito statico dell'itinerario di un viaggio in Giappone: HTML a mano, nessun
+build, nessun framework. Si modifica a mano e si guarda aprendo i file.
 
-Le regole qui sotto vengono **prima** di qualunque consiglio "da guida turistica".
-Se una tappa è bellissima ma viola una regola, non si propone. Non si propone
-nemmeno "come opzionale": si lascia fuori.
+Questo file contiene le regole del viaggio e le convenzioni del sito. Vale
+**prima** di qualunque consiglio da guida turistica: se una tappa e' bellissima
+ma viola una regola, non si propone, nemmeno come opzionale.
 
 ## I fatti fissi
 
@@ -92,10 +90,10 @@ robe fuori dal comune. Il resto è contorno.
 - ✅ **Karaoke, una serata.** Deciso, va messo in programma — non proposto come
   opzionale. Box privato in due, Kabukicho ce l'ha sotto casa (~300 m
   dall'APA), aperti fino a notte fonda, ~1.500 ¥ l'ora. Va incastrato in una
-  sera di Tokyo che finisce presto e vicino all'hotel: i candidati sono il
-  **Giorno 12** (si rientra a Shinjuku a piedi facendo shopping) o il
-  **Giorno 14** (rientro dalla baia). Non il Giorno 8, già pieno con Omoide
-  Yokocho e Golden Gai.
+  sera di Tokyo che finisce presto e vicino all'hotel. **Assegnato: Giorno 12,
+  alle 21:00**, dopo cena, dentro Kabukicho. Non il Giorno 8, già pieno con
+  Omoide Yokocho e Golden Gai. Non è in preventivo: sta fra le spese non
+  comprese di `costi.html`, ~3.000 ¥ a testa.
 - ✅ **Spiaggia di Odaiba, tempo vero.** Al Giorno 14, dopo la Gundam Base e la
   trasformazione dell'Unicorn, va previsto **tempo largo sulla spiaggia** di
   Odaiba Kaihin Koen — non venti minuti di passaggio per la foto alla Statua
@@ -103,7 +101,36 @@ robe fuori dal comune. Il resto è contorno.
   tramonto alle 16:30 e le luci che si accendono subito dopo. È la tappa
   "niente da fare" della giornata e va difesa: se il tempo stringe, si taglia
   un centro commerciale, non la spiaggia.
+- ✅ **Acquari: nessuno.** Il Sunshine Aquarium è stato tolto dal Giorno 13, non
+  interessa. Non riproporne altri.
+- ✅ **Doppia opzione, non taglio secco.** Quando un evento a data fissa entra in
+  una giornata già scritta, **si tengono tutte e due le versioni**: la giornata
+  resta scritta col piano A, e le note contengono un paragrafo *"Due versioni
+  di oggi, si decide a colazione"* con il piano B, cosa costa l'uno e cosa
+  costa l'altro. Si sceglie la mattina stessa in base a come ci si sente. Vale
+  per i Giorni 4, 12 e 13.
 - ❌ Sumo, cerimonia del tè, parchi a tema: chiusi, vedi sopra.
+
+## 📅 Eventi a data fissa già incastrati
+
+Cadono dentro le date del viaggio e sono **tutti gratis e senza prenotazione**.
+Non toglierli e non spostarli: esistono solo quel giorno.
+
+| Giorno | Data | Evento |
+|---|---|---|
+| G2 | 4 dic | **Kodai-ji illuminato** la sera (600 ¥; date 2026 da confermare) |
+| G3 | 5 dic | **Midosuji Illumination**, 800 ginkgo, fino al 31 dicembre |
+| G4 | 6 dic | **Garakuta-ichi a To-ji** — prima domenica del mese |
+| G5 | 7 dic | **Kaomise** al Minamiza, i *maneki* sulla facciata |
+| G10 | 12 dic | **Blue Cave** a Shibuya (4-25 dic) + Omotesando in oro |
+| G12 | 14 dic | **Gishi-sai** dei 47 ronin a Sengaku-ji |
+| G13 | 15 dic | **Setagaya Boro-ichi**, 700 banchi, 4 giorni all'anno |
+
+Tre cose che **non** esistono più e non vanno riproposte: la **Kobe Luminarie**
+si è spostata a fine gennaio (era il candidato ovvio per il G7 a Kobe),
+l'**Hanatouro** di Arashiyama è stato soppresso, e il **Kiyomizu-dera** di notte
+chiude il 30 novembre, tre giorni prima dell'arrivo. Lo **Shimai Kobo** a To-ji
+(21 dic) e il **Tenjin-san** a Kitano (25 dic) cadono dopo il rientro.
 
 ## 📏 La regola del ritmo — vale quanto i veti
 
@@ -133,10 +160,11 @@ la nuova è meglio.
 | Categoria | Tetto | Note |
 |---|---|---|
 | **Osservatori e viste dall'alto** | **2** | Ce n'erano **sei** (Kyoto Tower, Umeda Sky, Skytree, Shibuya Sky, Sunshine 60, palazzo del Governo). Ne restano due: **Umeda Sky** in Kansai e **Shibuya Sky** a Tokyo. |
-| Acquari | 1 | |
+| Acquari | **0** | Il Sunshine Aquarium è stato tolto dal Giorno 13. Categoria chiusa, non se ne aggiungono. |
 | Giardini zen di sassi | 1 | Ryoan-ji basta, è l'originale. |
 | Grandi templi d'oro / padiglioni | 2 | |
 | Mercati alimentari fatti *apposta* | 2 | Nishiki e Kuromon. Ameyoko si attraversa e basta. |
+| Mercati dell'usato e delle pulci | **2, pieno** | Garakuta-ichi a To-ji (G4) e Boro-ichi a Setagaya (G13). Un terzo entra solo al posto di uno dei due. |
 | Serate in un vicolo di izakaya | 2 | Omoide Yokocho e Golden Gai (stessa sera, Giorno 8) più Pontocho (Giorno 5). Gli altri vicoli si attraversano, non ci si cena. |
 
 Il conteggio è **su tutto il viaggio**, non per città: due osservatori totali,
@@ -147,6 +175,12 @@ un ascensore o ci si passa la serata: quella conta e va contata. Un quartiere,
 un vicolo o una galleria che si attraversano camminando verso altro **non
 contano** — sono strada, non programma. Il fastidio di partenza erano *le
 tante torri viste dall'alto*, non l'aver camminato in due vie diverse.
+
+Per questo le **illuminazioni invernali** sono quattro (G2, G3, G10, G13) e non
+violano il tetto: tre sono viali che si percorrono tornando a casa, gratis e
+senza biglietto. L'unica che conta come tappa è **Kodai-ji** al Giorno 2, perché
+si paga e si entra. Se ne salta fuori una quinta, si attraversa o si lascia
+perdere: non si aggiunge una seconda illuminazione a pagamento.
 
 Prima di proporre qualcosa, chiediti: **"di questa cosa qui quante ne hanno
 già?"** Zero o una → si può aggiungere. Due → è una sostituzione.
@@ -185,10 +219,12 @@ consiglio è generale e non di giornata).
 4. Sta in una giornata già piena? → **si scambia**, non si aggiunge.
 5. È retrogaming / Switch / manga / figure / sushi / carne? → **priorità alta**,
    e dagli tempo largo.
-6. Funziona **a dicembre**, con il buio alle 16:30 e le chiusure invernali
-   alle 16:30? Verifica i giorni di chiusura settimanali.
+6. Funziona **a dicembre**, col buio alle 16:30 e gli ultimi ingressi nel
+   pomeriggio? Verifica i giorni di chiusura settimanali.
 7. Richiede prenotazione? → allora va anche in `prenotazioni.html` con la sua
    scadenza.
+8. Sostituisce qualcosa di già scritto? → tieni **tutte e due** le versioni come
+   piano A e piano B, non cancellare la vecchia.
 
 ## Debito noto (da sistemare quando si passa di lì)
 
@@ -196,9 +232,14 @@ Il grosso è stato saldato nella revisione di luglio 2026. Resta questo:
 
 - `mangiare.html` — **tofu** nell'oden da konbini (ingrediente in una lista, non
   una tappa: tollerabile, non serve riscrivere).
-- `images/` — `matcha.jpg`, `soba.jpg`, `tofu.jpg` e `okonomiyaki.jpg` non sono
-  più referenziate da nessuna pagina. Cancellarle è una decisione dell'utente,
-  non tua.
+- `giorno-02.html` — le **date 2026 dell'illuminazione serale di Kodai-ji** non
+  sono ancora uscite. Nel 2025 andò dal 24 ottobre al 14 dicembre, quindi il
+  4 dicembre è quasi certo ma non garantito: **ricontrollare a fine novembre**.
+  È l'unica verifica rimasta fra gli eventi di dicembre, tutti gli altri hanno
+  date pubblicate.
+- `giorno-13.html` — dopo la deviazione a Setagaya il chip dice ancora
+  **~8 km a piedi**. È una stima ereditata, non ricalcolata: se si tocca la
+  giornata, rifare il conto.
 - `giorno-06.html` — con la salita alla Tsutenkaku è saltato anche il
   **Tower Slider**, lo scivolo a spirale dalla base della torre. Non è una
   vista dall'alto e non violerebbe niente: se serve un'aggiunta a Shinsekai,
@@ -214,6 +255,14 @@ Tower (G1), la salita alla Tsutenkaku (G6), lo Skytree (G9 → sostituito da
 **Kappabashi**, e il giorno si è rinominato in quattro file), il Sunshine 60
 (G13) e il palazzo del Governo (G15 → **Hanazono Jinja**). Okonomiyaki fuori
 dal G3 e omurice da **Hokkyokusei** promosso a prima scelta. Matcha tolto da
-G4, G7 e G15. Karaoke messo a programma alle 21:30 del **G12**. Spiaggia di
+G4, G7 e G15. Karaoke messo a programma alle 21:00 del **G12**. Spiaggia di
 Odaiba a un'ora e mezza piena nel **G14**. Teaser di `index.html` riallineati
 ai chip delle giornate.
+
+Le quattro immagini orfane (`matcha.jpg`, `soba.jpg`, `tofu.jpg`,
+`okonomiyaki.jpg`) più `gion.jpg` sono state **cancellate**: in `images/` ne
+restano 32, tutte referenziate. Gli eventi di dicembre sono stati scansionati e
+incastrati (tabella sopra), col Sunshine Aquarium tolto dal **G13**, che si è
+rinominato *"Boro-ichi, Ikebukuro e le luci di Ginza"* in quattro file. Le
+linee guida stavano in `.claude/skills/viaggio-giappone/SKILL.md`: quella
+cartella è stata rimossa, questo file la sostituisce.
