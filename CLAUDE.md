@@ -71,8 +71,13 @@ Il sushi vero è **sotto-rappresentato** nel sito: se c'è occasione di
 aggiungerne di buono, ha priorità alta.
 
 **Da fare — il tema nerd, in ordine di interesse:**
-1. **Retrogaming** — cartucce sciolte, console testate, hardware junk, sale
-   arcade con i cabinati veri.
+1. **Retrogaming, da _comprare_** — cartucce sciolte (Super Famicom, Game Boy),
+   console testate, hardware junk, i cassoni da rovistare.
+   ⛔ **Non le sale giochi.** I cabinati non interessano: non c'è voglia di
+   mettersi a giocare in vacanza e comunque non si riportano in aereo. Una sala
+   arcade, un piano di crane game o una parete di gachapon **non contano come
+   retrogaming**: sono tempo tolto ai negozi. Se un posto si consiglia solo per
+   i cabinati, non si consiglia.
 2. **Giochi Switch** nuovi e usati.
 3. **Manga** nuovi e usati.
 4. **Action figure** nuove e usate.
@@ -159,7 +164,7 @@ la nuova è meglio.
 
 | Categoria | Tetto | Note |
 |---|---|---|
-| **Osservatori e viste dall'alto** | **2** | Ce n'erano **sei** (Kyoto Tower, Umeda Sky, Skytree, Shibuya Sky, Sunshine 60, palazzo del Governo). Ne restano due: **Umeda Sky** in Kansai e **Shibuya Sky** a Tokyo. |
+| **Osservatori e viste dall'alto** | **2 a pagamento** | Ce n'erano **sei** (Kyoto Tower, Umeda Sky, Skytree, Shibuya Sky, Sunshine 60, palazzo del Governo). Di quelle **a biglietto** ne restano due: **Umeda Sky** in Kansai e **Shibuya Sky** a Tokyo, e altre non se ne aggiungono. Ma il fastidio erano *le sei torri in fila*, non il guardare in basso: **se salta fuori un terzo tetto che è davvero bello — gratis o quasi, e sulla strada — va bene che ci sia.** Non è un tetto secco, è un no alla collezione di osservatori. |
 | Acquari | **0** | Il Sunshine Aquarium è stato tolto dal Giorno 13. Categoria chiusa, non se ne aggiungono. |
 | Giardini zen di sassi | 1 | Ryoan-ji basta, è l'originale. |
 | Grandi templi d'oro / padiglioni | 2 | |
@@ -233,10 +238,11 @@ Il grosso è stato saldato nella revisione di luglio 2026. Resta questo:
 - `mangiare.html` — **tofu** nell'oden da konbini (ingrediente in una lista, non
   una tappa: tollerabile, non serve riscrivere).
 - `giorno-02.html` — le **date 2026 dell'illuminazione serale di Kodai-ji** non
-  sono ancora uscite. Nel 2025 andò dal 24 ottobre al 14 dicembre, quindi il
-  4 dicembre è quasi certo ma non garantito: **ricontrollare a fine novembre**.
-  È l'unica verifica rimasta fra gli eventi di dicembre, tutti gli altri hanno
-  date pubblicate.
+  sono ancora uscite (verificato a luglio 2026: il tempio pubblicizza solo il
+  notturno estivo). Nel 2025 andò dal 24 ottobre al 14 dicembre, quindi il
+  4 dicembre è quasi certo ma non garantito. Il calendario autunnale esce in
+  genere **fra settembre e ottobre**: **ricontrollare a inizio ottobre**, non a
+  novembre. È l'unica verifica rimasta fra gli eventi di dicembre.
 - `giorno-13.html` — dopo la deviazione a Setagaya il chip dice ancora
   **~8 km a piedi**. È una stima ereditata, non ricalcolata: se si tocca la
   giornata, rifare il conto.
@@ -245,8 +251,11 @@ Il grosso è stato saldato nella revisione di luglio 2026. Resta questo:
   vista dall'alto e non violerebbe niente: se serve un'aggiunta a Shinsekai,
   ricomincia da lì.
 - `giorno-14.html` — **mercoledì 16 dicembre 2026**: Toyosu chiude *alcuni*
-  mercoledì e il calendario ufficiale esce tardi. La pagina ha già i due
-  ripieghi scritti, ma il controllo va rifatto a fine novembre.
+  mercoledì. **Il calendario 2026 è già pubblicato** (deciso a settembre 2025,
+  PDF e CSV su `shijou.metro.tokyo.lg.jp/calendar/2026`): non è più una cosa da
+  rimandare, è una verifica da cinque minuti. La pagina ha già i due ripieghi
+  scritti. È l'unico punto di rottura singolo dell'itinerario, perché con
+  Toyosu chiuso salta uno dei due soli sushi del viaggio.
 
 ### Già sistemato, non riaprire
 

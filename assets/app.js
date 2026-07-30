@@ -25,7 +25,7 @@
         } else if (days === 1) {
             html = '<strong>Domani</strong><span>si parte!</span>';
         } else if (now <= RETURN) {
-            html = '<strong>Giorno ' + Math.floor((now - DEPARTURE) / 86400000) + '</strong><span>siete in Giappone 🎌</span>';
+            html = '<strong>Giorno ' + (Math.floor((now - DEPARTURE) / 86400000) + 1) + '</strong><span>siete in Giappone 🎌</span>';
         }
         if (html) { box.innerHTML = html; box.hidden = false; }
     }
