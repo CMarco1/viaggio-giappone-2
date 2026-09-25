@@ -19,6 +19,25 @@ ma viola una regola, non si propone, nemmeno come opzionale.
 - Buio alle **16:30-16:45**. Le cose "da luce" vanno al mattino, sempre.
 - Non è la prima volta in Giappone: **Nara è già stata fatta** e non ha convinto.
 
+## ⛔ Il viaggio del 2025 — non ripeterlo
+
+Nel **novembre-dicembre 2025** hanno fatto un tour di gruppo (TripLab, "Da
+Hiroshima a Tokyo attraverso l'antica via Nakasendo"; il PDF è nella cartella del
+sito). Quello che hanno già visto **non si ripropone**, nemmeno "con occhi
+diversi", tranne le eccezioni scelte da loro.
+
+| Già fatto nel 2025 | |
+|---|---|
+| Kyoto | Kiyomizu-dera, Nishiki, **Fushimi Inari**, **Kinkaku-ji**, **foresta di bambù di Arashiyama** |
+| Fuori Kyoto | Miyajima e Hiroshima, **Nara** (Todai-ji), la Nakasendo (Magome-Tsumago, Narai), Nagano (Zenko-ji), Shibu Onsen, i macachi di **Jigokudani** |
+| Tokyo | **Asakusa** (hotel lì per 4 notti: Senso-ji, Kaminarimon), Shinjuku con la birra a **Omoide Yokocho**, **incrocio di Shibuya**, **Meiji Jingu**, pranzo al mercato di **Tsukiji**, tramonto sulla **spiaggia di Odaiba**, la vista dall'alto dallo **Skytree**, e un giorno libero a caccia di nerdate ad **Akihabara** |
+
+**Eccezioni volute, da tenere:** **Kiyomizu-dera** (G2, stavolta all'alba),
+la **spiaggia di Odaiba** (G14) e il **mercato Nishiki** (G5, affiancato da un
+mercato di quartiere). **Akihabara** resta perché il nerd shopping non stanca:
+"al limite si cambia posto se ne vale la pena". Toyosu non è una ripetizione di
+Tsukiji: è il mercato all'ingrosso, non quello esterno.
+
 ## ⛔ Veti assoluti
 
 ### Parchi a tema — no, in nessuna forma
@@ -62,13 +81,18 @@ Una volta piazzato, non riproporlo altrove: vale la regola anti-doppioni.
 
 ## ✅ Cosa piace
 
-**Da mangiare:** **sushi** e **carne**, in tutte le forme — wagyu, yakiniku,
-teppanyaki, sukiyaki, shabu-shabu, tonkatsu, katsudon, yakitori, kushikatsu,
-unagi, ramen, curry con la cotoletta, gyoza. I mercati vanno bene se il motivo
-è il pesce o la carne alla griglia, non i dolci.
+**Da mangiare:** **carne** in tutte le forme — wagyu, yakiniku, teppanyaki,
+sukiyaki, shabu-shabu, tonkatsu, katsudon, yakitori, kushikatsu, unagi, ramen,
+curry con la cotoletta, gyoza. I mercati vanno bene se il motivo è il pesce o
+la carne alla griglia, non i dolci.
 
-Il sushi vero è **sotto-rappresentato** nel sito: se c'è occasione di
-aggiungerne di buono, ha priorità alta.
+**Sushi: due volte, buone, e basta.** Lei il sushi non lo ama. Deciso a
+settembre 2026: **Toyosu all'alba** (G12, e sullo stesso piano c'è Odayasu con
+tonkatsu e chashu per lei) e l'**omakase di Sushi Tokyo Ten** (G15, pranzo).
+Non aggiungerne altri: se ne salta fuori uno migliore, entra **al posto** di
+uno dei due. La **carne** invece le piace: almeno un paio di cene di carne vera,
+e oggi ce ne sono parecchie (Mishima-tei, Mouriya, Horaiya, Motomura, Mansei,
+yakiniku, Zakuro).
 
 **Da fare — il tema nerd, in ordine di interesse:**
 1. **Retrogaming, da _comprare_** — cartucce sciolte (Super Famicom, Game Boy),
@@ -97,8 +121,8 @@ robe fuori dal comune. Il resto è contorno.
   dall'APA), aperti fino a notte fonda, ~1.500 ¥ l'ora. Va incastrato in una
   sera di Tokyo che finisce presto e vicino all'hotel. **Assegnato: Giorno 12,
   alle 21:00**, dopo cena, dentro Kabukicho. Non il Giorno 8, già pieno con
-  Omoide Yokocho e Golden Gai. Non è in preventivo: sta fra le spese non
-  comprese di `costi.html`, ~3.000 ¥ a testa.
+  la cena da Fuunji e Golden Gai. Non è in preventivo: sta fra le spese non
+  comprese del budget (`prenotazioni.html#budget`), ~3.000 ¥ a testa.
 - ✅ **Spiaggia di Odaiba, tempo vero.** Al Giorno 14, dopo la Gundam Base, va
   previsto **tempo largo sulla spiaggia** di
   Odaiba Kaihin Koen — non venti minuti di passaggio per la foto alla Statua
@@ -180,10 +204,10 @@ la nuova è meglio.
 | **Osservatori e viste dall'alto** | **2 a pagamento** | Ce n'erano **sei** (Kyoto Tower, Umeda Sky, Skytree, Shibuya Sky, Sunshine 60, palazzo del Governo). Di quelle **a biglietto** ne restano due: **Umeda Sky** in Kansai e **Shibuya Sky** a Tokyo, e altre non se ne aggiungono. Ma il fastidio erano *le sei torri in fila*, non il guardare in basso: **se salta fuori un terzo tetto che è davvero bello — gratis o quasi, e sulla strada — va bene che ci sia.** Non è un tetto secco, è un no alla collezione di osservatori. |
 | Acquari | **0** | Il Sunshine Aquarium è stato tolto dal Giorno 13. Categoria chiusa, non se ne aggiungono. |
 | Giardini zen di sassi | 1 | Ryoan-ji basta, è l'originale. |
-| Grandi templi d'oro / padiglioni | 2 | |
-| Mercati alimentari fatti *apposta* | 2 | Nishiki e Kuromon. Ameyoko si attraversa e basta. |
+| Grandi templi d'oro / padiglioni | 2 | Kinkaku-ji è uscito (visto nel 2025). |
+| Mercati alimentari fatti *apposta* | **2, pieno** | Nishiki (G5) e Uonotana ad Akashi (G7). Kuromon è stato tolto (troppo turistico); al G6 oggi si mangia il curry di Jiyuken. Sanjo-kai (G5) e Yanaka Ginza (G9) sono gallerie di quartiere che si attraversano: non contano. |
 | Mercati dell'usato e delle pulci | **2, pieno** | Garakuta-ichi a To-ji (G4) e Boro-ichi a Setagaya (G13). Un terzo entra solo al posto di uno dei due. |
-| Serate in un vicolo di izakaya | **2, pieno** | Omoide Yokocho e Golden Gai (stessa sera, Giorno 8) più Pontocho (Giorno 5). Gli altri vicoli (Ameyoko/Okachimachi, Nonbei Yokocho, Yurakucho, Harmonica) si attraversano, non ci si cena: a settembre 2026 tre cene che ci finivano dentro sono state spostate. |
+| Serate in un vicolo di izakaya | **2, pieno** | Golden Gai (Giorno 8) e Pontocho (Giorno 5). Omoide Yokocho, già vista nel 2025, si attraversa soltanto. Gli altri vicoli (Ameyoko/Okachimachi, Nonbei Yokocho, Yurakucho, Harmonica) si attraversano, non ci si cena: a settembre 2026 tre cene che ci finivano dentro sono state spostate. |
 
 Il conteggio è **su tutto il viaggio**, non per città: due osservatori totali,
 non due a Kyoto e due a Tokyo.
@@ -224,13 +248,31 @@ Struttura di `giorno-NN.html` (non inventarne una nuova):
 - Navigazione in fondo: `.dayfoot` prev/home/next.
 - Priorità: `<span class="prio prio-high|prio-med|prio-low">`.
 
+Le pagine del sito sono **quattro più le giornate** (da settembre 2026, prima
+erano sette):
+
+- `index.html` — la home: giorni, uscite fuori porta, tre tessere.
+- `prenotazioni.html` — **Prenotazioni e budget**: già prenotato, i voli
+  (`#voli`), i treni da e per gli aeroporti (`#aeroporti`), da prenotare,
+  niente da prenotare, calendario, budget (`#budget`). Ha assorbito le vecchie
+  `voli.html` e `costi.html`.
+- `pratica.html` — dicembre, hotel, **come si mangia** (`#mangiare`, ex
+  `mangiare.html`), checklist, regole ed emergenze.
+- `shopping.html` — ex `nerd.html`: le nerdate, il Seiko, e la sezione
+  `#souvenir` con ceramiche, cibo da riportare, tax-free, dogana e valigie.
+
+Non ricreare pagine separate per voli, budget o cibo. Menu e footer hanno
+quattro voci, uguali in tutte le pagine.
+
 Toccando un giorno, controlla sempre gli effetti su: `index.html` (teaser e
-immagine), `prenotazioni.html` (se nasce o muore una prenotazione),
-`costi.html` (se cambia una spesa), `mangiare.html` e `nerd.html` (se il
-consiglio è generale e non di giornata).
+immagine), `prenotazioni.html` (se nasce o muore una prenotazione, o cambia
+una spesa), `pratica.html` e `shopping.html` (se il consiglio è generale e non
+di giornata).
 
 ## Checklist prima di proporre qualsiasi cosa
 
+0. L'avete già visto nel viaggio del 2025? → **fuori**, tranne Kiyomizu, la
+   spiaggia di Odaiba e Nishiki (vedi la sezione in cima).
 1. È un parco a tema, il sumo o una cerimonia del tè? → **fuori.**
 2. Il motivo per andarci è soba, okonomiyaki, matcha o tofu? → **fuori.**
 3. Ne hanno già una uguale? → solo come **sostituzione**, dicendo cosa si perde.
@@ -248,7 +290,7 @@ consiglio è generale e non di giornata).
 
 Il grosso è stato saldato nelle revisioni di luglio e settembre 2026. Resta questo:
 
-- `mangiare.html` — **tofu** nell'oden da konbini (ingrediente in una lista, non
+- `pratica.html#mangiare` — **tofu** nell'oden da konbini (ingrediente in una lista, non
   una tappa: tollerabile, non serve riscrivere).
 - `giorno-06.html` — con la salita alla Tsutenkaku è saltato anche il
   **Tower Slider**, lo scivolo a spirale dalla base della torre. Non è una
@@ -257,9 +299,15 @@ Il grosso è stato saldato nelle revisioni di luglio e settembre 2026. Resta que
 - `giorno-09.html` — **Horaiya** chiude il mercoledì (il G9 è venerdì), ma le
   fonti non concordano sull'apertura serale nei feriali. La pagina dice di farlo
   chiamare dall'hotel e ha già il ripiego (Ponta Honke, a due isolati).
-- `images/` — `tempura.jpg` e `tsukemen.jpg` non sono usate da nessuna pagina
-  (su 37 immagini). Si possono riusare, per esempio `tempura.jpg` per Daikokuya
-  al G9, oppure cancellare.
+- `images/` — sei immagini non sono più usate da nessuna pagina (su 39):
+  `arashiyama.jpg`, `sensoji.jpg`, `crepes.jpg`, `melonpan.jpg`, `tempura.jpg`,
+  `yakitori.jpg`. Sono rimaste orfane con la revisione anti-ripetizioni di
+  settembre 2026 (i posti che illustravano sono usciti dal programma). Non sono
+  state cancellate: il sito non è sotto git e cancellarle non si annulla.
+  Da decidere se eliminarle.
+- `giorno-07.html` — **Mouriya**: i prezzi citati (percorsi di manzo di Kobe da
+  ~8.000 yen) sono del 2024 e il gruppo li ha alzati. Controllare sul sito
+  quando si prenota.
 
 ### Già sistemato, non riaprire
 
@@ -300,3 +348,34 @@ cartella è stata rimossa, questo file la sostituisce.
   Ninna-ji, che dopo Ryoan-ji è irraggiungibile. **G5:** orario del Manga
   Museum (17:00) e cena Pontocho → Mishima-tei riallineata. Classi `opt` messe
   sulle tappe giuste in G2, G4 e G6. Kanji di Yoshino Sushi corretto (吉野寿司).
+
+**Seconda revisione di settembre 2026: niente ripetizioni del viaggio 2025**
+(vedi la sezione in cima). Tolti **Fushimi Inari** (G2 → Sanjusangen-do e le
+distillerie di Fushimi, cena da Torisei), **Arashiyama, Kinkaku-ji e Monkey
+Park** (G4 → rinominato *"Garakuta-ichi a To-ji, Ninna-ji e Ryoan-ji"*, col
+mercato al mattino come pezzo centrale e l'anguilla da Kyogoku Kaneyo la sera),
+la cena a **Omoide Yokocho** (G8 → tsukemen da Fuunji, Omoide solo di passaggio),
+**Asakusa** (G9 → rinominato *"Yanaka, Kappabashi e Akihabara di venerdì"*),
+**Meiji Jingu e Harajuku** (G10 → rinominato *"Shibuya: Mandarake, Nintendo e il
+tramonto dall'alto"*, con Mandarake Shibuya). Nella stessa revisione: Kuromon →
+**Endo Sushi** al Mercato Centrale (G6), Nankinmachi → **Uonotana e torri del
+castello di Akashi** (G7, cena da **Mouriya**), **Sanjo-kai** accanto a Nishiki
+(G5), **Gotoku-ji** accanto al Boro-ichi e niente Ginza (G13, rinominato *"Boro-ichi,
+Ikebukuro e le luci di Marunouchi"*), **teamLab tolto** (G14), **omakase da Sushi
+Tokyo Ten** all'ultimo pranzo (G15). Akihabara divisa in due mezze giornate (G9 e
+G11). Immagini nuove da Commons: `toji.jpg` e `yanaka.jpg` (crediti in
+`images/CREDITS.md`).
+
+**Terza revisione di settembre 2026: meno sushi, souvenir, sito da 7 a 4 pagine.**
+Il sushi è sceso da sei pasti a due (Toyosu G12 e Tokyo Ten G15): Endo e Yoshino
+al G6 → curry di **Jiyuken** (1910) e partenza senza sveglia (il G6 si è
+rinominato *"Osaka #2: Den Den Town, il curry del 1910 e Shinsekai"*), Sushi no
+Midori al G10 → **Gyukatsu Motomura** a cena e Afuri a pranzo, Nemuro Hanamaru
+al G13 → shabu-shabu da **Zakuro** a Muromachi, passando dal ponte di Nihonbashi.
+Al G2 il **Kyoto Ceramic Center** a Gojo-zaka, fra il pranzo e Sanjusangen-do,
+per le ceramiche nuove. Pagine: `voli.html` e `costi.html` dentro
+`prenotazioni.html`, `mangiare.html` dentro `pratica.html`, `nerd.html`
+rinominata `shopping.html` con la sezione souvenir (ceramiche, cibo, tax-free,
+franchigia doganale di 430 € a persona, divieto UE su carne e latticini,
+valigie, spedizioni). Il backup della cartella prima di questa revisione è in
+`../viaggio-giappone-2-backup-2026-09-25`.
