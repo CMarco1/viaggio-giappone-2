@@ -5,3 +5,7 @@
 # Documenti di viaggio: passaporti, carte d'imbarco, conferme di prenotazione.
 # Il sito e' pubblico, questa roba non ci deve finire.
 biglietti/
+
+# Programma del viaggio di gruppo 2025 (TripLab): nomi, numeri di emergenza,
+# hotel. Serve solo in locale per non riproporre le tappe gia' viste.
+Nakasendo 2025 Itineratio & Consigli.pdf
