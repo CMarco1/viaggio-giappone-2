@@ -8,8 +8,6 @@ Add-Type -AssemblyName System.Drawing
 
 $heroes = 'airport','akihabara','cover','dotonbori','himeji','ikebukuro','kiyomizu','kyoto_station',
           'nakano','nishiki','odaiba','shibuya','shinjuku','shinsekai','toji','yanaka'
-$food   = 'chuka_soba','gyoza','katsu_curry','kobe_beef','kushikatsu','nikuman','omurice','sushi',
-          'taiyaki','tako_tamago','tonkatsu','tsukemen','unagi'
 
 $codec = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.MimeType -eq 'image/jpeg' }
 
@@ -44,9 +42,4 @@ foreach ($n in $heroes) {
     $f = Join-Path $root "$n.jpg"
     Save-Jpeg $f (Join-Path $root "thumbs\$n.jpg") 640 66 $true
     Save-Jpeg $f $f 1200 72 $true
-}
-foreach ($n in $food) {
-    if ($Only -and ($Only -notcontains $n)) { continue }
-    $f = Join-Path $root "$n.jpg"
-    Save-Jpeg $f $f 900 70
 }

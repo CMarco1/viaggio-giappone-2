@@ -91,7 +91,7 @@ settembre 2026: **Toyosu all'alba** (G12, e sullo stesso piano c'è Odayasu con
 tonkatsu e chashu per lei) e l'**omakase di Sushi Tokyo Ten** (G15, pranzo).
 Non aggiungerne altri: se ne salta fuori uno migliore, entra **al posto** di
 uno dei due. La **carne** invece le piace: almeno un paio di cene di carne vera,
-e oggi ce ne sono parecchie (Mishima-tei, Mouriya, Horaiya, Motomura, Mansei,
+e oggi ce ne sono parecchie (Katsugyu, Mishima-tei, Mouriya, Horaiya, Motomura, Mansei,
 yakiniku, Zakuro).
 
 **Da fare — il tema nerd, in ordine di interesse:**
@@ -238,7 +238,7 @@ già?"** Zero o una → si può aggiungere. Due → è una sostituzione.
 
 ## Come si scrive sul sito
 
-Il tono esistente è: **secca persona plurale ("fate", "arrivateci"), motivo
+Il tono esistente è: **seconda persona plurale ("fate", "arrivateci"), motivo
 concreto per ogni scelta, un fatto verificabile per tappa, nessun entusiasmo
 generico**. Ogni giornata spiega la *logica* di sé stessa in "Note e dritte".
 Mantienilo.
@@ -279,7 +279,8 @@ erano sette):
   `voli.html` e `costi.html`.
 - `pratica.html` — dicembre, hotel, **come si mangia** (`#mangiare`, ex
   `mangiare.html`), checklist, regole ed emergenze.
-- `shopping.html` — ex `nerd.html`: le nerdate, il Seiko, e la sezione
+- `shopping.html` — ex `nerd.html`: le nerdate, gli orologi (`#orologi`: Seiko elegante,
+  Seiko 5 col giorno in kanji, G-SHOCK Nintendo usati, Seiko anime), e la sezione
   `#souvenir` con ceramiche, cibo da riportare, tax-free, dogana e valigie.
 
 Non ricreare pagine separate per voli, budget o cibo. Menu e footer hanno
@@ -309,10 +310,37 @@ tema scuro automatico. Regole per non rovinarla:
   la sessione del browser).
 
 **Il sito si usa dal telefono, in giro e in roaming: deve restare leggero.**
-- Foto nuove: aggiungere il nome alla lista giusta in `assets/optimize-images.ps1`
-  e lanciarlo con `-Only nome` (copertine a 1200 px più la miniatura in
-  `images/thumbs/` per la home, cibo a 900 px). Non rilanciarlo su foto già
-  compresse. Le card della home usano `images/thumbs/`.
+- Copertine nuove: aggiungere il nome alla lista in `assets/optimize-images.ps1`
+  e lanciarlo con `-Only nome` (copertina a 1200 px più la miniatura in
+  `images/thumbs/` per la home). Non rilanciarlo su foto già compresse. Le card
+  della home usano `images/thumbs/`.
+- **Foto di tappe, piatti e shopping** (settembre 2026): si creano con
+  `assets/make-images.ps1 -Src <foto> -Name <slug> -Kind stop|food|shop`.
+  - `stop` → `images/stops/<slug>.jpg` (800×533, galleria del giorno) più
+    `images/stops/t/<slug>.jpg` (160×160, miniatura nella lista delle tappe).
+  - `food` → `images/food/<slug>.jpg` (360×270): la miniatura a destra di ogni
+    piatto in *Dove mangiare* (`<img class="eat-img" …>` subito dopo
+    `<span class="when">…</span><div>`). Ogni piatto ha la sua: niente più foto
+    larga in cima alla sezione.
+  - `shop` → `images/shop/<slug>.jpg` (640×427): in `shopping.html` come
+    `<figure class="shot">` sotto il titolo della scheda, `.shots` per una
+    griglia (`.shots two` per due), `.li-photo` per la foto piccola dentro una voce.
+  - Lista tappe: `<ol class="stops pics">`, e dentro ogni link la miniatura
+    `<img src="images/stops/t/…" alt="" width="52" height="52" loading="lazy" decoding="async">`
+    prima del nome (per i ristoranti la foto del piatto da `images/food/`). Se la
+    foto non c'è, il segnaposto `<span class="ph" aria-hidden="true"><span class="ic ic-pin"></span></span>`.
+  - Galleria: `<div class="gallery" aria-label="Le tappe in foto">` prima di
+    `.daylayout`, da 2 a 4 `<figure>` con le foto di `images/stops/` e la
+    didascalia col nome. Il G1 non ce l'ha. Ogni miniatura in `stops/t/` ha la
+    sua foto grande in `stops/` anche se non è in galleria: è voluto, serve per
+    cambiare le foto della galleria senza rifarle (unica eccezione alla regola
+    delle immagini orfane).
+  - Solo foto con licenza libera (Wikimedia Commons: CC0, pubblico dominio,
+    CC BY, CC BY-SA) e soggetto giusto: meglio il segnaposto che una foto di un
+    altro posto o di un altro piatto. I crediti si scrivono in
+    `images/credits/*.tsv` (slug, file, autore, licenza, url, note) e poi si
+    lancia `bash assets/build-credits.sh`, che rigenera il fondo di
+    `images/CREDITS.md`.
 - Nessun font web: testo e titoli usano i font di sistema del telefono.
 - `sw.js` tiene il sito consultabile offline (solo su https, cioè su GitHub
   Pages). Se si aggiunge o si rinomina una pagina, va aggiunta a `PAGES` e va
@@ -356,12 +384,6 @@ Il grosso è stato saldato nelle revisioni di luglio e settembre 2026. Resta que
 - `giorno-09.html` — **Horaiya** chiude il mercoledì (il G9 è venerdì), ma le
   fonti non concordano sull'apertura serale nei feriali. La pagina dice di farlo
   chiamare dall'hotel e ha già il ripiego (Ponta Honke, a due isolati).
-- `images/` — sei immagini non sono più usate da nessuna pagina (su 39):
-  `arashiyama.jpg`, `sensoji.jpg`, `crepes.jpg`, `melonpan.jpg`, `tempura.jpg`,
-  `yakitori.jpg`. Sono rimaste orfane con la revisione anti-ripetizioni di
-  settembre 2026 (i posti che illustravano sono usciti dal programma). Non sono
-  state cancellate: il sito non è sotto git e cancellarle non si annulla.
-  Da decidere se eliminarle.
 - `giorno-07.html` — **Mouriya**: i prezzi citati (percorsi di manzo di Kobe da
   ~8.000 yen) sono del 2024 e il gruppo li ha alzati. Controllare sul sito
   quando si prenota.
@@ -381,7 +403,7 @@ Le quattro immagini orfane (`matcha.jpg`, `soba.jpg`, `tofu.jpg`,
 `okonomiyaki.jpg`) più `gion.jpg` sono state **cancellate**. Gli eventi di
 dicembre sono stati scansionati e
 incastrati (tabella sopra), col Sunshine Aquarium tolto dal **G13**, che si è
-rinominato *"Boro-ichi, Ikebukuro e le luci di Ginza"* in quattro file. Le
+rinominato *"Boro-ichi, Ikebukuro e le luci di Ginza"* in quattro file (oggi *"…le luci di Marunouchi"*, vedi sotto). Le
 linee guida stavano in `.claude/skills/viaggio-giappone/SKILL.md`: quella
 cartella è stata rimossa, questo file la sostituisce.
 
@@ -391,7 +413,7 @@ cartella è stata rimossa, questo file la sostituisce.
   ronin"* in quattro file. Kichijoji è diventato il piano B della mattina, e
   Nakano Broadway è passato da due a quattro ore.
 - **G14** rinominato *"Odaiba, la Gundam Base e la baia di Tokyo"*: fuori
-  Toyosu e l'Unicorn smantellato. Mattina libera (teamLab opzionale, oppure il
+  Toyosu e l'Unicorn smantellato. Mattina libera (teamLab, allora opzionale, poi tolto; oppure il
   Boro-ichi del 16 come piano B del G13).
 - **Vicoli di izakaya riportati a due** (Pontocho, Omoide Yokocho + Golden Gai).
   Le cene nei vicoli di Okachimachi (G9), Nonbei Yokocho (G10) e Yurakucho
@@ -401,8 +423,8 @@ cartella è stata rimossa, questo file la sostituisce.
 - **G6:** Den Den Town su due giri, circa 4 ore, e Shitenno-ji ridotto a
   opzionale. **G2:** Kodai-ji solo la sera (prima si pagava due volte), date
   confermate, 800 ¥. **G7:** Himeji a 2.500 ¥ (2.600 col giardino), chip dei
-  km aggiunto, tolta la sosta alla sala da tè Tsuen a Uji. **G4:** tolto
-  Ninna-ji, che dopo Ryoan-ji è irraggiungibile. **G5:** orario del Manga
+  km aggiunto, tolta la sosta alla sala da tè Tsuen a Uji (oggi Uji è in fondo al G5). **G4:**
+  Ninna-ji spostato prima di Ryoan-ji, perché dopo era già chiuso. **G5:** orario del Manga
   Museum (17:00) e cena Pontocho → Mishima-tei riallineata. Classi `opt` messe
   sulle tappe giuste in G2, G4 e G6. Kanji di Yoshino Sushi corretto (吉野寿司).
 
@@ -434,8 +456,7 @@ per le ceramiche nuove. Pagine: `voli.html` e `costi.html` dentro
 `prenotazioni.html`, `mangiare.html` dentro `pratica.html`, `nerd.html`
 rinominata `shopping.html` con la sezione souvenir (ceramiche, cibo, tax-free,
 franchigia doganale di 430 € a persona, divieto UE su carne e latticini,
-valigie, spedizioni). Il backup della cartella prima di questa revisione è in
-`../viaggio-giappone-2-backup-2026-09-25`.
+valigie, spedizioni).
 
 **Grafica, peso e mappe (settembre 2026).** Tutte le mappe rifatte: dieci
 chiedevano un percorso coi mezzi fra 4-8 tappe, che Google non calcola. Ora ogni
@@ -444,3 +465,37 @@ la modalità giusta; al G3 aggiunto Hozen-ji. Foto ricompresse (le miniature del
 home passano da ~3,5 MB a ~0,8 MB), tolto il font Noto Sans JP, menu compatto e
 card orizzontali sul telefono, indice interno in Shopping, service worker per
 l'uso offline.
+
+**Foto (settembre 2026).** Aggiunte 112 foto leggere (quasi tutte da Commons): miniatura in
+quasi ogni tappa, galleria in ogni giornata dal G2, una foto per piatto in *Dove
+mangiare*, e 17 foto nelle schede di Shopping. Senza foto libera, con il
+segnaposto: Yamashiroya (G9), Mandarake Shibuya (G10), Aoyama Square (G14), e
+il piatto del pranzo al Nishiki (G5: su Commons il "tako tamago" non c'è).
+Cancellate le vecchie foto larghe dei piatti e sei foto rimaste senza
+pagina (`arashiyama`, `sensoji`, `crepes`, `melonpan`, `tempura`, `yakitori`).
+
+**Controllo generale (25 settembre 2026, sera).** Tre revisioni parallele di
+contenuti più controlli di struttura. Cambi da non riaprire:
+- **G2:** Hisago è chiuso il venerdì (e su Tabelog risulta chiuso del tutto):
+  pranzo da **Gyukatsu Kyoto Katsugyu** in cima a Gojo-zaka. Il gyukatsu così
+  compare due volte (G2 e Motomura al G10): è il tetto.
+- **G3:** la cena da Dotonbori Imai era *kitsune udon* (tofu fritto, veto):
+  ora **Kani Doraku Dotonbori Honten**, granchio, da prenotare. La cena ha un
+  orario nel timeline (18:00) e la crociera è passata alle 17:30.
+- **G5:** Mishima-tei costa ~17.500 ¥ a testa la sera (non 8-13.000), chiuso il
+  martedì; il tako tamago di Nishiki è di **Kai** (櫂), non di Daiyasu.
+- **Shibuya Sky:** le vendite aprono **14 giorni prima** a mezzanotte
+  giapponese (per il 12/12: venerdì 27/11 alle 16:00 italiane), non un mese.
+- **Tax-free dal 1/11/2026:** a Narita non si incassa niente. Chiosco doganale
+  prima del check-in (o Visit Japan Web), rimborso dal negozio dopo, soglia
+  5.000 ¥ più IVA. Scritto uguale in G15, G14 e Shopping.
+- **Prenotazioni:** le cinque cene da prenotare (Kani Doraku, Mishima-tei,
+  Mouriya, Zakuro, Tokyo Ten) stanno in *Ancora da prenotare* con la data;
+  Shinkansen ~13.970 ¥ a testa su SmartEX, vendita alle 10:00 JST del 10/11;
+  Seiko SZSB011 con consegna all'APA fra il 10 e il 12 dicembre; budget
+  ricalcolato (~4.896-5.246 €).
+- Le **tappe dei pasti** (Katsugyu, Torisei, Hokkyokusei, Kani Doraku,
+  Mishima-tei, Kushikatsu Daruma, Surugaya, Afuri, Beep, Mansei) sono entrate
+  nella lista `.stops` e nel percorso della mappa.
+- `og:image` con indirizzo assoluto (`https://cmarco1.github.io/viaggio-giappone-2/…`),
+  come serve alle anteprime di WhatsApp e dei social.
