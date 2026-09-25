@@ -285,12 +285,35 @@ erano sette):
 Non ricreare pagine separate per voli, budget o cibo. Menu e footer hanno
 quattro voci, uguali in tutte le pagine.
 
+**Grafica (da settembre 2026): stile "app", pulito.** Font di sistema (nessun
+font web), grigi neutri, **un solo colore d'accento** (il rosso `--accent`),
+tema scuro automatico. Regole per non rovinarla:
+- Tutti i colori passano dalle variabili di `:root` in `style.css`
+  (`--text`, `--text-2`, `--surface`, `--accent`…), che hanno la versione scura.
+  **Niente colori scritti negli attributi `style`** dell'HTML: non si vedrebbero
+  nel tema scuro e riportano l'effetto arcobaleno.
+- **Niente emoji nei titoli, nel menu e nelle schede.** Le icone sono
+  `<span class="ic ic-NOME" aria-hidden="true"></span>`, maschere SVG in fondo a
+  `style.css` (cal, ticket, compass, bag, list, clock, pin, map, food, bulb,
+  check, plane, train, wallet, snow, bed, chat, grid, home, sun, up, back,
+  arrow). Per una nuova icona si aggiunge lì una riga `.ic-nome { --i: url(...) }`.
+  Le emoji restano nei chip, nei teaser e dentro il testo, dove fanno colore.
+- Sotto i 760 px il menu diventa una **barra in basso** (Giorni, Prenotazioni,
+  Pratica, Shopping, più "Oggi" durante il viaggio).
+- L'itinerario mostra **due righe per tappa** e si apre al tocco (`app.js`,
+  attivo solo con JS, classe `js` sull'`<html>`). La prima frase di ogni tappa
+  deve quindi dire l'essenziale: nome in `<strong>` e subito il perché.
+- **Modalità "Oggi"**: dal 3 al 17 dicembre la home apre con la scheda del
+  giorno e il menu ha la voce "Oggi"; il 2 dicembre la scheda della partenza.
+  Per provarla prima: aggiungere `?oggi=2026-12-05` all'indirizzo (resta per
+  la sessione del browser).
+
 **Il sito si usa dal telefono, in giro e in roaming: deve restare leggero.**
 - Foto nuove: aggiungere il nome alla lista giusta in `assets/optimize-images.ps1`
   e lanciarlo con `-Only nome` (copertine a 1200 px più la miniatura in
   `images/thumbs/` per la home, cibo a 900 px). Non rilanciarlo su foto già
   compresse. Le card della home usano `images/thumbs/`.
-- Un solo font web (Montserrat); il giapponese lo fanno i font di sistema.
+- Nessun font web: testo e titoli usano i font di sistema del telefono.
 - `sw.js` tiene il sito consultabile offline (solo su https, cioè su GitHub
   Pages). Se si aggiunge o si rinomina una pagina, va aggiunta a `PAGES` e va
   alzato `VERSION`.
