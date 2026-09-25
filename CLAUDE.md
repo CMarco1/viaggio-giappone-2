@@ -111,6 +111,15 @@ Potato, Retro Game Camp, Nakano Broadway, Den Den Town, Yamashiroya, Radio
 Kaikan, Gundam Base, i piani usato ovunque. **Il mercato dell'usato ha
 priorità sul nuovo**, perché è la cosa che in Italia non si può fare.
 
+**Souvenir: si comprano negli ultimi giorni**, a meno di occasioni davvero
+irripetibili. Tutto quello che si trova in più negozi (ceramiche nuove, vestiti,
+cibo, il nuovo in generale) va negli ultimi due giorni: ceramiche ad **Aoyama
+Square** la mattina del G14, **UNIQLO GINZA** la sera del G14 (Uniqlo è una
+tappa voluta: il reparto UT e le collaborazioni), cibo il pomeriggio del G15 e a
+Narita. Si compra subito solo l'irripetibile: i pezzi dei mercati delle pulci
+(G4, G13) e l'usato dei negozi nerd, dove il pezzo è uno solo. Non proporre
+tappe di acquisto "di souvenir" nella prima settimana.
+
 **Da vedere:** templi e castelli veri, quartieri al neon, mercati, vicoli,
 robe fuori dal comune. Il resto è contorno.
 
