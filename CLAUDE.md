@@ -99,8 +99,8 @@ robe fuori dal comune. Il resto è contorno.
   alle 21:00**, dopo cena, dentro Kabukicho. Non il Giorno 8, già pieno con
   Omoide Yokocho e Golden Gai. Non è in preventivo: sta fra le spese non
   comprese di `costi.html`, ~3.000 ¥ a testa.
-- ✅ **Spiaggia di Odaiba, tempo vero.** Al Giorno 14, dopo la Gundam Base e la
-  trasformazione dell'Unicorn, va previsto **tempo largo sulla spiaggia** di
+- ✅ **Spiaggia di Odaiba, tempo vero.** Al Giorno 14, dopo la Gundam Base, va
+  previsto **tempo largo sulla spiaggia** di
   Odaiba Kaihin Koen — non venti minuti di passaggio per la foto alla Statua
   della Libertà. È sabbia vera sulla baia, con il Rainbow Bridge davanti, il
   tramonto alle 16:30 e le luci che si accendono subito dopo. È la tappa
@@ -123,19 +123,26 @@ Non toglierli e non spostarli: esistono solo quel giorno.
 
 | Giorno | Data | Evento |
 |---|---|---|
-| G2 | 4 dic | **Kodai-ji illuminato** la sera (600 ¥; date 2026 da confermare) |
+| G2 | 4 dic | **Kodai-ji illuminato** la sera (800 ¥; confermato 23 ott-13 dic 2026) |
 | G3 | 5 dic | **Midosuji Illumination**, 800 ginkgo, fino al 31 dicembre |
 | G4 | 6 dic | **Garakuta-ichi a To-ji** — prima domenica del mese |
 | G5 | 7 dic | **Kaomise** al Minamiza, i *maneki* sulla facciata |
 | G10 | 12 dic | **Blue Cave** a Shibuya (4-25 dic) + Omotesando in oro |
 | G12 | 14 dic | **Gishi-sai** dei 47 ronin a Sengaku-ji |
-| G13 | 15 dic | **Setagaya Boro-ichi**, 700 banchi, 4 giorni all'anno |
+| G13 | 15 dic | **Setagaya Boro-ichi**, 700 banchi, 4 giorni all'anno (c'è anche il 16: piano B la mattina del G14) |
 
 Tre cose che **non** esistono più e non vanno riproposte: la **Kobe Luminarie**
 si è spostata a fine gennaio (era il candidato ovvio per il G7 a Kobe),
 l'**Hanatouro** di Arashiyama è stato soppresso, e il **Kiyomizu-dera** di notte
 chiude il 30 novembre, tre giorni prima dell'arrivo. Lo **Shimai Kobo** a To-ji
-(21 dic) e il **Tenjin-san** a Kitano (25 dic) cadono dopo il rientro.
+(21 dic) e il **Tenjin-san** a Kitano (25 dic) cadono dopo il rientro. E dal
+31 agosto 2026 a Odaiba **non c'è più il Gundam Unicorn** a grandezza naturale:
+niente trasformazioni né spettacoli serali, resta solo la Gundam Base.
+
+**Toyosu è chiuso mercoledì 16 dicembre 2026** (CSV ufficiale del mercato:
+a dicembre chiude il 2, 6, 9, 13, 16, 20, 23 e 31). La colazione di sushi sta
+al **Giorno 12, lunedì 14**, al posto della mattina a Kichijoji (che resta
+come piano B nelle note). Non riportarla al G14.
 
 ## 📏 La regola del ritmo — vale quanto i veti
 
@@ -176,7 +183,7 @@ la nuova è meglio.
 | Grandi templi d'oro / padiglioni | 2 | |
 | Mercati alimentari fatti *apposta* | 2 | Nishiki e Kuromon. Ameyoko si attraversa e basta. |
 | Mercati dell'usato e delle pulci | **2, pieno** | Garakuta-ichi a To-ji (G4) e Boro-ichi a Setagaya (G13). Un terzo entra solo al posto di uno dei due. |
-| Serate in un vicolo di izakaya | 2 | Omoide Yokocho e Golden Gai (stessa sera, Giorno 8) più Pontocho (Giorno 5). Gli altri vicoli si attraversano, non ci si cena. |
+| Serate in un vicolo di izakaya | **2, pieno** | Omoide Yokocho e Golden Gai (stessa sera, Giorno 8) più Pontocho (Giorno 5). Gli altri vicoli (Ameyoko/Okachimachi, Nonbei Yokocho, Yurakucho, Harmonica) si attraversano, non ci si cena: a settembre 2026 tre cene che ci finivano dentro sono state spostate. |
 
 Il conteggio è **su tutto il viaggio**, non per città: due osservatori totali,
 non due a Kyoto e due a Tokyo.
@@ -239,29 +246,20 @@ consiglio è generale e non di giornata).
 
 ## Debito noto (da sistemare quando si passa di lì)
 
-Il grosso è stato saldato nella revisione di luglio 2026. Resta questo:
+Il grosso è stato saldato nelle revisioni di luglio e settembre 2026. Resta questo:
 
 - `mangiare.html` — **tofu** nell'oden da konbini (ingrediente in una lista, non
   una tappa: tollerabile, non serve riscrivere).
-- `giorno-02.html` — le **date 2026 dell'illuminazione serale di Kodai-ji** non
-  sono ancora uscite (verificato a luglio 2026: il tempio pubblicizza solo il
-  notturno estivo). Nel 2025 andò dal 24 ottobre al 14 dicembre, quindi il
-  4 dicembre è quasi certo ma non garantito. Il calendario autunnale esce in
-  genere **fra settembre e ottobre**: **ricontrollare a inizio ottobre**, non a
-  novembre. È l'unica verifica rimasta fra gli eventi di dicembre.
-- `giorno-13.html` — dopo la deviazione a Setagaya il chip dice ancora
-  **~8 km a piedi**. È una stima ereditata, non ricalcolata: se si tocca la
-  giornata, rifare il conto.
 - `giorno-06.html` — con la salita alla Tsutenkaku è saltato anche il
   **Tower Slider**, lo scivolo a spirale dalla base della torre. Non è una
   vista dall'alto e non violerebbe niente: se serve un'aggiunta a Shinsekai,
   ricomincia da lì.
-- `giorno-14.html` — **mercoledì 16 dicembre 2026**: Toyosu chiude *alcuni*
-  mercoledì. **Il calendario 2026 è già pubblicato** (deciso a settembre 2025,
-  PDF e CSV su `shijou.metro.tokyo.lg.jp/calendar/2026`): non è più una cosa da
-  rimandare, è una verifica da cinque minuti. La pagina ha già i due ripieghi
-  scritti. È l'unico punto di rottura singolo dell'itinerario, perché con
-  Toyosu chiuso salta uno dei due soli sushi del viaggio.
+- `giorno-09.html` — **Horaiya** chiude il mercoledì (il G9 è venerdì), ma le
+  fonti non concordano sull'apertura serale nei feriali. La pagina dice di farlo
+  chiamare dall'hotel e ha già il ripiego (Ponta Honke, a due isolati).
+- `images/` — `tempura.jpg` e `tsukemen.jpg` non sono usate da nessuna pagina
+  (su 37 immagini). Si possono riusare, per esempio `tempura.jpg` per Daikokuya
+  al G9, oppure cancellare.
 
 ### Già sistemato, non riaprire
 
@@ -275,9 +273,30 @@ Odaiba a un'ora e mezza piena nel **G14**. Teaser di `index.html` riallineati
 ai chip delle giornate.
 
 Le quattro immagini orfane (`matcha.jpg`, `soba.jpg`, `tofu.jpg`,
-`okonomiyaki.jpg`) più `gion.jpg` sono state **cancellate**: in `images/` ne
-restano 32, tutte referenziate. Gli eventi di dicembre sono stati scansionati e
+`okonomiyaki.jpg`) più `gion.jpg` sono state **cancellate**. Gli eventi di
+dicembre sono stati scansionati e
 incastrati (tabella sopra), col Sunshine Aquarium tolto dal **G13**, che si è
 rinominato *"Boro-ichi, Ikebukuro e le luci di Ginza"* in quattro file. Le
 linee guida stavano in `.claude/skills/viaggio-giappone/SKILL.md`: quella
 cartella è stata rimossa, questo file la sostituisce.
+
+**Revisione di settembre 2026** (verifiche online del 25/09/2026):
+- **Toyosu** chiuso il 16/12: la colazione di sushi è passata al **G12** (lunedì
+  14, aperto), che si è rinominato *"Toyosu all'alba, Nakano Broadway e i 47
+  ronin"* in quattro file. Kichijoji è diventato il piano B della mattina, e
+  Nakano Broadway è passato da due a quattro ore.
+- **G14** rinominato *"Odaiba, la Gundam Base e la baia di Tokyo"*: fuori
+  Toyosu e l'Unicorn smantellato. Mattina libera (teamLab opzionale, oppure il
+  Boro-ichi del 16 come piano B del G13).
+- **Vicoli di izakaya riportati a due** (Pontocho, Omoide Yokocho + Golden Gai).
+  Le cene nei vicoli di Okachimachi (G9), Nonbei Yokocho (G10) e Yurakucho
+  (G13) sono diventate **Horaiya** (hirekatsu, 1912), **Sushi no Midori**
+  (Shibuya) e **Nemuro Hanamaru** (KITTE). Al G11 Jimbocho, chiuso la domenica,
+  è stato sostituito da **Niku no Mansei Akiba Place**.
+- **G6:** Den Den Town su due giri, circa 4 ore, e Shitenno-ji ridotto a
+  opzionale. **G2:** Kodai-ji solo la sera (prima si pagava due volte), date
+  confermate, 800 ¥. **G7:** Himeji a 2.500 ¥ (2.600 col giardino), chip dei
+  km aggiunto, tolta la sosta alla sala da tè Tsuen a Uji. **G4:** tolto
+  Ninna-ji, che dopo Ryoan-ji è irraggiungibile. **G5:** orario del Manga
+  Museum (17:00) e cena Pontocho → Mishima-tei riallineata. Classi `opt` messe
+  sulle tappe giuste in G2, G4 e G6. Kanji di Yoshino Sushi corretto (吉野寿司).
