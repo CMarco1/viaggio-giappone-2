@@ -15,16 +15,16 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗾</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <header class="topbar">
-    <a class="brand" href="index.html">🇯🇵 Giappone 2026 <span>· 2-18 dic</span></a>
+    <a class="brand" href="index.html" aria-label="Giappone 2026, home">🇯🇵<b> Giappone 2026</b> <span>· 2-18 dic</span></a>
     <nav class="mainnav" aria-label="Sezioni del sito">
         <a href="index.html#giorni" aria-current="page">📅 Giorni</a>
-        <a href="prenotazioni.html">🎟️ Prenotazioni e budget</a>
+        <a href="prenotazioni.html">🎟️ Prenotazioni</a>
         <a href="pratica.html">🧭 Pratica</a>
         <a href="shopping.html">🛍️ Shopping</a>
     </nav>
@@ -88,11 +88,17 @@
         </section>
 
         <section class="card a-mappa">
-            <h2>🗺️ La mappa del giro</h2>
-            <div class="mapbox">
-                <iframe src="https://maps.google.com/maps?saddr=Kanda+Myojin,+Tokyo&daddr=Akihabara+Radio+Kaikan+to:Super+Potato+Akihabara+to:Book+Off+Akihabara+to:Hard+Off+Akihabara+2,+Tokyo&dirflg=w&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 11" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <a class="maplink" href="https://maps.google.com/maps?saddr=Kanda+Myojin,+Tokyo&daddr=Akihabara+Radio+Kaikan+to:Super+Potato+Akihabara+to:Book+Off+Akihabara+to:Hard+Off+Akihabara+2,+Tokyo&dirflg=w&t=&z=15&ie=UTF8" target="_blank" rel="noopener">Apri il percorso in Google Maps ↗</a>
+            <h2>🗺️ Le tappe su Google Maps</h2>
+            <ol class="stops">
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Kanda+Myojin%2C+Tokyo" target="_blank" rel="noopener">Kanda Myojin</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Akihabara+Radio+Kaikan" target="_blank" rel="noopener">Radio Kaikan</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=スーパーポテト+秋葉原店" target="_blank" rel="noopener">Super Potato</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Book+Off+Akihabara" target="_blank" rel="noopener">Book Off</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=ハードオフ+秋葉原2号店" target="_blank" rel="noopener">Hard Off (Junk Street)</a></li>
+            </ol>
+            <p class="maphint">Toccate una tappa e si apre in Google Maps: da lì <em>Indicazioni</em> vi dice treno e binario partendo da dove siete.</p>
+            <div class="mapbox"><a class="mapload" href="https://maps.google.com/maps?saddr=Kanda+Myojin,+Tokyo&amp;daddr=Akihabara+Radio+Kaikan+to:Super+Potato+Akihabara+to:Book+Off+Akihabara+to:Hard+Off+Akihabara+2,+Tokyo&amp;dirflg=w&amp;t=&amp;z=15&amp;ie=UTF8" data-embed="https://maps.google.com/maps?saddr=Kanda+Myojin,+Tokyo&amp;daddr=Akihabara+Radio+Kaikan+to:Super+Potato+Akihabara+to:Book+Off+Akihabara+to:Hard+Off+Akihabara+2,+Tokyo&amp;dirflg=w&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" target="_blank" rel="noopener">🗺️ Mostra tutte le tappe sulla mappa</a></div>
+            <p class="maphint">La mappa si carica solo se la toccate, per non consumare dati: il tracciato è a piedi; dove l'itinerario dice treno o metro, prendete quelli.</p>
         </section>
 
         <section class="card a-mangiare">

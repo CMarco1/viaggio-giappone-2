@@ -241,8 +241,20 @@ Struttura di `giorno-NN.html` (non inventarne una nuova):
 - `.card.accent.a-sintesi` → `ul.synth`, tre righe.
 - `.card.a-itin` → `ol.timeline`, `<li><span class="t">HH:MM</span><div>…</div></li>`.
   Le tappe facoltative hanno `class="opt"` sul `<li>`.
-- `.card.a-mappa` → iframe Google Maps + link `.maplink`. Se cambi le tappe,
-  **aggiorna anche saddr/daddr**.
+- `.card.a-mappa` → titolo "🗺️ Le tappe su Google Maps", poi:
+  - `ol.stops`: una `<li><a>` per tappa, con
+    `https://www.google.com/maps/search/?api=1&query=…` (apre l'app sul
+    telefono). Per ristoranti e negozi nella query va il **nome giapponese**
+    (es. `京極かねよ`): Google lo trova senza ambiguità.
+  - `.mapbox > a.mapload`: `href` = mappa grande (URL legacy `maps?saddr=…&daddr=…+to:…`),
+    `data-embed` = lo stesso con `&output=embed`. L'iframe lo crea `app.js` solo
+    al tocco, per non consumare dati.
+  - **Mai `dirflg=r` con più di due punti**: Google non calcola percorsi a più
+    tappe coi mezzi (sul telefono accetta al massimo 3 tappe intermedie).
+    Giorni in una città sola: `dirflg=w`. Giorni su più città (1, 7, 12, 13):
+    nessun `dirflg`, tracciato indicativo in auto. Fra due soli punti coi
+    mezzi: `https://www.google.com/maps/dir/?api=1&origin=…&destination=…&travelmode=transit`.
+  - Se cambi le tappe, aggiorna **insieme** l'elenco `.stops`, `href` e `data-embed`.
 - `.card.a-mangiare` → `ul.eat` con `<span class="when">Pranzo</span>`.
 - `.card.a-note.prose` → paragrafi che aprono con `<strong>`.
 - Navigazione in fondo: `.dayfoot` prev/home/next.
@@ -263,6 +275,19 @@ erano sette):
 
 Non ricreare pagine separate per voli, budget o cibo. Menu e footer hanno
 quattro voci, uguali in tutte le pagine.
+
+**Il sito si usa dal telefono, in giro e in roaming: deve restare leggero.**
+- Foto nuove: aggiungere il nome alla lista giusta in `assets/optimize-images.ps1`
+  e lanciarlo con `-Only nome` (copertine a 1200 px più la miniatura in
+  `images/thumbs/` per la home, cibo a 900 px). Non rilanciarlo su foto già
+  compresse. Le card della home usano `images/thumbs/`.
+- Un solo font web (Montserrat); il giapponese lo fanno i font di sistema.
+- `sw.js` tiene il sito consultabile offline (solo su https, cioè su GitHub
+  Pages). Se si aggiunge o si rinomina una pagina, va aggiunta a `PAGES` e va
+  alzato `VERSION`.
+- Sotto i 560 px: menu compatto (il marchio resta solo bandiera), card della
+  home orizzontali, e nelle giornate la card delle tappe viene prima
+  dell'itinerario (proprietà `order` in `style.css`).
 
 Toccando un giorno, controlla sempre gli effetti su: `index.html` (teaser e
 immagine), `prenotazioni.html` (se nasce o muore una prenotazione, o cambia
@@ -379,3 +404,11 @@ rinominata `shopping.html` con la sezione souvenir (ceramiche, cibo, tax-free,
 franchigia doganale di 430 € a persona, divieto UE su carne e latticini,
 valigie, spedizioni). Il backup della cartella prima di questa revisione è in
 `../viaggio-giappone-2-backup-2026-09-25`.
+
+**Grafica, peso e mappe (settembre 2026).** Tutte le mappe rifatte: dieci
+chiedevano un percorso coi mezzi fra 4-8 tappe, che Google non calcola. Ora ogni
+giornata ha l'elenco delle tappe da toccare, la mappa caricata solo su richiesta e
+la modalità giusta; al G3 aggiunto Hozen-ji. Foto ricompresse (le miniature della
+home passano da ~3,5 MB a ~0,8 MB), tolto il font Noto Sans JP, menu compatto e
+card orizzontali sul telefono, indice interno in Shopping, service worker per
+l'uso offline.

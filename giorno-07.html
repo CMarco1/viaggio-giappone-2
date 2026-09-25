@@ -15,16 +15,16 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗾</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <header class="topbar">
-    <a class="brand" href="index.html">🇯🇵 Giappone 2026 <span>· 2-18 dic</span></a>
+    <a class="brand" href="index.html" aria-label="Giappone 2026, home">🇯🇵<b> Giappone 2026</b> <span>· 2-18 dic</span></a>
     <nav class="mainnav" aria-label="Sezioni del sito">
         <a href="index.html#giorni" aria-current="page">📅 Giorni</a>
-        <a href="prenotazioni.html">🎟️ Prenotazioni e budget</a>
+        <a href="prenotazioni.html">🎟️ Prenotazioni</a>
         <a href="pratica.html">🧭 Pratica</a>
         <a href="shopping.html">🛍️ Shopping</a>
     </nav>
@@ -88,11 +88,19 @@
         </section>
 
         <section class="card a-mappa">
-            <h2>🗺️ La mappa del giro</h2>
-            <div class="mapbox">
-                <iframe src="https://maps.google.com/maps?saddr=Kyoto+Station,+Kyoto&daddr=Himeji+Castle+to:Koko-en+Garden,+Himeji+to:Uonotana,+Akashi+to:Akashi+Castle+to:Meriken+Park,+Kobe+to:Mouriya+Honten,+Kobe&dirflg=r&t=&z=9&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 7" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <a class="maplink" href="https://maps.google.com/maps?saddr=Kyoto+Station,+Kyoto&daddr=Himeji+Castle+to:Koko-en+Garden,+Himeji+to:Uonotana,+Akashi+to:Akashi+Castle+to:Meriken+Park,+Kobe+to:Mouriya+Honten,+Kobe&dirflg=r&t=&z=9&ie=UTF8" target="_blank" rel="noopener">Apri il percorso in Google Maps ↗</a>
+            <h2>🗺️ Le tappe su Google Maps</h2>
+            <ol class="stops">
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Kyoto+Station%2C+Kyoto" target="_blank" rel="noopener">Kyoto Station</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Himeji+Castle" target="_blank" rel="noopener">Castello di Himeji</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Koko-en+Garden%2C+Himeji" target="_blank" rel="noopener">Koko-en</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=魚の棚商店街+明石" target="_blank" rel="noopener">Uonotana (Akashi)</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Akashi+Castle" target="_blank" rel="noopener">Castello di Akashi</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Meriken+Park%2C+Kobe" target="_blank" rel="noopener">Meriken Park</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=モーリヤ+本店+神戸" target="_blank" rel="noopener">Mouriya Honten</a></li>
+            </ol>
+            <p class="maphint">Toccate una tappa e si apre in Google Maps: da lì <em>Indicazioni</em> vi dice treno e binario partendo da dove siete.</p>
+            <div class="mapbox"><a class="mapload" href="https://maps.google.com/maps?saddr=Kyoto+Station,+Kyoto&amp;daddr=Himeji+Castle+to:Koko-en+Garden,+Himeji+to:Uonotana,+Akashi+to:Akashi+Castle+to:Meriken+Park,+Kobe+to:Mouriya+Honten,+Kobe&amp;t=&amp;z=9&amp;ie=UTF8" data-embed="https://maps.google.com/maps?saddr=Kyoto+Station,+Kyoto&amp;daddr=Himeji+Castle+to:Koko-en+Garden,+Himeji+to:Uonotana,+Akashi+to:Akashi+Castle+to:Meriken+Park,+Kobe+to:Mouriya+Honten,+Kobe&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=&amp;output=embed" target="_blank" rel="noopener">🗺️ Mostra tutte le tappe sulla mappa</a></div>
+            <p class="maphint">La mappa si carica solo se la toccate, per non consumare dati: il tracciato è in auto e serve solo a vedere dove stanno le tappe: gli spostamenti veri sono in treno, come nell'itinerario.</p>
         </section>
 
         <section class="card a-mangiare">

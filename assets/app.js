@@ -71,6 +71,33 @@
         }, { passive: true });
     }
 
+    /* ---- Mappa incorporata solo quando la si tocca: niente dati consumati prima ---- */
+    Array.prototype.forEach.call(document.querySelectorAll('.mapload[data-embed]'), function (a) {
+        a.addEventListener('click', function (e) {
+            e.preventDefault();
+            var f = document.createElement('iframe');
+            f.src = a.getAttribute('data-embed');
+            f.title = 'Mappa delle tappe della giornata';
+            f.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+            f.setAttribute('allowfullscreen', '');
+            var big = document.createElement('a');
+            big.className = 'maplink';
+            big.href = a.href;
+            big.target = '_blank';
+            big.rel = 'noopener';
+            big.textContent = 'Apri la mappa grande in Google Maps ↗';
+            a.parentNode.insertBefore(big, a.nextSibling);
+            a.parentNode.replaceChild(f, a);
+        });
+    });
+
+    /* ---- Uso offline: le pagine già aperte restano consultabili senza rete ---- */
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('sw.js').catch(function () {});
+        });
+    }
+
     /* ---- Frecce sinistra/destra per passare da un giorno all'altro ---- */
     document.addEventListener('keydown', function (e) {
         if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;

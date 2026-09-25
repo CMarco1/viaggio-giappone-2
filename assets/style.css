@@ -22,7 +22,7 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topbar-h) + var(--strip-h) + 12px); }
 body {
-    font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
     line-height: 1.7; margin: 0; padding: 0;
     background: var(--bg-color); color: var(--text-color);
     -webkit-font-smoothing: antialiased;
@@ -61,6 +61,14 @@ a { color: var(--primary-color); }
 }
 .mainnav a:hover { background: var(--bg-color); color: var(--primary-color); }
 .mainnav a[aria-current="page"] { background: var(--primary-light); color: var(--primary-color); }
+/* Telefono: il marchio resta solo bandiera, il menu sta tutto nella barra */
+@media (max-width: 560px) {
+    .topbar { gap: 0.4rem; padding: 0 0.7rem; }
+    .brand b { display: none; }
+    .mainnav { gap: 2px; }
+    .mainnav a { padding: 7px 9px; font-size: 0.78rem; }
+}
+@media (max-width: 400px) { .mainnav a { padding: 6px 6px; font-size: 0.74rem; } }
 
 /* ---------- Striscia dei giorni (pagine giornata) ---------- */
 .daystrip {
@@ -124,6 +132,8 @@ a { color: var(--primary-color); }
 
 /* ---------- Impaginazione di una giornata ---------- */
 .daylayout { display: grid; gap: 1.3rem; }
+/* Sul telefono le tappe da toccare vengono subito dopo la sintesi, prima dell'itinerario lungo */
+.a-sintesi { order: 1; } .a-mappa { order: 2; } .a-itin { order: 3; } .a-mangiare { order: 4; } .a-note { order: 5; }
 @media (min-width: 1000px) {
     .daylayout {
         grid-template-columns: 1.55fr 1fr;
@@ -166,6 +176,20 @@ a { color: var(--primary-color); }
 .daycard .go { margin-top: auto; padding-top: 0.6rem; font-size: 0.8rem; font-weight: 800; color: var(--primary-color); }
 .daycard.is-today { border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--primary-light), var(--shadow-lg); }
 .daycard.is-today .num::before { content: "OGGI · "; }
+/* Telefono: card orizzontali, foto piccola a sinistra — 15 giornate in un terzo dello scorrimento */
+@media (max-width: 560px) {
+    .daygrid { gap: 0.7rem; }
+    .daycard { flex-direction: row; min-height: 118px; }
+    .daycard .thumb { flex: 0 0 98px; height: auto; }
+    .daycard .thumb::after { background: linear-gradient(to top, rgba(0,0,0,0.35), transparent 70%); }
+    .daycard .num { left: 8px; top: 8px; font-size: 0.64rem; padding: 3px 8px; }
+    .daycard .zone { display: none; }
+    .daycard .body { padding: 0.7rem 0.85rem; gap: 0.2rem; }
+    .daycard .date { font-size: 0.64rem; }
+    .daycard h3 { font-size: 0.93rem; }
+    .daycard .teaser { font-size: 0.78rem; line-height: 1.45; }
+    .daycard .go { display: none; }
+}
 
 /* ---------- Riquadri di collegamento in home ---------- */
 .tiles { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
@@ -198,6 +222,7 @@ a { color: var(--primary-color); }
 h2.sec { color: var(--text-color); font-weight: 800; font-size: 1.9rem; margin: 3rem 0 1.6rem 0; display: flex; align-items: center; gap: 12px; scroll-margin-top: calc(var(--topbar-h) + 14px); }
 h2.sec::after { content: ""; flex: 1; height: 3px; background: linear-gradient(90deg, #E0E0E0, transparent); border-radius: 2px; }
 h2.sec:first-of-type { margin-top: 2.2rem; }
+@media (max-width: 560px) { h2.sec { font-size: 1.45rem; margin: 2.4rem 0 1.2rem 0; } }
 h3.sub { font-size: 1.4rem; font-weight: 800; margin: 2.6rem 0 1.2rem 0; scroll-margin-top: calc(var(--topbar-h) + 14px); }
 
 .summary-box { background: var(--card-bg); padding: 1.4rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); margin-bottom: 2rem; border-top: 6px solid var(--primary-color); }
@@ -263,8 +288,29 @@ h3.sub { font-size: 1.4rem; font-weight: 800; margin: 2.6rem 0 1.2rem 0; scroll-
     .eat .when { padding-top: 0; }
 }
 
-/* Mappa */
-.mapbox iframe { width: 100%; height: 320px; border: none; border-radius: 12px; background: #eee; display: block; }
+/* Mappa: le tappe come elenco toccabile, la mappa incorporata solo su richiesta */
+.stops { list-style: none; counter-reset: stop; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.stops li { counter-increment: stop; }
+.stops a {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px 6px 6px;
+    background: var(--bg-color); border: 1px solid var(--line); border-radius: 30px;
+    color: var(--text-color); font-size: 0.86rem; font-weight: 700; text-decoration: none; line-height: 1.25;
+    transition: background 0.2s, border-color 0.2s;
+}
+.stops a::before {
+    content: counter(stop); flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--primary-color); color: #fff; font-size: 0.78rem; font-weight: 800;
+}
+.stops a:hover, .stops a:active { background: var(--primary-light); border-color: var(--primary-color); }
+.maphint { margin: 0.8rem 0 0 0; font-size: 0.8rem; line-height: 1.5; color: var(--light-text); }
+.mapbox { margin-top: 1rem; }
+.mapload {
+    display: flex; align-items: center; justify-content: center; min-height: 64px; padding: 0.8rem 1rem;
+    border: 2px dashed rgba(0,0,0,0.15); border-radius: 12px; background: var(--bg-color);
+    color: var(--primary-color); font-size: 0.9rem; font-weight: 800; text-decoration: none; text-align: center;
+}
+.mapload:hover { border-color: var(--primary-color); }
+.mapbox iframe { width: 100%; height: 340px; border: none; border-radius: 12px; background: #eee; display: block; }
 .maplink { display: inline-block; margin-top: 0.9rem; font-size: 0.82rem; font-weight: 800; text-decoration: none; color: var(--primary-color); }
 .maplink:hover { text-decoration: underline; }
 .maplink + .maplink { margin-left: 1.4rem; }
@@ -309,7 +355,8 @@ tr:last-child td { border-bottom: none; font-weight: 800; font-size: 1.15rem; ba
 
 /* ---------- Stampa ---------- */
 @media print {
-    .topbar, .daystrip, .to-top, .sitefoot, .dayfoot, .subnav, .mood-tags, .countdown, .maplink, .mapbox { display: none !important; }
+    .topbar, .daystrip, .to-top, .sitefoot, .dayfoot, .subnav, .mood-tags, .countdown, .maplink, .mapbox, .maphint { display: none !important; }
+    .stops a { min-height: 0; padding: 2px 8px 2px 2px; }
     body { background: #fff; }
     .hero, .pagehead { background: none !important; color: var(--text-color); padding: 1.5rem 0; }
     .hero h1, .pagehead h1 { text-shadow: none; }

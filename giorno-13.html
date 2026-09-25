@@ -15,16 +15,16 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗾</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <header class="topbar">
-    <a class="brand" href="index.html">🇯🇵 Giappone 2026 <span>· 2-18 dic</span></a>
+    <a class="brand" href="index.html" aria-label="Giappone 2026, home">🇯🇵<b> Giappone 2026</b> <span>· 2-18 dic</span></a>
     <nav class="mainnav" aria-label="Sezioni del sito">
         <a href="index.html#giorni" aria-current="page">📅 Giorni</a>
-        <a href="prenotazioni.html">🎟️ Prenotazioni e budget</a>
+        <a href="prenotazioni.html">🎟️ Prenotazioni</a>
         <a href="pratica.html">🧭 Pratica</a>
         <a href="shopping.html">🛍️ Shopping</a>
     </nav>
@@ -91,11 +91,20 @@
         </section>
 
         <section class="card a-mappa">
-            <h2>🗺️ La mappa del giro</h2>
-            <div class="mapbox">
-                <iframe src="https://maps.google.com/maps?saddr=Boroichi-dori,+Setagaya,+Tokyo&daddr=Gotokuji+Temple,+Setagaya,+Tokyo+to:Sunshine+City,+Ikebukuro,+Tokyo+to:Otome+Road,+Ikebukuro+to:Marunouchi+Naka-dori,+Tokyo+to:Tokyo+Station,+Tokyo+to:Nihonbashi+Bridge,+Tokyo+to:COREDO+Muromachi,+Tokyo&dirflg=r&t=&z=12&ie=UTF8&iwloc=&output=embed" title="Mappa dell'itinerario del giorno 13" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <a class="maplink" href="https://maps.google.com/maps?saddr=Boroichi-dori,+Setagaya,+Tokyo&daddr=Gotokuji+Temple,+Setagaya,+Tokyo+to:Sunshine+City,+Ikebukuro,+Tokyo+to:Otome+Road,+Ikebukuro+to:Marunouchi+Naka-dori,+Tokyo+to:Tokyo+Station,+Tokyo+to:Nihonbashi+Bridge,+Tokyo+to:COREDO+Muromachi,+Tokyo&dirflg=r&t=&z=12&ie=UTF8" target="_blank" rel="noopener">Apri il percorso in Google Maps ↗</a>
+            <h2>🗺️ Le tappe su Google Maps</h2>
+            <ol class="stops">
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=ボロ市通り+世田谷" target="_blank" rel="noopener">Boro-ichi</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Gotokuji+Temple%2C+Setagaya%2C+Tokyo" target="_blank" rel="noopener">Gotoku-ji</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Sunshine+City%2C+Ikebukuro%2C+Tokyo" target="_blank" rel="noopener">Sunshine City (Pokémon Center)</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Otome+Road%2C+Ikebukuro" target="_blank" rel="noopener">Otome Road</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Marunouchi+Naka-dori%2C+Tokyo" target="_blank" rel="noopener">Marunouchi Naka-dori</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Tokyo+Station%2C+Tokyo" target="_blank" rel="noopener">Tokyo Station</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=日本橋+橋梁+中央区" target="_blank" rel="noopener">Ponte di Nihonbashi</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=ざくろ+室町店" target="_blank" rel="noopener">Zakuro (Muromachi)</a></li>
+            </ol>
+            <p class="maphint">Toccate una tappa e si apre in Google Maps: da lì <em>Indicazioni</em> vi dice treno e binario partendo da dove siete.</p>
+            <div class="mapbox"><a class="mapload" href="https://maps.google.com/maps?saddr=Boroichi-dori,+Setagaya,+Tokyo&amp;daddr=Gotokuji+Temple,+Setagaya,+Tokyo+to:Sunshine+City,+Ikebukuro,+Tokyo+to:Otome+Road,+Ikebukuro+to:Marunouchi+Naka-dori,+Tokyo+to:Tokyo+Station,+Tokyo+to:Nihonbashi+Bridge,+Tokyo+to:COREDO+Muromachi,+Tokyo&amp;t=&amp;z=12&amp;ie=UTF8" data-embed="https://maps.google.com/maps?saddr=Boroichi-dori,+Setagaya,+Tokyo&amp;daddr=Gotokuji+Temple,+Setagaya,+Tokyo+to:Sunshine+City,+Ikebukuro,+Tokyo+to:Otome+Road,+Ikebukuro+to:Marunouchi+Naka-dori,+Tokyo+to:Tokyo+Station,+Tokyo+to:Nihonbashi+Bridge,+Tokyo+to:COREDO+Muromachi,+Tokyo&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=&amp;output=embed" target="_blank" rel="noopener">🗺️ Mostra tutte le tappe sulla mappa</a></div>
+            <p class="maphint">La mappa si carica solo se la toccate, per non consumare dati: il tracciato è in auto e serve solo a vedere dove stanno le tappe: gli spostamenti veri sono in treno, come nell'itinerario.</p>
         </section>
 
         <section class="card a-mangiare">
