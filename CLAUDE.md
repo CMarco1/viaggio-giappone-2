@@ -335,7 +335,7 @@ tema scuro automatico. Regole per non rovinarla:
     sua foto grande in `stops/` anche se non è in galleria: è voluto, serve per
     cambiare le foto della galleria senza rifarle (unica eccezione alla regola
     delle immagini orfane).
-  - Solo foto con licenza libera (Wikimedia Commons: CC0, pubblico dominio,
+  - Solo foto con licenza libera (Wikimedia Commons, poi Openverse per Flickr: CC0, pubblico dominio,
     CC BY, CC BY-SA) e soggetto giusto: meglio il segnaposto che una foto di un
     altro posto o di un altro piatto. I crediti si scrivono in
     `images/credits/*.tsv` (slug, file, autore, licenza, url, note) e poi si
@@ -469,8 +469,10 @@ l'uso offline.
 **Foto (settembre 2026).** Aggiunte 112 foto leggere (quasi tutte da Commons): miniatura in
 quasi ogni tappa, galleria in ogni giornata dal G2, una foto per piatto in *Dove
 mangiare*, e 17 foto nelle schede di Shopping. Senza foto libera, con il
-segnaposto: Yamashiroya (G9), Mandarake Shibuya (G10), Aoyama Square (G14), e
-il piatto del pranzo al Nishiki (G5: su Commons il "tako tamago" non c'è).
+segnaposto: Kyoto Ceramic Center (G2), Beep (G11), Aoyama Square (G14) e i due
+hotel. Il 26 settembre, cercando anche su Openverse (Flickr), sono arrivati
+Yamashiroya, Mandarake Shibuya, Surugaya, Kani Doraku, KIX, la stazione di
+Shinjuku e il tako tamago del Nishiki: prima di dire "non esiste" si cerca lì.
 Cancellate le vecchie foto larghe dei piatti e sei foto rimaste senza
 pagina (`arashiyama`, `sensoji`, `crepes`, `melonpan`, `tempura`, `yakitori`).
 

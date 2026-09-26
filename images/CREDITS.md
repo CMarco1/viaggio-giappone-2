@@ -81,6 +81,12 @@ non si conosce la fonte (nei file `credits/*.tsv` sono segnate "preesistente").
 | `stops/shinjuku-gyoen.jpg` | Yoshikazu TAKADA from Tokyo, Japan | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:NTT_Docomo_Yoyogi_Building_and_Shinjuku_Skyscraper_(15843794605).jpg) |
 | `stops/hanazono-shrine.jpg` | Bernard Spragg. NZ from Christchurch, New Zealand | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hanazono_shrine._Shinjuku._Tokyo._(42654941572).jpg) |
 | `stops/yodobashi-shinjuku.jpg` | Asanagi | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Yodobashi_Camera_Shinjuku-nishiguchi_main_branch_2021-08-26.jpg) |
+| `stops/kani-doraku.jpg` | Tokumeigakarinoaoshima | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Crab_sign_on_Kani_Doraku_Dotombori_honten_on_21st_October_2020.jpg) |
+| `stops/kix.jpg` | Wpcpey | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kansai_International_Airport_Terminal_1_Interior1_2014.jpg) |
+| `stops/surugaya-akihabara.jpg` | Bject | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Akihabara_Surugaya_IMG_5995.jpg) |
+| `stops/mandarake-shibuya.jpg` | adactio (Jeremy Keith) | CC BY 2.0 | [Originale](https://www.flickr.com/photos/74105777@N00/3027221118) |
+| `stops/yamashiroya.jpg` | DocChewbacca | CC BY-SA 2.0 | [Originale](https://www.flickr.com/photos/49462908@N00/2871330944) |
+| `stops/shinjuku-station.jpg` | MaedaAkihiko | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:JRE_Shinjuku-STA_South.jpg) |
 
 ## Piatti (images/food)
 
@@ -106,6 +112,8 @@ non si conosce la fonte (nei file `credits/*.tsv` sono segnate "preesistente").
 | `food/shabu-shabu.jpg` | Nishimuraya Kinosaki Onsen | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Tajima_Beef_Shabu-Shabu_Hot_Pot_(25519259666).jpg) |
 | `food/nigiri-omakase.jpg` | N509FZ | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Shichifuku_Nigiri_Sushi_at_Tsukiji_Tamasushi,_Wing_Takanawa_(20230802203124).jpg) |
 | `food/chashu-egg.jpg` | Misei sen | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Yakibuta_tamago_meshi_20250924.jpg) |
+| `food/tako-tamago.jpg` | grepsy | CC BY-SA 2.0 | [Originale](https://www.flickr.com/photos/25024731@N00/38345216651) |
+| `food/konbini-onigiri.jpg` | Amagase | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Onigiri_Bought_at_a_Convenience_Store.jpg) |
 
 ## Shopping (images/shop)
 
