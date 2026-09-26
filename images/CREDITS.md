@@ -81,8 +81,13 @@ non si conosce la fonte (nei file `credits/*.tsv` sono segnate "preesistente").
 | `stops/shinjuku-gyoen.jpg` | Yoshikazu TAKADA from Tokyo, Japan | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:NTT_Docomo_Yoyogi_Building_and_Shinjuku_Skyscraper_(15843794605).jpg) |
 | `stops/hanazono-shrine.jpg` | Bernard Spragg. NZ from Christchurch, New Zealand | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hanazono_shrine._Shinjuku._Tokyo._(42654941572).jpg) |
 | `stops/yodobashi-shinjuku.jpg` | Asanagi | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Yodobashi_Camera_Shinjuku-nishiguchi_main_branch_2021-08-26.jpg) |
+| `stops/ms-plus-shijo-omiya.jpg` | Hotel M's Plus Shijo-Omiya | © tutti i diritti riservati | [Originale](https://cf.bstatic.com/xdata/images/hotel/max1024x768/91309921.jpg) |
+| `stops/apa-higashi-shinjuku.jpg` | APA Hotel Higashi-Shinjuku Kabukicho Tower | © tutti i diritti riservati | [Originale](https://cf.bstatic.com/xdata/images/hotel/max1024x768/607721692.jpg) |
 | `stops/kani-doraku.jpg` | Tokumeigakarinoaoshima | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Crab_sign_on_Kani_Doraku_Dotombori_honten_on_21st_October_2020.jpg) |
 | `stops/kix.jpg` | Wpcpey | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kansai_International_Airport_Terminal_1_Interior1_2014.jpg) |
+| `stops/kiyomizu-yaki.jpg` | Daderot | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Openwork_Hexagonal_Ko-Kiyomizu_Ware_Bowl,_c._1731-1752,_Japan,_artist_unknown,_stoneware_with_overglaze_enamels_-_Art_Institute_of_Chicago_-_DSC00215.JPG) |
+| `stops/famicom-cartridges.jpg` | Bryan Ochalla from Seattle, WA, USA | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Famicom_cartridges_(5099356375).jpg) |
+| `stops/kutani-ware.jpg` | MUSUBI KILN | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Hanazume_Japanese_Teacup_by_MUSUBI_KILN_-_51501763966.jpg) |
 | `stops/surugaya-akihabara.jpg` | Bject | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Akihabara_Surugaya_IMG_5995.jpg) |
 | `stops/mandarake-shibuya.jpg` | adactio (Jeremy Keith) | CC BY 2.0 | [Originale](https://www.flickr.com/photos/74105777@N00/3027221118) |
 | `stops/yamashiroya.jpg` | DocChewbacca | CC BY-SA 2.0 | [Originale](https://www.flickr.com/photos/49462908@N00/2871330944) |

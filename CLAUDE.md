@@ -469,8 +469,8 @@ l'uso offline.
 **Foto (settembre 2026).** Aggiunte 112 foto leggere (quasi tutte da Commons): miniatura in
 quasi ogni tappa, galleria in ogni giornata dal G2, una foto per piatto in *Dove
 mangiare*, e 17 foto nelle schede di Shopping. Senza foto libera, con il
-segnaposto: Kyoto Ceramic Center (G2), Beep (G11), Aoyama Square (G14) e i due
-hotel. Il 26 settembre, cercando anche su Openverse (Flickr), sono arrivati
+segnaposto: nessuno. I due hotel (M's Plus e APA) hanno la foto ufficiale presa da Booking.com, con tutti i diritti riservati: è l'unica eccezione alla regola delle licenze libere, decisa da Marco perché il sito è personale. Per i negozi senza foto libera della facciata (Kyoto Ceramic Center, Beep, Aoyama Square) la miniatura mostra la merce, come per i ristoranti si mostra il piatto: Kiyomizu-yaki, cartucce Famicom, ceramica Kutani.
+Il 26 settembre, cercando anche su Openverse (Flickr), sono arrivati
 Yamashiroya, Mandarake Shibuya, Surugaya, Kani Doraku, KIX, la stazione di
 Shinjuku e il tako tamago del Nishiki: prima di dire "non esiste" si cerca lì.
 Cancellate le vecchie foto larghe dei piatti e sei foto rimaste senza

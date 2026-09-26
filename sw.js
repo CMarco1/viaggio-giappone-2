@@ -1,7 +1,7 @@
 /* Giappone 2026 — service worker: il sito resta consultabile anche senza rete
    (metropolitana, eSIM esaurita). Le pagine si scaricano tutte alla prima visita;
    le foto man mano che si guardano. Cambiando il sito, alzare VERSION. */
-var VERSION = 'g26-v4';
+var VERSION = 'g26-v5';
 var PAGES = [
     './', 'index.html', 'prenotazioni.html', 'pratica.html', 'shopping.html',
     'giorno-01.html', 'giorno-02.html', 'giorno-03.html', 'giorno-04.html', 'giorno-05.html',
