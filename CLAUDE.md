@@ -295,6 +295,16 @@ Struttura di `giorno-NN.html` (non inventarne una nuova):
     Giorni in una città sola: `dirflg=w`. Giorni su più città o zone lontane (1, 7, 12, 13, 14):
     nessun `dirflg`, tracciato indicativo in auto. Fra due soli punti coi
     mezzi: `https://www.google.com/maps/dir/?api=1&origin=…&destination=…&travelmode=transit`.
+  - **Massimo 8-9 punti totali** anche con `dirflg=w` (saddr + tappe unite da
+    `+to:`, contate tutte e due): oltre, la mappa combinata legacy può non
+    caricarsi. Se una giornata piena da nerd ne accumula di più, si toglie
+    qualcosa dalla mappa combinata (non da `.stops`, che restano tutte
+    cliccabili una per una) — tenendo le tappe più ravvicinate fra loro.
+  - **Hotel e catene con nomi simili**: se un nome inglese rischia
+    l'ambiguità con un altro locale della stessa catena (es. i due "APA
+    Hotel … Kabukicho Tower" di Tokyo), usare l'indirizzo giapponese preciso
+    in `saddr`/`daddr` invece del nome, senza cambiare il testo visibile del
+    link.
   - Se cambi le tappe, aggiorna **insieme** l'elenco `.stops`, `href` e `data-embed`.
 - `.card.a-mangiare` → `ul.eat` con `<span class="when">Pranzo</span>`.
 - `.card.a-note.prose` → paragrafi che aprono con `<strong>`.
@@ -619,3 +629,26 @@ tempura sono a due):
 Nessun altro giorno ha carne due volte (i casi dubbi — ramen con chashu di
 maiale, curry con brodo di carne — non contano: la carne lì è nel brodo, non
 il piatto).
+
+**Mappe di Tokyo rotte, causa trovata (27 settembre 2026, notte).** Due
+problemi tecnici distinti, non collegati alla logica del programma:
+1. **Nome ambiguo dell'hotel**: "APA Hotel Higashi Shinjuku Kabukicho Tower"
+   scritto in inglese in `saddr`/`daddr` (G8, G12, G15) è troppo simile
+   all'altro hotel della catena, "APA Hotel Shinjuku Kabukicho Tower" (senza
+   "Higashi"), e Google può geocodificarlo in modo ambiguo o sbagliato.
+   **Corretto**: sostituito ovunque con l'indirizzo giapponese preciso
+   (`東京都新宿区歌舞伎町2-31-12`), senza toccare il testo visibile del link.
+2. **Troppe tappe sulla mappa unica**: G8, G9 e G11 erano arrivati a **10**
+   punti totali (saddr + catena `to:`) sommando le tappe aggiunte nelle
+   ultime revisioni (melonpan, taiyaki, Trader, Kyushu Jangara…). La mappa
+   combinata "Mostra tutte le tappe" con `dirflg=w` regge fino a circa **8-9**
+   punti: oltre, il percorso legacy `maps?saddr=&daddr=…` può non caricarsi.
+   **Corretto**: tolte dalla mappa combinata (non da `.stops`, che restano
+   tutte cliccabili una per una) le tappe più ridondanti — G8: il ritorno
+   finale in hotel, già implicito; G9: Nezu no Taiyaki e Surugaya Akihabara
+   (a un passo da tappe già in rotta); G11: Kyushu Jangara e Hey. Anche G15
+   aveva l'hotel duplicato nella catena, tolto allo stesso modo.
+   **Regola per il futuro**: quando si aggiunge una tappa a un giorno già
+   pieno, controllare il totale dei punti nel `daddr` (`+to:` contati + 2):
+   sopra 9, si toglie qualcosa dalla mappa combinata prima di aggiungere,
+   tenendo comunque la tappa in `.stops`.
