@@ -73,8 +73,8 @@ L'**omurice** (frittatina sottile chiusa sopra il riso saltato al pomodoro)
 provarlo. Va messo in programma **una volta**, in un posto che valga la pena.
 
 Il posto giusto ce l'avete già: **Hokkyokusei** a Shinsaibashi (Giorno 3),
-casa di legno con giardino interno, è **il locale dove l'omurice è stato
-inventato nel 1925**. Se per qualsiasi motivo salta, la sostituzione va
+è **la casa che ha inventato l'omurice nel 1925** (allora Panya no Shokudo,
+a Shiomibashi); la sede di oggi è una casa di legno del 1950 con giardino interno. Se per qualsiasi motivo salta, la sostituzione va
 cercata a Osaka o in un *yoshoku* storico, non in una catena.
 
 Una volta piazzato, non riproporlo altrove: vale la regola anti-doppioni.
@@ -539,7 +539,7 @@ contenuti più controlli di struttura. Cambi da non riaprire:
   5.000 ¥ più IVA. Scritto uguale in G15, G14 e Shopping.
 - **Prenotazioni:** le cene da prenotare (Kani Doraku, Mishima-tei,
   Mouriya, Zakuro, Tokyo Ten, più Koei e Miharu dal Giappone) stanno in *Ancora da prenotare* con la data;
-  Shinkansen ~13.970 ¥ a testa su SmartEX, vendita alle 10:00 JST del 10/11;
+  Shinkansen ~13.770 ¥ a testa su SmartEX (bassa stagione; Nozomi 246 non giornaliero), vendita alle 10:00 JST del 10/11;
   Seiko SZSB011 con consegna all'APA fra il 10 e il 12 dicembre; budget
   ricalcolato (~5.196-5.646 € dopo la revisione dei pasti del 27/9).
 - Le **tappe dei pasti** (Katsugyu, Torisei, Hokkyokusei, Kani Doraku,
@@ -564,7 +564,7 @@ non esiste, il gyoza storico è **Kairaku Honten** (G13). Conteggi: tempura 2
 
 **Ritmo e sere (27 settembre 2026).** Mattine spostate più tardi dove non costa
 niente: G3 (partenza 8:55, castello alle 10), G4 (9:00, mercato alle 9:30), G5
-(Tyrol 8:15, Nijo 9:15), G6 (colazione 8:30, Hankyu 9:15), G9 (9:15). Restano
+(Tyrol alle 8:00, Nijo 9:15), G6 (colazione 8:30, Hankyu 9:15), G9 (9:15). Restano
 presto solo il G2 (Kiyomizu all'alba, dichiarata la giornata più lunga, si
 taglia sul posto) e il G12 (Toyosu). Sere: **Pontocho** passato alla sera del
 G4 (passeggiata dopo Kaneyo), il G5 va dritto a cena da Mishima-tei; **Spa
@@ -626,8 +626,9 @@ manzo + Mishima-tei manzo), G14 (Sandaime Bunji manzo + Mallory maiale). In
 tutti e tre tenuta la cena (l'esperienza forte del giorno) e cambiato il
 pranzo con pesce o verdure, senza toccare i tetti già pieni (sushi, anguilla,
 tempura sono a due):
-- **G2** → **Gion Kirara** (obanzai, piatto unico di assaggi stagionali, sui
-  2.500 ¥), quattro minuti da Yasaka. Katsugyu resta il ripiego.
+- **G2** → **Gion Kirara** (obanzai su Hanamikoji; ai primi di dicembre solo il
+  Kirara Gozen da 3.500 ¥). Ripiego **Okaru** (udon, senza carne), non più
+  Katsugyu, che avrebbe fatto carne a pranzo e a cena.
 - **G5** → **kaisendon** da un banco di Nishiki (Ryoko Chokuso Ryoushi Goya,
   confermato aperto il lunedì). È pesce crudo: se la ragazza non ama nemmeno
   quello, Kakiya Daiyasu (ostriche cotte) è già l'alternativa scritta.
@@ -673,3 +674,33 @@ Dogenzaka", "Gyu-Katsu Motomura Shibuya", "Hard Off Akihabara Branch 2",
 "UNIQLO GINZA Store", "SEEKBASE Akihabara" per il nuovo Beep) e le coordinate
 per l'APA. Tutte le 15 mappe ora hanno ogni tappa riconosciuta
 (`assets/check-maps.sh`). La parte del 27 sul limite di punti resta valida.
+
+**Validazione di orari e aperture (fine settembre 2026).** Quattro controlli
+online, uno ogni quattro giornate, su tutto il programma: nessuna tappa trova
+chiuso nel giorno previsto. Corretti:
+- **Treni**: Haruka delle 17:46 (non 17:50), arrivo 19:04 (G1); l'Hankyu
+  Limited Express non ferma a Omiya (G3: cambio a Katsura; G6: semi-limited
+  express); Special Rapid delle 9:14 e castello di Osaka alle 10:15 (G3);
+  ultimo diretto Kobe-Kyoto alle 23:36 (G7); Shinkansen 13.770 ¥ (bassa
+  stagione) e **Nozomi 246 non giornaliero**, con ripieghi Nozomi 4 e 84 (G8).
+- **Luoghi**: il Mandarake Grand Chaos sta a Den Den Town dal 2020, non ad
+  Amerikamura (G3 e G6); Nakano, il retrogaming è al 2° piano (Mandarake
+  Galaxy), niente Daily Chiko (il soft serve ha il matcha); Toyosu alle 8:30
+  è a fine asta, sosta breve; Sengaku-ji a 45 minuti per tratta e rientro
+  entro le 18:15, perché **Koei cancella dopo 15 minuti di ritardo** (G12);
+  AmiAmi apre alle 11, orari del G11 spostati; ponte di Sanjo per Mishima-tei.
+- **Pasti**: Gion Kirara a 3.500 ¥ a dicembre e ripiego Okaru (G2);
+  Go Go Curry senza cotoletta (G11, cena di bistecca); ripiego Negishi solo
+  rinunciando a Koei (G12); Mouriya **senza giorno fisso di chiusura**
+  (annuncio circa a metà ottobre, a dicembre 2025 era un mercoledì),
+  13.000-35.000 ¥ (G7); prezzi aggiornati per Morita-ya, Kimuraya, Tako-iso,
+  Tsunahachi, Motomura, Nezu no Taiyaki, Daruma, Inoda.
+- **Ingressi**: castello di Osaka 1.200 ¥, Nishinomaru 300 ¥, To-ji 1.200 ¥
+  fino al 13/12 (pagoda aperta), Ryoan-ji 600 ¥, Umeda Sky 2.000 ¥, Manga
+  Museum 1.200 ¥, Kiyomizu 500 ¥; Himeji con impalcature fino a luglio 2027.
+- Immagini tolte perché rimaste orfane: `fugu.jpg`, `katsu-curry.jpg`.
+
+Da ricontrollare più vicino alla partenza: giorno di chiusura di Mouriya a
+dicembre (metà ottobre), Nozomi 246 il 10/12 (10/11), Rojiura Curry aperto,
+Gundam Base con la sala di montaggio, date 2026 di Blue Cave e Marunouchi,
+posa dei maneki del Minamiza, orari 2026 della Midosuji.

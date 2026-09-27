@@ -109,7 +109,6 @@ ritagliate da immagini che il sito aveva già e di cui non si conosce la fonte
 | `food/sukiyaki.jpg` | pelican from Tokyo, Japan | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Sukiyaki_(7320145438).jpg) |
 | `food/curry-rice-egg.jpg` | LoveIsAroundTheWorld | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Jiyuken_curry_rice_20100320.jpg) |
 | `food/korokke.jpg` | Ocdp | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Potato_croquettes_001.jpg) |
-| `food/fugu.jpg` | Qwert1234 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Fugu-no-Sashimi(Totafugu).JPG) |
 | `food/akashiyaki.jpg` | 663highland | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Akashi-yaki_at_Akashi01s.jpg) |
 | `food/ekiben.jpg` | くろふね | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:とちぎ和牛旨とろ煮込み飯（宇都宮駅）20260120-P1078872.jpg) |
 | `food/menchi-katsu.jpg` | RuinDig/Yuki Uchida | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:牛カツ京都勝牛_牛サーロインカツとメンチカツ膳.jpg) |
@@ -128,7 +127,7 @@ ritagliate da immagini che il sito aveva già e di cui non si conosce la fonte
 | `food/melonpan.jpg` | Sakurai Midori | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Melonpan.jpg) |
 | `food/taiyaki.jpg` | Ocdp | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Taiyaki_005.jpg) |
 | `food/obanzai.jpg` | Nesnad | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Obanzai-kyotofood-2018-12-30.jpg) |
-| `food/yakizakana.jpg` | Yaco* | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Yakizakana.jpg) |
+| `food/gyutan.jpg` | Captain76 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Gyutan_teishoku.JPG) |
 | `food/tako-tamago.jpg` | grepsy | CC BY-SA 2.0 | [Originale](https://www.flickr.com/photos/25024731@N00/38345216651) |
 | `food/konbini-onigiri.jpg` | Amagase | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Onigiri_Bought_at_a_Convenience_Store.jpg) |
 
