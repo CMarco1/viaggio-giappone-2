@@ -300,11 +300,19 @@ Struttura di `giorno-NN.html` (non inventarne una nuova):
     caricarsi. Se una giornata piena da nerd ne accumula di più, si toglie
     qualcosa dalla mappa combinata (non da `.stops`, che restano tutte
     cliccabili una per una) — tenendo le tappe più ravvicinate fra loro.
-  - **Hotel e catene con nomi simili**: se un nome inglese rischia
-    l'ambiguità con un altro locale della stessa catena (es. i due "APA
-    Hotel … Kabukicho Tower" di Tokyo), usare l'indirizzo giapponese preciso
-    in `saddr`/`daddr` invece del nome, senza cambiare il testo visibile del
-    link.
+  - **Ogni tappa della mappa combinata deve essere trovata da Google**: se
+    anche un solo punto non viene riconosciuto, il percorso non si disegna e
+    la mappa risulta rotta. Nei `saddr`/`daddr` si usano **nomi inglesi
+    verificati**, mai caratteri giapponesi (nei percorsi vengono letti male:
+    uno è finito a Roma) e mai l'indirizzo giapponese. Se un posto non si
+    trova per nome (è il caso dell'APA Higashi-Shinjuku), si usano le
+    **coordinate** (`35.6980298,139.7038376` per l'APA). I link di ricerca
+    delle singole tappe (`maps/search/?api=1&query=…`) sono un'altra cosa:
+    lì i nomi giapponesi funzionano.
+  - **Prima di pubblicare una mappa modificata**: `bash assets/check-maps.sh 08`
+    (uno o più giorni) scarica l'embed vero di Google col cookie di consenso e
+    segna con ✗ ogni tappa che Google non trova. Si pubblica solo se sono
+    tutte ✓.
   - Se cambi le tappe, aggiorna **insieme** l'elenco `.stops`, `href` e `data-embed`.
 - `.card.a-mangiare` → `ul.eat` con `<span class="when">Pranzo</span>`.
 - `.card.a-note.prose` → paragrafi che aprono con `<strong>`.
@@ -636,7 +644,7 @@ problemi tecnici distinti, non collegati alla logica del programma:
    scritto in inglese in `saddr`/`daddr` (G8, G12, G15) è troppo simile
    all'altro hotel della catena, "APA Hotel Shinjuku Kabukicho Tower" (senza
    "Higashi"), e Google può geocodificarlo in modo ambiguo o sbagliato.
-   **Corretto**: sostituito ovunque con l'indirizzo giapponese preciso
+   **Correzione sbagliata**, rifatta il 28 (vedi sotto): era stato sostituito con l'indirizzo giapponese preciso
    (`東京都新宿区歌舞伎町2-31-12`), senza toccare il testo visibile del link.
 2. **Troppe tappe sulla mappa unica**: G8, G9 e G11 erano arrivati a **10**
    punti totali (saddr + catena `to:`) sommando le tappe aggiunte nelle
@@ -652,3 +660,16 @@ problemi tecnici distinti, non collegati alla logica del programma:
    pieno, controllare il totale dei punti nel `daddr` (`+to:` contati + 2):
    sopra 9, si toglie qualcosa dalla mappa combinata prima di aggiungere,
    tenendo comunque la tappa in `.stops`.
+
+**Mappe di Tokyo, la causa vera (28 settembre 2026).** La correzione del 27
+sera era sbagliata: l'indirizzo giapponese dell'hotel **non** viene trovato da
+Google dentro un percorso, e aveva rotto anche G12 e G15. Con il cookie di
+consenso si può leggere la risposta vera dell'embed, dove Google elenca le
+tappe riconosciute con le coordinate: le mappe rotte avevano tutte almeno una
+tappa non trovata — l'hotel (G8, G12, G15), Shinjuku Takano (G8), Afuri e
+Motomura (G10), Hard Off 2 (G11), UNIQLO Ginza (G14). Corretto con nomi
+inglesi verificati uno per uno ("Shinjuku Takano Main Store", "Afuri Shibuya
+Dogenzaka", "Gyu-Katsu Motomura Shibuya", "Hard Off Akihabara Branch 2",
+"UNIQLO GINZA Store", "SEEKBASE Akihabara" per il nuovo Beep) e le coordinate
+per l'APA. Tutte le 15 mappe ora hanno ogni tappa riconosciuta
+(`assets/check-maps.sh`). La parte del 27 sul limite di punti resta valida.
