@@ -218,6 +218,11 @@ fra una tappa e l'altra. Regole:
 - **Mai un pasto ridotto a "qualcosa al konbini"** o a "pranzo leggero in zona".
   Il konbini va bene solo come ripiego dichiarato (tardi la sera, o in
   spiaggia come spuntino), mai come pasto previsto.
+- **Mai carne sia a pranzo sia a cena nello stesso giorno.** Se un giorno ha
+  già una cena di carne, il pranzo va a pesce, verdure o un piatto misto
+  (curry, udon, obanzai): non conta come "carne" il ramen con un po' di
+  chashu o il curry con brodo di manzo, solo il piatto dove la carne è il
+  centro (cotoletta, griglia, sukiyaki, yakiniku, hamburg…).
 - Ogni pasto ha un posto preciso, verificato: nome (anche in giapponese),
   orari del giorno della settimana giusto, giorno di chiusura, prezzo. Dove ha
   senso, un'alternativa.
@@ -576,3 +581,41 @@ uscito dal programma. **G2**: pranzo da Katsugyu nella sede **Gion Yasaka**
 invece che in cima a Gojo-zaka, così dopo Yasaka si scende sempre verso sud
 (chip ~10 km). Il **G12** resta uno zig-zag (Toyosu, Nakano, Sengaku-ji) per
 due vincoli fissi del 14; è la giornata con più treni, ed è scritto.
+
+**Colazione e due dolci veri (27 settembre 2026, sera).** La colazione a Tokyo
+non è più il buffet dell'APA come prima scelta: ora è **Shinpachi Shokudo**
+(Kabukicho 1-26-3, dieci minuti a piedi, pesce alla brace, quasi 24 ore, ~600
+¥), con l'APA e i konbini come ripiego per chi vuole restare sotto casa. A
+Kyoto restava già buona (Matsuya, Kissa Tyrol, Inoda Coffee) e non è stata
+toccata. Aggiunti due assaggi mirati, non lasciati al caso: il **melonpan**
+vero da **Shinjuku Takano** (Creamy Melon, sulla strada del G8 dopo
+Tsunahachi, prima di Ikebukuro) e il **taiyaki** cotto uno alla volta da
+**Nezu no Taiyaki** (G9, subito dopo Nezu Jinja, prima che finisca la scorta).
+Niente di uguale c'era già nel viaggio, e nessuna delle due tappe aggiunge un
+pasto: sono spuntini in mezzo a cose già in programma.
+
+**Alternativa economica al sukiyaki (27 settembre 2026, sera).** Nel G5,
+accanto a Mishima-tei, aggiunta **Morita-ya, sede di Kiyamachi** (dal 1869,
+primo negozio di manzo di Kyoto, storia paragonabile a Mishima-tei): stesso
+piatto, sukiyaki, da 5.300 a 10.000 yen a testa secondo il percorso — un terzo
+o la metà del conto di Mishima-tei (17.500-21.800). Katsukura resta il
+ripiego per chi vuole cambiare piatto (tonkatsu, ~2.000 yen).
+
+**Niente carne due volte lo stesso giorno (27 settembre 2026, sera).** Nuova
+regola esplicita di Marco. Controllati tutti i 15 giorni: tre avevano carne a
+sia pranzo sia cena — G2 (Katsugyu manzo + Torisei pollo), G5 (Hiro Nishiki
+manzo + Mishima-tei manzo), G14 (Sandaime Bunji manzo + Mallory maiale). In
+tutti e tre tenuta la cena (l'esperienza forte del giorno) e cambiato il
+pranzo con pesce o verdure, senza toccare i tetti già pieni (sushi, anguilla,
+tempura sono a due):
+- **G2** → **Gion Kirara** (obanzai, piatto unico di assaggi stagionali, sui
+  2.500 ¥), quattro minuti da Yasaka. Katsugyu resta il ripiego.
+- **G5** → **kaisendon** da un banco di Nishiki (Ryoko Chokuso Ryoushi Goya,
+  confermato aperto il lunedì). È pesce crudo: se la ragazza non ama nemmeno
+  quello, Kakiya Daiyasu (ostriche cotte) è già l'alternativa scritta.
+- **G14** → **Obon de Gohan** (teishoku di pesce alla griglia, DiverCity 6F,
+  da 1.200 ¥) al posto del gyutan di Sandaime Bunji.
+
+Nessun altro giorno ha carne due volte (i casi dubbi — ramen con chashu di
+maiale, curry con brodo di carne — non contano: la carne lì è nel brodo, non
+il piatto).

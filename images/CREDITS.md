@@ -124,8 +124,11 @@ ritagliate da immagini che il sito aveva già e di cui non si conosce la fonte
 | `food/unagi.jpg` | Choo Yut Shing from Singapore, Singapore | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Unadon_-_Flickr_-_chooyutshing.jpg) |
 | `food/tempura.jpg` | Ocdp | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Tempura_001.jpg) |
 | `food/kamaage-udon.jpg` | Lombroso | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kama-age_Udon.jpg) |
-| `food/gyutan.jpg` | Captain76 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Gyutan_teishoku.JPG) |
 | `food/soup-curry.jpg` | Eok12 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Soup_curry.jpg) |
+| `food/melonpan.jpg` | Sakurai Midori | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Melonpan.jpg) |
+| `food/taiyaki.jpg` | Ocdp | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Taiyaki_005.jpg) |
+| `food/obanzai.jpg` | Nesnad | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Obanzai-kyotofood-2018-12-30.jpg) |
+| `food/yakizakana.jpg` | Yaco* | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Yakizakana.jpg) |
 | `food/tako-tamago.jpg` | grepsy | CC BY-SA 2.0 | [Originale](https://www.flickr.com/photos/25024731@N00/38345216651) |
 | `food/konbini-onigiri.jpg` | Amagase | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Onigiri_Bought_at_a_Convenience_Store.jpg) |
 
