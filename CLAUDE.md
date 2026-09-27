@@ -15,7 +15,7 @@ ma viola una regola, non si propone, nemmeno come opzionale.
 - **Base 2:** Tokyo, APA Higashi-Shinjuku Kabukicho Tower, 7 notti (10→17 dic).
   Fermata quotidiana **Higashi-Shinjuku** (Oedo + Fukutoshin), 350 m.
   Shinjuku Station è a 1,1 km: non è la stazione "di casa".
-- Hotel occidentali, **niente ryokan**. Onsen in terrazza incluso all'APA.
+- Hotel occidentali, **niente ryokan**. All'APA c'è un grande bagno comune gratuito (2° piano, 15-24 e 6-10, acqua artificiale, niente vasca all'aperto: quella in terrazza è di un altro APA, il Shinjuku Kabukicho Tower).
 - Buio alle **16:30-16:45**. Le cose "da luce" vanno al mattino, sempre.
 - Non è la prima volta in Giappone: **Nara è già stata fatta** e non ha convinto.
 
@@ -91,7 +91,7 @@ settembre 2026: **Toyosu all'alba** (G12, e sullo stesso piano c'è Odayasu con
 tonkatsu e chashu per lei) e l'**omakase di Sushi Tokyo Ten** (G15, pranzo).
 Non aggiungerne altri: se ne salta fuori uno migliore, entra **al posto** di
 uno dei due. La **carne** invece le piace: almeno un paio di cene di carne vera,
-e oggi ce ne sono parecchie (Katsugyu, Mishima-tei, Mouriya, Horaiya, Motomura, Mansei,
+e oggi ce ne sono parecchie (Katsugyu, Mishima-tei, Mouriya, Ponta Honke, Motomura, Mansei,
 yakiniku, Zakuro).
 
 **Da fare — il tema nerd, in ordine di interesse:**
@@ -101,7 +101,9 @@ yakiniku, Zakuro).
    mettersi a giocare in vacanza e comunque non si riportano in aereo. Una sala
    arcade, un piano di crane game o una parete di gachapon **non contano come
    retrogaming**: sono tempo tolto ai negozi. Se un posto si consiglia solo per
-   i cabinati, non si consiglia.
+   i cabinati, non si consiglia. **Unica eccezione**, decisa da Marco a
+   settembre 2026: un'ora da **Hey**, la sala retro di Akihabara, la sera del
+   G11 dopo cena, quando i negozi sono chiusi. Non se ne aggiungono altre.
 2. **Giochi Switch** nuovi e usati.
 3. **Manga** nuovi e usati.
 4. **Action figure** nuove e usate.
@@ -125,13 +127,14 @@ robe fuori dal comune. Il resto è contorno.
 
 ## Decisioni già prese
 
+- ✅ **Kamakura, facoltativa.** È l'unica alternativa ammessa all'intero G14; costa la spiaggia di Odaiba, la Gundam Base e gli acquisti di Aoyama e Uniqlo (che passano al G15), ed è scritto sia nel G14 sia in `index.html`.
 - ✅ **Karaoke, una serata.** Deciso, va messo in programma — non proposto come
-  opzionale. Box privato in due, Kabukicho ce l'ha sotto casa (~300 m
-  dall'APA), aperti fino a notte fonda, ~1.500 ¥ l'ora. Va incastrato in una
+  opzionale. Box privato in due, Kabukicho ce l'ha sotto casa (Karaoke Kan a ~8 minuti
+  a piedi dall'APA), aperto fino alle 6, ~1.500 ¥ a testa l'ora. Va incastrato in una
   sera di Tokyo che finisce presto e vicino all'hotel. **Assegnato: Giorno 12,
   alle 21:00**, dopo cena, dentro Kabukicho. Non il Giorno 8, già pieno con
   la cena da Fuunji e Golden Gai. Non è in preventivo: sta fra le spese non
-  comprese del budget (`prenotazioni.html#budget`), ~3.000 ¥ a testa.
+  comprese del budget (`prenotazioni.html#budget`), ~1.500-2.000 ¥ a testa per un'ora.
 - ✅ **Spiaggia di Odaiba, tempo vero.** Al Giorno 14, dopo la Gundam Base, va
   previsto **tempo largo sulla spiaggia** di
   Odaiba Kaihin Koen — non venti minuti di passaggio per la foto alla Statua
@@ -160,7 +163,7 @@ Non toglierli e non spostarli: esistono solo quel giorno.
 | G3 | 5 dic | **Midosuji Illumination**, 800 ginkgo, fino al 31 dicembre |
 | G4 | 6 dic | **Garakuta-ichi a To-ji** — prima domenica del mese |
 | G5 | 7 dic | **Kaomise** al Minamiza, i *maneki* sulla facciata |
-| G10 | 12 dic | **Blue Cave** a Shibuya (4-25 dic) + Omotesando in oro |
+| G10 | 12 dic | **Blue Cave** a Shibuya (nel 2025 dal 4 al 25 dic; date 2026 a fine novembre) + Omotesando in oro |
 | G12 | 14 dic | **Gishi-sai** dei 47 ronin a Sengaku-ji |
 | G13 | 15 dic | **Setagaya Boro-ichi**, 700 banchi, 4 giorni all'anno (c'è anche il 16: piano B la mattina del G14) |
 
@@ -240,7 +243,7 @@ la nuova è meglio.
 | Grandi templi d'oro / padiglioni | 2 | Kinkaku-ji è uscito (visto nel 2025). |
 | Mercati alimentari fatti *apposta* | **2, pieno** | Nishiki (G5) e Uonotana ad Akashi (G7). Kuromon è stato tolto (troppo turistico); al G6 oggi si mangia il curry di Jiyuken. Sanjo-kai (G5) e Yanaka Ginza (G9) sono gallerie di quartiere che si attraversano: non contano. |
 | Mercati dell'usato e delle pulci | **2, pieno** | Garakuta-ichi a To-ji (G4) e Boro-ichi a Setagaya (G13). Un terzo entra solo al posto di uno dei due. |
-| Serate in un vicolo di izakaya | **2, pieno** | Golden Gai (Giorno 8) e Pontocho (Giorno 5). Omoide Yokocho, già vista nel 2025, si attraversa soltanto. Gli altri vicoli (Ameyoko/Okachimachi, Nonbei Yokocho, Yurakucho, Harmonica) si attraversano, non ci si cena: a settembre 2026 tre cene che ci finivano dentro sono state spostate. |
+| Serate in un vicolo di izakaya | **2, pieno** | Golden Gai (Giorno 8) e Pontocho (Giorno 4, passeggiata dopo cena; fino a settembre 2026 era la sera del G5). Omoide Yokocho, già vista nel 2025, si attraversa soltanto. Gli altri vicoli (Ameyoko/Okachimachi, Nonbei Yokocho, Yurakucho, Harmonica) si attraversano, non ci si cena: a settembre 2026 tre cene che ci finivano dentro sono state spostate. |
 
 Il conteggio è **su tutto il viaggio**, non per città: due osservatori totali,
 non due a Kyoto e due a Tokyo.
@@ -270,11 +273,11 @@ Mantienilo.
 Struttura di `giorno-NN.html` (non inventarne una nuova):
 
 - `.dayhero` + `.chips` — i chip devono coincidere con il teaser della card in
-  `index.html`. **Oggi non coincidono sempre: verificali quando tocchi un giorno.**
+  `index.html` (oggi coincidono tutti: tenerli allineati).
 - `.card.accent.a-sintesi` → `ul.synth`, tre righe.
 - `.card.a-itin` → `ol.timeline`, `<li><span class="t">HH:MM</span><div>…</div></li>`.
   Le tappe facoltative hanno `class="opt"` sul `<li>`.
-- `.card.a-mappa` → titolo "🗺️ Le tappe su Google Maps", poi:
+- `.card.a-mappa` → titolo `<span class="ic ic-pin" aria-hidden="true"></span>Le tappe su Google Maps`, poi:
   - `ol.stops`: una `<li><a>` per tappa, con
     `https://www.google.com/maps/search/?api=1&query=…` (apre l'app sul
     telefono). Per ristoranti e negozi nella query va il **nome giapponese**
@@ -284,7 +287,7 @@ Struttura di `giorno-NN.html` (non inventarne una nuova):
     al tocco, per non consumare dati.
   - **Mai `dirflg=r` con più di due punti**: Google non calcola percorsi a più
     tappe coi mezzi (sul telefono accetta al massimo 3 tappe intermedie).
-    Giorni in una città sola: `dirflg=w`. Giorni su più città (1, 7, 12, 13):
+    Giorni in una città sola: `dirflg=w`. Giorni su più città o zone lontane (1, 7, 12, 13, 14):
     nessun `dirflg`, tracciato indicativo in auto. Fra due soli punti coi
     mezzi: `https://www.google.com/maps/dir/?api=1&origin=…&destination=…&travelmode=transit`.
   - Se cambi le tappe, aggiorna **insieme** l'elenco `.stops`, `href` e `data-embed`.
@@ -407,12 +410,6 @@ Il grosso è stato saldato nelle revisioni di luglio e settembre 2026. Resta que
   **Tower Slider**, lo scivolo a spirale dalla base della torre. Non è una
   vista dall'alto e non violerebbe niente: se serve un'aggiunta a Shinsekai,
   ricomincia da lì.
-- `giorno-09.html` — **Horaiya** chiude il mercoledì (il G9 è venerdì), ma le
-  fonti non concordano sull'apertura serale nei feriali. La pagina dice di farlo
-  chiamare dall'hotel e ha già il ripiego (Ponta Honke, a due isolati).
-- `giorno-07.html` — **Mouriya**: i prezzi citati (percorsi di manzo di Kobe da
-  ~8.000 yen) sono del 2024 e il gruppo li ha alzati. Controllare sul sito
-  quando si prenota.
 
 ### Già sistemato, non riaprire
 
@@ -439,7 +436,7 @@ cartella è stata rimossa, questo file la sostituisce.
   ronin"* in quattro file. Kichijoji è diventato il piano B della mattina, e
   Nakano Broadway è passato da due a quattro ore.
 - **G14** rinominato *"Odaiba, la Gundam Base e la baia di Tokyo"*: fuori
-  Toyosu e l'Unicorn smantellato. Mattina libera (teamLab, allora opzionale, poi tolto; oppure il
+  Toyosu e l'Unicorn smantellato. Mattina: Aoyama Square (teamLab, allora opzionale, poi tolto; oppure il
   Boro-ichi del 16 come piano B del G13).
 - **Vicoli di izakaya riportati a due** (Pontocho, Omoide Yokocho + Golden Gai).
   Le cene nei vicoli di Okachimachi (G9), Nonbei Yokocho (G10) e Yurakucho
@@ -505,7 +502,7 @@ pagina (`arashiyama`, `sensoji`, `crepes`, `melonpan`, `tempura`, `yakitori`).
 **Controllo generale (25 settembre 2026, sera).** Tre revisioni parallele di
 contenuti più controlli di struttura. Cambi da non riaprire:
 - **G2:** Hisago è chiuso il venerdì (e su Tabelog risulta chiuso del tutto):
-  pranzo da **Gyukatsu Kyoto Katsugyu** in cima a Gojo-zaka. Il gyukatsu così
+  pranzo da **Gyukatsu Kyoto Katsugyu** (oggi la sede di Gion Yasaka). Il gyukatsu così
   compare due volte (G2 e Motomura al G10): è il tetto.
 - **G3:** la cena da Dotonbori Imai era *kitsune udon* (tofu fritto, veto):
   ora **Kani Doraku Dotonbori Honten**, granchio, da prenotare. La cena ha un
@@ -515,13 +512,13 @@ contenuti più controlli di struttura. Cambi da non riaprire:
 - **Shibuya Sky:** le vendite aprono **14 giorni prima** a mezzanotte
   giapponese (per il 12/12: venerdì 27/11 alle 16:00 italiane), non un mese.
 - **Tax-free dal 1/11/2026:** a Narita non si incassa niente. Chiosco doganale
-  prima del check-in (o Visit Japan Web), rimborso dal negozio dopo, soglia
+  prima del check-in (o il codice Visit Japan Web nelle aree segnalate, sempre in aeroporto), rimborso dal negozio dopo, soglia
   5.000 ¥ più IVA. Scritto uguale in G15, G14 e Shopping.
-- **Prenotazioni:** le cinque cene da prenotare (Kani Doraku, Mishima-tei,
-  Mouriya, Zakuro, Tokyo Ten) stanno in *Ancora da prenotare* con la data;
+- **Prenotazioni:** le cene da prenotare (Kani Doraku, Mishima-tei,
+  Mouriya, Zakuro, Tokyo Ten, più Koei e Miharu dal Giappone) stanno in *Ancora da prenotare* con la data;
   Shinkansen ~13.970 ¥ a testa su SmartEX, vendita alle 10:00 JST del 10/11;
   Seiko SZSB011 con consegna all'APA fra il 10 e il 12 dicembre; budget
-  ricalcolato (~4.896-5.246 €).
+  ricalcolato (~5.196-5.646 € dopo la revisione dei pasti del 27/9).
 - Le **tappe dei pasti** (Katsugyu, Torisei, Hokkyokusei, Kani Doraku,
   Mishima-tei, Kushikatsu Daruma, Surugaya, Afuri, Beep, Mansei) sono entrate
   nella lista `.stops` e nel percorso della mappa.
@@ -541,3 +538,41 @@ in volo. Cene che erano vaghe: **Koei** yakiniku (G12, l'unico yakiniku),
 **Tempura Tamai** a Narita (G15). Corretto un errore: "Kaikatei" a Ikebukuro
 non esiste, il gyoza storico è **Kairaku Honten** (G13). Conteggi: tempura 2
 (Tsunahachi, Tamai), anguilla 2 (Kaneyo, Miharu), gyukatsu 2, yakiniku 1.
+
+**Ritmo e sere (27 settembre 2026).** Mattine spostate più tardi dove non costa
+niente: G3 (partenza 8:55, castello alle 10), G4 (9:00, mercato alle 9:30), G5
+(Tyrol 8:15, Nijo 9:15), G6 (colazione 8:30, Hankyu 9:15), G9 (9:15). Restano
+presto solo il G2 (Kiyomizu all'alba, dichiarata la giornata più lunga, si
+taglia sul posto) e il G12 (Toyosu). Sere: **Pontocho** passato alla sera del
+G4 (passeggiata dopo Kaneyo), il G5 va dritto a cena da Mishima-tei; **Spa
+World** dopo cena al G6; **Hey** al G11 (eccezione decisa da Marco). Tutti i
+"Se oggi non gira" riscritti: dicono cosa si taglia, cosa non torna, cosa è
+prenotato e dove si mangia se salta un pasto (G2 → Wabiya Korekido se salta
+Fushimi; G7 → Ramen Koji o Ohsho se salta Kobe). Corretto il bagno dell'APA:
+2° piano, niente vasca all'aperto.
+
+**Controllo totale (27 settembre 2026, sera).** Quattro revisioni parallele più
+i controlli di struttura. Cambi da non riaprire: **Horaiya** nei feriali apre
+solo a pranzo (dal 2024) → la cena del G9 è **Ponta Honke** (1905, chiuso il
+lunedì, ultimo ordine 19:45). **N'EX del G15 alle 17:09** (non 17:15), 3.330 ¥,
+binari 5-6. **Beep** ha traslocato al SEEKBASE, sotto la Yamanote (chiuso il
+mercoledì). **Sushi Tokyo Ten**: 2° piano del NEWoMan, 5.500 ¥ a pranzo, si
+prenota su res-reserve.com. **Mandarake Complex** è su due palazzi (Complex 2
+dal 2025, giochi al 3°). A Osaka Super Potato è sulla Ota Road e Retro Game
+Camp non c'è. Himeji è "il più grande dei dodici castelli originali", non
+l'unico. Chip dei km corretti (G2 ~12, la più lunga; G3 ~10; G4 ~9; G5 ~10:
+sopra la regola dei 9 km, accettato per il G2, da tenere d'occhio per G3 e
+G5). Budget cibo alzato a 1.600-1.900 € (totale ~5.196-5.646 €). Aggiunti al
+calendario i contatti da far fare all'APA il 10-11 dicembre.
+
+**Geografia delle giornate (27 settembre 2026).** Regola: una giornata sta in
+una zona sola o si muove in linea, senza tornare indietro. Applicata così:
+**Shimokitazawa e Ikebukuro scambiati** fra G8 e G13. Il G8 ("Shinkansen,
+Ikebukuro e la notte di Shinjuku") fa Pokémon Center, Animate e Otome Road nel
+pomeriggio, a sei minuti di Fukutoshin da casa; il G13 ("Boro-ichi, Shimokitazawa
+e le luci di Marunouchi") resta a Setagaya fino alle 16:30 (Shimokitazawa è a tre
+fermate di Odakyu da Gotoku-ji), pranzo da **Rojiura Curry SAMURAI**. Kairaku è
+uscito dal programma. **G2**: pranzo da Katsugyu nella sede **Gion Yasaka**
+invece che in cima a Gojo-zaka, così dopo Yasaka si scende sempre verso sud
+(chip ~10 km). Il **G12** resta uno zig-zag (Toyosu, Nakano, Sengaku-ji) per
+due vincoli fissi del 14; è la giornata con più treni, ed è scritto.

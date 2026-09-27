@@ -6,7 +6,7 @@ param([string[]]$Only)
 
 Add-Type -AssemblyName System.Drawing
 
-$heroes = 'airport','akihabara','cover','dotonbori','himeji','ikebukuro','kiyomizu','kyoto_station',
+$heroes = 'airport','akihabara','cover','dotonbori','himeji','kiyomizu','kyoto_station',
           'nakano','nishiki','odaiba','shibuya','shinjuku','shinsekai','toji','yanaka'
 
 $codec = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.MimeType -eq 'image/jpeg' }

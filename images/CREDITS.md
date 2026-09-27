@@ -2,9 +2,12 @@
 
 Le copertine `toji.jpg` e `yanaka.jpg` sono la miniatura da 1280 px generata da
 **Wikimedia Commons**; le altre copertine in questa cartella sono preesistenti.
-Le foto delle cartelle `stops`, `food` e `shop` sono elencate in fondo, tutte da
-Commons. Mancano solo quelle ritagliate da foto che il sito aveva già e di cui
-non si conosce la fonte (nei file `credits/*.tsv` sono segnate "preesistente").
+Le foto delle cartelle `stops`, `food` e `shop` sono elencate in fondo: quasi tutte
+da Wikimedia Commons, alcune da Flickr tramite Openverse (sempre con licenza libera),
+più le due foto degli hotel prese da Booking.com, con tutti i diritti riservati
+(eccezione decisa per un sito personale). Mancano dalla tabella solo le foto
+ritagliate da immagini che il sito aveva già e di cui non si conosce la fonte
+(nei file `credits/*.tsv` sono segnate "preesistente").
 
 ## `toji.jpg` — giorno-04 (To-ji) e card in index
 - **Autore:** Simone Urbinati (Urby2004)
@@ -92,6 +95,7 @@ non si conosce la fonte (nei file `credits/*.tsv` sono segnate "preesistente").
 | `stops/mandarake-shibuya.jpg` | adactio (Jeremy Keith) | CC BY 2.0 | [Originale](https://www.flickr.com/photos/74105777@N00/3027221118) |
 | `stops/yamashiroya.jpg` | DocChewbacca | CC BY-SA 2.0 | [Originale](https://www.flickr.com/photos/49462908@N00/2871330944) |
 | `stops/shinjuku-station.jpg` | MaedaAkihiko | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:JRE_Shinjuku-STA_South.jpg) |
+| `stops/hey-akihabara.jpg` | TarkusAB | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Japanese_shmup_arcade.jpg) |
 
 ## Piatti (images/food)
 
@@ -100,7 +104,6 @@ non si conosce la fonte (nei file `credits/*.tsv` sono segnate "preesistente").
 | `food/yakitori.jpg` | Yoshiko Kikuraku | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:BEST_YAKITORI_in_local_Japan.jpg) |
 | `food/omurice.jpg` | Ocdp | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Omurice_001.jpg) |
 | `food/kaisendon.jpg` | Jun Seita from Palo Alto, CA, U.S. | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kaisendon_(15650467898).jpg) |
-| `food/gyoza.jpg` | Adryan R. Villanueva | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Japanese_pan_fried_gyoza.jpg) |
 | `food/kinshi-don.jpg` | Kykk wiki | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:KinshiDonburi_Kyogoku_Kaneyo.jpg) |
 | `food/takoyaki.jpg` | gaku. | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Takoyaki_is_served;_November_2010.jpg) |
 | `food/sukiyaki.jpg` | pelican from Tokyo, Japan | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Sukiyaki_(7320145438).jpg) |
@@ -119,6 +122,10 @@ non si conosce la fonte (nei file `credits/*.tsv` sono segnate "preesistente").
 | `food/chashu-egg.jpg` | Misei sen | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Yakibuta_tamago_meshi_20250924.jpg) |
 | `food/oyakodon.jpg` | Ocdp | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Oyakodon_003.jpg) |
 | `food/unagi.jpg` | Choo Yut Shing from Singapore, Singapore | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Unadon_-_Flickr_-_chooyutshing.jpg) |
+| `food/tempura.jpg` | Ocdp | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Tempura_001.jpg) |
+| `food/kamaage-udon.jpg` | Lombroso | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kama-age_Udon.jpg) |
+| `food/gyutan.jpg` | Captain76 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Gyutan_teishoku.JPG) |
+| `food/soup-curry.jpg` | Eok12 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Soup_curry.jpg) |
 | `food/tako-tamago.jpg` | grepsy | CC BY-SA 2.0 | [Originale](https://www.flickr.com/photos/25024731@N00/38345216651) |
 | `food/konbini-onigiri.jpg` | Amagase | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Onigiri_Bought_at_a_Convenience_Store.jpg) |
 
