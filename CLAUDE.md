@@ -200,6 +200,30 @@ posti che piacciono, non per collezionarne di più.
 - Le sere non devono finire tutte con "cena e a letto", ma nemmeno diventare
   un secondo programma. Una cosa dopocena, non tre.
 
+## 🍚 I pasti — pranzo e cena sempre, la colazione quando ci sta
+
+**I pasti sono una delle cose più importanti del viaggio**, non un riempitivo
+fra una tappa e l'altra. Regole:
+
+- **Pranzo e cena sono i pasti che contano**: ogni giornata li ha, sia
+  nell'itinerario (una riga con l'orario) sia in *Dove mangiare* (con il nome
+  del posto).
+- **La colazione è il pasto meno importante**: si scrive dove si fa (in hotel,
+  con orari e prezzo, o fuori, con il nome), ma se il programma la fa saltare
+  va bene così, basta dirlo (es. Kiyomizu all'alba). Non si sacrifica una
+  tappa per la colazione.
+- **Mai un pasto ridotto a "qualcosa al konbini"** o a "pranzo leggero in zona".
+  Il konbini va bene solo come ripiego dichiarato (tardi la sera, o in
+  spiaggia come spuntino), mai come pasto previsto.
+- Ogni pasto ha un posto preciso, verificato: nome (anche in giapponese),
+  orari del giorno della settimana giusto, giorno di chiusura, prezzo. Dove ha
+  senso, un'alternativa.
+- Se il programma costringe a saltare o spostare un pasto (volo, treno, alba),
+  **va scritto esplicitamente**, con dove e quando si recupera (es. "pranzo in
+  volo", "colazione sul treno con l'ekiben").
+- Gli spuntini (crocchette, tako tamago, nikuman) si aggiungono ai pasti, non
+  li sostituiscono.
+
 ## 🔁 La regola anti-doppioni — il tetto è **due**
 
 Due esperienze simili vanno bene: la seconda volta si guarda con occhi diversi.
@@ -368,7 +392,9 @@ di giornata).
    pomeriggio? Verifica i giorni di chiusura settimanali.
 7. Richiede prenotazione? → allora va anche in `prenotazioni.html` con la sua
    scadenza.
-8. Sostituisce qualcosa di già scritto? → tieni **tutte e due** le versioni come
+8. La giornata ha pranzo e cena con un posto preciso? → se no, **si aggiunge**
+   (vedi *I pasti*); se salta un pasto, si scrive. La colazione può saltare.
+9. Sostituisce qualcosa di già scritto? → tieni **tutte e due** le versioni come
    piano A e piano B, non cancellare la vecchia.
 
 ## Debito noto (da sistemare quando si passa di lì)
@@ -501,3 +527,17 @@ contenuti più controlli di struttura. Cambi da non riaprire:
   nella lista `.stops` e nel percorso della mappa.
 - `og:image` con indirizzo assoluto (`https://cmarco1.github.io/viaggio-giappone-2/…`),
   come serve alle anteprime di WhatsApp e dei social.
+
+**Pasti (27 settembre 2026).** Controllo di tutti i pasti con la regola nuova
+(*I pasti*, più su). Colazione: il M's Plus non la serve (dal 2021) → Matsuya
+accanto all'hotel, Kissa Tyrol (G5), Inoda Coffee (G6), ekiben sul treno (G7,
+G8); l'APA ha il buffet a 2.200/2.400 ¥ → alternative Shinpachi Shokudo e
+Pan-ya no Donsuke. Pranzi che erano vaghi o solo spuntini: **Tori-i** oyakodon
+(G4), **Hiro Nishiki** wagyu-jū o Kakiya Daiyasu (G5), **Tsunahachi** tempura
+(G8, sede provvisoria al TRES Shinjuku fino al 2028), **Kamachiku** udon (G9),
+**Miharu** anguilla a Nakano (G12), **Sandaime Bunji** gyutan (G14); G1 pranzo
+in volo. Cene che erano vaghe: **Koei** yakiniku (G12, l'unico yakiniku),
+**Mallory Pork Steak** ad Aqua City (G14, Garuva come alternativa),
+**Tempura Tamai** a Narita (G15). Corretto un errore: "Kaikatei" a Ikebukuro
+non esiste, il gyoza storico è **Kairaku Honten** (G13). Conteggi: tempura 2
+(Tsunahachi, Tamai), anguilla 2 (Kaneyo, Miharu), gyukatsu 2, yakiniku 1.
