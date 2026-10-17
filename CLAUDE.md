@@ -467,7 +467,7 @@ cartella è stata rimossa, questo file la sostituisce.
   (Shibuya) e **Nemuro Hanamaru** (KITTE). Al G11 Jimbocho, chiuso la domenica,
   è stato sostituito da **Niku no Mansei Akiba Place**.
 - **G6:** Den Den Town su due giri, circa 4 ore, e Shitenno-ji ridotto a
-  opzionale. **G2:** Kodai-ji solo la sera (prima si pagava due volte), date
+  opzionale (superato il 17/10/2026: vedi Katsuo-ji in fondo). **G2:** Kodai-ji solo la sera (prima si pagava due volte), date
   confermate, 800 ¥. **G7:** Himeji a 2.500 ¥ (2.600 col giardino), chip dei
   km aggiunto, tolta la sosta alla sala da tè Tsuen a Uji (oggi Uji è in fondo al G5). **G4:**
   Ninna-ji spostato prima di Ryoan-ji, perché dopo era già chiuso. **G5:** orario del Manga
@@ -550,7 +550,7 @@ contenuti più controlli di struttura. Cambi da non riaprire:
 
 **Pasti (27 settembre 2026).** Controllo di tutti i pasti con la regola nuova
 (*I pasti*, più su). Colazione: il M's Plus non la serve (dal 2021) → Matsuya
-accanto all'hotel, Kissa Tyrol (G5), Inoda Coffee (G6), ekiben sul treno (G7,
+accanto all'hotel, Kissa Tyrol (G5), Inoda Coffee (G6, spostata al G3 il 17/10 per Katsuo-ji), ekiben sul treno (G7,
 G8); l'APA ha il buffet a 2.200/2.400 ¥ → alternative Shinpachi Shokudo e
 Pan-ya no Donsuke. Pranzi che erano vaghi o solo spuntini: **Tori-i** oyakodon
 (G4), **Hiro Nishiki** wagyu-jū o Kakiya Daiyasu (G5), **Tsunahachi** tempura
@@ -704,3 +704,33 @@ Da ricontrollare più vicino alla partenza: giorno di chiusura di Mouriya a
 dicembre (metà ottobre), Nozomi 246 il 10/12 (10/11), Rojiura Curry aperto,
 Gundam Base con la sala di montaggio, date 2026 di Blue Cave e Marunouchi,
 posa dei maneki del Minamiza, orari 2026 della Midosuji.
+
+**G5 senza Manga Museum (17 ottobre 2026).** Marco e la ragazza lo hanno
+tolto: sembra una libreria di manga e senza il giapponese non serve a niente.
+Al suo posto, sullo stesso asse di Nishiki, due negozi di usato che cadono nelle
+priorità 1 e 4 (retrogaming e figure) e che il programma non conosceva:
+**Surugaya Kyoto Teramachi** (Ebisunocho 534-2, tre piani riaperti ad agosto
+2025, lun-ven 12-22, sab-dom 10-22) e **Mandarake Kyoto** (Kyoto Takashimaya
+S.C. [T8] 4F, 12-20, segue le chiusure del grande magazzino). Orari del G5:
+Nishiki e pranzo alle 12:15, Teramachi 13:45, Surugaya 14:15, Mandarake 15:30;
+dalle 16:30 tutto come prima. Titolo del giorno: «Nijo, Nishiki, l'usato di
+Teramachi e Gion di sera». Mappa a 8 punti, tutti trovati.
+Da ricontrollare a novembre: orari 2026 di Surugaya Teramachi (le fonti sono
+del 2025) e calendario di chiusura del Kyoto Takashimaya per il 7 dicembre.
+
+**G6 con Katsuo-ji (17 ottobre 2026).** Deciso da Marco: la mattina il tempio
+dei daruma a Minoh, Den Den Town solo il pomeriggio, cena alle 19. Orari:
+Matsuya 7:15, Hankyu da Omiya alle 8:00, Midosuji fino al capolinea
+Minoh-Kayano (alcuni treni si fermano prima), bus Hankyu 30 delle 9:30
+(banchina 6, 800 ¥, **niente contanti** dal 1/10/2026; feriali 9:00, 9:30,
+10:00…), Katsuo-ji 9:55-11:20 (500 ¥, dalle 8:00), **primo bus di ritorno
+feriale alle 11:20** (poi 11:50), Jiyuken 12:30, Den Den Town 13:30-17:45 con
+tutti i negozi aperti, Shinsekai 18:00, Daruma 19:00, in hotel verso le 21:30.
+Usciti: Shitenno-ji (era l'alternativa al secondo giro), Spa World (troppo
+tardi col treno per Himeji la mattina dopo), Inoda Coffee, spostata alla
+colazione del **G3** (uscita alle 7:35, Inoda 7:55-8:40, metro Karasuma fino a
+Kyoto Station per lo Special Rapid delle 9:14; Matsuya resta il ripiego). Titolo: «Osaka #2:
+i daruma di Katsuo-ji, Den Den Town e Shinsekai». Foto `katsuoji.jpg` da
+Commons (CC BY 4.0). Katsuo-ji non è nella mappa a piedi, solo fra le tappe.
+Il tempio conta come "un'altra cosa da vedere": è entrato perché occupa le ore
+in cui Den Den Town è ancora chiusa, non al posto di negozi.

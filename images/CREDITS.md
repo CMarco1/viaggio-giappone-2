@@ -41,7 +41,6 @@ ritagliate da immagini che il sito aveva già e di cui non si conosce la fonte
 | `stops/ryoanji.jpg` | Stephane D'Alu | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:RyoanJi-Dry_garden.jpg) |
 | `stops/nijo-castle.jpg` | Sailko | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kyoto,_castello_nijo,_porta_karamon,_01.jpg) |
 | `stops/sanjokai.jpg` | ketou-daisuki from Kyoto, japansko | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:%E4%B8%89%E6%9D%A1%E5%95%86%E5%BA%97%E8%A1%97_(1563905141).jpg) |
-| `stops/manga-museum.jpg` | Banzai Hiroaki | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kyoto_International_Manga_Museum_20091229.jpg) |
 | `stops/minamiza.jpg` | Conveyor belt sushi | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kabuki_Minamiza_Kaomise.jpg) |
 | `stops/gion.jpg` | Christophe95 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Hanamikoji_Dori.jpg) |
 | `stops/pontocho.jpg` | Sergiy Galyonkin from Raleigh, USA | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Pontocho_Alley,_Kyoto_(52450102682).jpg) |
@@ -52,6 +51,7 @@ ritagliate da immagini che il sito aveva già e di cui non si conosce la fonte
 | `stops/uonotana.jpg` | m-louis .® | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Uonotana_shopping_arcade,_Akashi,_Hyogo_2021-11-28.jpg) |
 | `stops/akashi-castle.jpg` | Drivephotographer | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Akashi_castle.jpg) |
 | `stops/meriken-park.jpg` | x768 | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:K%C5%8Dbe_Port_Tower,_Meriken_Park_(15871783216).jpg) |
+| `stops/katsuoji.jpg` | Hyppolyte de Saint-Rambert | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Katsu%C5%8D-ji_(Minoh_Osaka)_Temple_hdsr_S5_da08.jpg) |
 | `stops/shimokitazawa.jpg` | Stephen Kelly from San Francisco, CA, USA | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Dense_Street_in_Shimokitazawa_(11919213554).jpg) |
 | `stops/godzilla-shinjuku.jpg` | Stephen Kelly from San Francisco, CA, USA | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Godzilla_in_Kabukich%C5%8D,_Shinjuku_(53415745587).jpg) |
 | `stops/omoide-yokocho.jpg` | MaedaAkihiko | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Shinjuku-West_Omoide-Yokocho.jpg) |
