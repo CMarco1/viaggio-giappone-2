@@ -734,3 +734,18 @@ i daruma di Katsuo-ji, Den Den Town e Shinsekai». Foto `katsuoji.jpg` da
 Commons (CC BY 4.0). Katsuo-ji non è nella mappa a piedi, solo fra le tappe.
 Il tempio conta come "un'altra cosa da vedere": è entrato perché occupa le ore
 in cui Den Den Town è ancora chiusa, non al posto di negozi.
+
+**Treni del G3 e del G7 (17 ottobre 2026).** Chiarito con Marco che "JR" non
+è un treno speciale: il sovrapprezzo c'è solo su Shinkansen, Haruka e N'EX, e
+il JR Pass non conviene (~29.000 ¥ di treni JR a testa in tutto il viaggio).
+**G3**: niente più JR per il castello di Osaka. Da Inoda all'Hankyu di Karasuma,
+準特急 delle **8:48** (a Umeda 9:33; c'è un treno ogni ~10 min, il 特急 delle
+9:01 arriva alle 9:43), poi metro Tanimachi da Higashi-Umeda a Tanimachi
+4-chome (3 fermate, 7 min, 240 ¥), uscita 1-B, mastio verso le 10:15. Col
+ripiego Matsuya si prende lo stesso treno a Omiya alle 8:46 circa. Chip
+«🚃 hotel→castello ~1h30». **G7**: confermato lo Shinkansen, **Hikari 733
+delle 8:01**, a Himeji alle 8:49 (dopo: Hikari 735 delle 8:29, alle 9:14);
+uscita dall'hotel alle 7:20, castello alle 9:10. Orari presi da NAVITIME per
+le date esatte. **ICOCA e Shinkansen**: la ICOCA da sola non apre il tornello,
+ma registrata su SmartEX (anche quella del compagno, per posto) fa da biglietto;
+scritto in Prenotazioni.
