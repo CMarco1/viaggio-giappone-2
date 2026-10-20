@@ -749,3 +749,12 @@ uscita dall'hotel alle 7:20, castello alle 9:10. Orari presi da NAVITIME per
 le date esatte. **ICOCA e Shinkansen**: la ICOCA da sola non apre il tornello,
 ma registrata su SmartEX (anche quella del compagno, per posto) fa da biglietto;
 scritto in Prenotazioni.
+
+**Assicurazione comprata (20 ottobre 2026).** Heymondo «Viaggio Top» con
+l'opzione VIP Lounge, 2 persone, 2-18 dicembre, **104,79 €** col 10% del link
+INGIAPPONE (116,44 € senza sconto). Niente elettronica né sport. Non copre
+l'annullamento. Ritardi: 200 € oltre 8 h (Top), VIP Lounge da 2h30 (lounge o
+50 €), solo se i quattro voli sono registrati nell'app entro 24 h prima (in
+calendario: 1° dicembre). Revolut di Marco è il piano gratuito: nessuna lounge
+inclusa. In Prenotazioni la voce è passata da "Ancora da prenotare" a "Già
+prenotato" (totale impegnato 2.900,55 €). Numero di polizza mai sul sito.
