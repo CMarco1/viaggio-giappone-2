@@ -781,3 +781,23 @@ voto** a spostamenti, check-in, colazioni in catena, rientri, e ai "Piano B"
 (restano solo "facoltativo"). Quando si aggiunge una tappa, darle un voto con
 gli stessi criteri. Distribuzione iniziale: 30 cinque, 40 quattro, 33 tre,
 26 due, 3 uno, 76 senza voto.
+
+**Mappe che seguono davvero il giro (24 ottobre 2026).** Controllo su tutte
+le giornate: la mappa del G2 saltava Sannenzaka, Ninenzaka, Nene-no-michi,
+Chion-in, Gojo-zaka e Teradaya. Regola nuova: **una giornata può avere due
+mappe** (due `div.mapbox` di fila, ognuna ≤ 9 punti, etichetta che dice il
+blocco: "La mattina…", "Il pomeriggio…", "La sera…"; `.maphint` al plurale).
+Oggi ne hanno due **G2** (mattina Kiyomizu→Gion Kirara; pomeriggio e sera
+Gojo-zaka→Fushimi→Kodai-ji, con la nota che Fushimi→Kodai-ji è in treno),
+**G8** (pomeriggio JINS→Ikebukuro; sera Godzilla→Golden Gai) e **G11**
+(mattina Kanda Myojin→Kyushu Jangara; pomeriggio e sera Trader→Hey).
+Punti aggiunti alla mappa unica: G1 Ohsho, G3 Nishinomaru, G5 Tatsumi Bridge
+(Shirakawa), G6 Grand Chaos e Super Potato Ota Road, G10 Nonbei Yokocho.
+Tappe cliccabili aggiunte dove mancavano (colazioni con un posto preciso,
+facoltative comprese). Restano solo tra le tappe, non in mappa: le tappe in
+un'altra città rispetto alla mappa (Inoda al G3, Katsuo-ji al G6), Janpara e
+Karaoke Kan (Google non li trova in un percorso) e Chuo-dori di Akihabara
+("Chuo-dori, Akihabara" finisce a Ginza). `assets/check-maps.sh` ora controlla
+tutte le mappe di ogni pagina, segnala i punti scartati senza coordinate e
+verifica che `href` e `data-embed` coincidano. In `app.js` l'iframe prende
+come titolo l'etichetta della sua mappa.

@@ -164,7 +164,7 @@
             e.preventDefault();
             var f = document.createElement('iframe');
             f.src = a.getAttribute('data-embed');
-            f.title = 'Mappa delle tappe della giornata';
+            f.title = a.textContent.trim() || 'Mappa delle tappe della giornata';
             f.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
             f.setAttribute('allowfullscreen', '');
             var big = document.createElement('a');
