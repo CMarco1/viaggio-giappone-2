@@ -311,6 +311,20 @@ h3.sub { font-size: 1.25rem; font-weight: 700; margin: 2.2rem 0 1rem; }
 .timeline div { color: var(--text-2); line-height: 1.55; }
 .timeline div > strong:first-child { color: var(--text); font-weight: 650; }
 .timeline .prio { margin-left: 4px; }
+/* Importanza delle tappe, da 1 a 5: pallini sotto l'orario (data-imp sul li) */
+.timeline div { align-self: start; }
+.timeline .t { display: flex; flex-direction: column; align-items: flex-start; }
+.timeline li[data-imp] .t::before, .imp-key::before { order: 1; font-size: 0.72rem; letter-spacing: 1px; line-height: 1.3; color: var(--text-3); }
+.timeline li[data-imp="5"] .t::before { content: "●●●●●"; content: "●●●●●" / "importanza 5 su 5"; color: var(--accent); }
+.timeline li[data-imp="4"] .t::before { content: "●●●●"; content: "●●●●" / "importanza 4 su 5"; color: var(--accent); }
+.timeline li[data-imp="3"] .t::before { content: "●●●"; content: "●●●" / "importanza 3 su 5"; color: var(--warn); }
+.timeline li[data-imp="2"] .t::before { content: "●●"; content: "●●" / "importanza 2 su 5"; }
+.timeline li[data-imp="1"] .t::before { content: "●"; content: "●" / "importanza 1 su 5"; }
+.tl-legend { margin: -0.2rem 0 0.9rem; font-size: 0.8rem; color: var(--text-3); line-height: 1.5; }
+.imp-key::before { font-size: 0.78rem; margin: 0 1px; letter-spacing: 1px; }
+.imp-key[data-imp="5"]::before { content: "●●●●●"; content: "●●●●●" / "5 su 5:"; color: var(--accent); }
+.imp-key[data-imp="3"]::before { content: "●●●"; content: "●●●" / "3 su 5:"; color: var(--warn); }
+.imp-key[data-imp="1"]::before { content: "●"; content: "●" / "1 su 5:"; }
 /* A colpo d'occhio: due righe per tappa, il resto si apre toccando (attivo solo con JS) */
 .js .timeline li.has-more { cursor: pointer; }
 .js .timeline li.has-more:not(.open) div { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }

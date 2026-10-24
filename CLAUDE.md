@@ -768,3 +768,16 @@ Animate 15:40, Otome Road 16:15, rientro 16:55), la sera resta uguale. Ritiro
 la sera stessa se le lenti sono semplici, altrimenti una delle sere seguenti.
 L'alternativa scartata era JINS Kyoto Teramachi-dori (accanto a Mishima-tei,
 G5), buona solo per lenti pronte in giornata. Non è nella mappa combinata.
+
+**Importanza delle tappe, da 1 a 5 (24 ottobre 2026).** Il programma è
+sembrato troppo pieno; invece di tagliare, ogni voce dell'itinerario ha un
+voto: `data-imp="1..5"` sul `<li>` della timeline, mostrato in CSS come pallini
+sotto l'orario (5-4 rossi, 3 arancioni, 2-1 grigi, con testo alternativo
+"importanza N su 5"), più una riga di legenda (`p.tl-legend`) sotto il titolo
+Itinerario. Regole: **5** eventi a data fissa, pasti prenotati, slot pagati, il
+cuore nerd e la tappa-motivo della giornata; **4** importanti ma recuperabili;
+**3** belle; **2** le prime da tagliare; **1** le facoltative minori. **Niente
+voto** a spostamenti, check-in, colazioni in catena, rientri, e ai "Piano B"
+(restano solo "facoltativo"). Quando si aggiunge una tappa, darle un voto con
+gli stessi criteri. Distribuzione iniziale: 30 cinque, 40 quattro, 33 tre,
+26 due, 3 uno, 76 senza voto.
