@@ -758,3 +758,13 @@ l'annullamento. Ritardi: 200 € oltre 8 h (Top), VIP Lounge da 2h30 (lounge o
 calendario: 1° dicembre). Revolut di Marco è il piano gratuito: nessuna lounge
 inclusa. In Prenotazioni la voce è passata da "Ancora da prenotare" a "Già
 prenotato" (totale impegnato 2.900,55 €). Numero di polizza mai sul sito.
+
+**JINS al G8 (24 ottobre 2026).** Gli occhiali nuovi: lenti forse complesse
+(3-7 giorni), quindi a Tokyo e non a Kyoto. **JINS Shinjuku Subnade**
+(Kabukicho 1, Subnade B1, uscita B12, 10:30-21:00, tax-free), dieci minuti
+dall'APA: G8 alle 12:45, dopo i bagagli e prima di Tsunahachi; il pomeriggio
+slitta di ~25 minuti (Tsunahachi 13:40, Takano 14:25, Pokémon Center 15:00,
+Animate 15:40, Otome Road 16:15, rientro 16:55), la sera resta uguale. Ritiro
+la sera stessa se le lenti sono semplici, altrimenti una delle sere seguenti.
+L'alternativa scartata era JINS Kyoto Teramachi-dori (accanto a Mishima-tei,
+G5), buona solo per lenti pronte in giornata. Non è nella mappa combinata.
